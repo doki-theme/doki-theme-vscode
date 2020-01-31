@@ -11,18 +11,15 @@ function getVsCodeCss() {
   if (!fs.existsSync(editorCssCopy)) {
     fs.copyFileSync(editorCss, editorCssCopy);
   }
-  console.log(editorCssCopy);
-  return fs.readFileSync(editorCssCopy, 'utf-8')
-    .replace(/\/\*css-background-start\*\/[\s\S]*?\/\*css-background-end\*\//g, '')
-    .replace(/\s*$/, '');
+  return fs.readFileSync(editorCssCopy, 'utf-8');
 }
 
-function buildStickerCss(sticker: Sticker): string {
-  const stickerUrl = satsukiSticker;
+function buildStickerCss(dokiTheme: DokiTheme): string {
+  const stickerUrl = satsukiSticker; // todo: real sticker
+  const backgroundImage = dokiTheme.name;
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `
-/*css-background-start*/
-
+/* Stickers */
 [id="workbench.parts.editor"] .split-view-view:nth-child(1) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
 [id="workbench.parts.editor"] .split-view-view:nth-child(2) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
@@ -31,7 +28,18 @@ function buildStickerCss(sticker: Sticker): string {
 
 [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
-/*css-background-end*/
+  /* Background Image */
+  .monaco-workbench .part.editor > .content {
+    background-image: url('https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/assets/themes/${backgroundImage}.png') !important;
+    background-position: center;
+    background-size: cover;
+    content:'';
+    z-index:99999;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    opacity:1;
+}
 `;
 }
 
@@ -51,9 +59,9 @@ export function installSticker(dokiTheme: DokiTheme) {
 
 const backgroundHax = `
   .monaco-workbench .part.editor > .content {
-    background-image: url('https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/assets/themes/ryuko.png') !important;
+    background-image: url('https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/assets/themes/satsuki.png') !important;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     content:'';
     z-index:99999;
     width:100%;
