@@ -23,11 +23,11 @@ function buildStickerCss(sticker: Sticker): string {
   return `
 /*css-background-start*/
 
-[id="workbench.parts.editor"] .split-view-view:nth-child(1) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}
+[id="workbench.parts.editor"] .split-view-view:nth-child(1) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
-[id="workbench.parts.editor"] .split-view-view:nth-child(2) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}
+[id="workbench.parts.editor"] .split-view-view:nth-child(2) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
-[id="workbench.parts.editor"] .split-view-view:nth-child(3) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}
+[id="workbench.parts.editor"] .split-view-view:nth-child(3) .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
 [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
@@ -49,3 +49,15 @@ export function installSticker(dokiTheme: DokiTheme) {
   installEditorStyles(stickerStyles);
 }
 
+const backgroundHax = `
+  .monaco-workbench .part.editor > .content {
+    background-image: url('https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/assets/themes/ryuko.png') !important;
+    background-position: center;
+    background-size: contain;
+    content:'';
+    z-index:99999;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    opacity:1;
+}`;
