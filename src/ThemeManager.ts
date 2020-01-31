@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
 import {DokiTheme} from "./DokiTheme";
 import {installSticker} from "./StickerService";
-import {installBackground} from "./BackgroundService";
 import {setLookAndFeel} from "./LaFService";
 import {activateIcons} from "./IconService";
+import {installBackground} from "./BackgroundService";
 
 export function activateTheme(dokiTheme: DokiTheme) {
   installSticker(dokiTheme);
