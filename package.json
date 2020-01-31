@@ -10,13 +10,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.Satsuki"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
+			"command": "extension.Satsuki",
+			"title": "Satsuki Kiruin"
 		}]
 	},
 	"scripts": {
