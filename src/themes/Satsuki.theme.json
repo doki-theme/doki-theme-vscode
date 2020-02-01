@@ -518,7 +518,7 @@
 
 		"editorWidget.background": "#f0f0f6",
 		"debugToolBar.background": "#f0f0f6",
-		"editorSuggestWidget.background": "#f0f0f6",
+		"editorSuggestWidget.background": "#e7e5ea",
 
 		"peekViewResult.matchHighlightBackground": "#ff0000",
 		"statusBarItem.remoteBackground": "#4e3c69",

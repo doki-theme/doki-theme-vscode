@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.Satsuki"
+		"onCommand:extension.Satsuki",
+		"onCommand:extension.Ryuko"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -18,6 +19,10 @@
 			{
 				"command": "extension.Satsuki",
 				"title": "Satsuki Kiruin"
+			},
+			{
+				"command": "extension.Ryuko",
+				"title": "Ryuko Matoi"
 			}
 		],
 		"themes": [
@@ -26,6 +31,12 @@
 				"label": "Satsuki Kiriun",
 				"path": "./out/Satsuki.theme.json",
 				"uiTheme": "vs"
+			},
+			{
+				"id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
+				"label": "Ryuko Matoi",
+				"path": "./out/Ryuko.theme.json",
+				"uiTheme": "vs-dark"
 			}
 		]
 	},

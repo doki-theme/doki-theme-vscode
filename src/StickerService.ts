@@ -1,7 +1,6 @@
 import {DokiTheme, Sticker} from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
-import {satsukiSticker} from "./StickerHolder";
 
 const main = require.main || {filename: 'yeet'};
 const editorCss = path.join(path.dirname(main.filename), 'vs', 'workbench', 'workbench.desktop.main.css');
@@ -15,7 +14,7 @@ function getVsCodeCss() {
 }
 
 function buildStickerCss(dokiTheme: DokiTheme): string {
-  const stickerUrl = satsukiSticker; // todo: real sticker
+  const stickerUrl = dokiTheme.sticker.url; // todo: real sticker
   const backgroundImage = dokiTheme.name.toLowerCase(); // todo: fix
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `

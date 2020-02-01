@@ -1,13 +1,13 @@
 export class DokiTheme {
-  name: String;
+  name: string;
   sticker: Sticker;
 
-  constructor(name: String, sticker: Sticker) {
+  constructor(name: string, sticker: Sticker) {
     this.name = name;
     this.sticker = sticker;
   }
 }
 
-export class Sticker {
-
+export interface Sticker {
+  url: string;
 }
