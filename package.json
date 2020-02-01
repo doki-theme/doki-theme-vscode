@@ -19,6 +19,14 @@
 				"command": "extension.Satsuki",
 				"title": "Satsuki Kiruin"
 			}
+		],
+		"themes": [
+			{
+				"id": "3a78b13e-dbf2-410f-bb20-12b57bff7735",
+				"label": "Satsuki Kiriun",
+				"path": "./out/Satsuki.theme.json",
+				"uiTheme": "vs"
+			}
 		]
 	},
 	"scripts": {

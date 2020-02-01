@@ -43,9 +43,9 @@ function buildStickerCss(dokiTheme: DokiTheme): string {
 `;
 }
 
-function buildStyles(sticker: Sticker): string {
+function buildStyles(dokiTheme: DokiTheme): string {
   let vsCodeCss = getVsCodeCss();
-  return vsCodeCss + buildStickerCss(sticker);
+  return vsCodeCss + buildStickerCss(dokiTheme);
 
 }
 function installEditorStyles(styles: string) {
@@ -53,7 +53,7 @@ function installEditorStyles(styles: string) {
 }
 
 export function installSticker(dokiTheme: DokiTheme) {
-  const stickerStyles = buildStyles(dokiTheme.sticker);
+  const stickerStyles = buildStyles(dokiTheme);
   installEditorStyles(stickerStyles);
 }
 
