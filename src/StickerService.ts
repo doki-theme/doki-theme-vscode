@@ -16,7 +16,7 @@ function getVsCodeCss() {
 
 function buildStickerCss(dokiTheme: DokiTheme): string {
   const stickerUrl = satsukiSticker; // todo: real sticker
-  const backgroundImage = dokiTheme.name;
+  const backgroundImage = dokiTheme.name.toLowerCase(); // todo: fix
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `
 /* Stickers */
