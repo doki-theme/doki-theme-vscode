@@ -1,0 +1,66 @@
+{
+  "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
+  "name": "Ryuko",
+  "displayName": "Ryuko",
+  "dark": true,
+  "author": "cyclic-reference",
+  "group": "Kill la Kill",
+  "editorScheme": {
+    "type": "templateExtension",
+    "file": "Ryuko.xml"
+  },
+  "stickers": {
+    "default": "ryuko.png"
+  },
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "accentColor": "#e4ff10",
+        "startColor": "#e4ff10"
+      }
+    }
+  },
+  "colors": {
+    "caretRow": "#2a3037",
+    "baseIconColor": "#717981",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#262c32",
+    "nonProjectFileScopeColor":  "#303638",
+    "editorBackground": "#2b3238",
+    "secondaryBackground": "#282f35",
+    "selectionForeground": "#E2CB14",
+    "inactiveBackground": "#2a272e",
+    "inactiveBackgroundDarker": "#333037",
+    "headerColor": "#2b3238",
+    "baseBackground": "#2f363c",
+    "borderColor": "#30383d",
+    "buttonColor": "#2b3237",
+    "selectionInactive": "#292e34",
+    "tagColor": "#7A7A7A",
+    "selectionBackground":  "#563036",
+    "selectionBackgroundTransparent":  "#a730355a",
+    "buttonFont": "#6b8b99",
+    "foregroundColor":  "#bbbbbb",
+    "startColor": "#511c22",
+    "highlightColor": "#a32f345a",
+    "disabledColor": "#585F6F",
+    "accentColorTransparent": "#a730355A",
+    "accentColorLessTransparent": "#a730359A",
+    "accentColorMoreTransparent": "#a730352A",
+    "accentColor": "#a73035",
+    "accentContrastColor": "#271c21",
+    "stopColor": "#ee2726",
+    "testScopeColor": "#2d3e3a",
+    "popupMask": "#EAEAF00A",
+    "codeBlock": "#292e34",
+    "textEditorBackground": "#2b3238",
+    "searchResultBackground": "#272e34",
+    "classNameColor": "#6893f3",
+    "htmlTagColor": "#a28a92",
+    "stringColor": "#efa554",
+    "keyColor": "#C1B5C3",
+    "keywordColor": "#e0474b"
+  },
+  "ui": {},
+  "icons": {}
+}
