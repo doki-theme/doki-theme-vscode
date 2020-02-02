@@ -13,13 +13,11 @@
 		"minimap.selectionHighlight": "#563036",
 		
         
-        "list.activeSelectionForeground": "#6c6c6c",
+        "list.activeSelectionForeground": "#E2CB14",
 		
 		"list.inactiveSelectionBackground": "#292e34",
         
         "editor.background": "#2b3238",
-        
-        "editorWhitespace.foreground": "#AAAAAA",
         
         "tab.activeBackground": "#a32f345a",
 		
@@ -32,6 +30,7 @@
 		"sideBar.border": "#30383d",
 		"editorIndentGuide.background": "#30383d",
         "editorIndentGuide.activeBackground": "#30383d",
+		"inputOption.activeBorder": "#30383d",
 		
         "editorCursor.background": "#ffffff",
         
@@ -44,7 +43,6 @@
 		
         "editorLineNumber.foreground": "#666879",
         
-		"inputOption.activeBorder": "#adafb7",
 		
         "editorCursor.foreground": "#a73035",
 		"editorWidget.border": "#a73035",
@@ -71,7 +69,7 @@
 		"sideBarSectionHeader.background": "#2f363c",
 		"activityBar.background": "#2f363c",
 		
-		"editor.findMatchBackground": "#a0a9d2",
+		"editor.findMatchBackground": "#563036",
 		"editor.findMatchHighlightBackground": "#292e34",
 		"peekViewEditor.matchHighlightBackground": "#292e34",
 		"editor.wordHighlightBackground": "#292e34",

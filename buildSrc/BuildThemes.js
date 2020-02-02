@@ -3,12 +3,12 @@ const path = require('path');
 const currentDirectory = require.main.path;
 const repoDirectory = path.resolve(currentDirectory, '..');
 
-const satsukiThemePath = path.resolve(repoDirectory, 'src','themes','Satsuki.theme.json')
+const satsukiThemePath = path.resolve(repoDirectory, 'src','themes','Ryuko.theme.json')
 
 const fs = require('fs');
 const satsukiJson = JSON.parse(fs.readFileSync(satsukiThemePath, 'utf-8'))
 
-const satsukiDefinitionPath = path.resolve(repoDirectory,'themes','definitions','killLaKill','satsuki','satsuki.doki.json')
+const satsukiDefinitionPath = path.resolve(repoDirectory,'themes','definitions','killLaKill','ryuko','ryuko.doki.json')
 const satsukiDefinition = JSON.parse(fs.readFileSync(satsukiDefinitionPath, 'utf-8'));
 const satuskiColors = satsukiDefinition.colors;
 
@@ -25,7 +25,7 @@ const defColorToName = Object.keys(satuskiColors)
     return acc;
 }, {});
 
-const templated = Object.keys(satsukiJson.colors)
+const templatedColors = Object.keys(satsukiJson.colors)
 .map(key => ({key, value: satsukiJson.colors[key]}))
 .map(kV => {
     const hexColor = kV.value.toUpperCase();
@@ -40,7 +40,10 @@ const templated = Object.keys(satsukiJson.colors)
     const templatedValue = `&${namedColor}&${hexColor.substring(7) || ''}`
 
     return {key: kV.key, value: templatedValue}
-})
+}).reduce((accum, kV) => {
+    accum[kV.key] = kV.value;
+    return accum;
+}, {});
 
 
-console.log(templated)
+console.log(JSON.stringify(templatedColors))
