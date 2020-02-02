@@ -201,6 +201,8 @@ function readSticker(
     return base64Img.base64Sync(stickerPath);
 }
 
+const omit = require('lodash/omit');
+
 walkDir(templateDirectoryPath)
     .then(readTemplates)
     .then(dokiTemplateDefinitions => {
@@ -264,7 +266,12 @@ walkDir(templateDirectoryPath)
             return {
                 extensionName: getCommandName(dokiDefinition),
                 themeDefinition: {
-                    information: dokiDefinition,
+                    information: omit(dokiDefinition,[
+                        'colors',
+                        'overrides',
+                        'ui',
+                        'icons'
+                    ] ),
                     sticker: readSticker(
                         dokiTheme.path,
                         dokiDefinition
@@ -276,7 +283,7 @@ walkDir(templateDirectoryPath)
         const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions, null, 2);
         fs.writeFileSync(
             path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'), 
-        `export default ${finalDokiDefinitions}`)
+        `export default ${finalDokiDefinitions};`)
 
 
         // copy to out directory
