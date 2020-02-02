@@ -45,7 +45,8 @@
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "yarn run compile",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"build:themes":"node ./buildSrc/BuildThemes.js"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
