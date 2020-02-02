@@ -460,7 +460,8 @@
 		"editor.selectionBackground": "#C9D0D9",
 		"minimap.selectionHighlight": "#C9D0D9",
 		
-        
+		"tab.activeBackground": "#dddce1",
+
         "tab.border":"#dadbe6",
         "tree.indentGuidesStroke": "#dadbe6",
 		"sideBar.border": "#dadbe6",
