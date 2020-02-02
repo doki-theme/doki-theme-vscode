@@ -247,7 +247,7 @@ walkDir(templateDirectoryPath)
         const themes = dokiDefinitions.map(dokiDefinition => ({
             id: dokiDefinition.id,
             label: `Doki Theme: ${dokiDefinition.displayName}`,
-            path: `./out/themes/${dokiDefinition.name}.theme.json`,
+            path: `./out/${dokiDefinition.name}.theme.json`,
             uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
         }))
 
@@ -260,18 +260,17 @@ walkDir(templateDirectoryPath)
         )
 
         // write things for extension
-        // stickers, extension registry
         const dokiThemeDefinitions = dokiThemes.map(dokiTheme => {
             const dokiDefinition = dokiTheme.definition
             return {
                 extensionName: getCommandName(dokiDefinition),
                 themeDefinition: {
-                    information: omit(dokiDefinition,[
+                    information: omit(dokiDefinition, [
                         'colors',
                         'overrides',
                         'ui',
                         'icons'
-                    ] ),
+                    ]),
                     sticker: readSticker(
                         dokiTheme.path,
                         dokiDefinition
@@ -281,12 +280,19 @@ walkDir(templateDirectoryPath)
         });
         const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
         fs.writeFileSync(
-            path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'), 
-        `export default ${finalDokiDefinitions};`)
-
+            path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
+            `export default ${finalDokiDefinitions};`)
 
         // copy to out directory
-        const vsCodeThemes = dokiThemes.map(d => d.theme);
+        dokiThemes.forEach(dokiTheme => {
+            const vsCodeTheme = dokiTheme.theme;
+            fs.writeFileSync(
+                path.resolve(repoDirectory,
+                    'out',
+                    `${dokiTheme.definition.name}.theme.json`),
+                JSON.stringify(vsCodeTheme, null, 2)
+            )
+        })
     })
 
 function getCommandName(dokiDefinition) {
