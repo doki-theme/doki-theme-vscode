@@ -448,26 +448,19 @@
 		"list.activeSelectionBackground": "#a0a9d2",
 		"list.hoverBackground": "#a0a9d22a",
 		
-        "focusBorder": "#A6B39B",
-        "pickerGroup.border": "#A6B39B",
-		"pickerGroup.foreground": "#A6B39B",
-        
 		"list.inactiveSelectionBackground": "#d1d0dc",
 
 		"editor.background": "#e7e6eb",
 
-
-		"editor.selectionBackground": "#C9D0D9",
-		"minimap.selectionHighlight": "#C9D0D9",
-		
 		"tab.activeBackground": "#dddce1",
 
+		"focusBorder": "#dadbe6",
+        "pickerGroup.border": "#dadbe6",
         "tab.border":"#dadbe6",
         "tree.indentGuidesStroke": "#dadbe6",
 		"sideBar.border": "#dadbe6",
 		"editorIndentGuide.background": "#dadbe6",
         "editorIndentGuide.activeBackground": "#dadbe6",
-		
 		
         "editorCursor.background": "#ffffff",
 		
@@ -512,10 +505,6 @@
 		"editorOverviewRuler.findMatchForeground": "#d1d0dc",
 		"searchEditor.findMatchBackground":"#d1d0dc",
 
-
-		"peekViewTitle.background": "#F2F8FC",
-		"peekViewEditor.background": "#F2F8FC",
-		"peekViewResult.background": "#F2F8FC",
 
 		"editorWidget.background": "#f0f0f6",
 		"debugToolBar.background": "#f0f0f6",
