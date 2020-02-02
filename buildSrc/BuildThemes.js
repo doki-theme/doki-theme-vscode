@@ -212,8 +212,38 @@ walkDir(templateDirectoryPath)
                 )
         )
     }).then(dokiThemes => {
+        const dokiDefinitions = dokiThemes.map(d => d.definition);
+        const vsCodeThemes = dokiThemes.map(d => d.theme);
+        
         // write to package json
+        const packageJsonPath =
+            path.resolve(repoDirectory, 'package.json');
+        const packageJson = readJson(packageJsonPath);
+        const activationEvents =
+            dokiDefinitions.map(dokiDefinition =>
+                `onCommand:extension.${dokiDefinition.name}`
+            )
+
+        const commands = dokiDefinitions.map(dokiDefinition => ({
+            name: `extension.${dokiDefinition.name}`,
+            title: `Doki Theme: ${dokiDefinition.displayName}`
+        }))
+
+        const themes = dokiDefinitions.map(dokiDefinition => ({
+            id: dokiDefinition.id,
+            label: `Doki Theme: ${dokiDefinition.displayName}`,
+            path: `./out/themes/${dokiDefinition.name}.theme.json`,
+            uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs' 
+        }))
+
+        packageJson.activationEvents = activationEvents
+        packageJson.contributes.commands = commands;
+        packageJson.contributes.themes = themes;
+        fs.writeFileSync(
+            packageJsonPath,
+            JSON.stringify(packageJson, null, 2)
+        )
+
         // write things for extension
         // copy to out directory
-        // console.log(JSON.stringify(dokiThemes.map(dokiTheme => dokiTheme.theme)))
     })
