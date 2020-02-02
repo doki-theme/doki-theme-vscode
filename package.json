@@ -17,12 +17,12 @@
   "contributes": {
     "commands": [
       {
-        "name": "extension.Ryuko",
-        "title": "Doki Theme: Ryuko"
+        "command": "extension.Ryuko",
+        "title": "Activate Doki Theme: Ryuko"
       },
       {
-        "name": "extension.Satsuki",
-        "title": "Doki Theme: Satsuki"
+        "command": "extension.Satsuki",
+        "title": "Activate Doki Theme: Satsuki"
       }
     ],
     "themes": [

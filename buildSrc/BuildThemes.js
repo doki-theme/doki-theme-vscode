@@ -154,6 +154,7 @@ function createDokiTheme(
         readJson(dokiFileDefinitonPath);
     try {
         const dokiTheme = {
+            path: dokiFileDefinitonPath,
             definition: dokiThemeDefinition,
             theme: buildVSCodeTheme(
                 dokiThemeDefinition,
@@ -213,8 +214,7 @@ walkDir(templateDirectoryPath)
         )
     }).then(dokiThemes => {
         const dokiDefinitions = dokiThemes.map(d => d.definition);
-        const vsCodeThemes = dokiThemes.map(d => d.theme);
-        
+
         // write to package json
         const packageJsonPath =
             path.resolve(repoDirectory, 'package.json');
@@ -225,15 +225,15 @@ walkDir(templateDirectoryPath)
             )
 
         const commands = dokiDefinitions.map(dokiDefinition => ({
-            name: `extension.${dokiDefinition.name}`,
-            title: `Doki Theme: ${dokiDefinition.displayName}`
+            command: `extension.${dokiDefinition.name}`,
+            title: `Activate Doki Theme: ${dokiDefinition.displayName}`
         }))
 
         const themes = dokiDefinitions.map(dokiDefinition => ({
             id: dokiDefinition.id,
             label: `Doki Theme: ${dokiDefinition.displayName}`,
             path: `./out/themes/${dokiDefinition.name}.theme.json`,
-            uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs' 
+            uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
         }))
 
         packageJson.activationEvents = activationEvents
@@ -245,5 +245,11 @@ walkDir(templateDirectoryPath)
         )
 
         // write things for extension
+        // stickers, extension registry
+        dokiThemes.forEach(dokiTheme => {
+
+        })
+
         // copy to out directory
+        const vsCodeThemes = dokiThemes.map(d => d.theme);
     })
