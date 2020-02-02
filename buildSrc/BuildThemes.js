@@ -3,47 +3,46 @@ const path = require('path');
 const currentDirectory = require.main.path;
 const repoDirectory = path.resolve(currentDirectory, '..');
 
-const satsukiThemePath = path.resolve(repoDirectory, 'src','themes','Ryuko.theme.json')
-
 const fs = require('fs');
-const satsukiJson = JSON.parse(fs.readFileSync(satsukiThemePath, 'utf-8'))
 
-const satsukiDefinitionPath = path.resolve(repoDirectory,'themes','definitions','killLaKill','ryuko','ryuko.doki.json')
-const satsukiDefinition = JSON.parse(fs.readFileSync(satsukiDefinitionPath, 'utf-8'));
-const satuskiColors = satsukiDefinition.colors;
+const definitionDirectoryPath =
+    path.resolve(repoDirectory, 'themes', 'definitions');
+const templateDirectoryPath =
+    path.resolve(repoDirectory, 'themes', 'templates');
 
-const defColorToName = Object.keys(satuskiColors)
-.map(k => ({key: k, value: satuskiColors[k]}))
-.reduce((acc, k) => {
-    const key = k.key;
-    const value = k.value.toUpperCase();
-    if(!acc[value]){
-        acc[value] = []
+function walkDir(dir, callback) {
+    fs.readdirSync(dir).forEach(f => {
+        const dirPath = path.join(dir, f);
+        const isDirectory = fs.statSync(dirPath).isDirectory();
+        isDirectory ?
+            walkDir(dirPath, callback) : callback(path.join(dir, f));
+    });
+};
+
+// todo: get templates
+
+function getThemeType(dokiThemeTemplateJson) {
+    return dokiThemeTemplateJson.dark ? 
+    "dark": "light"
+}
+
+function buildLAFColors(dokiThemeTemplateJson) {
+    return dokiThemeTemplateJson.colors;
+}
+
+function buildSyntaxColors(dokiThemeTemplateJson) {
+    return {};
+}
+
+walkDir(definitionDirectoryPath, (filePath) => {
+    if (filePath.endsWith('doki.json')) {
+        const dokiThemeTemplateJson =
+            JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        const vsCodeTheme = {
+            type: getThemeType(dokiThemeTemplateJson),
+            colors: buildLAFColors(dokiThemeTemplateJson),
+            tokenColors: buildSyntaxColors(dokiThemeTemplateJson),
+        }
+        console.log(vsCodeTheme);
     }
-
-    acc[value].push(key)
-    return acc;
-}, {});
-
-const templatedColors = Object.keys(satsukiJson.colors)
-.map(key => ({key, value: satsukiJson.colors[key]}))
-.map(kV => {
-    const hexColor = kV.value.toUpperCase();
-    const mappedValue = 
-    defColorToName[hexColor.substring(0, 7)] ||
-    defColorToName[hexColor]
-    if(!mappedValue) {
-        throw new Error(`Unable to find named color for ${hexColor} for property ${kV.key}`)
-    }
-    const namedColor = mappedValue[0]
-
-    const templatedValue = `&${namedColor}&${hexColor.substring(7) || ''}`
-
-    return {key: kV.key, value: templatedValue}
-}).reduce((accum, kV) => {
-    accum[kV.key] = kV.value;
-    return accum;
-}, {});
-
-
-console.log(JSON.stringify(templatedColors))
+})
