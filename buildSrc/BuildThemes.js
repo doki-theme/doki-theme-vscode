@@ -26,17 +26,55 @@ function walkDir(dir) {
 };
 
 // todo: get templates
+const LAF_TYPE = 'laf';
+const SYNTAX_TYPE = 'syntax';
+
+function getTemplateType(templatePath) {
+    if (templatePath.endsWith('laf.template.json')) {
+        return LAF_TYPE;
+    } else if (templatePath.endsWith('syntax.template.json')) {
+        return SYNTAX_TYPE
+    }
+    throw new Error(`I do not know what template ${templatePath} is!`);
+}
+
 
 function getThemeType(dokiThemeTemplateJson) {
     return dokiThemeTemplateJson.dark ?
         "dark" : "light"
 }
 
-function buildLAFColors(dokiThemeTemplateJson) {
+// todo fill this out
+function resolveTemplate(
+    childTemplate,
+    templateNameToTemplate
+) {
+    return childTemplate;
+}
+
+function buildLAFColors(
+    dokiThemeTemplateJson,
+    dokiTemplateDefinitions
+) {
+    const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
+    const lafTemplate = dokiThemeTemplateJson.dark ?
+    lafTemplates.dark : lafTemplates.base;
+
+
+    const resolvedLafTemplate = 
+        resolveTemplate(
+            lafTemplate, lafTemplates
+        );
+
+    console.log(resolvedLafTemplate);
+
     return dokiThemeTemplateJson.colors;
 }
 
-function buildSyntaxColors(dokiThemeTemplateJson) {
+function buildSyntaxColors(
+    dokiThemeTemplateJson,
+    dokiTemplateDefinitions
+) {
     return {};
 }
 
@@ -61,12 +99,12 @@ function createDokiTheme(
     dokiFileDefinitonPath,
     dokiTemplateDefinitions
 ) {
-    const dokiThemeDefinition = 
+    const dokiThemeDefinition =
         readJson(dokiFileDefinitonPath);
     const dokiTheme = {
         definition: dokiThemeDefinition,
         theme: buildVSCodeTheme(
-            dokiThemeDefinition, 
+            dokiThemeDefinition,
             dokiTemplateDefinitions
         )
     }
@@ -78,11 +116,20 @@ const readJson = (jsonPath) =>
 
 const readTemplates = templatePaths => {
     return templatePaths
-        .map(readJson)
-        .reduce((accum, template) => {
-            accum[template.name] = template;
+        .map(templatePath => {
+            return {
+                type: getTemplateType(templatePath),
+                template: readJson(templatePath)
+            }
+        })
+        .reduce((accum, templateRepresentation) => {
+            accum[templateRepresentation.type][templateRepresentation.template.name] =
+                templateRepresentation.template;
             return accum;
-        }, {});
+        }, {
+            [SYNTAX_TYPE]: {},
+            [LAF_TYPE]: {},
+        });
 };
 
 walkDir(templateDirectoryPath)
@@ -103,15 +150,15 @@ walkDir(templateDirectoryPath)
             dokiFileDefinitionPaths
         } = templatesAndDefinitions;
         return dokiFileDefinitionPaths.map(
-                dokiFileDefinitonPath =>
-                    createDokiTheme(
-                        dokiFileDefinitonPath,
-                        dokiTemplateDefinitions
-                    )
-            )
+            dokiFileDefinitonPath =>
+                createDokiTheme(
+                    dokiFileDefinitonPath,
+                    dokiTemplateDefinitions
+                )
+        )
     }).then(dokiThemes => {
         // write to package json
         // write things for extension
         // copy to out directory
-        console.log(dokiThemes)
+        // console.log(dokiThemes)
     })
