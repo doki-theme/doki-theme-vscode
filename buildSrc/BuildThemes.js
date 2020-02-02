@@ -188,6 +188,19 @@ const readTemplates = templatePaths => {
         });
 };
 
+const base64Img = require('base64-img');
+
+function readSticker(
+    themeDefinitonPath,
+    themeDefinition,
+) {
+    const stickerPath = path.resolve(
+        path.resolve(themeDefinitonPath, '..'),
+        themeDefinition.stickers.default
+    );
+    return base64Img.base64Sync(stickerPath);
+}
+
 walkDir(templateDirectoryPath)
     .then(readTemplates)
     .then(dokiTemplateDefinitions => {
@@ -225,7 +238,7 @@ walkDir(templateDirectoryPath)
             )
 
         const commands = dokiDefinitions.map(dokiDefinition => ({
-            command: `extension.${dokiDefinition.name}`,
+            command: getCommandName(dokiDefinition),
             title: `Activate Doki Theme: ${dokiDefinition.displayName}`
         }))
 
@@ -246,10 +259,30 @@ walkDir(templateDirectoryPath)
 
         // write things for extension
         // stickers, extension registry
-        dokiThemes.forEach(dokiTheme => {
+        const dokiThemeDefinitions = dokiThemes.map(dokiTheme => {
+            const dokiDefinition = dokiTheme.definition
+            return {
+                extensionName: getCommandName(dokiDefinition),
+                themeDefinition: {
+                    information: dokiDefinition,
+                    sticker: readSticker(
+                        dokiTheme.path,
+                        dokiDefinition
+                    ),
+                }
+            }
+        });
 
-        })
+        const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions, null, 2);
+        fs.writeFileSync(
+            path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'), 
+        `export default ${finalDokiDefinitions}`)
+
 
         // copy to out directory
         const vsCodeThemes = dokiThemes.map(d => d.theme);
     })
+
+function getCommandName(dokiDefinition) {
+    return `extension.${dokiDefinition.name}`;
+}

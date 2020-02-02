@@ -1,10 +1,14 @@
+import { DokiThemeDefinition } from "./extension";
+
 export class DokiTheme {
   name: string;
   sticker: Sticker;
 
-  constructor(name: string, sticker: Sticker) {
-    this.name = name;
-    this.sticker = sticker;
+  constructor(dokiThemeDefinition: DokiThemeDefinition) {
+    this.name = dokiThemeDefinition.information.name;
+    this.sticker = {
+      url: dokiThemeDefinition.sticker
+    };
   }
 }
 

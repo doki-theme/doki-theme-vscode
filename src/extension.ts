@@ -1,27 +1,31 @@
 import * as vscode from 'vscode';
-import {activateTheme} from "./ThemeManager";
-import {DokiTheme, Sticker} from "./DokiTheme";
-import { ryukoBase64 } from './RyukoHolder';
-import { satsukiSticker } from './StickerHolder';
+import { activateTheme } from "./ThemeManager";
+import { DokiTheme } from "./DokiTheme";
+import DokiThemeDefinitions from './DokiThemeDefinitions';
 
-export function activate(context: vscode.ExtensionContext) {
-	const disposable = vscode.commands.registerCommand('extension.Satsuki', () => {
-	  const satsuki = new DokiTheme("Satsuki", {
-		  url: satsukiSticker
-	  });
-	  activateTheme(satsuki);
-	});
-
-	context.subscriptions.push(disposable);
-
-	const ryukoCommand = vscode.commands.registerCommand('extension.Ryuko', () => {
-		const ryuko = new DokiTheme("Ryuko", {
-			url: ryukoBase64
-		});
-		activateTheme(ryuko);
-	  });
-
-	  context.subscriptions.push(ryukoCommand);
+export interface DokiThemeDefinition {
+	sticker: string;
+	information: any;
 }
 
-export function deactivate() {}
+export interface VSCodeDokiThemeDefinition {
+	extensionName: string;
+	themeDefinition: DokiThemeDefinition;
+}
+
+
+export function activate(context: vscode.ExtensionContext) {
+	const disposableHeros =
+		DokiThemeDefinitions
+			.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
+				vscode.commands.registerCommand(
+					dokiThemeDefinition.extensionName,
+					() => activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition)))
+			);
+
+	disposableHeros.forEach(disposableHero =>
+		context.subscriptions.push(disposableHero)
+	);
+}
+
+export function deactivate() { }
