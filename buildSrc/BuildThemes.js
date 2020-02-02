@@ -25,7 +25,6 @@ function walkDir(dir) {
     return allPromises;
 };
 
-// todo: get templates
 const LAF_TYPE = 'laf';
 const SYNTAX_TYPE = 'syntax';
 
@@ -44,12 +43,65 @@ function getThemeType(dokiThemeTemplateJson) {
         "dark" : "light"
 }
 
-// todo fill this out
 function resolveTemplate(
     childTemplate,
-    templateNameToTemplate
+    templateNameToTemplate,
+    attributeResolver
 ) {
-    return childTemplate;
+    if (!childTemplate.extends) {
+        return attributeResolver(childTemplate)
+    } else {
+        const parent = templateNameToTemplate[childTemplate.extends];
+        const resolvedParent = resolveTemplate(
+            parent,
+            templateNameToTemplate,
+            attributeResolver
+        );
+        return {
+            ...resolvedParent,
+            ...attributeResolver(childTemplate)
+        };
+    }
+}
+
+
+function resolveColor(
+    color,
+    namedColors
+) {
+    const startingTemplateIndex = color.indexOf('&');
+    if (startingTemplateIndex > -1) {
+        const namedColor =
+            color.substring(startingTemplateIndex + 1, color.lastIndexOf('&'))
+        const resolvedNamedColor = namedColors[namedColor]
+        if (!resolvedNamedColor) {
+            throw new Error(`Cannot find named color '${namedColor}'.`)
+        }
+        return resolvedNamedColor;
+    }
+
+    return color
+}
+
+function applyNamedColors(
+    objectWithNamedColors,
+    namedColors
+) {
+    return Object.keys(objectWithNamedColors)
+        .map(key => {
+            const color = objectWithNamedColors[key];
+            const resolvedColor = resolveColor(
+                color,
+                namedColors
+            );
+            return {
+                key,
+                value: resolvedColor
+            }
+        }).reduce((accum, kv) => {
+            accum[kv.key] = kv.value;
+            return accum;
+        }, {});
 }
 
 function buildLAFColors(
@@ -58,17 +110,16 @@ function buildLAFColors(
 ) {
     const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
     const lafTemplate = dokiThemeTemplateJson.dark ?
-    lafTemplates.dark : lafTemplates.base;
+        lafTemplates.dark : lafTemplates.base;
 
-
-    const resolvedLafTemplate = 
+    const resolvedLafTemplate =
         resolveTemplate(
-            lafTemplate, lafTemplates
+            lafTemplate, lafTemplates, template => template.ui
         );
-
-    console.log(resolvedLafTemplate);
-
-    return dokiThemeTemplateJson.colors;
+    return applyNamedColors(
+        resolvedLafTemplate,
+        dokiThemeTemplateJson.colors
+    );
 }
 
 function buildSyntaxColors(
@@ -101,14 +152,18 @@ function createDokiTheme(
 ) {
     const dokiThemeDefinition =
         readJson(dokiFileDefinitonPath);
-    const dokiTheme = {
-        definition: dokiThemeDefinition,
-        theme: buildVSCodeTheme(
-            dokiThemeDefinition,
-            dokiTemplateDefinitions
-        )
+    try {
+        const dokiTheme = {
+            definition: dokiThemeDefinition,
+            theme: buildVSCodeTheme(
+                dokiThemeDefinition,
+                dokiTemplateDefinitions
+            )
+        }
+        return dokiTheme;
+    } catch (e) {
+        throw new Error(`Unable to build ${dokiThemeDefinition.name}'s theme for reasons ${e}`)
     }
-    return dokiTheme
 }
 
 const readJson = (jsonPath) =>
@@ -160,5 +215,5 @@ walkDir(templateDirectoryPath)
         // write to package json
         // write things for extension
         // copy to out directory
-        // console.log(dokiThemes)
+        // console.log(JSON.stringify(dokiThemes.map(dokiTheme => dokiTheme.theme)))
     })
