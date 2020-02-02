@@ -62,6 +62,7 @@
 		"scrollbarSlider.hoverBackground": "#a730359a",
 		"scrollbarSlider.background": "#a730355a",
 		"scrollbarSlider.activeBackground": "#a730359a",
+		"activityBar.inactiveForeground": "#a73035bb",
 		
 		"button.background": "#2b3237",
 		"button.foreground": "#6b8b99",
