@@ -1,7 +1,9 @@
 import * as vscode from 'vscode';
-import { activateTheme } from "./ThemeManager";
+import { activateTheme, ACTIVE_THEME } from "./ThemeManager";
 import { DokiTheme } from "./DokiTheme";
 import DokiThemeDefinitions from './DokiThemeDefinitions';
+import { StatusBarComponent } from './StatusBar';
+import { VSCodeGlobals } from './VSCodeGlobals';
 
 export interface DokiThemeDefinition {
 	sticker: string;
@@ -15,17 +17,22 @@ export interface VSCodeDokiThemeDefinition {
 
 
 export function activate(context: vscode.ExtensionContext) {
-	const disposableHeros =
-		DokiThemeDefinitions
-			.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
-				vscode.commands.registerCommand(
-					dokiThemeDefinition.extensionName,
-					() => activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition)))
-			);
+	console.log('Activated Extension');
 
-	disposableHeros.forEach(disposableHero =>
-		context.subscriptions.push(disposableHero)
-	);
+	VSCodeGlobals.globalState = context.globalState;
+
+	StatusBarComponent.initialize();
+	context.subscriptions.push(StatusBarComponent);
+
+	DokiThemeDefinitions
+		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
+			vscode.commands.registerCommand(
+				dokiThemeDefinition.extensionName,
+				() => activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition)))
+		).forEach(disposableHero =>
+			context.subscriptions.push(disposableHero)
+		);
 }
+
 
 export function deactivate() { }
