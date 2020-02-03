@@ -66,3 +66,15 @@ export function installSticker(dokiTheme: DokiTheme): boolean {
     return false;
   }
 }
+
+// :(
+export function removeStickers(): boolean {
+  if (fs.existsSync(editorCssCopy)) {
+    fs.unlinkSync(editorCss);
+    fs.copyFileSync(editorCssCopy, editorCss);
+    fs.unlinkSync(editorCssCopy);
+    return true;
+  }
+
+  return false;
+}

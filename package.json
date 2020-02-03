@@ -12,19 +12,24 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:extension.Ryuko",
-    "onCommand:extension.Satsuki"
+    "onCommand:extension.remove.sticker",
+    "onCommand:extension.theme.Ryuko",
+    "onCommand:extension.theme.Satsuki"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.Ryuko",
-        "title": "Activate Doki Theme: Ryuko"
+        "command": "extension.remove.sticker",
+        "title": "Doki-Theme: Remove Sticker/Background"
       },
       {
-        "command": "extension.Satsuki",
-        "title": "Activate Doki Theme: Satsuki"
+        "command": "extension.theme.Ryuko",
+        "title": "Doki-Theme: Install Ryuko's Stickers"
+      },
+      {
+        "command": "extension.theme.Satsuki",
+        "title": "Doki-Theme: Install Satsuki's Stickers"
       }
     ],
     "themes": [

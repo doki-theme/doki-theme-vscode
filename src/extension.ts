@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { activateTheme, ACTIVE_THEME } from "./ThemeManager";
+import { activateTheme, ACTIVE_THEME, uninstallImages } from "./ThemeManager";
 import { DokiTheme } from "./DokiTheme";
 import DokiThemeDefinitions from './DokiThemeDefinitions';
 import { StatusBarComponent } from './StatusBar';
@@ -19,6 +19,13 @@ export interface VSCodeDokiThemeDefinition {
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Activated Extension');
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand(
+			'extension.remove.sticker', 
+			() => uninstallImages()
+		)
+	);
 
 	VSCodeGlobals.globalState = context.globalState;
 

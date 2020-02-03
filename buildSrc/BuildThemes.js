@@ -275,12 +275,12 @@ walkDir(templateDirectoryPath)
         const packageJson = readJson(packageJsonPath);
         const activationEvents =
             dokiDefinitions.map(dokiDefinition =>
-                `onCommand:extension.${dokiDefinition.name}`
+                `onCommand:${getCommandName(dokiDefinition)}`
             )
 
         const commands = dokiDefinitions.map(dokiDefinition => ({
             command: getCommandName(dokiDefinition),
-            title: `Activate Doki Theme: ${dokiDefinition.displayName}`
+            title: `Doki-Theme: Install ${dokiDefinition.displayName}'s Stickers`
         }))
 
         const themes = dokiDefinitions.map(dokiDefinition => ({
@@ -290,21 +290,30 @@ walkDir(templateDirectoryPath)
             uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
         }))
 
-        packageJson.activationEvents = activationEvents
-        packageJson.contributes.commands = commands;
+        packageJson.activationEvents = [
+            ...packageJson.activationEvents.filter(activationEvent =>
+                !activationEvent.startsWith("onCommand:extension.theme")),
+            ...activationEvents
+        ];
+
+        packageJson.contributes.commands =
+            [
+                ...packageJson.contributes.commands.filter(command => !command.command.startsWith('extension.theme')),
+                ...commands
+            ];
         packageJson.contributes.themes = themes;
         return new Promise((resolve, reject) => fs.writeFile(
             packageJsonPath,
             JSON.stringify(packageJson, null, 2),
-            (err) =>{
-                if(err) reject(err)
+            (err) => {
+                if (err) reject(err)
                 else resolve()
             }
         ));
-    }).then(()=>{
+    }).then(() => {
         console.log('Theme Generation Complete!');
     })
 
 function getCommandName(dokiDefinition) {
-    return `extension.${dokiDefinition.name}`;
+    return `extension.theme.${dokiDefinition.name}`;
 }
