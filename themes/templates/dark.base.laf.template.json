@@ -2,7 +2,6 @@
   "name":"dark",
   "extends":"base",
   "ui": {
-    "tab.activeBackground": "&highlightColor&5A",
     "editor.lineHighlightBackground": "&baseBackground&",
     "sideBarSectionHeader.background": "&baseBackground&",
     "activityBar.background": "&baseBackground&"

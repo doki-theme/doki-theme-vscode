@@ -71,13 +71,14 @@ function resolveColor(
 ) {
     const startingTemplateIndex = color.indexOf('&');
     if (startingTemplateIndex > -1) {
+        const lastDelimeterIndex = color.lastIndexOf('&');
         const namedColor =
-            color.substring(startingTemplateIndex + 1, color.lastIndexOf('&'))
+            color.substring(startingTemplateIndex + 1, lastDelimeterIndex)
         const resolvedNamedColor = namedColors[namedColor]
         if (!resolvedNamedColor) {
             throw new Error(`Cannot find named color '${namedColor}'.`)
         }
-        return resolvedNamedColor;
+        return resolvedNamedColor + color.substring(lastDelimeterIndex + 1) || '';
     }
 
     return color
@@ -126,7 +127,7 @@ function buildSyntaxColors(
     dokiThemeTemplateJson,
     dokiTemplateDefinitions
 ) {
-    return {};
+    return [];
 }
 
 function buildVSCodeTheme(
@@ -254,12 +255,14 @@ walkDir(templateDirectoryPath)
             `export default ${finalDokiDefinitions};`)
 
         // copy to out directory
+        const themeOutputDirectory = 'generatedThemes';
+        const themePostfix = '.theme.json'
         dokiThemes.forEach(dokiTheme => {
             const vsCodeTheme = dokiTheme.theme;
             fs.writeFileSync(
                 path.resolve(repoDirectory,
-                    'out',
-                    `${dokiTheme.definition.name}.theme.json`),
+                    themeOutputDirectory,
+                    `${dokiTheme.definition.name}${themePostfix}`),
                 JSON.stringify(vsCodeTheme, null, 2)
             )
         });
@@ -283,7 +286,7 @@ walkDir(templateDirectoryPath)
         const themes = dokiDefinitions.map(dokiDefinition => ({
             id: dokiDefinition.id,
             label: `Doki Theme: ${dokiDefinition.displayName}`,
-            path: `./out/${dokiDefinition.name}.theme.json`,
+            path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
             uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
         }))
 

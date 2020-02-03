@@ -5,3 +5,4 @@ node_modules
 *.vsix
 .vscode/
 src/DokiThemeDefinitions.ts
+generatedThemes/*.json

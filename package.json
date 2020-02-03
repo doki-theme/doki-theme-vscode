@@ -7,7 +7,8 @@
     "vscode": "^1.40.0"
   },
   "categories": [
-    "Themes"
+    "Themes",
+    "Other"
   ],
   "activationEvents": [
     "onCommand:extension.Ryuko",
@@ -29,20 +30,22 @@
       {
         "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
         "label": "Doki Theme: Ryuko",
-        "path": "./out/Ryuko.theme.json",
+        "path": "./generatedThemes/Ryuko.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "3a78b13e-dbf2-410f-bb20-12b57bff7735",
         "label": "Doki Theme: Satsuki",
-        "path": "./out/Satsuki.theme.json",
+        "path": "./generatedThemes/Satsuki.theme.json",
         "uiTheme": "vs"
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
-    "precompile": "node ./buildSrc/BuildThemes.js",
+    "buildThemes": "node ./buildSrc/BuildThemes.js",
+    "precompile": "yarn buildThemes",
+    "prewatch": "yarn buildThemes",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile",
