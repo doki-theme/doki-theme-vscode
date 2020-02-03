@@ -4,6 +4,7 @@ import { DokiTheme } from "./DokiTheme";
 import DokiThemeDefinitions from './DokiThemeDefinitions';
 import { StatusBarComponent } from './StatusBar';
 import { VSCodeGlobals } from './VSCodeGlobals';
+import { attemptToGreetUser } from './WelcomeService';
 
 export interface DokiThemeDefinition {
 	sticker: string;
@@ -23,6 +24,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	StatusBarComponent.initialize();
 	context.subscriptions.push(StatusBarComponent);
+
+	attemptToGreetUser();
 
 	DokiThemeDefinitions
 		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
