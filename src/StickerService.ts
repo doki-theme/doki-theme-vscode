@@ -3,8 +3,9 @@ import path from 'path';
 import fs from "fs";
 
 const main = require.main || {filename: 'yeet'};
-const editorCss = path.join(path.dirname(main.filename), 'vs', 'workbench', 'workbench.desktop.main.css');
-const editorCssCopy = path.join(path.dirname(main.filename), 'vs', 'workbench', 'workbench.desktop.main.css.copy');
+const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
+const editorCss = path.join(workbenchDirectory, 'workbench.desktop.main.css');
+const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.copy');
 
 function getVsCodeCss() {
   if (!fs.existsSync(editorCssCopy)) {
@@ -47,20 +48,21 @@ function installEditorStyles(styles: string) {
   fs.writeFileSync(editorCss, styles, 'utf-8');
 }
 
-export function installSticker(dokiTheme: DokiTheme) {
-  const stickerStyles = buildStyles(dokiTheme);
-  installEditorStyles(stickerStyles);
+function canWrite(): boolean {
+  try {
+    fs.accessSync(editorCss, fs.constants.W_OK);
+    return true;
+  } catch(error){
+    return false;
+  }
 }
 
-const backgroundHax = `
-  .monaco-workbench .part.editor > .content {
-    background-image: url('https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/assets/themes/satsuki.png') !important;
-    background-position: center;
-    background-size: cover;
-    content:'';
-    z-index:99999;
-    width:100%;
-    height:100%;
-    background-repeat:no-repeat;
-    opacity:1;
-}`;
+export function installSticker(dokiTheme: DokiTheme): boolean {
+  if(canWrite()) {
+    const stickerStyles = buildStyles(dokiTheme);
+    installEditorStyles(stickerStyles);
+    return true;
+  } else {
+    return false;
+  }
+}
