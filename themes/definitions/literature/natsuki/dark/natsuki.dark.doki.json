@@ -1,0 +1,76 @@
+{
+  "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
+  "name": "Natsuki Dark",
+  "displayName": "Natsuki",
+  "dark": true,
+  "author": "cyclic-reference",
+  "editorScheme": {
+    "type": "templateExtension",
+    "file": "Natsuki_Dark.xml"
+  },
+  "group": "Literature Club",
+  "stickers": {
+    "default": "natsuki_dark.png",
+    "secondary": "natsuki_dark_normal.png"
+  },
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "testScopeColor": "#243223"
+      }
+    }
+  },
+  "colors": {
+    "caretRow": "#4D2339",
+    "caretForeground": "#ffffff",
+    "lineNumberColor":"#666879",
+    "completionWindowBackground":"#32393F",
+    "baseIconColor": "#7F707A",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#56324C",
+    "nonProjectFileScopeColor": "#302827",
+    "editorBackground": "#2d222b",
+    "secondaryBackground": "#2a1823",
+    "selectionForeground": "#e6afca",
+    "inactiveBackground": "#6F3654",
+    "inactiveBackgroundDarker": "#65324a",
+    "headerColor": "#2a1f28",
+    "baseBackground": "#251923",
+    "borderColor": "#2e2228",
+    "buttonColor": "#56324C",
+    "selectionInactive": "#6F3654",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#5D2960",
+    "selectionBackgroundTransparent": "#5d29606c",
+    "buttonFont": "#BBBBBBBB",
+    "foregroundColor":  "#bbbbbb",
+    "startColor":  "#BB0A69",
+    "highlightColor": "#403138",
+    "disabledColor": "#232323",
+    "accentColorTransparent": "#E946865A",
+    "accentColorLessTransparent": "#E946869A",
+    "accentColorMoreTransparent": "#E946862A",
+    "accentColor": "#E94686",
+    "accentContrastColor": "#251923",
+    "stopColor": "#F650FF",
+    "testScopeColor": "#2a2628",
+    "popupMask": "#EAEAF00A",
+    "codeBlock": "#3C293A",
+    "textEditorBackground": "#2d222b",
+    "searchResultBackground": "#6F3654",
+    "foldedTextBackground": "#3C293A",
+    "classNameColor": "#FF9CD6",
+    "htmlTagColor": "#bca3aa",
+    "stringColor": "#f1fa8c",
+    "keyColor": "#FF9CD6",
+    "keywordColor": "#bca3aa"
+  },
+  "ui": {
+    "Plugins.lightSelectionBackground": "selectionBackground",
+    "CompletionPopup.selectionBackground": "selectionBackground",
+    "CompletionPopup.selectionInactiveBackground": "selectionInactive",
+    "SearchEverywhere.Header.background": "headerColor",
+    "SearchEverywhere.SearchField.background": "headerColor"
+  },
+  "icons": {}
+}

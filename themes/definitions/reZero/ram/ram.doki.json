@@ -1,0 +1,70 @@
+{
+  "id": "ecb74f1c-8c84-40c4-916f-601039ba2af0",
+  "name": "Ram",
+  "displayName": "Ram",
+  "dark": true,
+  "author": "cyclic-reference",
+  "group": "Re Zero",
+  "editorScheme": {
+    "type": "template",
+    "name": "Doki Dark"
+  },
+  "stickers": {
+    "default": "ram.png"
+  },
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "accentColor": "#a87ff8",
+        "nonProjectFileScopeColor": "#343635",
+        "testScopeColor": "#2f393a"
+      }
+    }
+  },
+  "colors": {
+    "caretRow": "#353139",
+    "caretForeground": "#ffffff",
+    "lineNumberColor":"#666879",
+    "completionWindowBackground":"#32393F",
+    "baseIconColor": "#717981",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#3c303d",
+    "nonProjectFileScopeColor": "#313332",
+    "editorBackground": "#342f36",
+    "textEditorBackground": "#342f36",
+    "secondaryBackground": "#373139",
+    "selectionForeground": "#fbfbfb",
+    "inactiveBackground": "#2c272e",
+    "inactiveBackgroundDarker": "#333037",
+    "headerColor": "#322c33",
+    "baseBackground": "#302930",
+    "borderColor": "#362d39",
+    "buttonColor": "#373237",
+    "selectionInactive": "#413a44",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#7a546f",
+    "selectionBackgroundTransparent":  "#7a546fAA",
+    "buttonFont": "#6b8b99",
+    "foregroundColor":  "#bbbbbb",
+    "startColor": "#595959",
+    "highlightColor": "#3c353b",
+    "disabledColor": "#585F6F",
+    "accentColorTransparent": "#e594bf5A",
+    "accentColorLessTransparent": "#e594bf9A",
+    "accentColorMoreTransparent": "#e594bf2A",
+    "accentColor": "#e594bf",
+    "accentContrastColor": "#271c21",
+    "stopColor": "#e565ee",
+    "testScopeColor": "#2c3436",
+    "popupMask": "#EAEAF00A",
+    "codeBlock": "#2c2934",
+    "searchResultBackground": "#292734",
+    "classNameColor": "#EF9FD8",
+    "htmlTagColor": "#a28a92",
+    "stringColor": "#f4fa8c",
+    "keyColor": "#F375C8",
+    "keywordColor": "#988F9A"
+  },
+  "ui": {},
+  "icons": {}
+}

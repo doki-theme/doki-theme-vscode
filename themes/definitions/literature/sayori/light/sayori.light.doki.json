@@ -1,0 +1,73 @@
+{
+  "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
+  "name": "Sayori Light",
+  "displayName": "Sayori",
+  "dark": false,
+  "author": "cyclic-reference",
+  "group": "Literature Club",
+  "editorScheme": {
+    "type": "template",
+    "name": "Doki Light"
+  },
+  "stickers": {
+    "default": "sayori.png",
+    "secondary": "sayori_joy.png"
+  },
+  "colors": {
+    "caretRow": "#bde9f0",
+    "caretForeground":"#ffffff",
+    "lineNumberColor":"#aaaaaa",
+    "completionWindowBackground":"#e7e5ea",
+    "baseIconColor": "#5B777F",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#9cdaf0",
+    "nonProjectFileScopeColor": "#E4FBF8",
+    "editorBackground": "#CDF8FF",
+    "secondaryBackground": "#c2ebf3",
+    "selectionForeground": "#ffffff",
+    "inactiveBackground": "#bfe5ee",
+    "inactiveBackgroundDarker": "#acdaeb",
+    "headerColor": "#cdf8ff",
+    "baseBackground": "#c5fbfb",
+    "borderColor": "#bfeff1",
+    "buttonColor": "#a4d9e1",
+    "selectionInactive": "#95c7cf",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#8cbad2",
+    "buttonFont": "#252427",
+    "foregroundColor": "#000000",
+    "startColor": "#0D96F1",
+    "highlightColor": "#c0eaf7",
+    "disabledColor": "#94b5cb",
+    "accentColorTransparent": "#00BCD45A",
+    "accentColorLessTransparent": "#00BCD49A",
+    "accentColorMoreTransparent": "#00BCD42A",
+    "accentColor": "#00BCD4",
+    "accentColorDarker": "#0090a5",
+    "accentContrastColor": "#252427",
+    "stopColor": "#3DFFF3",
+    "testScopeColor": "#c5f3dc",
+    "popupMask": "#EAEAF020",
+
+    "codeBlock": "#BDEEFF",
+    "textEditorBackground": "#CDF8FF",
+    "searchResultBackground": "#90D9FF",
+    "classNameColor": "#FF3889",
+    "htmlTagColor": "#A89097",
+    "stringColor": "#DC872E",
+    "keyColor": "#3F77EF",
+    "keywordColor": "#A89097"
+  },
+  "ui": {
+    "CompletionPopup.background": "testScopeColor",
+    "CompletionPopup.selectionForeground": "selectionForeground",
+    "CompletionPopup.selectionBackground": "selectionBackground",
+    "CompletionPopup.selectionInactiveBackground": "selectionBackground",
+
+    "SearchEverywhere.Header.background": "headerColor",
+    "SearchEverywhere.SearchField.background": "headerColor",
+
+    "CompletionPopup.matchForeground": "accentColorDarker"
+  },
+  "icons": {}
+}

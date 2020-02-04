@@ -1,0 +1,75 @@
+{
+  "id": "b0340303-0a5a-4a20-9b9c-fc8ce9880078",
+  "name": "Sayori Dark",
+  "displayName": "Š̸̘͚̼͎̯̙̣̱̎̋̐͒a̴̖̟̠̳̤͙̟͂̂͑̐͜ỷ̵̧̨̞̠̖̠o̴̧͍̗̬̎̓͆̔͝ͅr̴̡̮̟͈͠ͅi̴̡̨͓͈̬̗̺̍́̃̇̓",
+  "dark": true,
+  "author": "cyclic-reference",
+  "editorScheme": {
+    "type": "templateExtension",
+    "file": "Sayori_Dark.xml"
+  },
+  "group": "Literature Club",
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "testScopeColor": "#192d24",
+        "nonProjectFileScopeColor": "#2b2b20"
+      }
+    }
+  },
+  "stickers": {
+    "default": "sayori_dark.png",
+    "secondary": "sayori_dark_normal.png"
+  },
+  "colors": {
+    "caretRow": "#252D3C",
+    "caretForeground": "#ffffff",
+    "lineNumberColor":"#666879",
+    "completionWindowBackground":"#32393F",
+    "baseIconColor": "#5B777F",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#1B323F",
+    "nonProjectFileScopeColor": "#1a1c22",
+    "editorBackground": "#181925",
+    "secondaryBackground": "#1f2030",
+    "selectionForeground": "#9CF5FF",
+    "inactiveBackground": "#1b254b",
+    "inactiveBackgroundDarker": "#1d2650",
+    "headerColor": "#171823",
+    "baseBackground": "#12131f",
+    "borderColor": "#1f202d",
+    "buttonColor": "#1B323F",
+    "selectionInactive": "#1d274b",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#234164",
+    "buttonFont": "#26A8E8",
+    "foregroundColor":  "#bbbbbb",
+    "startColor":  "#0A74BB",
+    "highlightColor": "#232e3f",
+    "disabledColor": "#232323",
+    "accentColorTransparent": "#00BCD45A",
+    "accentColorLessTransparent": "#00BCD49A",
+    "accentColorMoreTransparent": "#00BCD42A",
+    "accentColor": "#00BCD4",
+    "accentContrastColor": "#12131f",
+    "stopColor": "#11FFFD",
+    "testScopeColor": "#161c22",
+    "popupMask": "#EAEAF00A",
+    "codeBlock": "#1B1D31",
+    "textEditorBackground": "#181925",
+    "searchResultBackground": "#1D274B",
+    "foldedTextBackground": "#1B1D31",
+    "classNameColor": "#c1ff10",
+    "htmlTagColor": "#bca3aa",
+    "stringColor": "#f1fa8c",
+    "keyColor": "#3F77EF",
+    "keywordColor": "#bca3aa"
+  },
+  "ui": {
+    "Plugins.lightSelectionBackground": "selectionBackground",
+    "CompletionPopup.selectionBackground": "selectionBackground",
+    "SearchEverywhere.Header.background": "headerColor",
+    "SearchEverywhere.SearchField.background": "headerColor"
+  },
+  "icons": {}
+}

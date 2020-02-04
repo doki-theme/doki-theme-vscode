@@ -1,0 +1,101 @@
+{
+  "id": "35422aa4-1396-4e76-8ec6-c5560884df22",
+  "name": "Beatrice",
+  "displayName": "Beatrice",
+  "dark": false,
+  "author": "cyclic-reference",
+  "group": "Re Zero",
+  "editorScheme": {
+    "type": "templateExtension",
+    "file": "Beatrice.xml"
+  },
+  "stickers": {
+    "default": "beatrice.png"
+  },
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "accentColor": "#5c84da"
+      }
+    }
+  },
+  "colors": {
+    "caretRow": "#ffdce6",
+    "caretForeground":"#ffffff",
+    "lineNumberColor":"#aaaaaa",
+    "completionWindowBackground":"#e7e5ea",
+    "baseIconColor": "#7F707A",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#f0c3e3",
+    "nonProjectFileScopeColor": "#FFE4E3",
+    "editorBackground": "#f0d4e1",
+    "secondaryBackground": "#f3cfe0",
+    "selectionForeground": "#ffffff",
+    "inactiveBackground": "#eed4ec",
+    "inactiveBackgroundDarker": "#ebd1e9",
+    "headerColor": "#FFE0F0",
+    "baseBackground": "#fbdde9",
+    "borderColor": "#F1D7E6",
+    "buttonColor": "#e5c5d3",
+    "selectionInactive": "#FFD9E2",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#dc99bb",
+    "buttonFont": "#252427",
+    "foregroundColor":  "#000000",
+    "startColor":  "#F25AAF",
+    "highlightColor": "#f7d2e8",
+    "disabledColor": "#cbb1c6",
+    "accentColorTransparent": "#78A5EB5A",
+    "accentColorLessTransparent": "#78A5EB9A",
+    "accentColorMoreTransparent": "#78A5EB2A",
+    "accentColor": "#78A5EB",
+    "accentColorDarker": "#4d6fcd",
+    "accentColorSecondaryTransparent": "#E946865A",
+    "accentColorSecondaryLessTransparent": "#E946869A",
+    "accentColorSecondaryMoreTransparent": "#E946862A",
+    "accentColorSecondary": "#E94686",
+    "accentContrastColor": "#252427",
+    "stopColor": "#fbadff",
+    "testScopeColor": "#ede8e4",
+    "popupMask": "#EAEAF030",
+
+    "codeBlock": "#FDD8FF",
+    "textEditorBackground": "#FFE5F1",
+    "searchResultBackground": "#F1E5FA",
+    "classNameColor": "#df81b8",
+    "htmlTagColor": "#7B6970",
+    "stringColor": "#DC872E",
+    "keyColor": "#7C75EF",
+    "keywordColor": "#C869A3"
+  },
+  "ui": {
+    "CompletionPopup.background": "testScopeColor",
+    "CompletionPopup.selectionForeground": "selectionForeground",
+    "CompletionPopup.selectionBackground": "selectionBackground",
+    "CompletionPopup.selectionInactiveBackground": "selectionBackground",
+    "CompletionPopup.matchForeground":"accentColorDarker",
+
+
+    "SearchEverywhere.Tab.selectedBackground": "selectionBackground",
+    "SearchEverywhere.Header.background": "headerColor",
+    "SearchEverywhere.SearchField.background": "headerColor",
+
+    "ScrollBar.Transparent.thumbColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Transparent.thumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Transparent.hoverThumbColor": "accentColorSecondaryLessTransparent",
+    "ScrollBar.Transparent.hoverThumbBorderColor": "accentColorSecondaryLessTransparent",
+    "ScrollBar.thumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.thumbColor":"accentColorSecondaryTransparent",
+    "ScrollBar.hoverThumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.hoverThumbColor":"accentColorSecondaryTransparent",
+    "ScrollBar.Mac.Transparent.thumbColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Mac.Transparent.thumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Mac.Transparent.hoverThumbColor": "accentColorSecondaryLessTransparent",
+    "ScrollBar.Mac.Transparent.hoverThumbBorderColor": "accentColorSecondaryLessTransparent",
+    "ScrollBar.Mac.thumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Mac.thumbColor":"accentColorSecondaryTransparent",
+    "ScrollBar.Mac.hoverThumbBorderColor": "accentColorSecondaryTransparent",
+    "ScrollBar.Mac.hoverThumbColor":"accentColorSecondaryTransparent"
+  },
+  "icons": {}
+}

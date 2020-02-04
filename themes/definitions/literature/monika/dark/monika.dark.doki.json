@@ -1,0 +1,72 @@
+{
+  "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
+  "name": "Monika Dark",
+  "displayName": "Monika",
+  "dark": true,
+  "author": "cyclic-reference",
+  "editorScheme": {
+    "type": "templateExtension",
+    "file": "Monika_Dark.xml"
+  },
+  "group": "Literature Club",
+  "stickers": {
+    "default": "just_monika_dark.png",
+    "secondary": "just_monika_dark_joy.png"
+  },
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "testScopeColor": "#222d10"
+      }
+    }
+  },
+  "colors": {
+    "caretRow": "#292D1F",
+    "caretForeground": "#ffffff",
+    "lineNumberColor":"#666879",
+    "completionWindowBackground":"#32393F",
+    "baseIconColor": "#657F6E",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#244020",
+    "nonProjectFileScopeColor": "#222613",
+    "editorBackground": "#1D2115",
+    "secondaryBackground": "#1a1e12",
+    "selectionForeground": "#ffffff",
+    "inactiveBackground": "#122D13",
+    "inactiveBackgroundDarker": "#133414",
+    "headerColor": "#1D2115",
+    "baseBackground": "#1A1E12",
+    "borderColor": "#202416",
+    "buttonColor": "#1e3219",
+    "selectionInactive": "#122D13",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#30432B",
+    "buttonFont": "#6f9a65",
+    "foregroundColor":  "#bbbbbb",
+    "startColor":  "#0abb0d",
+    "highlightColor": "#253120",
+    "disabledColor": "#505050",
+    "accentColorTransparent": "#388E3C5A",
+    "accentColorLessTransparent": "#388E3C9A",
+    "accentColorMoreTransparent": "#388E3C2A",
+    "accentColor": "#388E3C",
+    "accentContrastColor": "#1A1E12",
+    "stopColor": "#FFFA11",
+    "testScopeColor": "#1b2610",
+    "popupMask": "#EAEAF00A",
+    "codeBlock": "#23271A",
+    "textEditorBackground": "#1d2115",
+    "searchResultBackground": "#1A401B",
+    "foldedTextBackground": "#252D19",
+    "classNameColor": "#bca3aa",
+    "htmlTagColor": "#3eae5d",
+    "stringColor": "#f1fa8c",
+    "keyColor": "#bca3aa",
+    "keywordColor": "#3eae5d"
+  },
+  "ui": {
+    "Plugins.lightSelectionBackground": "selectionBackground",
+    "CompletionPopup.selectionBackground": "selectionBackground"
+  },
+  "icons": {}
+}

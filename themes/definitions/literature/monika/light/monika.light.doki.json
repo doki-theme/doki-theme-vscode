@@ -1,0 +1,71 @@
+{
+  "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
+  "name": "Monika Light",
+  "displayName": "Monika",
+  "dark": false,
+  "author": "cyclic-reference",
+  "group": "Literature Club",
+  "editorScheme": {
+    "type": "template",
+    "name": "Doki Light"
+  },
+  "stickers": {
+    "default": "just_monika.png",
+    "secondary": "just_monika_joy.png"
+  },
+  "colors": {
+    "caretRow": "#dcf0db",
+    "caretForeground":"#ffffff",
+    "lineNumberColor":"#aaaaaa",
+    "completionWindowBackground":"#e7e5ea",
+    "baseIconColor": "#657F6E",
+    "ghostColor": "#FFFFFF00",
+    "contrastColor": "#c6f0cc",
+    "nonProjectFileScopeColor": "#E9FBD7",
+    "editorBackground": "#dbf0da",
+    "secondaryBackground": "#d9f1d5",
+    "selectionForeground": "#ffffff",
+    "inactiveBackground": "#c1eec9",
+    "inactiveBackgroundDarker": "#bae6c2",
+    "headerColor": "#eaffe8",
+    "baseBackground": "#E4FBE2",
+    "borderColor": "#d8f1d0",
+    "buttonColor": "#b7dcbd",
+    "selectionInactive": "#b6cfb9",
+    "tagColor": "#7A7A7A",
+    "selectionBackground": "#789b7a",
+    "selectionBackgroundTransparent": "#789b7a55",
+    "buttonFont": "#252427",
+    "foregroundColor":  "#000000",
+    "startColor":  "#5FAA51",
+    "highlightColorDarker": "#bfdcbd",
+    "highlightColor": "#d1f0cf",
+    "disabledColor": "#98cbab",
+    "accentColorTransparent": "#388E3C5A",
+    "accentColorLessTransparent": "#388E3C9A",
+    "accentColorMoreTransparent": "#388E3C2A",
+    "accentColor": "#388E3C",
+    "accentContrastColor": "#252427",
+    "stopColor": "#5EEF1B",
+    "testScopeColor": "#C0EDCC",
+    "popupMask": "#EAEAF007",
+
+    "textEditorBackground": "#ecffea",
+    "classNameColor": "#7AA42E",
+    "keyColor": "#8a777d",
+    "stringColor": "#EC9130",
+    "htmlTagColor": "#3eae5d",
+    "codeBlock": "#D4ECD2",
+    "searchResultBackground": "#DCF5DA",
+    "keywordColor": "#3eae5d"
+  },
+  "ui": {
+    "CompletionPopup.background": "testScopeColor",
+    "CompletionPopup.selectionForeground": "selectionForeground",
+    "CompletionPopup.selectionBackground": "selectionBackground",
+    "CompletionPopup.selectionInactiveBackground": "selectionBackground",
+
+    "SearchEverywhere.Tab.selectedBackground": "highlightColorDarker"
+  },
+  "icons": {}
+}
