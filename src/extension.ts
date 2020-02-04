@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 	StatusBarComponent.initialize();
 	context.subscriptions.push(StatusBarComponent);
 
-	attemptToGreetUser();
+	attemptToGreetUser(context);
 
 	DokiThemeDefinitions
 		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
