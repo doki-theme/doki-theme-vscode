@@ -1,28 +1,74 @@
 import * as vscode from "vscode";
-import {DokiTheme} from "./DokiTheme";
-import {installSticker, removeStickers} from "./StickerService";
+import { DokiTheme } from "./DokiTheme";
+import { installSticker, removeStickers } from "./StickerService";
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import { StatusBarComponent } from "./StatusBar";
 
 export const ACTIVE_THEME = 'doki.theme.active';
 
-export function activateTheme(dokiTheme: DokiTheme) {
-  VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.displayName);
-  StatusBarComponent.setText(dokiTheme.displayName);
-  const didInstall = installSticker(dokiTheme);
-  if(didInstall) {
-    vscode.window.showInformationMessage(`${dokiTheme.name} installed!\n Please restart your c͇o̪̜r̴̫̮̰͖r̨ư̼͎p͙̞̻͇̤̠t́e̙̘͓͓̻̰̩d̯͙ IDE`);
+export enum InstallStatus {
+  INSTALLED, NOT_INSTALLED, FAILURE
+}
+
+const FIRST_TIME_STICKER_INSTALL = 'doki.sticker.first.install';
+function isFirstTimeInstalling(context: vscode.ExtensionContext) {
+  return !context.globalState.get(FIRST_TIME_STICKER_INSTALL);
+}
+
+async function attemptToInstall(
+  dokiTheme: DokiTheme,
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  if (isFirstTimeInstalling(context)) {
+    const stickerInstall = 'Install Stickers';
+
+    const result = await vscode.window.showWarningMessage(`Installing stickers requires this extension to c͇o̪̜r̴̫̮̰͖r̨ư̼͎p͙̞̻͇̤̠t́ VS-Code. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status. I won't show you this message again in the future. :)`, {
+      modal: true
+    }, {
+      title: stickerInstall, isCloseAffordance: false
+    });
+
+    if (result && result.title === stickerInstall) {
+      const installStatus = performStickerInstall(dokiTheme);
+      if (installStatus === InstallStatus.INSTALLED) {
+        context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
+      }
+      return installStatus;
+    } else {
+      return InstallStatus.NOT_INSTALLED;
+    }
   } else {
-    // todo: show how to corrupt webview
-    vscode.window.showErrorMessage(`Unable to install ${dokiTheme.name}, please see active tab for more information.`);
+    return performStickerInstall(dokiTheme);
   }
+}
+
+function performStickerInstall(dokiTheme: DokiTheme) {
+  const installResult = installSticker(dokiTheme);
+  return installResult ? InstallStatus.INSTALLED :
+    InstallStatus.FAILURE;
+}
+
+export function activateTheme(
+  dokiTheme: DokiTheme,
+  context: vscode.ExtensionContext
+) {
+  attemptToInstall(dokiTheme, context).then(didInstall => {
+    if (didInstall === InstallStatus.INSTALLED) {
+      VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.displayName);
+      StatusBarComponent.setText(dokiTheme.displayName);
+      vscode.window.showInformationMessage(`${dokiTheme.name} installed!\n Please restart your IDE`);
+    } else if (didInstall === InstallStatus.FAILURE) {
+      // todo: show how to corrupt webview
+      vscode.window.showErrorMessage(`Unable to install ${dokiTheme.name}, please see active tab for more information.`);
+    }
+  });
 }
 
 
 // :(
-export function uninstallImages(){
+export function uninstallImages() {
   const stickersRemoved = removeStickers();
-  if(stickersRemoved) {
-    vscode.window.showInformationMessage(`Removed Images. Please restart your un-c͇o̪̜r̴̫̮̰͖r̨ư̼͎p͙̞̻͇̤̠t́e̙̘͓͓̻̰̩d̯͙ IDE`);
+  if (stickersRemoved) {
+    vscode.window.showInformationMessage(`Removed Images. Please restart your restored IDE`);
   }
 }

@@ -24,14 +24,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand(
-			'extension.remove.sticker', 
+			'extension.remove.sticker',
 			() => uninstallImages()
 		)
 	);
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand(
-			'extension.doki.changelog', 
+			'extension.doki.changelog',
 			() => showChanglog(context)
 		)
 	);
@@ -47,7 +47,10 @@ export function activate(context: vscode.ExtensionContext) {
 		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
 			vscode.commands.registerCommand(
 				dokiThemeDefinition.extensionName,
-				() => activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition)))
+				() => activateTheme(
+					new DokiTheme(dokiThemeDefinition.themeDefinition),
+					context
+				))
 		).forEach(disposableHero =>
 			context.subscriptions.push(disposableHero)
 		);
