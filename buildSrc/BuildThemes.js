@@ -310,7 +310,28 @@ walkDir(templateDirectoryPath)
                 else resolve()
             }
         ));
-    }).then(() => {
+    })
+    .then(()=> {
+        // UPDATE CHANGELOG
+        const showdown = require('showdown');
+        const markdownConverter = new showdown.Converter();
+
+        const changelogPath = path.join(
+            repoDirectory, 'CHANGELOG.md'
+        );
+        const changelogText = fs.readFileSync(
+            changelogPath, 'utf-8'
+        );
+
+        const changelogHTML = markdownConverter.makeHtml(
+            changelogText
+        );
+
+        fs.writeFileSync(
+            path.resolve(repoDirectory, 'src', 'ChangelogHtml.ts'),
+            `export default ${finalDokiDefinitions};`)
+    })
+    .then(() => {
         console.log('Theme Generation Complete!');
     })
 

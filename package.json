@@ -194,8 +194,11 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^13.5.3",
     "@types/vscode": "^1.40.0",
+    "base64-img": "^1.0.4",
     "glob": "^7.1.5",
+    "lodash": "^4.17.15",
     "mocha": "^6.2.2",
+    "showdown": "^1.9.1",
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
     "vscode-test": "^1.2.2"
