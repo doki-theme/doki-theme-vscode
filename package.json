@@ -12,6 +12,7 @@
   ],
   "activationEvents": [
     "*",
+    "onCommand:extension.doki.changelog",
     "onCommand:extension.remove.sticker",
     "onCommand:extension.theme.Ryuko",
     "onCommand:extension.theme.Satsuki",
@@ -31,6 +32,10 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
+      {
+        "command": "extension.doki.changelog",
+        "title": "Doki-Theme: Show Changelog"
+      },
       {
         "command": "extension.remove.sticker",
         "title": "Doki-Theme: Remove Sticker/Background"

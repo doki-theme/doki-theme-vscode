@@ -6,6 +6,7 @@ import { StatusBarComponent } from './StatusBar';
 import { VSCodeGlobals } from './VSCodeGlobals';
 import { attemptToGreetUser } from './WelcomeService';
 import { attemptToNotifyUpdates } from './NotificationService';
+import { showChanglog } from './ChangelogService';
 
 export interface DokiThemeDefinition {
 	sticker: string;
@@ -25,6 +26,13 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.commands.registerCommand(
 			'extension.remove.sticker', 
 			() => uninstallImages()
+		)
+	);
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand(
+			'extension.doki.changelog', 
+			() => showChanglog(context)
 		)
 	);
 

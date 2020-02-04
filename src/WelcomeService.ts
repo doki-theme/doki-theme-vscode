@@ -1,6 +1,7 @@
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import * as vscode from 'vscode';
 import * as path from 'path';
+import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
 
 const IS_GREETED = 'doki.theme.greeted';
 
@@ -15,25 +16,8 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
             {}
         );
 
-        const onDiskPath = vscode.Uri.file(
-            path.join(context.extensionPath, 'src', 'assets', 'heart.png')
-          );
-        welcomPanel.iconPath = onDiskPath;
-        welcomPanel.webview.html = `<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>The Doki Theme</title>
-            <style>
-            .sticker {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-            }
-            </style>
-        </head>
-        <body>
+        welcomPanel.iconPath = getWebviewIcon(context);
+        welcomPanel.webview.html = buildWebviewHtml(`
             <h2>The Doki Theme</h2>
             <div>
                 <p>
@@ -47,9 +31,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 <div>
                 </div>
             </div>
-            <img class="sticker" src="https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/themes/definitions/literature/monika/light/just_monika_joy.png" />
-        </body>
-        </html>`;
+            `);
         
         VSCodeGlobals.globalState.update(IS_GREETED, true);
     }

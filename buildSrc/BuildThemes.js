@@ -329,7 +329,7 @@ walkDir(templateDirectoryPath)
 
         fs.writeFileSync(
             path.resolve(repoDirectory, 'src', 'ChangelogHtml.ts'),
-            `export default ${finalDokiDefinitions};`)
+            `export default \`${changelogHTML}\`;`)
     })
     .then(() => {
         console.log('Theme Generation Complete!');
