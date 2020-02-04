@@ -5,8 +5,8 @@ import * as path from 'path';
 const IS_GREETED = 'doki.theme.greeted';
 
 export function attemptToGreetUser(context: vscode.ExtensionContext) {
-    const greeted = false;
-    // const greeted = VSCodeGlobals.globalState.get(IS_GREETED);
+    // const greeted = false;
+    const greeted = VSCodeGlobals.globalState.get(IS_GREETED);
     if(!greeted) {
         const welcomPanel = vscode.window.createWebviewPanel(
             'dokiWelcomeWindow',

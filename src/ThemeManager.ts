@@ -14,7 +14,7 @@ export function activateTheme(dokiTheme: DokiTheme) {
     vscode.window.showInformationMessage(`${dokiTheme.name} installed!\n Please restart your c͇o̪̜r̴̫̮̰͖r̨ư̼͎p͙̞̻͇̤̠t́e̙̘͓͓̻̰̩d̯͙ IDE`);
   } else {
     // todo: show how to corrupt webview
-    vscode.window.showInformationMessage(`Unable to install ${dokiTheme.name}, please see active tab for more information.`);
+    vscode.window.showErrorMessage(`Unable to install ${dokiTheme.name}, please see active tab for more information.`);
   }
 }
 
