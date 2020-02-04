@@ -3,7 +3,7 @@ import { DokiTheme } from "./DokiTheme";
 import { installSticker, removeStickers } from "./StickerService";
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import { StatusBarComponent } from "./StatusBar";
-import { showStickerSupportWindow } from "./SupportService";
+import { showStickerInstallationSupportWindow, showStickerRemovalSupportWindow } from "./SupportService";
 
 export const ACTIVE_THEME = 'doki.theme.active';
 
@@ -58,7 +58,7 @@ export function activateTheme(
       StatusBarComponent.setText(dokiTheme.displayName);
       vscode.window.showInformationMessage(`${dokiTheme.name} installed!\n Please restart your IDE`);
     } else if (didInstall === InstallStatus.FAILURE) {
-      showStickerSupportWindow(context);
+      showStickerInstallationSupportWindow(context);
       vscode.window.showErrorMessage(`Unable to install ${dokiTheme.name}, please see active tab for more information.`);
     }
   });
@@ -73,7 +73,7 @@ export function uninstallImages(
   if (stickersRemoved === InstallStatus.INSTALLED) {
     vscode.window.showInformationMessage(`Removed Images. Please restart your restored IDE`);
   } else if (stickersRemoved === InstallStatus.FAILURE) {
-    showStickerSupportWindow(context);
+    showStickerRemovalSupportWindow(context);
     vscode.window.showErrorMessage(`Unable to remove stickers/background, please see active tab for more information.`);
   }
 }

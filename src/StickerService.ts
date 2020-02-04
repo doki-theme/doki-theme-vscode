@@ -4,7 +4,7 @@ import fs from "fs";
 import { InstallStatus } from "./ThemeManager";
 
 const main = require.main || {filename: 'yeet'};
-const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
+export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
 const editorCss = path.join(workbenchDirectory, 'workbench.desktop.main.css');
 const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.copy');
 

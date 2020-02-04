@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand(
 			'extension.remove.sticker',
-			() => uninstallImages()
+			() => uninstallImages(context)
 		)
 	);
 
