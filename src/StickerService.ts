@@ -1,6 +1,7 @@
 import {DokiTheme, Sticker} from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
+import { InstallStatus } from "./ThemeManager";
 
 const main = require.main || {filename: 'yeet'};
 const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
@@ -68,13 +69,16 @@ export function installSticker(dokiTheme: DokiTheme): boolean {
 }
 
 // :(
-export function removeStickers(): boolean {
-  if (fs.existsSync(editorCssCopy)) {
-    fs.unlinkSync(editorCss);
-    fs.copyFileSync(editorCssCopy, editorCss);
-    fs.unlinkSync(editorCssCopy);
-    return true;
+export function removeStickers(): InstallStatus {
+  if(canWrite()) {
+    if (fs.existsSync(editorCssCopy)) {
+      fs.unlinkSync(editorCss);
+      fs.copyFileSync(editorCssCopy, editorCss);
+      fs.unlinkSync(editorCssCopy);
+      return InstallStatus.INSTALLED;
+    }
+    return InstallStatus.NOT_INSTALLED;
   }
 
-  return false;
+  return InstallStatus.FAILURE;
 }
