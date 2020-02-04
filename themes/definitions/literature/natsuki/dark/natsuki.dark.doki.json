@@ -11,7 +11,8 @@
   "group": "Literature Club",
   "stickers": {
     "default": "natsuki_dark.png",
-    "secondary": "natsuki_dark_normal.png"
+    "secondary": "natsuki_dark_normal.png",
+    "normal": "natsuki_dark_normal.png"
   },
   "overrides": {
     "editorScheme": {

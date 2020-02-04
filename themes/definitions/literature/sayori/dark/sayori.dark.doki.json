@@ -19,7 +19,8 @@
   },
   "stickers": {
     "default": "sayori_dark.png",
-    "secondary": "sayori_dark_normal.png"
+    "secondary": "sayori_dark_normal.png",
+    "normal": "sayori_dark_normal.png"
   },
   "colors": {
     "caretRow": "#252D3C",

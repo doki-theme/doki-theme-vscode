@@ -197,7 +197,7 @@ function readSticker(
 ) {
     const stickerPath = path.resolve(
         path.resolve(themeDefinitonPath, '..'),
-        themeDefinition.stickers.default
+        themeDefinition.stickers.normal || themeDefinition.stickers.default
     );
     return base64Img.base64Sync(stickerPath);
 }
@@ -280,7 +280,7 @@ walkDir(templateDirectoryPath)
 
         const commands = dokiDefinitions.map(dokiDefinition => ({
             command: getCommandName(dokiDefinition),
-            title: `Doki-Theme: Install ${dokiDefinition.displayName}'s Stickers`
+            title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`
         }))
 
         const themes = dokiDefinitions.map(dokiDefinition => ({
