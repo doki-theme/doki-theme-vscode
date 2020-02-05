@@ -48,7 +48,7 @@
                 "markup.inserted"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -148,7 +148,7 @@
                 "punctuation.definition.link.restructuredtext"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -158,7 +158,7 @@
                 "markup.raw.restructuredtext"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -168,7 +168,7 @@
                 "markup.underline.link.image"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -211,7 +211,7 @@
                 "markup.fenced_code.block.markdown punctuation.definition.markdown"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -260,7 +260,7 @@
                 "entity.name.class"
             ],
             "settings": {
-                "foreground": "&CYAN&",
+                "foreground": "&keyColor&",
                 "fontStyle": "normal"
             }
         },
@@ -286,7 +286,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -318,7 +318,7 @@
                 "comment.block.documentation entity.name.type"
             ],
             "settings": {
-                "foreground": "&CYAN&",
+                "foreground": "&keyColor&",
                 "fontStyle": "italic"
             }
         },
@@ -328,7 +328,7 @@
                 "comment.block.documentation entity.name.type punctuation.definition.bracket"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -386,7 +386,7 @@
                 "entity.other.attribute-name"
             ],
             "settings": {
-                "foreground": "&GREEN&",
+                "foreground": "&classNameColor&",
                 "fontStyle": "italic"
             }
         },
@@ -404,7 +404,7 @@
                 "keyword.operator.function.infix"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -429,7 +429,7 @@
                 "meta.decorator variable.other.property"
             ],
             "settings": {
-                "foreground": "&GREEN&",
+                "foreground": "&classNameColor&",
                 "fontStyle": "italic"
             }
         },
@@ -439,7 +439,7 @@
                 "meta.decorator variable.other.object"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -478,7 +478,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -587,7 +587,7 @@
                 "variable.other.key.toml"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -607,7 +607,7 @@
             ],
             "settings": {
                 "fontStyle": "italic underline",
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -648,7 +648,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -707,7 +707,7 @@
                 "punctuation.definition.character-class.regexp"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
@@ -735,7 +735,7 @@
                 "meta.assertion.look-ahead.regexp"
             ],
             "settings": {
-                "foreground": "&GREEN&"
+                "foreground": "&classNameColor&"
             }
         },
         {
@@ -842,7 +842,7 @@
                 "variable.fragment.graphql"
             ],
             "settings": {
-                "foreground": "&CYAN&"
+                "foreground": "&keyColor&"
             }
         },
         {
