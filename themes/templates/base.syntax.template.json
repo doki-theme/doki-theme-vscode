@@ -23,7 +23,7 @@
                 "header"
             ],
             "settings": {
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -31,7 +31,7 @@
                 "source"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -40,7 +40,7 @@
                 "meta.diff.header"
             ],
             "settings": {
-                "foreground": "$COMMENT$"
+                "foreground": "&COMMENT&"
             }
         },
         {
@@ -48,7 +48,7 @@
                 "markup.inserted"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -56,7 +56,7 @@
                 "markup.deleted"
             ],
             "settings": {
-                "foreground": "$RED$"
+                "foreground": "&RED&"
             }
         },
         {
@@ -64,7 +64,7 @@
                 "markup.changed"
             ],
             "settings": {
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -72,7 +72,7 @@
                 "invalid"
             ],
             "settings": {
-                "foreground": "$RED$",
+                "foreground": "&RED&",
                 "fontStyle": "underline italic"
             }
         },
@@ -81,7 +81,7 @@
                 "invalid.deprecated"
             ],
             "settings": {
-                "foreground": "$FG$",
+                "foreground": "&foregroundColorEditor&",
                 "fontStyle": "underline italic"
             }
         },
@@ -90,7 +90,7 @@
                 "entity.name.filename"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -98,7 +98,7 @@
                 "markup.error"
             ],
             "settings": {
-                "foreground": "$RED$"
+                "foreground": "&RED&"
             }
         },
         {
@@ -117,7 +117,7 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -127,7 +127,7 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -136,7 +136,7 @@
                 "markup.italic"
             ],
             "settings": {
-                "foreground": "$YELLOW$",
+                "foreground": "&stringColor&",
                 "fontStyle": "italic"
             }
         },
@@ -148,7 +148,7 @@
                 "punctuation.definition.link.restructuredtext"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -158,7 +158,7 @@
                 "markup.raw.restructuredtext"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -168,7 +168,7 @@
                 "markup.underline.link.image"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -180,7 +180,7 @@
                 "string.other.link.title"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -190,7 +190,7 @@
                 "markup.quote"
             ],
             "settings": {
-                "foreground": "$YELLOW$",
+                "foreground": "&stringColor&",
                 "fontStyle": "italic"
             }
         },
@@ -200,7 +200,7 @@
                 "meta.separator.markdown"
             ],
             "settings": {
-                "foreground": "$COMMENT$"
+                "foreground": "&COMMENT&"
             }
         },
         {
@@ -211,7 +211,7 @@
                 "markup.fenced_code.block.markdown punctuation.definition.markdown"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -220,7 +220,7 @@
                 "punctuation.definition.constant.restructuredtext"
             ],
             "settings": {
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -230,7 +230,7 @@
                 "markup.heading.markdown punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -240,7 +240,7 @@
                 "meta.paragraph.markdown punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -250,7 +250,7 @@
                 "markup.quote.markdown meta.paragraph.markdown punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -260,7 +260,7 @@
                 "entity.name.class"
             ],
             "settings": {
-                "foreground": "$CYAN$",
+                "foreground": "&CYAN&",
                 "fontStyle": "normal"
             }
         },
@@ -275,7 +275,7 @@
                 "variable.parameter.function.language.special"
             ],
             "settings": {
-                "foreground": "$PURPLE$",
+                "foreground": "&PURPLE&",
                 "fontStyle": "italic"
             }
         },
@@ -286,7 +286,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -298,7 +298,7 @@
                 "wildcard.comment"
             ],
             "settings": {
-                "foreground": "$COMMENT$"
+                "foreground": "&COMMENT&"
             }
         },
         {
@@ -309,7 +309,7 @@
                 "comment.block.documentation storage.type.class"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -318,7 +318,7 @@
                 "comment.block.documentation entity.name.type"
             ],
             "settings": {
-                "foreground": "$CYAN$",
+                "foreground": "&CYAN&",
                 "fontStyle": "italic"
             }
         },
@@ -328,7 +328,7 @@
                 "comment.block.documentation entity.name.type punctuation.definition.bracket"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -337,7 +337,7 @@
                 "comment.block.documentation variable"
             ],
             "settings": {
-                "foreground": "$ORANGE$",
+                "foreground": "&ORANGE&",
                 "fontStyle": "italic"
             }
         },
@@ -348,7 +348,7 @@
                 "variable.other.constant"
             ],
             "settings": {
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -359,7 +359,7 @@
                 "constant.regexp"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -368,7 +368,7 @@
                 "entity.name.tag"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -377,7 +377,7 @@
                 "entity.other.attribute-name.parent-selector"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -386,7 +386,7 @@
                 "entity.other.attribute-name"
             ],
             "settings": {
-                "foreground": "$GREEN$",
+                "foreground": "&GREEN&",
                 "fontStyle": "italic"
             }
         },
@@ -404,7 +404,7 @@
                 "keyword.operator.function.infix"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -419,7 +419,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -429,7 +429,7 @@
                 "meta.decorator variable.other.property"
             ],
             "settings": {
-                "foreground": "$GREEN$",
+                "foreground": "&GREEN&",
                 "fontStyle": "italic"
             }
         },
@@ -439,7 +439,7 @@
                 "meta.decorator variable.other.object"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -449,7 +449,7 @@
                 "punctuation.definition.keyword"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -468,7 +468,7 @@
                 "meta.selector"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -478,7 +478,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -490,7 +490,7 @@
             ],
             "settings": {
                 "fontStyle": "regular",
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -532,7 +532,7 @@
                 "punctuation.separator.annotation"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -556,7 +556,7 @@
                 "string.template punctuation.accessor"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -575,7 +575,7 @@
                 "punctuation.definition.variable.makefile"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -587,7 +587,7 @@
                 "variable.other.key.toml"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -597,7 +597,7 @@
                 "constant.other.timestamp"
             ],
             "settings": {
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -607,7 +607,7 @@
             ],
             "settings": {
                 "fontStyle": "italic underline",
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -620,7 +620,7 @@
             ],
             "settings": {
                 "fontStyle": "regular",
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -648,7 +648,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -659,7 +659,7 @@
                 "meta.type.parameters entity.name.type"
             ],
             "settings": {
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -668,7 +668,7 @@
                 "storage.modifier"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -679,7 +679,7 @@
                 "constant.character.escape.backslash.regexp"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -688,7 +688,7 @@
                 "punctuation.definition.group.capture.regexp"
             ],
             "settings": {
-                "foreground": "$PINK$"
+                "foreground": "&keywordColor&"
             }
         },
         {
@@ -698,7 +698,7 @@
                 "string.regexp punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "$RED$"
+                "foreground": "&RED&"
             }
         },
         {
@@ -707,7 +707,7 @@
                 "punctuation.definition.character-class.regexp"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -716,7 +716,7 @@
                 "punctuation.definition.group.regexp"
             ],
             "settings": {
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -726,7 +726,7 @@
                 "keyword.operator.negation.regexp"
             ],
             "settings": {
-                "foreground": "$RED$"
+                "foreground": "&RED&"
             }
         },
         {
@@ -735,7 +735,7 @@
                 "meta.assertion.look-ahead.regexp"
             ],
             "settings": {
-                "foreground": "$GREEN$"
+                "foreground": "&GREEN&"
             }
         },
         {
@@ -744,7 +744,7 @@
                 "string"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -754,7 +754,7 @@
                 "punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "$TEMP_QUOTES$"
+                "foreground": "&TEMP_QUOTES&"
             }
         },
         {
@@ -764,7 +764,7 @@
                 "punctuation.support.type.property-name.end"
             ],
             "settings": {
-                "foreground": "$TEMP_PROPERTY_QUOTES$"
+                "foreground": "&TEMP_PROPERTY_QUOTES&"
             }
         },
         {
@@ -776,7 +776,7 @@
                 "string.quoted.docstring.multi.python constant.character.escape"
             ],
             "settings": {
-                "foreground": "$COMMENT$"
+                "foreground": "&COMMENT&"
             }
         },
         {
@@ -790,7 +790,7 @@
                 "variable.other.constant.tsx"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -802,7 +802,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "$ORANGE$"
+                "foreground": "&ORANGE&"
             }
         },
         {
@@ -814,7 +814,7 @@
             ],
             "settings": {
                 "fontStyle": "normal",
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -823,7 +823,7 @@
                 "meta.selectionset.graphql variable"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -832,7 +832,7 @@
                 "meta.selectionset.graphql meta.arguments variable"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -842,7 +842,7 @@
                 "variable.fragment.graphql"
             ],
             "settings": {
-                "foreground": "$CYAN$"
+                "foreground": "&CYAN&"
             }
         },
         {
@@ -863,16 +863,16 @@
                 "constant.language.empty-list.haskell"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
-            "name": "Shell variables prefixed with \"$\" (edge case)",
+            "name": "Shell variables prefixed with \"&\" (edge case)",
             "scope": [
                 "source.shell variable.other"
             ],
             "settings": {
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -882,7 +882,7 @@
             ],
             "settings": {
                 "fontStyle": "normal",
-                "foreground": "$PURPLE$"
+                "foreground": "&PURPLE&"
             }
         },
         {
@@ -891,7 +891,7 @@
                 "meta.scope.prerequisites.makefile"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -900,7 +900,7 @@
                 "meta.attribute-selector.scss"
             ],
             "settings": {
-                "foreground": "$YELLOW$"
+                "foreground": "&stringColor&"
             }
         },
         {
@@ -910,7 +910,7 @@
                 "punctuation.definition.attribute-selector.begin.bracket.square.scss"
             ],
             "settings": {
-                "foreground": "$FG$"
+                "foreground": "&foregroundColorEditor&"
             }
         },
         {
@@ -919,7 +919,7 @@
                 "meta.preprocessor.haskell"
             ],
             "settings": {
-                "foreground": "$COMMENT$"
+                "foreground": "&COMMENT&"
             }
         }
     ]
