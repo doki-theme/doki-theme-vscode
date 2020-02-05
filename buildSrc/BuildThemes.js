@@ -202,6 +202,25 @@ function readSticker(
     return base64Img.base64Sync(stickerPath);
 }
 
+const nameMapping =
+{
+    "Kill la Kill": "KillLaKill: ",
+    "Re Zero": "Re:Zero: ",
+    "Literature Club": "DDLC: ",
+    "KonoSuba": "KonoSuba: ",
+}
+function getThemeGroup(dokiDefinition) {
+    const themeGroup = dokiDefinition.group;
+    const groupMapping = nameMapping[themeGroup];
+
+    if(!groupMapping){
+        throw new Error(`Unable to find group mapping
+        ${themeGroup} for theme ${dokiDefinition.name}`);
+    }
+
+    return groupMapping;
+}
+
 const omit = require('lodash/omit');
 
 console.log('Preparing to generate themes.')
@@ -285,7 +304,7 @@ walkDir(templateDirectoryPath)
 
         const themes = dokiDefinitions.map(dokiDefinition => ({
             id: dokiDefinition.id,
-            label: `Doki Theme: ${dokiDefinition.displayName}`,
+            label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${dokiDefinition.displayName}`,
             path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
             uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
         }))
@@ -311,7 +330,7 @@ walkDir(templateDirectoryPath)
             }
         ));
     })
-    .then(()=> {
+    .then(() => {
         // UPDATE CHANGELOG
         const showdown = require('showdown');
         const markdownConverter = new showdown.Converter();

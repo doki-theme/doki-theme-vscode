@@ -100,85 +100,85 @@
     "themes": [
       {
         "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
-        "label": "Doki Theme: Ryuko",
+        "label": "Doki Theme: KillLaKill:  Ryuko",
         "path": "./generatedThemes/Ryuko.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "3a78b13e-dbf2-410f-bb20-12b57bff7735",
-        "label": "Doki Theme: Satsuki",
+        "label": "Doki Theme: KillLaKill:  Satsuki",
         "path": "./generatedThemes/Satsuki.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "63fe4617-4cac-47a5-9b93-6794514c35ad",
-        "label": "Doki Theme: Megumin",
+        "label": "Doki Theme: KonoSuba:  Megumin",
         "path": "./generatedThemes/Megumin.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
-        "label": "Doki Theme: Monika",
+        "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
-        "label": "Doki Theme: Monika",
+        "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Light.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
-        "label": "Doki Theme: Natsuki",
+        "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
-        "label": "Doki Theme: Natsuki",
+        "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Light.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "b0340303-0a5a-4a20-9b9c-fc8ce9880078",
-        "label": "Doki Theme: Š̸̘͚̼͎̯̙̣̱̎̋̐͒a̴̖̟̠̳̤͙̟͂̂͑̐͜ỷ̵̧̨̞̠̖̠o̴̧͍̗̬̎̓͆̔͝ͅr̴̡̮̟͈͠ͅi̴̡̨͓͈̬̗̺̍́̃̇̓",
+        "label": "Doki Theme: DDLC:  Š̸̘͚̼͎̯̙̣̱̎̋̐͒a̴̖̟̠̳̤͙̟͂̂͑̐͜ỷ̵̧̨̞̠̖̠o̴̧͍̗̬̎̓͆̔͝ͅr̴̡̮̟͈͠ͅi̴̡̨͓͈̬̗̺̍́̃̇̓",
         "path": "./generatedThemes/Sayori Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
-        "label": "Doki Theme: Sayori",
+        "label": "Doki Theme: DDLC:  Sayori",
         "path": "./generatedThemes/Sayori Light.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
-        "label": "Doki Theme: Yuri",
+        "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
-        "label": "Doki Theme: Yuri",
+        "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Light.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "35422aa4-1396-4e76-8ec6-c5560884df22",
-        "label": "Doki Theme: Beatrice",
+        "label": "Doki Theme: Re:Zero:  Beatrice",
         "path": "./generatedThemes/Beatrice.theme.json",
         "uiTheme": "vs"
       },
       {
         "id": "ecb74f1c-8c84-40c4-916f-601039ba2af0",
-        "label": "Doki Theme: Ram",
+        "label": "Doki Theme: Re:Zero:  Ram",
         "path": "./generatedThemes/Ram.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "f770dcfc-f41e-4b49-aa17-66e9ffc208fd",
-        "label": "Doki Theme: Rem",
+        "label": "Doki Theme: Re:Zero:  Rem",
         "path": "./generatedThemes/Rem.theme.json",
         "uiTheme": "vs-dark"
       }
