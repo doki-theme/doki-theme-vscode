@@ -1,7 +1,6 @@
 const path = require('path');
 
-const currentDirectory = require.main.path;
-const repoDirectory = path.resolve(currentDirectory, '..');
+const repoDirectory = path.resolve(__dirname, '..');
 
 const fs = require('fs');
 
