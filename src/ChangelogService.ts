@@ -11,12 +11,24 @@ export function showChanglog(context: vscode.ExtensionContext) {
         vscode.ViewColumn.Active,
         {}
     );
-
     welcomPanel.iconPath = getWebviewIcon(context);
-    welcomPanel.webview.html = buildWebviewHtml(ChangelogHtml);
+    welcomPanel.webview.html = buildWebviewHtml(
+        ChangelogHtml,
+        context,
+        welcomPanel
+    );
 }
 
-export function buildWebviewHtml(content: string): string {
+export function buildWebviewHtml(
+    content: string,
+    context: vscode.ExtensionContext,
+    panel: vscode.WebviewPanel
+): string {
+    const monikaUrl =
+        panel.webview.asWebviewUri(
+            vscode.Uri.file(path.join(context.extensionPath, 'src', 'assets', 'just_monika.png'))
+        );
+    console.log(monikaUrl);
     return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -33,7 +45,7 @@ export function buildWebviewHtml(content: string): string {
         </head>
         <body>
             ${content}
-            <img class="sticker" src="https://raw.githubusercontent.com/cyclic-reference/doki-theme-jetbrains/master/themes/definitions/literature/monika/light/just_monika_joy.png" />
+            <img class="sticker" src="${monikaUrl}" />
         </body>
         </html>`;
 }
