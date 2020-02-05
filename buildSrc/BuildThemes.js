@@ -122,11 +122,46 @@ function buildLAFColors(
     );
 }
 
+function getNewValue(
+    syntaxSettingsValue,
+    dokiThemeTemplateJson
+) {
+    if(syntaxSettingsValue.indexOf('$') > -1) {
+        return 'dis is templated' + syntaxSettingsValue;
+    } else {
+        return syntaxSettingsValue;
+    }
+}
+
 function buildSyntaxColors(
     dokiThemeTemplateJson,
     dokiTemplateDefinitions
 ) {
-    return [];
+    const syntaxTemplate = dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
+    syntaxTemplate.map(tokenSpecification => {
+        const newTokenSpec = {
+            ...tokenSpecification
+        }
+
+        const newsettings = Object.keys(newTokenSpec.settings)
+            .map(key => {
+                const oldValue = newTokenSpec.settings[key];
+                const value = getNewValue(oldValue, dokiThemeTemplateJson);
+                return { key, value };
+            }).reduce((accum, next) => {
+                accum[next.key] = next.value;
+                return accum;
+            }, {});
+            console.log(newsettings)
+        newTokenSpec.settings = 
+        newsettings;
+
+        return {
+            ...tokenSpecification,
+            settings: newsettings
+        } 
+    })
+    return syntaxTemplate;
 }
 
 function buildVSCodeTheme(
@@ -201,18 +236,19 @@ function readSticker(
     return base64Img.base64Sync(stickerPath);
 }
 
-const nameMapping =
-{
+// todo: move out to separate file
+const nameMapping = {
     "Kill la Kill": "KillLaKill: ",
     "Re Zero": "Re:Zero: ",
     "Literature Club": "DDLC: ",
     "KonoSuba": "KonoSuba: ",
 }
+
 function getThemeGroup(dokiDefinition) {
     const themeGroup = dokiDefinition.group;
     const groupMapping = nameMapping[themeGroup];
 
-    if(!groupMapping){
+    if (!groupMapping) {
         throw new Error(`Unable to find group mapping
         ${themeGroup} for theme ${dokiDefinition.name}`);
     }
