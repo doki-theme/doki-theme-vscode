@@ -26,12 +26,15 @@ function walkDir(dir) {
 
 const LAF_TYPE = 'laf';
 const SYNTAX_TYPE = 'syntax';
+const NAMED_COLOR_TYPE = 'colorz';
 
 function getTemplateType(templatePath) {
     if (templatePath.endsWith('laf.template.json')) {
         return LAF_TYPE;
     } else if (templatePath.endsWith('syntax.template.json')) {
         return SYNTAX_TYPE
+    } else if (templatePath.endsWith('colors.template.json')) {
+        return NAMED_COLOR_TYPE
     }
     throw new Error(`I do not know what template ${templatePath} is!`);
 }
@@ -45,16 +48,18 @@ function getThemeType(dokiThemeTemplateJson) {
 function resolveTemplate(
     childTemplate,
     templateNameToTemplate,
-    attributeResolver
+    attributeResolver,
+    parentResolver
 ) {
-    if (!childTemplate.extends) {
+    if (!parentResolver(childTemplate)) {
         return attributeResolver(childTemplate)
     } else {
-        const parent = templateNameToTemplate[childTemplate.extends];
+        const parent = templateNameToTemplate[parentResolver(childTemplate)];
         const resolvedParent = resolveTemplate(
             parent,
             templateNameToTemplate,
-            attributeResolver
+            attributeResolver,
+            parentResolver
         );
         return {
             ...resolvedParent,
@@ -62,6 +67,7 @@ function resolveTemplate(
         };
     }
 }
+
 
 const temp = {
     BG: '#282A36',
@@ -99,7 +105,6 @@ const temp = {
     BGLight: '#343746',
     BGDark: '#21222C',
     BGDarker: '#191A21',
-    foregroundColorEditor: '#F8F8F2',
     TEMP_QUOTES: '#e9f284',
     TEMP_PROPERTY_QUOTES: '#8be9fe'
 };
@@ -154,22 +159,38 @@ function buildLAFColors(
 
     const resolvedLafTemplate =
         resolveTemplate(
-            lafTemplate, lafTemplates, template => template.ui
+            lafTemplate, lafTemplates,
+            template => template.ui,
+            template => template.extends
         );
+
+    const resolvedNameColors = resolveNamedColors(
+        dokiTemplateDefinitions,
+        dokiThemeTemplateJson
+    );
+
     return applyNamedColors(
         resolvedLafTemplate,
-        dokiThemeTemplateJson.colors
+        resolvedNameColors
     );
 }
 
-function getNewValue(
+function resolveNamedColors(dokiTemplateDefinitions, dokiThemeTemplateJson) {
+    const colorTemplates = dokiTemplateDefinitions[NAMED_COLOR_TYPE];
+    const resolvedNameColors = resolveTemplate(dokiThemeTemplateJson, colorTemplates, template => template.colors, template => template.extends ||
+        template.dark !== undefined && (dokiThemeTemplateJson.dark ?
+            'dark' : 'light'));
+    return resolvedNameColors;
+}
+
+function getSyntaxColor(
     syntaxSettingsValue,
-    dokiThemeTemplateJson
+    resolvedNamedColors
 ) {
-    if(syntaxSettingsValue.indexOf('&') > -1) {
+    if (syntaxSettingsValue.indexOf('&') > -1) {
         return resolveColor(
             syntaxSettingsValue,
-            dokiThemeTemplateJson.colors
+            resolvedNamedColors
         );
     } else {
         return syntaxSettingsValue;
@@ -181,6 +202,9 @@ function buildSyntaxColors(
     dokiTemplateDefinitions
 ) {
     const syntaxTemplate = dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
+    const resolvedNamedColors = resolveNamedColors(
+        dokiTemplateDefinitions, dokiThemeTemplateJson
+    )
     return syntaxTemplate.map(tokenSpecification => {
         const newTokenSpec = {
             ...tokenSpecification
@@ -189,19 +213,22 @@ function buildSyntaxColors(
         const newsettings = Object.keys(newTokenSpec.settings)
             .map(key => {
                 const oldValue = newTokenSpec.settings[key];
-                const value = getNewValue(oldValue, dokiThemeTemplateJson);
+                const value = getSyntaxColor(
+                    oldValue,
+                    resolvedNamedColors
+                );
                 return { key, value };
             }).reduce((accum, next) => {
                 accum[next.key] = next.value;
                 return accum;
             }, {});
-        newTokenSpec.settings = 
-        newsettings;
+        newTokenSpec.settings =
+            newsettings;
 
         return {
             ...tokenSpecification,
             settings: newsettings
-        } 
+        }
     })
 }
 
@@ -261,6 +288,7 @@ const readTemplates = templatePaths => {
         }, {
             [SYNTAX_TYPE]: {},
             [LAF_TYPE]: {},
+            [NAMED_COLOR_TYPE]: {},
         });
 };
 

@@ -1,0 +1,7 @@
+{
+    "name": "dark",
+    "extends": "base",
+    "colors": {
+        "foregroundColorEditor":"#F8F8F2"   
+    }
+}

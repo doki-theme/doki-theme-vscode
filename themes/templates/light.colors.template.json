@@ -1,0 +1,7 @@
+{
+    "name": "light",
+    "extends": "base",
+    "colors": {
+        "foregroundColorEditor":"#4D4D4A"
+    }
+}
