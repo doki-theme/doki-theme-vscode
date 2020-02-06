@@ -127,7 +127,7 @@ function buildLAFColors(
         dokiThemeTemplateJson.vsCode ?
             dokiThemeTemplateJson.vsCode.laf :
             (dokiThemeTemplateJson.dark ?
-                lafTemplates.dark : lafTemplates.base);
+                lafTemplates.dark : lafTemplates.light);
 
     const resolvedLafTemplate =
         resolveTemplate(

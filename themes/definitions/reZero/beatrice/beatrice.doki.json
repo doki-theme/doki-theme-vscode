@@ -101,7 +101,7 @@
 
   "vsCode":{
     "laf": {
-      "extends": "base",
+      "extends": "light",
       "ui": {
         "list.highlightForeground": "&accentColorDarker&",
         "editorLineNumber.activeForeground": "&accentColorDarker&",
