@@ -61,6 +61,13 @@
     "debugToolBar.background": "&completionWindowBackground&",
 		"widget.shadow": "#1111115a",
 		"scrollbar.shadow": "#1111113a",
-    "editorSuggestWidget.background": "&completionWindowBackground&"
+    "editorSuggestWidget.background": "&completionWindowBackground&",
+
+    "terminal.ansiYellow": "#EFA554",
+		"terminal.ansiRed": "#E356A7",
+		"terminal.ansiGreen": "#42E66C",
+		"terminal.ansiBlue": "#9B6BDF",
+		"terminal.ansiMagenta": "#E64747",
+		"terminal.ansiCyan": "#75D7EC"
   }
 }
