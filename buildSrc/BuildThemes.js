@@ -123,8 +123,11 @@ function buildLAFColors(
     dokiTemplateDefinitions
 ) {
     const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
-    const lafTemplate = dokiThemeTemplateJson.dark ?
-        lafTemplates.dark : lafTemplates.base;
+    const lafTemplate =
+        dokiThemeTemplateJson.vsCode ?
+            dokiThemeTemplateJson.vsCode.laf :
+            (dokiThemeTemplateJson.dark ?
+                lafTemplates.dark : lafTemplates.base);
 
     const resolvedLafTemplate =
         resolveTemplate(

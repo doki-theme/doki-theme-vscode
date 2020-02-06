@@ -97,5 +97,18 @@
     "ScrollBar.Mac.hoverThumbBorderColor": "accentColorSecondaryTransparent",
     "ScrollBar.Mac.hoverThumbColor":"accentColorSecondaryTransparent"
   },
-  "icons": {}
+  "icons": {},
+
+  "vsCode":{
+    "laf": {
+      "extends": "base",
+      "ui": {
+        "list.highlightForeground": "&accentColorDarker&",
+        "editorLineNumber.activeForeground": "&accentColorDarker&",
+        "scrollbarSlider.hoverBackground": "&accentColorSecondary&9A",
+        "scrollbarSlider.background": "&accentColorSecondary&5A",
+        "scrollbarSlider.activeBackground": "&accentColorSecondary&9A"
+      }
+    }
+  }
 }
