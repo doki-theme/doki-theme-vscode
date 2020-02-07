@@ -9,6 +9,7 @@
     "editor.selectionBackground": "&selectionBackground&",
     "minimap.selectionHighlight": "&selectionBackground&",
     "list.activeSelectionForeground": "&selectionForeground&",
+    "list.focusForeground": "&selectionForeground&",
     "list.inactiveSelectionBackground": "&selectionInactive&",
     "editor.background": "&editorBackground&",
     "tab.activeBackground": "&highlightColor&",
