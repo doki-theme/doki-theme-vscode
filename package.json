@@ -186,7 +186,7 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
-    "buildThemes": "node ./buildSrc/BuildThemes.js",
+    "buildThemes": "ts-node ./buildSrc/BuildThemes.ts",
     "precompile": "yarn buildThemes",
     "prewatch": "yarn buildThemes",
     "compile": "tsc -p ./",
@@ -204,6 +204,7 @@
     "lodash": "^4.17.15",
     "mocha": "^6.2.2",
     "showdown": "^1.9.1",
+    "ts-node": "^8.6.2",
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
     "vscode-test": "^1.2.2"
