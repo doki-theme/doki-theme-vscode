@@ -1,15 +1,12 @@
 import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
-import { installSticker, removeStickers } from "./StickerService";
+import { installSticker, removeStickers, InstallStatus } from "./StickerService";
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import { StatusBarComponent } from "./StatusBar";
 import { showStickerInstallationSupportWindow, showStickerRemovalSupportWindow } from "./SupportService";
 
 export const ACTIVE_THEME = 'doki.theme.active';
 
-export enum InstallStatus {
-  INSTALLED, NOT_INSTALLED, FAILURE
-}
 
 const FIRST_TIME_STICKER_INSTALL = 'doki.sticker.first.install';
 function isFirstTimeInstalling(context: vscode.ExtensionContext) {

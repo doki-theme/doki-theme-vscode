@@ -1,7 +1,10 @@
-import {DokiTheme, Sticker} from "./DokiTheme";
+import {DokiTheme} from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
-import { InstallStatus } from "./ThemeManager";
+
+export enum InstallStatus {
+  INSTALLED, NOT_INSTALLED, FAILURE
+}
 
 const main = require.main || {filename: 'yeet'};
 export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
@@ -20,10 +23,8 @@ function buildStickerCss(dokiTheme: DokiTheme): string {
   const backgroundImage = dokiTheme.name.toLowerCase();
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `
-/* Stickers */
-[id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
-
-[id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
+  /* Stickers */
+  .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
   /* Background Image */
   .monaco-workbench .part.editor > .content {

@@ -1,8 +1,20 @@
 {
   "name": "doki-theme",
-  "displayName": "doki-theme-vscode",
-  "description": "A bunch of character-based themes.",
+  "displayName": "The Doki Theme",
+  "description": "Themes based on various anime and visual novel characters.",
   "version": "1.0.0-beta",
+  "icon": "Doki-Theme.png",
+  "galleryBanner": {
+    "color": "#578CDA",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/cyclic-reference/doki-theme-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyclic-reference/doki-theme-vscode.git"
+  },
   "engines": {
     "vscode": "^1.40.0"
   },
@@ -186,6 +198,7 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
+    "vscode:uninstall": "node ./out/Cleanup.js",
     "buildThemes": "ts-node ./buildSrc/BuildThemes.ts",
     "precompile": "yarn buildThemes",
     "prewatch": "yarn buildThemes",
