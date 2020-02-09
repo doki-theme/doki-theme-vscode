@@ -62,9 +62,14 @@ interface Overrides {
 }
 
 interface VSCodeDefinitions {
-  laf: {
+  laf?: {
     extends: string;
     ui: StringDictonary<string>
+  };
+  overrides?: {
+    editorScheme?: {
+      colors: StringDictonary<string>
+    };
   };
 }
 
@@ -138,7 +143,7 @@ function resolveColor(
     const namedColorValue = namedColors[namedColor];
 
     // todo: check for cyclic references
-    if(color === namedColorValue) {
+    if (color === namedColorValue) {
       throw new Error(`Very Cheeky, you set ${namedColor} to resolve to itself 😒`);
     }
 
@@ -236,9 +241,15 @@ function buildSyntaxColors(
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   const syntaxTemplate: any[] = dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
-  const resolvedNamedColors = resolveNamedColors(
-    dokiTemplateDefinitions, dokiThemeTemplateJson
-  );
+
+  const overrides = dokiThemeTemplateJson.vsCode?.overrides?.editorScheme?.colors || {};
+  const resolvedNamedColors = {
+    ...resolveNamedColors(
+      dokiTemplateDefinitions, dokiThemeTemplateJson
+    ),
+    ...overrides
+  };
+
   return syntaxTemplate.map(tokenSpecification => {
     const newTokenSpec = {
       ...tokenSpecification
@@ -251,7 +262,7 @@ function buildSyntaxColors(
           oldValue,
           resolvedNamedColors
         );
-        return {key, value};
+        return { key, value };
       }).reduce((accum: StringDictonary<string>, next) => {
         accum[next.key] = next.value;
         return accum;
@@ -380,91 +391,91 @@ walkDir(templateDirectoryPath)
         )
     );
   }).then(dokiThemes => {
-  // write things for extension
-  const dokiThemeDefinitions = dokiThemes.map(dokiTheme => {
-    const dokiDefinition = dokiTheme.definition;
-    return {
-      extensionName: getCommandName(dokiDefinition),
-      themeDefinition: {
-        information: omit(dokiDefinition, [
-          'colors',
-          'overrides',
-          'ui',
-          'icons'
-        ]),
-        sticker: readSticker(
-          dokiTheme.path,
-          dokiDefinition
-        ),
-      }
-    };
-  });
-  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
-  fs.writeFileSync(
-    path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
-    `export default ${finalDokiDefinitions};`);
-
-  // copy to out directory
-  const themeOutputDirectory = 'generatedThemes';
-  const themePostfix = '.theme.json';
-  dokiThemes.forEach(dokiTheme => {
-    const vsCodeTheme = dokiTheme.theme;
+    // write things for extension
+    const dokiThemeDefinitions = dokiThemes.map(dokiTheme => {
+      const dokiDefinition = dokiTheme.definition;
+      return {
+        extensionName: getCommandName(dokiDefinition),
+        themeDefinition: {
+          information: omit(dokiDefinition, [
+            'colors',
+            'overrides',
+            'ui',
+            'icons'
+          ]),
+          sticker: readSticker(
+            dokiTheme.path,
+            dokiDefinition
+          ),
+        }
+      };
+    });
+    const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
-      path.resolve(repoDirectory,
-        themeOutputDirectory,
-        `${dokiTheme.definition.name}${themePostfix}`),
-      JSON.stringify(vsCodeTheme, null, 2)
-    );
-  });
+      path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
+      `export default ${finalDokiDefinitions};`);
+
+    // copy to out directory
+    const themeOutputDirectory = 'generatedThemes';
+    const themePostfix = '.theme.json';
+    dokiThemes.forEach(dokiTheme => {
+      const vsCodeTheme = dokiTheme.theme;
+      fs.writeFileSync(
+        path.resolve(repoDirectory,
+          themeOutputDirectory,
+          `${dokiTheme.definition.name}${themePostfix}`),
+        JSON.stringify(vsCodeTheme, null, 2)
+      );
+    });
 
 
-  // write to package json
-  const dokiDefinitions = dokiThemes.map(d => d.definition);
-  const packageJsonPath =
-    path.resolve(repoDirectory, 'package.json');
-  const packageJson = readJson(packageJsonPath);
-  const activationEvents =
-    dokiDefinitions.map(dokiDefinition =>
-      `onCommand:${getCommandName(dokiDefinition)}`
-    );
+    // write to package json
+    const dokiDefinitions = dokiThemes.map(d => d.definition);
+    const packageJsonPath =
+      path.resolve(repoDirectory, 'package.json');
+    const packageJson = readJson(packageJsonPath);
+    const activationEvents =
+      dokiDefinitions.map(dokiDefinition =>
+        `onCommand:${getCommandName(dokiDefinition)}`
+      );
 
-  const commands = dokiDefinitions.map(dokiDefinition => ({
-    command: getCommandName(dokiDefinition),
-    title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`
-  }));
+    const commands = dokiDefinitions.map(dokiDefinition => ({
+      command: getCommandName(dokiDefinition),
+      title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`
+    }));
 
-  const themes = dokiDefinitions.map(dokiDefinition => ({
-    id: dokiDefinition.id,
-    label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${dokiDefinition.displayName}`,
-    path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
-    uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
-  }));
+    const themes = dokiDefinitions.map(dokiDefinition => ({
+      id: dokiDefinition.id,
+      label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${dokiDefinition.displayName}`,
+      path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
+      uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
+    }));
 
-  packageJson.activationEvents = [
-    ...packageJson.activationEvents.filter((activationEvent: string) =>
-      !activationEvent.startsWith("onCommand:extension.theme")),
-    ...activationEvents
-  ];
-
-  packageJson.contributes.commands =
-    [
-      ...packageJson.contributes.commands.filter((command: { command: string }) =>
-        !command.command.startsWith('extension.theme')),
-      ...commands
+    packageJson.activationEvents = [
+      ...packageJson.activationEvents.filter((activationEvent: string) =>
+        !activationEvent.startsWith("onCommand:extension.theme")),
+      ...activationEvents
     ];
-  packageJson.contributes.themes = themes;
-  return new Promise((resolve, reject) => fs.writeFile(
-    packageJsonPath,
-    JSON.stringify(packageJson, null, 2),
-    (err: any) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
+
+    packageJson.contributes.commands =
+      [
+        ...packageJson.contributes.commands.filter((command: { command: string }) =>
+          !command.command.startsWith('extension.theme')),
+        ...commands
+      ];
+    packageJson.contributes.themes = themes;
+    return new Promise((resolve, reject) => fs.writeFile(
+      packageJsonPath,
+      JSON.stringify(packageJson, null, 2),
+      (err: any) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
       }
-    }
-  ));
-})
+    ));
+  })
   .then(() => {
     // UPDATE CHANGELOG
     const showdown = require('showdown');
