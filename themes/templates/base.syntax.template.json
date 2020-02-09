@@ -754,7 +754,6 @@
                 "punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "&quotesColor&"
             }
         },
         {
@@ -764,7 +763,6 @@
                 "punctuation.support.type.property-name.end"
             ],
             "settings": {
-                "foreground": "&otherQuotesColor&"
             }
         },
         {

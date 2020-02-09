@@ -67,5 +67,10 @@
 
     "SearchEverywhere.Tab.selectedBackground": "highlightColorDarker"
   },
-  "icons": {}
+  "icons": {},
+  "vsCode": {
+    "colors": {
+      "extends": ""
+    }
+  }
 }

@@ -129,13 +129,20 @@ function resolveTemplate<T, R>(
 function resolveColor(
   color: string,
   namedColors: StringDictonary<string>
-) {
+): string {
   const startingTemplateIndex = color.indexOf('&');
   if (startingTemplateIndex > -1) {
     const lastDelimeterIndex = color.lastIndexOf('&');
     const namedColor =
       color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
-    const resolvedNamedColor = namedColors[namedColor];
+    const namedColorValue = namedColors[namedColor];
+
+    // todo: check for cyclic references
+    if(color === namedColorValue) {
+      throw new Error(`Very Cheeky, you set ${namedColor} to resolve to itself 😒`);
+    }
+
+    const resolvedNamedColor = resolveColor(namedColorValue, namedColors);
     if (!resolvedNamedColor) {
       throw new Error(`Cannot find named color '${namedColor}'.`);
     }
