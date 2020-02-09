@@ -1,14 +1,16 @@
-<div align="center">
-    <img src="https://raw.githubusercontent.com/cyclic-reference/jetbrains-theme/master/assets/logo.png" alt="Doki Theme"></img>
-</div>
-
----
-<div align="center">
-    <h3 style="color: pink;">Ṱ͙̠͔́̈́͐̇h̳̳̗̘͂̇́̊e̮̰̼̮̿́̋͗ ̝͇͎̱̊̚̕͝o͙͈̼̜̓̀̉̀n͚̩̣̣̅̍̐̈́l̻̺̩̠͋̑̎͠y̧̱̘͕̿͐̎͘ ̧͎̹̙̓̅̈́͆t̢͔̩̮́̐̕͠h̨͓͔͉̿́͑͝é̹̙̤̮̀̍̈m̙̥̙̺̋̾͑̊e̳̗̖̩̽͐͆͒s͖̰͎̏̍̓̈́ͅ ͎̻͔͍͗͒̾̀y̢̻̜͎̾̄͒̋o̗̝̮̞͛̿̏͐ǔ̥̜̹̘̓̿̕ ̢̛̫͕͔̎̂́ẻ̲̜̰͙̍̌͑v̜̻̗̥̈́̓̈́̔e̡͚͇̫̎̆̋͑r̺̮͓̳̍̊͗̋ ̻̻̣̹͋͑́̈́ǹ̨̲͚͇̒̆͘e̗͉̫̱͂͑͗̓e̳̬̬͈̓̊̂͘d̪̻̞̮̈͂͠͝.͍͇͍̫̒͆̓͝</h3>
-</div>
-
----
 [![Gitter](https://badges.gitter.im/doki-theme-vscode/community.svg)](https://gitter.im/doki-theme-vscode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+# Preview
+
+![Rem's Theme Usage](https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif)
+
+Steps:
+1. Choose Color Theme
+1. Enable Theme's Stickers
+1. Reload/Restart VSCode
+1. Code!
+
+## About!
 
 Hey! Before we go any further, I would like to ask you a couple of questions:
 
@@ -43,40 +45,22 @@ Great! I am glad you like it!
 
 Be sure to share it with others who also may like it as well!
 
-Also, giving it a good [review on the plugins page](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme) will help this plugin will become more visible to users!
-
 ## Not your thing or something bothering you?
 
-Feel free to submit your feedback as [an issue](https://github.com/cyclic-reference/doki-theme-vscode/issues/new).
+Feel free to submit your feedback as [an issue](https://github.com/Unthrottled/doki-theme-vscode/issues/new).
 Help make this plugin better!
 
+# More!
 
-# todo: 
-----
-## Features
+Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc), be sure to install  [the JetBrain's theme plugin as well!](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+---
+<div align="center">
+    <h3 style="color: pink;">Ṱ͙̠͔́̈́͐̇h̳̳̗̘͂̇́̊e̮̰̼̮̿́̋͗ ̝͇͎̱̊̚̕͝o͙͈̼̜̓̀̉̀n͚̩̣̣̅̍̐̈́l̻̺̩̠͋̑̎͠y̧̱̘͕̿͐̎͘ ̧͎̹̙̓̅̈́͆t̢͔̩̮́̐̕͠h̨͓͔͉̿́͑͝é̹̙̤̮̀̍̈m̙̥̙̺̋̾͑̊e̳̗̖̩̽͐͆͒s͖̰͎̏̍̓̈́ͅ ͎̻͔͍͗͒̾̀y̢̻̜͎̾̄͒̋o̗̝̮̞͛̿̏͐ǔ̥̜̹̘̓̿̕ ̢̛̫͕͔̎̂́ẻ̲̜̰͙̍̌͑v̜̻̗̥̈́̓̈́̔e̡͚͇̫̎̆̋͑r̺̮͓̳̍̊͗̋ ̻̻̣̹͋͑́̈́ǹ̨̲͚͇̒̆͘e̗͉̫̱͂͑͗̓e̳̬̬͈̓̊̂͘d̪̻̞̮̈͂͠͝.͍͇͍̫̒͆̓͝</h3>
+</div>
 
-For example if there is an image subfolder under your extension project workspace:
+---
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-
-**Enjoy!**
+<div align="center">
+    <img src="https://doki.assets.acari.io/misc/logo.png" alt="Doki Theme"></img>
+</div>
