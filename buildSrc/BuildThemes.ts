@@ -1,3 +1,6 @@
+// @ts-ignore
+import GroupToNameMapping from "./GroupMappings";
+
 const path = require('path');
 
 const repoDirectory = path.resolve(__dirname, '..');
@@ -46,7 +49,7 @@ interface EditorScheme {
   file?: string;
 }
 
-interface StringDictonary<T> {
+export interface StringDictonary<T> {
   [key: string]: T;
 }
 
@@ -123,12 +126,12 @@ function resolveTemplate<T, R>(
 }
 
 const temp: StringDictonary<string> = {
-    COMMENT: '#6272A4',
-    ORANGE: '#FFB86C',
-    PURPLE: '#BD93F9',
-    RED: '#FF5555',
-    TEMP_QUOTES: '#e9f284',
-    TEMP_PROPERTY_QUOTES: '#8be9fe'
+  COMMENT: '#6272A4',
+  ORANGE: '#FFB86C',
+  PURPLE: '#BD93F9',
+  RED: '#FF5555',
+  TEMP_QUOTES: '#e9f284',
+  TEMP_PROPERTY_QUOTES: '#8be9fe'
 };
 
 
@@ -339,17 +342,9 @@ function readSticker(
   return base64Img.base64Sync(stickerPath);
 }
 
-// todo: move out to separate file
-const nameMapping: StringDictonary<string> = {
-  "Kill la Kill": "KillLaKill: ",
-  "Re Zero": "Re:Zero: ",
-  "Literature Club": "DDLC: ",
-  "KonoSuba": "KonoSuba: ",
-};
-
 function getThemeGroup(dokiDefinition: DokiThemeTemplateDefinition) {
   const themeGroup = dokiDefinition.group;
-  const groupMapping = nameMapping[themeGroup];
+  const groupMapping = GroupToNameMapping[themeGroup];
 
   if (!groupMapping) {
     throw new Error(`Unable to find group mapping
