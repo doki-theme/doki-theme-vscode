@@ -125,15 +125,6 @@ function resolveTemplate<T, R>(
   }
 }
 
-const temp: StringDictonary<string> = {
-  COMMENT: '#6272A4',
-  ORANGE: '#FFB86C',
-  PURPLE: '#BD93F9',
-  RED: '#FF5555',
-  TEMP_QUOTES: '#e9f284',
-  TEMP_PROPERTY_QUOTES: '#8be9fe'
-};
-
 
 function resolveColor(
   color: string,
@@ -144,7 +135,7 @@ function resolveColor(
     const lastDelimeterIndex = color.lastIndexOf('&');
     const namedColor =
       color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
-    const resolvedNamedColor = namedColors[namedColor] || temp[namedColor];
+    const resolvedNamedColor = namedColors[namedColor];
     if (!resolvedNamedColor) {
       throw new Error(`Cannot find named color '${namedColor}'.`);
     }

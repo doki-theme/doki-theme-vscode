@@ -23,7 +23,7 @@
                 "header"
             ],
             "settings": {
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -40,7 +40,7 @@
                 "meta.diff.header"
             ],
             "settings": {
-                "foreground": "&COMMENT&"
+                "foreground": "&commentColor&"
             }
         },
         {
@@ -56,7 +56,7 @@
                 "markup.deleted"
             ],
             "settings": {
-                "foreground": "&RED&"
+                "foreground": "&errorColor&"
             }
         },
         {
@@ -64,7 +64,7 @@
                 "markup.changed"
             ],
             "settings": {
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -72,7 +72,7 @@
                 "invalid"
             ],
             "settings": {
-                "foreground": "&RED&",
+                "foreground": "&errorColor&",
                 "fontStyle": "underline italic"
             }
         },
@@ -98,7 +98,7 @@
                 "markup.error"
             ],
             "settings": {
-                "foreground": "&RED&"
+                "foreground": "&errorColor&"
             }
         },
         {
@@ -117,7 +117,7 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -127,7 +127,7 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -200,7 +200,7 @@
                 "meta.separator.markdown"
             ],
             "settings": {
-                "foreground": "&COMMENT&"
+                "foreground": "&commentColor&"
             }
         },
         {
@@ -220,7 +220,7 @@
                 "punctuation.definition.constant.restructuredtext"
             ],
             "settings": {
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -230,7 +230,7 @@
                 "markup.heading.markdown punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -275,7 +275,7 @@
                 "variable.parameter.function.language.special"
             ],
             "settings": {
-                "foreground": "&PURPLE&",
+                "foreground": "&constantsColor&",
                 "fontStyle": "italic"
             }
         },
@@ -298,7 +298,7 @@
                 "wildcard.comment"
             ],
             "settings": {
-                "foreground": "&COMMENT&"
+                "foreground": "&commentColor&"
             }
         },
         {
@@ -337,7 +337,7 @@
                 "comment.block.documentation variable"
             ],
             "settings": {
-                "foreground": "&ORANGE&",
+                "foreground": "&parameterColor&",
                 "fontStyle": "italic"
             }
         },
@@ -348,7 +348,7 @@
                 "variable.other.constant"
             ],
             "settings": {
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -419,7 +419,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -490,7 +490,7 @@
             ],
             "settings": {
                 "fontStyle": "regular",
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -597,7 +597,7 @@
                 "constant.other.timestamp"
             ],
             "settings": {
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -659,7 +659,7 @@
                 "meta.type.parameters entity.name.type"
             ],
             "settings": {
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -698,7 +698,7 @@
                 "string.regexp punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "&RED&"
+                "foreground": "&errorColor&"
             }
         },
         {
@@ -716,7 +716,7 @@
                 "punctuation.definition.group.regexp"
             ],
             "settings": {
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -726,7 +726,7 @@
                 "keyword.operator.negation.regexp"
             ],
             "settings": {
-                "foreground": "&RED&"
+                "foreground": "&errorColor&"
             }
         },
         {
@@ -754,7 +754,7 @@
                 "punctuation.definition.string.end"
             ],
             "settings": {
-                "foreground": "&TEMP_QUOTES&"
+                "foreground": "&quotesColor&"
             }
         },
         {
@@ -764,7 +764,7 @@
                 "punctuation.support.type.property-name.end"
             ],
             "settings": {
-                "foreground": "&TEMP_PROPERTY_QUOTES&"
+                "foreground": "&otherQuotesColor&"
             }
         },
         {
@@ -776,7 +776,7 @@
                 "string.quoted.docstring.multi.python constant.character.escape"
             ],
             "settings": {
-                "foreground": "&COMMENT&"
+                "foreground": "&commentColor&"
             }
         },
         {
@@ -802,7 +802,7 @@
             ],
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "&ORANGE&"
+                "foreground": "&parameterColor&"
             }
         },
         {
@@ -872,7 +872,7 @@
                 "source.shell variable.other"
             ],
             "settings": {
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -882,7 +882,7 @@
             ],
             "settings": {
                 "fontStyle": "normal",
-                "foreground": "&PURPLE&"
+                "foreground": "&constantsColor&"
             }
         },
         {
@@ -919,7 +919,7 @@
                 "meta.preprocessor.haskell"
             ],
             "settings": {
-                "foreground": "&COMMENT&"
+                "foreground": "&commentColor&"
             }
         }
     ]

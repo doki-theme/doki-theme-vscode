@@ -2,7 +2,7 @@
   "name": "doki-theme",
   "displayName": "doki-theme-vscode",
   "description": "A bunch of character-based themes.",
-  "version": "0.0.1",
+  "version": "1.0.0-beta",
   "engines": {
     "vscode": "^1.40.0"
   },
