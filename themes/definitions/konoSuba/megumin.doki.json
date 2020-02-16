@@ -34,6 +34,7 @@
     "inactiveBackground": "#2a272e",
     "inactiveBackgroundDarker": "#333037",
     "headerColor": "#2d2227",
+    "completionWindowBackground": "&headerColor&",
     "baseBackground": "#271c21",
     "borderColor": "#32262c",
     "buttonColor":  "#2f2329",
