@@ -10,6 +10,6 @@ vsc-extension-quickstart.md
 **/*.ts
 .idea/**
 .github/**
-.buildSrc/**
+buildSrc/**
 todo
 themes/**
