@@ -5,8 +5,7 @@ import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
 const IS_GREETED = 'doki.theme.greeted';
 
 export function attemptToGreetUser(context: vscode.ExtensionContext) {
-    const greeted = false;
-    // const greeted = VSCodeGlobals.globalState.get(IS_GREETED);
+    const greeted = VSCodeGlobals.globalState.get(IS_GREETED);
     if(!greeted) {
         const welcomePanel = vscode.window.createWebviewPanel(
             'dokiWelcomeWindow',
@@ -57,19 +56,23 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 <h2>More!</h2>
                 <p>
                     Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? 
-                    Then be sure to install <a href="https://plugins.jetbrains.com/plugin/10803-doki-doki-literature-club-theme">the JetBrain's Doki Theme plugin as well!</a>
+                    Then be sure to install <a href="https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme">the JetBrain's Doki Theme plugin as well!</a>
                 </p>
                 </div>
             </div>
-            <h2>Sample Usage</h2>
-                <img src="https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
+            <div>
+               <h2>Sample Usage</h2>
+                <img 
+                style="z-index: 9001;"
+                src="https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
                 Steps:
                 <ol>
                     <li>Choose Color Theme</li>
                     <li>Enable Theme's Stickers</li>
                     <li>Reload/Restart VSCode</li>
                     <li>Code!</li>
-                </ol>
+                </ol> 
+            </div>
             </div>
             `, context, welcomePanel);
         

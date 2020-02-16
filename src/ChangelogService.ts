@@ -34,9 +34,10 @@ export function buildWebviewHtml(
             <title>The Doki Theme</title>
             <style>
             .sticker {
-                position: absolute;
+                position: fixed;
                 right: 0;
                 bottom: 0;
+                z-index: -1;
             }
             </style>
         </head>
