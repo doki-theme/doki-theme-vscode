@@ -63,6 +63,7 @@
 		"widget.shadow": "#1111115a",
 		"scrollbar.shadow": "#1111113a",
     "editorSuggestWidget.background": "&completionWindowBackground&",
+    "titleBar.activeBackground": "&headerColor&",
 
 		"terminal.ansiRed": "#E356A7",
 		"terminal.ansiGreen": "#42E66C",
