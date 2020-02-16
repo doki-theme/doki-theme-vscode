@@ -481,8 +481,8 @@ walkDir(templateDirectoryPath)
   })
   .then(() => {
     // UPDATE CHANGELOG
-    const showdown = require('showdown');
-    const markdownConverter = new showdown.Converter();
+    const MarkItDown = require('markdown-it');
+    const markdownConverter = new MarkItDown();
 
     const changelogPath = path.join(
       repoDirectory, 'CHANGELOG.md'
@@ -491,7 +491,7 @@ walkDir(templateDirectoryPath)
       changelogPath, 'utf-8'
     );
 
-    const changelogHTML = markdownConverter.makeHtml(
+    const changelogHTML = markdownConverter.render(
       changelogText
     );
 
