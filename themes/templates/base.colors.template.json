@@ -4,6 +4,7 @@
         "constantsColor":"#BD93F9",
         "parameterColor":"#FFB86C",
         "commentColor": "#6272A4",
+        "completionWindowBackground": "&contrastColor&",
         "quotesColor": "&accentColor&",
         "otherQuotesColor": "&quotesColor&",
         "errorColor":"#FF5555"

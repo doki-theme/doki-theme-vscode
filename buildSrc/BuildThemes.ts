@@ -141,6 +141,9 @@ function resolveColor(
     const namedColor =
       color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
     const namedColorValue = namedColors[namedColor];
+    if(!namedColorValue) {
+      throw new Error(`Named color: '${namedColor}' is not present!`)
+    }
 
     // todo: check for cyclic references
     if (color === namedColorValue) {

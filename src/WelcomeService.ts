@@ -1,6 +1,5 @@
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import * as vscode from 'vscode';
-import * as path from 'path';
 import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
 
 const IS_GREETED = 'doki.theme.greeted';

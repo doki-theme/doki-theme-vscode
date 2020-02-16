@@ -23,7 +23,6 @@
   },
   "colors": {
     "caretRow": "#4D2339",
-    "completionWindowBackground":"#32393F",
     "baseIconColor": "#7F707A",
     "ghostColor": "#FFFFFF00",
     "contrastColor": "#56324C",
