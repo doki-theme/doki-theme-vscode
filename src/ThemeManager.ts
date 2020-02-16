@@ -19,7 +19,7 @@ async function attemptToInstall(
 ): Promise<InstallStatus> {
   if (isFirstTimeInstalling(context)) {
     const stickerInstall = 'Install Stickers';
-    const result = await vscode.window.showWarningMessage(`Installing stickers requires this extension to make VS-Code corrupted, by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status. I won't show you this message again in the future if you choose 'Install Stickers'. :)`, {
+    const result = await vscode.window.showWarningMessage(`Installing stickers requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`, {
       modal: true
     }, {
       title: stickerInstall, isCloseAffordance: false

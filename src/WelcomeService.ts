@@ -30,7 +30,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                     You can even find one that fits your mood for the day.
                 </p>
                 <p>
-                    Variety is the spice of life! So you can choose themes from the following Doki-Doki Theme Suites:
+                    You can choose themes from the following Doki-Doki Theme Suites:
                 </p>
                 <ul>
                     <li>Doki-Doki Literature Club</li>
@@ -52,6 +52,9 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                  <p>
                     If I am unable to install your requested sticker, I will pull up a help menu that will provide 
                     you with more information. 
+                </p>
+                <p>
+                    <strong>This also means that you have to use the 'Remove Sticker' action before uninstalling the extension if you want the stickers gone.</strong>
                 </p>
                 <h2>More!</h2>
                 <p>
