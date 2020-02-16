@@ -1,10 +1,10 @@
 [![Gitter](https://badges.gitter.im/doki-theme-vscode/community.svg)](https://gitter.im/doki-theme-vscode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# Preview
+# Feature Preview
 
 ![Rem's Theme Usage](https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif)
 
-Steps:
+Steps demonstrated:
 1. Choose Color Theme
 1. Enable Theme's Stickers
 1. Reload/Restart VSCode
@@ -25,7 +25,7 @@ Well look no further friend, **I've got what you are looking for!**
 With over 10 themes (light and dark) I think you will be able to find your favorite.
 You can even find one that fits your mood for the day.
 
-Variety is the spice of life! So you can choose themes from the following Doki-Doki Theme Suites:
+You can choose themes from the following Doki-Doki Theme Suites:
 
 - Doki-Doki Literature Club
 - Re:Zero
@@ -43,7 +43,7 @@ Don't be afraid to reach out and join the [Gitter Community](https://gitter.im/d
 
 Great! I am glad you like it!
 
-Be sure to share it with others who also may like it as well!
+Be sure to share it with others who also may enjoy it as well!
 
 ## Not your thing or something bothering you?
 
