@@ -52,7 +52,7 @@ Help make this plugin better!
 
 # More!
 
-Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc), be sure to install  [the JetBrain's theme plugin as well!](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme)
+Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? Then be sure to install [the JetBrain's Doki Theme plugin as well!](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme)
 
 ---
 <div align="center">

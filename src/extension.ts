@@ -4,7 +4,6 @@ import { DokiTheme } from "./DokiTheme";
 import DokiThemeDefinitions from './DokiThemeDefinitions';
 import { StatusBarComponent } from './StatusBar';
 import { VSCodeGlobals } from './VSCodeGlobals';
-import { attemptToGreetUser } from './WelcomeService';
 import { attemptToNotifyUpdates } from './NotificationService';
 import { showChanglog } from './ChangelogService';
 
@@ -20,8 +19,6 @@ export interface VSCodeDokiThemeDefinition {
 
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Activated Extension');
-
 	context.subscriptions.push(
 		vscode.commands.registerCommand(
 			'extension.remove.sticker',

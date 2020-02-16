@@ -198,6 +198,7 @@
     ]
   },
   "scripts": {
+    "package": "vsce package",
     "vscode:prepublish": "yarn run compile",
     "vscode:uninstall": "node ./out/Cleanup.js",
     "buildThemes": "ts-node ./buildSrc/BuildThemes.ts",

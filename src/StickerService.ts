@@ -12,6 +12,7 @@ const editorCss = path.join(workbenchDirectory, 'workbench.desktop.main.css');
 const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.copy');
 
 function getVsCodeCss() {
+  // todo: check to see if the current css has stickers if installed (ie they upgraded)
   if (!fs.existsSync(editorCssCopy)) {
     fs.copyFileSync(editorCss, editorCssCopy);
   }

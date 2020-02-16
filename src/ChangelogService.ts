@@ -1,8 +1,6 @@
-import { VSCodeGlobals } from "./VSCodeGlobals";
 import * as vscode from 'vscode';
 import * as path from 'path';
 import ChangelogHtml from "./ChangelogHtml";
-
 
 export function showChanglog(context: vscode.ExtensionContext) {
     const welcomPanel = vscode.window.createWebviewPanel(
@@ -25,10 +23,9 @@ export function buildWebviewHtml(
     panel: vscode.WebviewPanel
 ): string {
     const monikaUrl =
-        panel.webview.asWebviewUri(
-            vscode.Uri.file(path.join(context.extensionPath, 'src', 'assets', 'just_monika.png'))
-        );
-    console.log(monikaUrl);
+    panel.webview.asWebviewUri(
+        vscode.Uri.file(path.join(context.extensionPath, 'assets', 'just_monika.png'))
+    );
     return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -51,5 +48,5 @@ export function buildWebviewHtml(
 }
 
 export function getWebviewIcon(context: vscode.ExtensionContext) {
-    return vscode.Uri.file(path.join(context.extensionPath, 'src', 'assets', 'heart.png'));
+    return vscode.Uri.file(path.join(context.extensionPath, 'assets', 'heart.png'));
 }
