@@ -19,17 +19,15 @@ async function attemptToInstall(
 ): Promise<InstallStatus> {
   if (isFirstTimeInstalling(context)) {
     const stickerInstall = 'Install Stickers';
-    const result = await vscode.window.showWarningMessage(`Installing stickers requires this extension to c͇o̪̜r̴̫̮̰͖r̨ư̼͎p͙̞̻͇̤̠t́ VS-Code. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status. I won't show you this message again in the future. :)`, {
+    const result = await vscode.window.showWarningMessage(`Installing stickers requires this extension to make VS-Code corrupted, by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status. I won't show you this message again in the future if you choose 'Install Stickers'. :)`, {
       modal: true
     }, {
       title: stickerInstall, isCloseAffordance: false
     });
 
     if (result && result.title === stickerInstall) {
+      context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
       const installStatus = performStickerInstall(dokiTheme);
-      if (installStatus === InstallStatus.INSTALLED) {
-        context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
-      }
       return installStatus;
     } else {
       return InstallStatus.NOT_INSTALLED;
