@@ -1,4 +1,4 @@
-import {DokiTheme} from "./DokiTheme";
+import { DokiTheme } from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
 
@@ -6,16 +6,25 @@ export enum InstallStatus {
   INSTALLED, NOT_INSTALLED, FAILURE
 }
 
-const main = require.main || {filename: 'yeet'};
+const main = require.main || { filename: 'yeet' };
 export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
 const editorCss = path.join(workbenchDirectory, 'workbench.desktop.main.css');
 const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.copy');
 
-function getVsCodeCss() {
-  // todo: check to see if the current css has stickers if installed (ie they upgraded)
-  if (!fs.existsSync(editorCssCopy)) {
+// Was VS Code upgraded when stickers where installed?
+function isCssPrestine() {
+  const currentCss = fs.readFileSync(editorCss, 'utf-8');
+  return currentCss.indexOf('https://doki.assets.acari.io') < 0;
+}
+
+function ensureRightCssCopy() {
+  if (!fs.existsSync(editorCssCopy) || isCssPrestine()) {
     fs.copyFileSync(editorCss, editorCssCopy);
   }
+}
+
+function getVsCodeCss() {
+  ensureRightCssCopy();
   return fs.readFileSync(editorCssCopy, 'utf-8');
 }
 
@@ -55,13 +64,13 @@ function canWrite(): boolean {
   try {
     fs.accessSync(editorCss, fs.constants.W_OK);
     return true;
-  } catch(error){
+  } catch (error) {
     return false;
   }
 }
 
 export function installSticker(dokiTheme: DokiTheme): boolean {
-  if(canWrite()) {
+  if (canWrite()) {
     const stickerStyles = buildStyles(dokiTheme);
     installEditorStyles(stickerStyles);
     return true;
@@ -72,7 +81,7 @@ export function installSticker(dokiTheme: DokiTheme): boolean {
 
 // :(
 export function removeStickers(): InstallStatus {
-  if(canWrite()) {
+  if (canWrite()) {
     if (fs.existsSync(editorCssCopy)) {
       fs.unlinkSync(editorCss);
       fs.copyFileSync(editorCssCopy, editorCss);
