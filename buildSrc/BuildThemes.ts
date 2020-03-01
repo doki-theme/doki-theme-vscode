@@ -7,10 +7,22 @@ const repoDirectory = path.resolve(__dirname, '..');
 
 const fs = require('fs');
 
-const definitionDirectoryPath =
+const masterThemeDefinitionDirectoryPath =
+  path.resolve(repoDirectory, 'masterThemes');
+const vsCodeDefinitionDirectoryPath =
   path.resolve(repoDirectory, 'themes', 'definitions');
 const templateDirectoryPath =
   path.resolve(repoDirectory, 'themes', 'templates');
+
+
+  const swapMasterThemeForLocalTheme = 
+  (masterDokiThemeDefinitionPath: string): string => {
+    const masterThemeFilePath = 
+      masterDokiThemeDefinitionPath.substring(
+        masterThemeDefinitionDirectoryPath.toString().length
+        );
+    return `${vsCodeDefinitionDirectoryPath}${masterThemeFilePath}`;
+  };
 
 function walkDir(dir: string): Promise<string[]> {
   const values: Promise<string[]>[] = fs.readdirSync(dir)
@@ -141,8 +153,8 @@ function resolveColor(
     const namedColor =
       color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
     const namedColorValue = namedColors[namedColor];
-    if(!namedColorValue) {
-      throw new Error(`Named color: '${namedColor}' is not present!`)
+    if (!namedColorValue) {
+      throw new Error(`Named color: '${namedColor}' is not present!`);
     }
 
     // todo: check for cyclic references
@@ -305,7 +317,7 @@ function createDokiTheme(
     readJson(dokiFileDefinitonPath);
   try {
     return {
-      path: dokiFileDefinitonPath,
+      path: swapMasterThemeForLocalTheme(dokiFileDefinitonPath),
       definition: dokiThemeDefinition,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
@@ -372,7 +384,7 @@ console.log('Preparing to generate themes.');
 walkDir(templateDirectoryPath)
   .then(readTemplates)
   .then(dokiTemplateDefinitions => {
-    return walkDir(definitionDirectoryPath)
+    return walkDir(masterThemeDefinitionDirectoryPath)
       .then(files => files.filter(file => file.endsWith('doki.json')))
       .then(dokiFileDefinitionPaths => {
         return {
