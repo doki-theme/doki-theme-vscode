@@ -102,6 +102,7 @@ interface DokiThemeTemplateDefinition {
   dark: boolean;
   author: string;
   group: string;
+  product?: 'community' | 'ultimate';
   editorScheme: EditorScheme;
   stickers: Stickers;
   overrides: Overrides;
@@ -310,14 +311,13 @@ function buildVSCodeTheme(
 }
 
 function createDokiTheme(
-  dokiFileDefinitonPath: string,
+  dokiFileDefinitionPath: string,
+  dokiThemeDefinition: DokiThemeTemplateDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
-  const dokiThemeDefinition =
-    readJson(dokiFileDefinitonPath);
   try {
     return {
-      path: swapMasterThemeForLocalTheme(dokiFileDefinitonPath),
+      path: swapMasterThemeForLocalTheme(dokiFileDefinitionPath),
       definition: dokiThemeDefinition,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
@@ -329,7 +329,7 @@ function createDokiTheme(
   }
 }
 
-const readJson = (jsonPath: string) =>
+const readJson = <T>(jsonPath: string): T =>
   JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
 type TemplateTypes = StringDictonary<StringDictonary<string>>;
@@ -339,7 +339,7 @@ const readTemplates = (templatePaths: string[]): TemplateTypes => {
     .map(templatePath => {
       return {
         type: getTemplateType(templatePath),
-        template: readJson(templatePath)
+        template: readJson<any>(templatePath)
       };
     })
     .reduce((accum: TemplateTypes, templateRepresentation) => {
@@ -398,10 +398,23 @@ walkDir(templateDirectoryPath)
       dokiTemplateDefinitions,
       dokiFileDefinitionPaths
     } = templatesAndDefinitions;
-    return dokiFileDefinitionPaths.map(
-      dokiFileDefinitonPath =>
+    return dokiFileDefinitionPaths
+    .map(dokiFileDefinitionPath => ({
+      dokiFileDefinitionPath,
+      dokiThemeDefinition: readJson<DokiThemeTemplateDefinition>(dokiFileDefinitionPath),
+    }))
+    .filter(pathAndDefinition =>
+      (pathAndDefinition.dokiThemeDefinition.product === 'ultimate' &&
+        process.env.PRODUCT === 'ultimate') ||
+      pathAndDefinition.dokiThemeDefinition.product !== 'ultimate'
+    )
+    .map(({
+        dokiFileDefinitionPath,
+        dokiThemeDefinition,
+      }) =>
         createDokiTheme(
-          dokiFileDefinitonPath,
+          dokiFileDefinitionPath,
+          dokiThemeDefinition,
           dokiTemplateDefinitions
         )
     );
@@ -448,7 +461,7 @@ walkDir(templateDirectoryPath)
     const dokiDefinitions = dokiThemes.map(d => d.definition);
     const packageJsonPath =
       path.resolve(repoDirectory, 'package.json');
-    const packageJson = readJson(packageJsonPath);
+    const packageJson = readJson<any>(packageJsonPath);
     const activationEvents =
       dokiDefinitions.map(dokiDefinition =>
         `onCommand:${getCommandName(dokiDefinition)}`
