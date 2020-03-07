@@ -7,10 +7,22 @@ const repoDirectory = path.resolve(__dirname, '..');
 
 const fs = require('fs');
 
-const definitionDirectoryPath =
+const masterThemeDefinitionDirectoryPath =
+  path.resolve(repoDirectory, 'masterThemes');
+const vsCodeDefinitionDirectoryPath =
   path.resolve(repoDirectory, 'themes', 'definitions');
 const templateDirectoryPath =
   path.resolve(repoDirectory, 'themes', 'templates');
+
+
+  const swapMasterThemeForLocalTheme = 
+  (masterDokiThemeDefinitionPath: string): string => {
+    const masterThemeFilePath = 
+      masterDokiThemeDefinitionPath.substring(
+        masterThemeDefinitionDirectoryPath.toString().length
+        );
+    return `${vsCodeDefinitionDirectoryPath}${masterThemeFilePath}`;
+  };
 
 function walkDir(dir: string): Promise<string[]> {
   const values: Promise<string[]>[] = fs.readdirSync(dir)
@@ -90,6 +102,7 @@ interface DokiThemeTemplateDefinition {
   dark: boolean;
   author: string;
   group: string;
+  product?: 'community' | 'ultimate';
   editorScheme: EditorScheme;
   stickers: Stickers;
   overrides: Overrides;
@@ -141,8 +154,8 @@ function resolveColor(
     const namedColor =
       color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
     const namedColorValue = namedColors[namedColor];
-    if(!namedColorValue) {
-      throw new Error(`Named color: '${namedColor}' is not present!`)
+    if (!namedColorValue) {
+      throw new Error(`Named color: '${namedColor}' is not present!`);
     }
 
     // todo: check for cyclic references
@@ -298,14 +311,13 @@ function buildVSCodeTheme(
 }
 
 function createDokiTheme(
-  dokiFileDefinitonPath: string,
+  dokiFileDefinitionPath: string,
+  dokiThemeDefinition: DokiThemeTemplateDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
-  const dokiThemeDefinition =
-    readJson(dokiFileDefinitonPath);
   try {
     return {
-      path: dokiFileDefinitonPath,
+      path: swapMasterThemeForLocalTheme(dokiFileDefinitionPath),
       definition: dokiThemeDefinition,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
@@ -317,7 +329,7 @@ function createDokiTheme(
   }
 }
 
-const readJson = (jsonPath: string) =>
+const readJson = <T>(jsonPath: string): T =>
   JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
 type TemplateTypes = StringDictonary<StringDictonary<string>>;
@@ -327,7 +339,7 @@ const readTemplates = (templatePaths: string[]): TemplateTypes => {
     .map(templatePath => {
       return {
         type: getTemplateType(templatePath),
-        template: readJson(templatePath)
+        template: readJson<any>(templatePath)
       };
     })
     .reduce((accum: TemplateTypes, templateRepresentation) => {
@@ -372,7 +384,7 @@ console.log('Preparing to generate themes.');
 walkDir(templateDirectoryPath)
   .then(readTemplates)
   .then(dokiTemplateDefinitions => {
-    return walkDir(definitionDirectoryPath)
+    return walkDir(masterThemeDefinitionDirectoryPath)
       .then(files => files.filter(file => file.endsWith('doki.json')))
       .then(dokiFileDefinitionPaths => {
         return {
@@ -386,10 +398,23 @@ walkDir(templateDirectoryPath)
       dokiTemplateDefinitions,
       dokiFileDefinitionPaths
     } = templatesAndDefinitions;
-    return dokiFileDefinitionPaths.map(
-      dokiFileDefinitonPath =>
+    return dokiFileDefinitionPaths
+    .map(dokiFileDefinitionPath => ({
+      dokiFileDefinitionPath,
+      dokiThemeDefinition: readJson<DokiThemeTemplateDefinition>(dokiFileDefinitionPath),
+    }))
+    .filter(pathAndDefinition =>
+      (pathAndDefinition.dokiThemeDefinition.product === 'ultimate' &&
+        process.env.PRODUCT === 'ultimate') ||
+      pathAndDefinition.dokiThemeDefinition.product !== 'ultimate'
+    )
+    .map(({
+        dokiFileDefinitionPath,
+        dokiThemeDefinition,
+      }) =>
         createDokiTheme(
-          dokiFileDefinitonPath,
+          dokiFileDefinitionPath,
+          dokiThemeDefinition,
           dokiTemplateDefinitions
         )
     );
@@ -436,7 +461,7 @@ walkDir(templateDirectoryPath)
     const dokiDefinitions = dokiThemes.map(d => d.definition);
     const packageJsonPath =
       path.resolve(repoDirectory, 'package.json');
-    const packageJson = readJson(packageJsonPath);
+    const packageJson = readJson<any>(packageJsonPath);
     const activationEvents =
       dokiDefinitions.map(dokiDefinition =>
         `onCommand:${getCommandName(dokiDefinition)}`

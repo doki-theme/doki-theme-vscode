@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.1 [Non-Functional]
+
+- Migrated theme build process to centralized management strategy.
+
 ## 1.0.0 [Initial Release!]
 
 - 14 Color Themes based on characters from various anime and visual novels.
