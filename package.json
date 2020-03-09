@@ -4,6 +4,7 @@
   "description": "Themes based on various anime and visual novel characters.",
   "publisher": "unthrottled",
   "version": "1.0.1",
+  "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
     "color": "#578CDA",
@@ -199,9 +200,11 @@
   },
   "scripts": {
     "package": "vsce package",
+    "package:ultimate": "PRODUCT=ultimate yarn package",
     "vscode:prepublish": "yarn run compile",
     "vscode:uninstall": "node ./out/Cleanup.js",
     "buildThemes": "ts-node ./buildSrc/BuildThemes.ts",
+    "buildThemes:ultimate": "PRODUCT=ultimate yarn buildThemes",
     "precompile": "yarn buildThemes",
     "prewatch": "yarn buildThemes",
     "compile": "tsc -p ./",

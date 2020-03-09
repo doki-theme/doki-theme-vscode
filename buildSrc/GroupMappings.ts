@@ -6,6 +6,7 @@ const GroupToNameMapping: StringDictonary<string> = {
   "Re Zero": "Re:Zero: ",
   "Literature Club": "DDLC: ",
   "KonoSuba": "KonoSuba: ",
+  "Mistress": "Miss: ",
 };
 
 export default GroupToNameMapping;
