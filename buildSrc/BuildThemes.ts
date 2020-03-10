@@ -8,7 +8,7 @@ const repoDirectory = path.resolve(__dirname, '..');
 const fs = require('fs');
 
 const masterThemeDefinitionDirectoryPath =
-  path.resolve(repoDirectory, 'masterThemes');
+  path.resolve(repoDirectory, 'masterThemes','definitions');
 const vsCodeDefinitionDirectoryPath =
   path.resolve(repoDirectory, 'themes', 'definitions');
 const templateDirectoryPath =
@@ -95,7 +95,17 @@ interface Stickers {
   normal?: string;
 }
 
-interface DokiThemeTemplateDefinition {
+export interface VSCodeDokiThemeDefinition {
+  id: string;
+  overrides: Overrides;
+  laf: {
+    extends: string;
+    ui: StringDictonary<string>
+  };
+  syntax: {};
+  colors: {};
+}
+export interface MasterDokiThemeDefinition {
   id: string;
   name: string;
   displayName: string;
@@ -103,18 +113,12 @@ interface DokiThemeTemplateDefinition {
   author: string;
   group: string;
   product?: 'community' | 'ultimate';
-  editorScheme: EditorScheme;
   stickers: Stickers;
-  overrides: Overrides;
   colors: StringDictonary<string>;
-  ui: StringDictonary<string>;
-  icons: StringDictonary<string>;
-  vsCode?: VSCodeDefinitions;
-
 }
 
 function getThemeType(
-  dokiThemeTemplateJson: DokiThemeTemplateDefinition
+  dokiThemeTemplateJson: MasterDokiThemeDefinition
 ) {
   return dokiThemeTemplateJson.dark ?
     "dark" : "light";
@@ -195,13 +199,14 @@ function applyNamedColors(
 }
 
 function buildLAFColors(
-  dokiThemeTemplateJson: DokiThemeTemplateDefinition,
+  dokiThemeTemplateJson: MasterDokiThemeDefinition,
+  dokiVSCodeThemeTemplateJson: VSCodeDokiThemeDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
   const lafTemplate =
-    dokiThemeTemplateJson.vsCode ?
-      dokiThemeTemplateJson.vsCode.laf :
+    dokiVSCodeThemeTemplateJson.laf.extends ?
+      dokiVSCodeThemeTemplateJson.laf :
       (dokiThemeTemplateJson.dark ?
         lafTemplates.dark : lafTemplates.light);
 
@@ -225,7 +230,7 @@ function buildLAFColors(
 
 function resolveNamedColors(
   dokiTemplateDefinitions: DokiThemeDefinitions,
-  dokiThemeTemplateJson: DokiThemeTemplateDefinition
+  dokiThemeTemplateJson: MasterDokiThemeDefinition
 ) {
   const colorTemplates = dokiTemplateDefinitions[NAMED_COLOR_TYPE];
   return resolveTemplate(
@@ -253,12 +258,13 @@ function getSyntaxColor(
 }
 
 function buildSyntaxColors(
-  dokiThemeTemplateJson: DokiThemeTemplateDefinition,
+  dokiThemeTemplateJson: MasterDokiThemeDefinition,
+  dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   const syntaxTemplate: any[] = dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
 
-  const overrides = dokiThemeTemplateJson.vsCode?.overrides?.editorScheme?.colors || {};
+  const overrides = dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {
     ...resolveNamedColors(
       dokiTemplateDefinitions, dokiThemeTemplateJson
@@ -294,17 +300,20 @@ function buildSyntaxColors(
 }
 
 function buildVSCodeTheme(
-  dokiThemeDefinition: DokiThemeTemplateDefinition,
+  dokiThemeDefinition: MasterDokiThemeDefinition,
+  dokiThemeVSCodeDefinition: VSCodeDokiThemeDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   return {
     type: getThemeType(dokiThemeDefinition),
     colors: buildLAFColors(
       dokiThemeDefinition,
+      dokiThemeVSCodeDefinition,
       dokiTemplateDefinitions
     ),
     tokenColors: buildSyntaxColors(
       dokiThemeDefinition,
+      dokiThemeVSCodeDefinition,
       dokiTemplateDefinitions
     )
   };
@@ -312,7 +321,8 @@ function buildVSCodeTheme(
 
 function createDokiTheme(
   dokiFileDefinitionPath: string,
-  dokiThemeDefinition: DokiThemeTemplateDefinition,
+  dokiThemeDefinition: MasterDokiThemeDefinition,
+  dokiThemeVSCodeDefinition: VSCodeDokiThemeDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   try {
@@ -321,6 +331,7 @@ function createDokiTheme(
       definition: dokiThemeDefinition,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
+        dokiThemeVSCodeDefinition,
         dokiTemplateDefinitions
       )
     };
@@ -357,7 +368,7 @@ const base64Img = require('base64-img');
 
 function readSticker(
   themeDefinitonPath: string,
-  themeDefinition: DokiThemeTemplateDefinition,
+  themeDefinition: MasterDokiThemeDefinition,
 ) {
   const stickerPath = path.resolve(
     path.resolve(themeDefinitonPath, '..'),
@@ -366,7 +377,7 @@ function readSticker(
   return base64Img.base64Sync(stickerPath);
 }
 
-function getThemeGroup(dokiDefinition: DokiThemeTemplateDefinition) {
+function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
   const themeGroup = dokiDefinition.group;
   const groupMapping = GroupToNameMapping[themeGroup];
 
@@ -385,7 +396,7 @@ walkDir(templateDirectoryPath)
   .then(readTemplates)
   .then(dokiTemplateDefinitions => {
     return walkDir(masterThemeDefinitionDirectoryPath)
-      .then(files => files.filter(file => file.endsWith('doki.json')))
+      .then(files => files.filter(file => file.endsWith('master.definition.json')))
       .then(dokiFileDefinitionPaths => {
         return {
           dokiTemplateDefinitions,
@@ -401,7 +412,7 @@ walkDir(templateDirectoryPath)
     return dokiFileDefinitionPaths
     .map(dokiFileDefinitionPath => ({
       dokiFileDefinitionPath,
-      dokiThemeDefinition: readJson<DokiThemeTemplateDefinition>(dokiFileDefinitionPath),
+      dokiThemeDefinition: readJson<MasterDokiThemeDefinition>(dokiFileDefinitionPath),
     }))
     .filter(pathAndDefinition =>
       (pathAndDefinition.dokiThemeDefinition.product === 'ultimate' &&
@@ -528,6 +539,6 @@ walkDir(templateDirectoryPath)
     console.log('Theme Generation Complete!');
   });
 
-function getCommandName(dokiDefinition: DokiThemeTemplateDefinition) {
+function getCommandName(dokiDefinition: MasterDokiThemeDefinition) {
   return `extension.theme.${dokiDefinition.name}`;
 }
