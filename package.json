@@ -28,6 +28,8 @@
     "*",
     "onCommand:extension.doki.changelog",
     "onCommand:extension.remove.sticker",
+    "onCommand:extension.theme.Mioda Ibuki Dark",
+    "onCommand:extension.theme.Mioda Ibuki Light",
     "onCommand:extension.theme.Ryuko",
     "onCommand:extension.theme.Satsuki",
     "onCommand:extension.theme.Megumin",
@@ -39,7 +41,10 @@
     "onCommand:extension.theme.Sayori Light",
     "onCommand:extension.theme.Yuri Dark",
     "onCommand:extension.theme.Yuri Light",
+    "onCommand:extension.theme.Hatsune Miku",
     "onCommand:extension.theme.Beatrice",
+    "onCommand:extension.theme.Emilia Dark",
+    "onCommand:extension.theme.Emilia Light",
     "onCommand:extension.theme.Ram",
     "onCommand:extension.theme.Rem"
   ],
@@ -53,6 +58,14 @@
       {
         "command": "extension.remove.sticker",
         "title": "Doki-Theme: Remove Sticker/Background"
+      },
+      {
+        "command": "extension.theme.Mioda Ibuki Dark",
+        "title": "Doki-Theme: Install Mioda Ibuki Dark's Stickers"
+      },
+      {
+        "command": "extension.theme.Mioda Ibuki Light",
+        "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
       },
       {
         "command": "extension.theme.Ryuko",
@@ -99,8 +112,20 @@
         "title": "Doki-Theme: Install Yuri Light's Stickers"
       },
       {
+        "command": "extension.theme.Hatsune Miku",
+        "title": "Doki-Theme: Install Hatsune Miku's Stickers"
+      },
+      {
         "command": "extension.theme.Beatrice",
         "title": "Doki-Theme: Install Beatrice's Stickers"
+      },
+      {
+        "command": "extension.theme.Emilia Dark",
+        "title": "Doki-Theme: Install Emilia Dark's Stickers"
+      },
+      {
+        "command": "extension.theme.Emilia Light",
+        "title": "Doki-Theme: Install Emilia Light's Stickers"
       },
       {
         "command": "extension.theme.Ram",
@@ -112,6 +137,18 @@
       }
     ],
     "themes": [
+      {
+        "id": "420b0ed5-803c-4127-97e3-dae6aa1a5972",
+        "label": "Doki Theme: DR:  Ibuki",
+        "path": "./generatedThemes/Mioda Ibuki Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "697e8564-0975-4907-a34c-51f65177ebf3",
+        "label": "Doki Theme: DR:  Ibuki",
+        "path": "./generatedThemes/Mioda Ibuki Light.theme.json",
+        "uiTheme": "vs"
+      },
       {
         "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
         "label": "Doki Theme: KillLaKill:  Ryuko",
@@ -179,9 +216,27 @@
         "uiTheme": "vs"
       },
       {
+        "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
+        "label": "Doki Theme: Misc:  Miku",
+        "path": "./generatedThemes/Hatsune Miku.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "35422aa4-1396-4e76-8ec6-c5560884df22",
         "label": "Doki Theme: Re:Zero:  Beatrice",
         "path": "./generatedThemes/Beatrice.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "696de7c1-3a8e-4445-83ee-3eb7e9dca47f",
+        "label": "Doki Theme: Re:Zero:  Emilia",
+        "path": "./generatedThemes/Emilia Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "e828aaae-aa8c-4084-8993-d64697146930",
+        "label": "Doki Theme: Re:Zero:  Emilia",
+        "path": "./generatedThemes/Emilia Light.theme.json",
         "uiTheme": "vs"
       },
       {
