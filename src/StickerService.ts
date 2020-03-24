@@ -30,7 +30,7 @@ function getVsCodeCss() {
 
 function buildStickerCss(dokiTheme: DokiTheme): string {
   const stickerUrl = dokiTheme.sticker.url;
-  const backgroundImage = dokiTheme.name.toLowerCase();
+  const backgroundImage = dokiTheme.sticker.name;
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `
   /* Stickers */
@@ -38,7 +38,7 @@ function buildStickerCss(dokiTheme: DokiTheme): string {
 
   /* Background Image */
   .monaco-workbench .part.editor > .content {
-    background-image: url('https://doki.assets.acari.io/backgrounds/${backgroundImage}.png') !important;
+    background-image: url('https://doki.assets.acari.io/backgrounds/${backgroundImage}') !important;
     background-position: center;
     background-size: cover;
     content:'';

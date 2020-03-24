@@ -474,10 +474,13 @@ walkDir(templateDirectoryPath)
           'ui',
           'icons'
         ]),
-        sticker: readSticker(
-          dokiTheme.path,
-          dokiDefinition
-        ),
+        sticker: {
+          url: readSticker(
+            dokiTheme.path,
+            dokiDefinition
+          ),
+          name: dokiDefinition.stickers.default,
+        },
       }
     };
   });
