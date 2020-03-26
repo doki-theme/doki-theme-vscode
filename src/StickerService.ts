@@ -14,7 +14,7 @@ const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
   const currentCss = fs.readFileSync(editorCss, 'utf-8');
-  return currentCss.indexOf('https://doki.assets.acari.io') < 0;
+  return currentCss.indexOf('https://doki.assets.unthrottled.io') < 0;
 }
 
 function ensureRightCssCopy() {
@@ -38,7 +38,7 @@ function buildStickerCss(dokiTheme: DokiTheme): string {
 
   /* Background Image */
   .monaco-workbench .part.editor > .content {
-    background-image: url('https://doki.assets.acari.io/backgrounds/${backgroundImage}') !important;
+    background-image: url('https://doki.assets.unthrottled.io/backgrounds/${backgroundImage}') !important;
     background-position: center;
     background-size: cover;
     content:'';

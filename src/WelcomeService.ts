@@ -67,7 +67,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                <h2>Sample Usage</h2>
                 <img 
                 style="z-index: 9001;"
-                src="https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
+                src="https://doki.assets.unthrottled.io/screenshots/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
                 Steps Demonstrated:
                 <ol>
                     <li>Choose Color Theme</li>

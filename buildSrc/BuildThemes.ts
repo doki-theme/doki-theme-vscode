@@ -376,7 +376,7 @@ function readSticker(
     themeDefinition.stickers.normal || themeDefinition.stickers.default
   );
   const stickerDefinition = stickerPath.substr(vsCodeDefinitionDirectoryPath.length);
-  return `https://doki.assets.acari.io/stickers/vscode${stickerDefinition}`;
+  return `https://doki.assets.unthrottled.io/stickers/vscode${stickerDefinition}`;
 }
 
 function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
