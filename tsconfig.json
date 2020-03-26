@@ -19,6 +19,7 @@
 	"exclude": [
 		"node_modules",
 		"buildSrc",
-		".vscode-test"
+		".vscode-test",
+		"masterThemes"
 	]
 }

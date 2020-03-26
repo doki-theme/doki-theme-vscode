@@ -8,7 +8,10 @@ import { attemptToNotifyUpdates } from './NotificationService';
 import { showChanglog } from './ChangelogService';
 
 export interface DokiThemeDefinition {
-	sticker: string;
+	sticker: {
+		url: string;
+		name: string;
+	};
 	information: any;
 }
 

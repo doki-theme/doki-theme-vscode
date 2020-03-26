@@ -2,7 +2,7 @@
 
 # Feature Preview
 
-![Rem's Theme Usage](https://doki.assets.acari.io/screenshots/doki-theme-vscode-usage.gif)
+![Rem's Theme Usage](https://doki.assets.unthrottled.io/screenshots/doki-theme-vscode-usage.gif)
 
 Steps demonstrated:
 1. Choose Color Theme
@@ -62,5 +62,5 @@ Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? T
 ---
 
 <div align="center">
-    <img src="https://doki.assets.acari.io/misc/logo.png" alt="Doki Theme"></img>
+    <img src="https://doki.assets.unthrottled.io/misc/logo.png" alt="Doki Theme"></img>
 </div>
