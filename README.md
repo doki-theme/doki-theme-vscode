@@ -43,7 +43,11 @@ Help make this plugin better!
 
 # More!
 
+## JetBrains IDEs
+
 Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? Then be sure to install [the JetBrain's Doki Theme plugin as well!](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme)
+
+## Hyper
 
 Enhance your command line experience! Install [the Doki Theme for Hyper!](https://github.com/Unthrottled/doki-theme-hyper)
 
