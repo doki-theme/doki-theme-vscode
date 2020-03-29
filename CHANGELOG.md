@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.0.1 [Code Server Support]
+
+- Stickers/background can be installed on VSCode running on Code Server.
+
 ## 2.0.0 [New Themes!]
 
 - Added 5 new themes based on various new characters!

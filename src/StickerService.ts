@@ -8,8 +8,16 @@ export enum InstallStatus {
 
 const main = require.main || { filename: 'yeet' };
 export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
-const editorCss = path.join(workbenchDirectory, 'workbench.desktop.main.css');
-const editorCssCopy = path.join(workbenchDirectory, 'workbench.desktop.main.css.copy');
+
+const getFileName = () => {
+  return fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`)) ?
+   'desktop.main' : 'web.api';
+};
+
+const fileName = getFileName();
+
+const editorCss = path.join(workbenchDirectory, `workbench.${fileName}.css`);
+const editorCssCopy = path.join(workbenchDirectory, `workbench.${fileName}.css.copy`);
 
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
