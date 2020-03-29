@@ -12,25 +12,16 @@ Steps demonstrated:
 
 ## About!
 
-Hey! Before we go any further, I would like to ask you a couple of questions:
+With well over **10 themes** (light and dark) I think you will be able to find your favorite.
+You can even find a theme that fits your mood for the day.
 
--  Do you need a bit more spice in your development life?
--  Are Light or Dark themes your thing?
--  Is your tolerance for all things moe, high?
--  Do you like stickers?
--  Is having a lot of choices a must?
-
-Well look no further friend, **I've got what you are looking for!**
-
-With over 10 themes (light and dark) I think you will be able to find your favorite.
-You can even find one that fits your mood for the day.
-
-You can choose themes from the following Doki-Doki Theme Suites:
+Variety is the spice of life! So you can choose themes from the following Doki-Doki Theme Suites:
 
 - Doki-Doki Literature Club
 - Re:Zero
 - Kill La Kill
 - KonoSuba
+- DanganRonpa
 
 Too distracted by the sticker in the corner of your IDE?
 No worries! You can configure them to be on or off at your leisure.
@@ -53,6 +44,8 @@ Help make this plugin better!
 # More!
 
 Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? Then be sure to install [the JetBrain's Doki Theme plugin as well!](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme)
+
+Enhance your command line experience! Install [the Doki Theme for Hyper!](https://github.com/Unthrottled/doki-theme-hyper)
 
 ---
 <div align="center">
