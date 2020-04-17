@@ -27,18 +27,18 @@ async function attemptToInstall(
 
     if (result && result.title === stickerInstall) {
       context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
-      const installStatus = performStickerInstall(dokiTheme);
+      const installStatus = performStickerInstall(dokiTheme, context);
       return installStatus;
     } else {
       return InstallStatus.NOT_INSTALLED;
     }
   } else {
-    return performStickerInstall(dokiTheme);
+    return performStickerInstall(dokiTheme, context);
   }
 }
 
-function performStickerInstall(dokiTheme: DokiTheme) {
-  const installResult = installSticker(dokiTheme);
+function performStickerInstall(dokiTheme: DokiTheme, context: vscode.ExtensionContext) {
+  const installResult = installSticker(dokiTheme, context);
   return installResult ? InstallStatus.INSTALLED :
     InstallStatus.FAILURE;
 }

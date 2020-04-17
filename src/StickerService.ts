@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
@@ -36,9 +37,10 @@ function getVsCodeCss() {
   return fs.readFileSync(editorCssCopy, 'utf-8');
 }
 
-function buildStickerCss(dokiTheme: DokiTheme): string {
-  const stickerUrl = dokiTheme.sticker.url;
-  const backgroundImage = dokiTheme.sticker.name;
+function buildStickerCss({
+  stickerDataURL: stickerUrl,
+  backgroundImageURL: backgroundImage
+}: DokiStickers): string {
   const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
   return `
   /* Stickers */
@@ -59,9 +61,9 @@ function buildStickerCss(dokiTheme: DokiTheme): string {
 `;
 }
 
-function buildStyles(dokiTheme: DokiTheme): string {
+function buildStyles(dokiStickers: DokiStickers): string {
   let vsCodeCss = getVsCodeCss();
-  return vsCodeCss + buildStickerCss(dokiTheme);
+  return vsCodeCss + buildStickerCss(dokiStickers);
 
 }
 function installEditorStyles(styles: string) {
@@ -77,9 +79,31 @@ function canWrite(): boolean {
   }
 }
 
-export function installSticker(dokiTheme: DokiTheme): boolean {
+export interface DokiStickers {
+  stickerDataURL: string;
+  backgroundImageURL: string;
+}
+
+export function getLatestStickerAndBackground(
+  dokiTheme: DokiTheme,
+  context: vscode.ExtensionContext,
+  ): DokiStickers {
+    return {
+      stickerDataURL: dokiTheme.sticker.url,
+      backgroundImageURL: dokiTheme.sticker.name
+    }
+}
+
+export function installSticker(
+  dokiTheme: DokiTheme,
+  context: vscode.ExtensionContext,
+  ): boolean {
   if (canWrite()) {
-    const stickerStyles = buildStyles(dokiTheme);
+    const stickersAndBackground = getLatestStickerAndBackground(
+      dokiTheme,
+      context
+    );
+    const stickerStyles = buildStyles(stickersAndBackground);
     installEditorStyles(stickerStyles);
     return true;
   } else {
