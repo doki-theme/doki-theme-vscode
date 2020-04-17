@@ -6,6 +6,7 @@ import { StatusBarComponent } from './StatusBar';
 import { VSCodeGlobals } from './VSCodeGlobals';
 import { attemptToNotifyUpdates } from './NotificationService';
 import { showChanglog } from './ChangelogService';
+import { attemptToUpdateSticker } from './StickerUpdateService';
 
 export interface DokiThemeDefinition {
 	sticker: {
@@ -42,6 +43,8 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(StatusBarComponent);
 
 	attemptToNotifyUpdates(context);
+	
+	attemptToUpdateSticker(context);
 
 	DokiThemeDefinitions
 		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
