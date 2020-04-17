@@ -10,7 +10,7 @@ import { attemptToUpdateSticker } from './StickerUpdateService';
 
 export interface DokiThemeDefinition {
 	sticker: {
-		url: string;
+		path: string;
 		name: string;
 	};
 	information: any;

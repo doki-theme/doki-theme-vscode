@@ -3,5 +3,5 @@ import { getCurrentTheme } from './ThemeManager';
 
 export const attemptToUpdateSticker = (context: vscode.ExtensionContext) => {
   const currentTheme = getCurrentTheme();
-  console.log(currentTheme.name);
+  console.log(currentTheme.name, context.globalStoragePath);
 };

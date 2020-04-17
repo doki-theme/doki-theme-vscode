@@ -365,9 +365,7 @@ const readTemplates = (templatePaths: string[]): TemplateTypes => {
     });
 };
 
-const base64Img = require('base64-img');
-
-function readSticker(
+function resolveStickerPath(
   themeDefinitonPath: string,
   themeDefinition: MasterDokiThemeDefinition,
 ) {
@@ -375,7 +373,7 @@ function readSticker(
     path.resolve(themeDefinitonPath, '..'),
     themeDefinition.stickers.normal || themeDefinition.stickers.default
   );
-  return base64Img.base64Sync(stickerPath);
+  return stickerPath.substring(vsCodeDefinitionDirectoryPath.length);
 }
 
 function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
@@ -475,7 +473,7 @@ walkDir(templateDirectoryPath)
           'icons'
         ]),
         sticker: {
-          url: readSticker(
+          path: resolveStickerPath(
             dokiTheme.path,
             dokiDefinition
           ),
@@ -484,7 +482,7 @@ walkDir(templateDirectoryPath)
       }
     };
   });
-  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
+  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions, null, 2);
   fs.writeFileSync(
     path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
     `export default ${finalDokiDefinitions};`);

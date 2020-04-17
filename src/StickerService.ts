@@ -91,7 +91,7 @@ export function getLatestStickerAndBackground(
     return {
       stickerDataURL: dokiTheme.sticker.url,
       backgroundImageURL: dokiTheme.sticker.name
-    }
+    };
 }
 
 export function installSticker(
