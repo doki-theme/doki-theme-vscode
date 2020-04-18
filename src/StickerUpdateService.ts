@@ -20,7 +20,7 @@ export const resolveLocalStickerPath = (
   context: vscode.ExtensionContext,
 ): string => {
   const safeStickerPath = currentTheme.sticker.path.replace('/', path.sep);
-  return path.join(context.globalStoragePath, safeStickerPath);
+  return path.join(context.globalStoragePath, 'stickers', safeStickerPath);
 };
 
 export function createChecksum(data: Buffer | string): string {
@@ -35,7 +35,8 @@ const calculateFileChecksum = (filePath: string): string => {
 };
 
 const fetchLocalChecksum = async (localSticker: string) => {
-  return fs.existsSync(localSticker) ? calculateFileChecksum(localSticker) : 'File not downloaded, bruv.';
+  return fs.existsSync(localSticker) ?
+    calculateFileChecksum(localSticker) : 'File not downloaded, bruv.';
 };
 
 export const isStickerNotCurrent = async (
@@ -52,7 +53,7 @@ export const isStickerNotCurrent = async (
   }
 };
 export enum StickerUpdateStatus {
-  CURRENT, STALE, NOT_CHECKED, 
+  CURRENT, STALE, NOT_CHECKED,
 }
 
 export const attemptToUpdateSticker = async (context: vscode.ExtensionContext) => {

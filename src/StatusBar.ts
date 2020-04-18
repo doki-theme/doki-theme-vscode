@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { VSCodeGlobals } from './VSCodeGlobals';
-import { ACTIVE_THEME } from './ThemeManager';
+import { ACTIVE_THEME, getCurrentTheme } from './ThemeManager';
+import DokiThemeDefinitions from './DokiThemeDefinitions';
 
 
 class StatusBar implements vscode.Disposable {
@@ -16,10 +17,8 @@ class StatusBar implements vscode.Disposable {
     }
 
     initialize() {
-        const savedTheme: string | undefined = VSCodeGlobals.globalState.get(ACTIVE_THEME);
-        if (savedTheme) {
-            this.setText(savedTheme);
-        }
+        const currentTheme = getCurrentTheme()
+        this.setText(currentTheme.displayName);
     }
 
     dispose() {

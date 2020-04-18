@@ -482,7 +482,7 @@ walkDir(templateDirectoryPath)
       }
     };
   });
-  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions, null, 2);
+  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
   fs.writeFileSync(
     path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
     `export default ${finalDokiDefinitions};`);
