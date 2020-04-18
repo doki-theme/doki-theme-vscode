@@ -46,8 +46,6 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	attemptToUpdateSticker(context);
 
-
-
 	DokiThemeDefinitions
 		.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
 			vscode.commands.registerCommand(
