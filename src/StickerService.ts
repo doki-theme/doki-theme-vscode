@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
-import { resolveLocalStickerPath, isStickerCurrent, buildRemoteStickerPath, StickerUpdateStatus } from "./StickerUpdateService";
+import { resolveLocalStickerPath, isStickerNotCurrent, StickerUpdateStatus } from "./StickerUpdateService";
 import { performGet } from "./RESTClient";
 import { ASSETS_URL, BACKGROUND_ASSETS_URL, VSCODE_ASSETS_URL } from "./ENV";
 
@@ -114,7 +114,7 @@ export async function getLatestStickerAndBackground(
   );
   if (stickerStatus === StickerUpdateStatus.STALE || 
     !fs.existsSync(localStickerPath) ||
-    !(await isStickerCurrent(dokiTheme, localStickerPath))) {
+    await isStickerNotCurrent(dokiTheme, localStickerPath)) {
     await downloadSticker(dokiTheme.sticker.path, localStickerPath);
   }
 

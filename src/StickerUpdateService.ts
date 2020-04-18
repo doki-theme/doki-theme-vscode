@@ -38,7 +38,7 @@ const fetchLocalChecksum = async (localSticker: string) => {
   return fs.existsSync(localSticker) ? calculateFileChecksum(localSticker) : 'File not downloaded, bruv.';
 };
 
-export const isStickerCurrent = async (
+export const isStickerNotCurrent = async (
   dokiTheme: DokiTheme,
   localStickerPath: string
 ): Promise<boolean> => {
@@ -58,7 +58,7 @@ export enum StickerUpdateStatus {
 export const attemptToUpdateSticker = async (context: vscode.ExtensionContext) => {
   const currentTheme = getCurrentTheme();
   const localStickerPath = resolveLocalStickerPath(currentTheme, context);
-  if (await isStickerCurrent(currentTheme, localStickerPath)) {
+  if (await isStickerNotCurrent(currentTheme, localStickerPath)) {
     await installSticker(currentTheme, context, StickerUpdateStatus.STALE);
   }
 };
