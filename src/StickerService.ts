@@ -89,7 +89,7 @@ export function getLatestStickerAndBackground(
   context: vscode.ExtensionContext,
   ): DokiStickers {
     return {
-      stickerDataURL: dokiTheme.sticker.url,
+      stickerDataURL: dokiTheme.sticker.path,
       backgroundImageURL: dokiTheme.sticker.name
     };
 }

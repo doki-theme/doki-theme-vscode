@@ -11,13 +11,13 @@ export class DokiTheme {
     this.displayName = dokiThemeDefinition.information.displayName;
     this.id = dokiThemeDefinition.information.id;
     this.sticker = {
-      url: dokiThemeDefinition.sticker.path,
+      path: dokiThemeDefinition.sticker.path,
       name: dokiThemeDefinition.sticker.name
     };
   }
 }
 
 export interface Sticker {
-  url: string;
+  path: string;
   name: string;
 }
