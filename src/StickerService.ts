@@ -2,6 +2,9 @@ import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
+import { resolveLocalStickerPath, isStickerCurrent, buildRemoteStickerPath, StickerUpdateStatus } from "./StickerUpdateService";
+import { performGet } from "./RESTClient";
+import { ASSETS_URL, BACKGROUND_ASSETS_URL, VSCODE_ASSETS_URL } from "./ENV";
 
 export enum InstallStatus {
   INSTALLED, NOT_INSTALLED, FAILURE
@@ -12,7 +15,7 @@ export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', '
 
 const getFileName = () => {
   return fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`)) ?
-   'desktop.main' : 'web.api';
+    'desktop.main' : 'web.api';
 };
 
 const fileName = getFileName();
@@ -23,7 +26,7 @@ const editorCssCopy = path.join(workbenchDirectory, `workbench.${fileName}.css.c
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
   const currentCss = fs.readFileSync(editorCss, 'utf-8');
-  return currentCss.indexOf('https://doki.assets.unthrottled.io') < 0;
+  return currentCss.indexOf(ASSETS_URL) < 0;
 }
 
 function ensureRightCssCopy() {
@@ -48,7 +51,7 @@ function buildStickerCss({
 
   /* Background Image */
   .monaco-workbench .part.editor > .content {
-    background-image: url('https://doki.assets.unthrottled.io/backgrounds/${backgroundImage}') !important;
+    background-image: url('${BACKGROUND_ASSETS_URL}/${backgroundImage}') !important;
     background-position: center;
     background-size: cover;
     content:'';
@@ -84,31 +87,65 @@ export interface DokiStickers {
   backgroundImageURL: string;
 }
 
-export function getLatestStickerAndBackground(
+const downloadSticker = async (stickerPath: string, localDestination: string) => {
+  const parentDirectory = path.dirname(localDestination);
+  if (!fs.existsSync(parentDirectory)) {
+    fs.mkdirSync(parentDirectory, { recursive: true });
+  }
+
+  const stickerUrl = `${VSCODE_ASSETS_URL}${stickerPath}`;
+  console.log(`Downloading image: ${stickerUrl}`);
+  const stickerInputStream = await performGet(stickerUrl);
+  fs.writeFileSync(localDestination, stickerInputStream.read());
+};
+
+const readFileToDataURL = (localStickerPath: string): string => {
+  const base64ImageString = fs.readFileSync(localStickerPath, {encoding: 'base64'});
+  return `data:image/png;base64,${base64ImageString}`;
+};
+
+export async function getLatestStickerAndBackground(
   dokiTheme: DokiTheme,
   context: vscode.ExtensionContext,
-  ): DokiStickers {
-    return {
-      stickerDataURL: dokiTheme.sticker.path,
-      backgroundImageURL: dokiTheme.sticker.name
-    };
+  stickerStatus: StickerUpdateStatus
+): Promise<DokiStickers> {
+  const localStickerPath = resolveLocalStickerPath(
+    dokiTheme, context
+  );
+  if (stickerStatus === StickerUpdateStatus.STALE || 
+    !fs.existsSync(localStickerPath) ||
+    !(await isStickerCurrent(dokiTheme, localStickerPath))) {
+    await downloadSticker(dokiTheme.sticker.path, localStickerPath);
+  }
+
+  const stickerDataURL = readFileToDataURL(localStickerPath);
+  return {
+    stickerDataURL,
+    backgroundImageURL: dokiTheme.sticker.name
+  };
 }
 
-export function installSticker(
+export async function installSticker(
   dokiTheme: DokiTheme,
   context: vscode.ExtensionContext,
-  ): boolean {
+  stickerStatus: StickerUpdateStatus = StickerUpdateStatus.NOT_CHECKED
+): Promise<boolean> {
   if (canWrite()) {
-    const stickersAndBackground = getLatestStickerAndBackground(
-      dokiTheme,
-      context
-    );
-    const stickerStyles = buildStyles(stickersAndBackground);
-    installEditorStyles(stickerStyles);
-    return true;
-  } else {
-    return false;
+    try {
+      const stickersAndBackground = await getLatestStickerAndBackground(
+        dokiTheme,
+        context,
+        stickerStatus
+      );
+      const stickerStyles = buildStyles(stickersAndBackground);
+      installEditorStyles(stickerStyles);
+      return true;
+    } catch (e) {
+      console.error('Unable to install sticker!', e);
+    }
   }
+
+  return false;
 }
 
 // :(

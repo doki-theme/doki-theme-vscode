@@ -6,9 +6,12 @@ import { DokiTheme } from './DokiTheme';
 import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
+import { VSCODE_ASSETS_URL } from './ENV';
 
 const fetchRemoteChecksum = async (currentTheme: DokiTheme) => {
-  const checkSumInputStream = await performGet('https://doki.assets.acari.io/stickers/vscode/reZero/rem/rem.png.checksum.txt');
+  const checksumUrl = `${VSCODE_ASSETS_URL}${currentTheme.sticker.path}.checksum.txt`;
+  console.log(`Fetching checksum: ${checksumUrl}`);
+  const checkSumInputStream = await performGet(checksumUrl);
   return checkSumInputStream.setEncoding('utf8').read();
 };
 
@@ -31,24 +34,31 @@ const calculateFileChecksum = (filePath: string): string => {
   return createChecksum(fileRead);
 };
 
-const fetchLocalChecksum = async (currentTheme: DokiTheme, context: vscode.ExtensionContext) => {
-  const localSticker = resolveLocalStickerPath(currentTheme, context);
-  return fs.existsSync(localSticker) ? calculateFileChecksum(localSticker) : 'Not a checksum, bruv.';  
+const fetchLocalChecksum = async (localSticker: string) => {
+  return fs.existsSync(localSticker) ? calculateFileChecksum(localSticker) : 'File not downloaded, bruv.';
 };
 
-export const attemptToUpdateSticker = async (context: vscode.ExtensionContext) => {
-  const currentTheme = getCurrentTheme();  
+export const isStickerCurrent = async (
+  dokiTheme: DokiTheme,
+  localStickerPath: string
+): Promise<boolean> => {
   try {
-    const remoteChecksum = await fetchRemoteChecksum(currentTheme);
-    const localChecksum = await fetchLocalChecksum(currentTheme, context);
-    console.log(remoteChecksum, localChecksum);
-    
-    if(remoteChecksum !== localChecksum) {
-      console.log('sticker is different');
-      
-      // installSticker(currentTheme, context);
-    }    
-  } catch(e) {
+    const remoteChecksum = await fetchRemoteChecksum(dokiTheme);
+    const localChecksum = await fetchLocalChecksum(localStickerPath);
+    return remoteChecksum !== localChecksum;
+  } catch (e) {
     console.error('Unable to check for updates', e);
+    return false;
+  }
+};
+export enum StickerUpdateStatus {
+  CURRENT, STALE, NOT_CHECKED, 
+}
+
+export const attemptToUpdateSticker = async (context: vscode.ExtensionContext) => {
+  const currentTheme = getCurrentTheme();
+  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
+  if (await isStickerCurrent(currentTheme, localStickerPath)) {
+    await installSticker(currentTheme, context, StickerUpdateStatus.STALE);
   }
 };

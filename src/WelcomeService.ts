@@ -1,6 +1,7 @@
 import { VSCodeGlobals } from "./VSCodeGlobals";
 import * as vscode from 'vscode';
 import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
+import { SCREENSHOT_ASSETS_URL } from "./ENV";
 
 const IS_GREETED = 'doki.theme.greeted';
 
@@ -67,7 +68,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                <h2>Sample Usage</h2>
                 <img 
                 style="z-index: 9001;"
-                src="https://doki.assets.unthrottled.io/screenshots/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
+                src="${SCREENSHOT_ASSETS_URL}/doki-theme-vscode-usage.gif" alt="Theme Usage"/>
                 Steps Demonstrated:
                 <ol>
                     <li>Choose Color Theme</li>
