@@ -373,7 +373,7 @@ function resolveStickerPath(
     path.resolve(themeDefinitonPath, '..'),
     themeDefinition.stickers.normal || themeDefinition.stickers.default
   );
-  return stickerPath.substring(vsCodeDefinitionDirectoryPath.length);
+  return stickerPath.substring(vsCodeDefinitionDirectoryPath.length).replace(/\\/g, '/');
 }
 
 function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
