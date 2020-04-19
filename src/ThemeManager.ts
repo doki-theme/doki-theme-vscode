@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
-import { DokiTheme } from "./DokiTheme";
-import { installSticker, removeStickers, InstallStatus } from "./StickerService";
-import { VSCodeGlobals } from "./VSCodeGlobals";
-import { StatusBarComponent } from "./StatusBar";
-import { showStickerInstallationSupportWindow, showStickerRemovalSupportWindow } from "./SupportService";
+import {DokiTheme} from "./DokiTheme";
+import {InstallStatus, installSticker, removeStickers} from "./StickerService";
+import {VSCodeGlobals} from "./VSCodeGlobals";
+import {StatusBarComponent} from "./StatusBar";
+import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow} from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 
 export const ACTIVE_THEME = 'doki.theme.active';
@@ -28,8 +28,7 @@ async function attemptToInstall(
 
     if (result && result.title === stickerInstall) {
       context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
-      const installStatus = performStickerInstall(dokiTheme, context);
-      return installStatus;
+      return performStickerInstall(dokiTheme, context);
     } else {
       return InstallStatus.NOT_INSTALLED;
     }
@@ -78,6 +77,6 @@ export const getCurrentTheme = (): DokiTheme => {
   const currentThemeId = VSCodeGlobals.globalState.get(ACTIVE_THEME);
   const dokiThemeDefinition = DokiThemeDefinitions.find(
     dokiDefinition => dokiDefinition.themeDefinition.information.id === currentThemeId
-  ) || DokiThemeDefinitions[0]
+  ) || DokiThemeDefinitions[0];
   return new DokiTheme(dokiThemeDefinition.themeDefinition);
 };
