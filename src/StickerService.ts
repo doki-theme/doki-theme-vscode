@@ -96,12 +96,12 @@ const downloadSticker = async (stickerPath: string, localDestination: string) =>
   const stickerUrl = `${VSCODE_ASSETS_URL}${stickerPath}`;
   console.log(`Downloading image: ${stickerUrl}`);
   const stickerInputStream = await performGet(stickerUrl);
+  console.log('Image Downloaded!');
   fs.writeFileSync(localDestination, stickerInputStream.read());
 };
 
 const readFileToDataURL = (localStickerPath: string): string => {
-  const base64ImageString = fs.readFileSync(localStickerPath, {encoding: 'base64'});
-  return `data:image/png;base64,${base64ImageString}`;
+  return `file://${localStickerPath.replace(path.sep, '/')}`;
 };
 
 export async function getLatestStickerAndBackground(
