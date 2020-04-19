@@ -9,7 +9,7 @@ import crypto from 'crypto';
 import { VSCODE_ASSETS_URL } from './ENV';
 
 const fetchRemoteChecksum = async (currentTheme: DokiTheme) => {
-  const checksumUrl = `${VSCODE_ASSETS_URL}${currentTheme.sticker.path}.checksum.txt`;
+  const checksumUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(currentTheme)}.checksum.txt`;
   console.log(`Fetching checksum: ${checksumUrl}`);
   const checkSumInputStream = await performGet(checksumUrl);
   return checkSumInputStream.setEncoding('utf8').read();
@@ -19,9 +19,18 @@ export const resolveLocalStickerPath = (
   currentTheme: DokiTheme,
   context: vscode.ExtensionContext,
 ): string => {
-  const safeStickerPath = currentTheme.sticker.path.replace('/', path.sep);
+  const safeStickerPath = stickerPathToUrl(currentTheme);
   return path.join(context.globalStoragePath, 'stickers', safeStickerPath);
 };
+
+export function cleanPathToUrl(stickerPath: string) {
+  return stickerPath.replace(/\\/g, '/');
+}
+
+export function stickerPathToUrl(currentTheme: DokiTheme) {
+  const stickerPath = currentTheme.sticker.path;
+  return cleanPathToUrl(stickerPath);
+}
 
 export function createChecksum(data: Buffer | string): string {
   return crypto.createHash('md5')

@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
 import path from 'path';
 import fs from "fs";
-import { resolveLocalStickerPath, isStickerNotCurrent, StickerUpdateStatus } from "./StickerUpdateService";
+import { resolveLocalStickerPath, isStickerNotCurrent, StickerUpdateStatus, stickerPathToUrl, cleanPathToUrl } from "./StickerUpdateService";
 import { performGet } from "./RESTClient";
 import { ASSETS_URL, BACKGROUND_ASSETS_URL, VSCODE_ASSETS_URL } from "./ENV";
 
@@ -101,7 +101,7 @@ const downloadSticker = async (stickerPath: string, localDestination: string) =>
 };
 
 const readFileToDataURL = (localStickerPath: string): string => {
-  return `file://${localStickerPath.replace(path.sep, '/')}`;
+  return `file://${cleanPathToUrl(localStickerPath)}`;
 };
 
 export async function getLatestStickerAndBackground(
@@ -115,7 +115,7 @@ export async function getLatestStickerAndBackground(
   if (stickerStatus === StickerUpdateStatus.STALE || 
     !fs.existsSync(localStickerPath) ||
     await isStickerNotCurrent(dokiTheme, localStickerPath)) {
-    await downloadSticker(dokiTheme.sticker.path, localStickerPath);
+    await downloadSticker(stickerPathToUrl(dokiTheme), localStickerPath);
   }
 
   const stickerDataURL = readFileToDataURL(localStickerPath);
