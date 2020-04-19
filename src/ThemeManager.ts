@@ -76,7 +76,10 @@ export function uninstallImages(
 export const getCurrentTheme = (): DokiTheme => {
   const currentThemeId = VSCodeGlobals.globalState.get(ACTIVE_THEME);
   const dokiThemeDefinition = DokiThemeDefinitions.find(
-    dokiDefinition => dokiDefinition.themeDefinition.information.id === currentThemeId
+    dokiDefinition => 
+    dokiDefinition.themeDefinition.information.id === currentThemeId ||
+    // todo: remove this after deploy.
+    dokiDefinition.themeDefinition.information.displayName == currentThemeId
   ) || DokiThemeDefinitions[0];
   return new DokiTheme(dokiThemeDefinition.themeDefinition);
 };
