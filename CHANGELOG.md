@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.1.0 [Look and Feel Consistency]
+
+- Made more VS code components have a more consistent look and feel!
+
 ## 2.0.2 [Non-Functional]
 
 - Changed how the plugin gets stickers. 
