@@ -13,15 +13,19 @@ export enum InstallStatus {
 const main = require.main || { filename: 'yeet' };
 export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
 
+const CODE_SERVER_FILE = 'web.api';
 const getFileName = () => {
   return fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`)) ?
-    'desktop.main' : 'web.api';
+    'desktop.main' : CODE_SERVER_FILE;
 };
 
 const fileName = getFileName();
 
 const editorCss = path.join(workbenchDirectory, `workbench.${fileName}.css`);
 const editorCssCopy = path.join(workbenchDirectory, `workbench.${fileName}.css.copy`);
+
+
+const isCodeServer = () => fileName === CODE_SERVER_FILE;
 
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
@@ -101,6 +105,11 @@ const downloadSticker = async (stickerPath: string, localDestination: string) =>
 };
 
 const readFileToDataURL = (localStickerPath: string): string => {
+  if(isCodeServer()) {
+    const base64ImageString = fs.readFileSync(localStickerPath, {encoding: 'base64'});
+    return `data:image/png;base64,${base64ImageString}`; 
+  }
+  
   return `file://${cleanPathToUrl(localStickerPath)}`;
 };
 
@@ -119,6 +128,7 @@ export async function getLatestStickerAndBackground(
   }
 
   const stickerDataURL = readFileToDataURL(localStickerPath);
+
   return {
     stickerDataURL,
     backgroundImageURL: dokiTheme.sticker.name
