@@ -37,8 +37,11 @@ async function attemptToInstall(
   }
 }
 
-function performStickerInstall(dokiTheme: DokiTheme, context: vscode.ExtensionContext) {
-  const installResult = installSticker(dokiTheme, context);
+async function performStickerInstall(
+  dokiTheme: DokiTheme, 
+  context: vscode.ExtensionContext
+  ): Promise<InstallStatus>  {
+  const installResult = await installSticker(dokiTheme, context);
   return installResult ? InstallStatus.INSTALLED :
     InstallStatus.FAILURE;
 }
@@ -79,7 +82,7 @@ export const getCurrentTheme = (): DokiTheme => {
     dokiDefinition => 
     dokiDefinition.themeDefinition.information.id === currentThemeId ||
     // todo: remove this after deploy.
-    dokiDefinition.themeDefinition.information.displayName == currentThemeId
+    dokiDefinition.themeDefinition.information.displayName === currentThemeId
   ) || DokiThemeDefinitions[0];
   return new DokiTheme(dokiThemeDefinition.themeDefinition);
 };

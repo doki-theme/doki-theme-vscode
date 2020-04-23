@@ -69,8 +69,7 @@ function buildStickerCss({
 }
 
 function buildStyles(dokiStickers: DokiStickers): string {
-  let vsCodeCss = getVsCodeCss();
-  return vsCodeCss + buildStickerCss(dokiStickers);
+  return `${getVsCodeCss()}${buildStickerCss(dokiStickers)}`;
 
 }
 function installEditorStyles(styles: string) {
