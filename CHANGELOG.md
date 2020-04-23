@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.1.1 [Better Update Experience]
+
+- The plugin will actually tell you if it could not install your specified sticker.
+  - Rather than telling you it installed your sticker when it actually did not.
+
 ## 2.1.0 [Look and Feel Consistency]
 
 - Made more VS code components have a more consistent look and feel!
