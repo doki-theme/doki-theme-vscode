@@ -1,4 +1,3 @@
-
 import path from 'path';
 import fs from "fs";
 
@@ -21,6 +20,5 @@ const fileName = getFileName();
 
 export const editorCss = path.join(workbenchDirectory, `workbench.${fileName}.css`);
 export const editorCssCopy = path.join(workbenchDirectory, `workbench.${fileName}.css.copy`);
-
 
 export const isCodeServer = () => fileName === CODE_SERVER_FILE;
