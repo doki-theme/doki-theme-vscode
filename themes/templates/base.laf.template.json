@@ -1,5 +1,5 @@
 {
-  "name":"base",
+  "name": "base",
   "ui": {
     "input.background": "&secondaryBackground&",
     "peekViewResult.background": "&secondaryBackground&",
@@ -25,6 +25,7 @@
     "editorIndentGuide.activeBackground": "&borderColor&",
     "inputOption.activeBorder": "&borderColor&",
     "editorCursor.background": "&caretForeground&",
+    "terminalCursor.background": "&caretForeground&",
     "editorSuggestWidget.border": "&editorBackground&",
     "panel.background": "&editorBackground&",
     "sideBar.background": "&editorBackground&",
@@ -36,6 +37,7 @@
     "editorWidget.border": "&accentColor&",
     "list.highlightForeground": "&accentColor&",
     "editorLineNumber.activeForeground": "&accentColor&",
+    "debugIcon.breakpointForeground": "&accentColor&",
     "tab.activeBorder": "&accentColor&",
     "peekView.border": "&accentColor&",
     "statusBar.background": "&accentColor&",
@@ -56,7 +58,7 @@
     "sideBarSectionHeader.background": "&caretRow&",
     "activityBar.background": "&caretRow&",
     "editor.findMatchBackground": "&selectionBackground&",
-		"editor.wordHighlightStrongBackground": "&searchResultBackground&",
+    "editor.wordHighlightStrongBackground": "&searchResultBackground&",
     "editor.findMatchHighlightBackground": "&selectionInactive&",
     "peekViewEditor.matchHighlightBackground": "&selectionInactive&",
     "editor.wordHighlightBackground": "&selectionInactive&",
@@ -68,18 +70,19 @@
     "editorSuggestWidget.background": "&headerColor&",
     "notifications.background": "&headerColor&",
     "peekViewTitle.background": "&headerColor&",
-		"widget.shadow": "#1111115a",
-		"scrollbar.shadow": "#1111113a",
+    "widget.shadow": "#1111115a",
+    "scrollbar.shadow": "#1111113a",
     "titleBar.activeBackground": "&headerColor&",
     "titleBar.inactiveBackground": "&headerColor&",
     "peekViewEditor.background": "&codeBlock&",
     "peekViewEditorGutter.background": "&codeBlock&",
-
-		"terminal.ansiRed": "#E356A7",
-		"terminal.ansiGreen": "#42E66C",
+    "terminal.ansiRed": "#E356A7",
+    "terminal.ansiGreen": "#42E66C",
     "terminal.ansiYellow": "#EFA554",
-		"terminal.ansiBlue": "#9B6BDF",
-		"terminal.ansiMagenta": "#E64747",
-		"terminal.ansiCyan": "#75D7EC"
+    "terminal.ansiBlue": "#9B6BDF",
+    "terminal.ansiMagenta": "#E64747",
+    "terminal.ansiCyan": "#75D7EC",
+    "editor.stackFrameHighlightBackground": "&nonProjectFileScopeColor&",
+    "editor.focusedStackFrameHighlightBackground": "&testScopeColor&"
   }
 }
