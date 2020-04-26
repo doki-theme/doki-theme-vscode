@@ -49,6 +49,7 @@ export function activateTheme(
   dokiTheme: DokiTheme,
   context: vscode.ExtensionContext
 ) {
+  vscode.window.showInformationMessage(`Please wait, installing ${dokiTheme.name}.`);
   attemptToInstall(dokiTheme, context).then(didInstall => {
     if (didInstall === InstallStatus.INSTALLED) {
       VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
