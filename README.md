@@ -10,6 +10,20 @@ Steps demonstrated:
 1. Reload/Restart VSCode
 1. Code!
 
+[Complete Theme Album.](complete_theme_album.md)
+
+[Doki-Doki Literature Club Album](theme_album.md)
+
+[Re:Zero Album](r0_album.md)
+
+[DanganRonpa Album](dr_themes.md)
+
+[Kill La Kill Album](klk_album.md)
+
+[KonoSuba Album](ks_album.md)
+
+[Miscellaneous Album](misc_themes.md)
+
 ## About!
 
 With well over **10 themes** (light and dark) I think you will be able to find your favorite.
