@@ -2,15 +2,17 @@ import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
 import fs from "fs";
 import { ASSETS_URL, editorCss, editorCssCopy } from "./ENV";
-import { getLatestStickerAndBackground } from "./StickerUpdateService";
+import { attemptToUpdateSticker } from "./StickerUpdateService";
 
 export enum InstallStatus {
-  INSTALLED, NOT_INSTALLED, FAILURE
+  INSTALLED,
+  NOT_INSTALLED,
+  FAILURE,
 }
 
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
-  const currentCss = fs.readFileSync(editorCss, 'utf-8');
+  const currentCss = fs.readFileSync(editorCss, "utf-8");
   return currentCss.indexOf(ASSETS_URL) < 0;
 }
 
@@ -22,14 +24,15 @@ function ensureRightCssCopy() {
 
 function getVsCodeCss() {
   ensureRightCssCopy();
-  return fs.readFileSync(editorCssCopy, 'utf-8');
+  return fs.readFileSync(editorCssCopy, "utf-8");
 }
 
 function buildStickerCss({
   stickerDataURL: stickerUrl,
-  backgroundImageURL: wallpaperUrl
+  backgroundImageURL: wallpaperUrl,
 }: DokiStickers): string {
-  const style = 'content:\'\';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
+  const style =
+    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;";
   return `
   /* Stickers */
   .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
@@ -54,7 +57,7 @@ function buildStyles(dokiStickers: DokiStickers): string {
 }
 
 function installEditorStyles(styles: string) {
-  fs.writeFileSync(editorCss, styles, 'utf-8');
+  fs.writeFileSync(editorCss, styles, "utf-8");
 }
 
 function canWrite(): boolean {
@@ -73,19 +76,19 @@ export interface DokiStickers {
 
 export async function installStickersAndWallPaper(
   dokiTheme: DokiTheme,
-  context: vscode.ExtensionContext,
+  context: vscode.ExtensionContext
 ): Promise<boolean> {
   if (canWrite()) {
     try {
-      const stickersAndWallpaper = await getLatestStickerAndBackground(
-        dokiTheme,
-        context
+      const stickersAndWallpaper = await attemptToUpdateSticker(
+        context,
+        dokiTheme
       );
       const stickerStyles = buildStyles(stickersAndWallpaper);
       installEditorStyles(stickerStyles);
       return true;
     } catch (e) {
-      console.error('Unable to install sticker!', e);
+      console.error("Unable to install sticker!", e);
     }
   }
 

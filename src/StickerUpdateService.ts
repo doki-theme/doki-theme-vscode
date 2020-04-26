@@ -9,29 +9,42 @@ import { VSCODE_ASSETS_URL, isCodeServer } from "./ENV";
 import { DokiStickers } from "./StickerService";
 
 export const attemptToUpdateSticker = async (
-  context: vscode.ExtensionContext
-) => {
-  const currentTheme = getCurrentTheme();
-  // todo: wallpaper
-  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
+  context: vscode.ExtensionContext,
+  currentTheme: DokiTheme,
+): Promise<DokiStickers> => {
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
     currentTheme
   )}`;
+  const remoteWallpaperUrl = `${VSCODE_ASSETS_URL}${wallpaperPathToUrl(
+    currentTheme
+  )}`;
+  if (isCodeServer()) {
+    return {
+      stickerDataURL: remoteStickerUrl,
+      backgroundImageURL: remoteWallpaperUrl,
+    };
+  }
+
+  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
+  const localWallpaperPath = resolveLocalWallpaperPath(currentTheme, context);
+  await Promise.all([
+    attemptToUpdateAsset(remoteStickerUrl, localStickerPath),
+    attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath),
+  ]);
+
+  return {
+    stickerDataURL: createCssDokiAssetUrl(localStickerPath),
+    backgroundImageURL: createCssDokiAssetUrl(localWallpaperPath),
+  };
+};
+
+async function attemptToUpdateAsset(
+  remoteStickerUrl: string,
+  localStickerPath: string
+) {
   if (await isStickerNotCurrent(remoteStickerUrl, localStickerPath)) {
     await installAsset(remoteStickerUrl, localStickerPath);
   }
-};
-
-export async function getLatestStickerAndBackground(
-  dokiTheme: DokiTheme,
-  context: vscode.ExtensionContext
-): Promise<DokiStickers> {
-  const localStickerPath = resolveLocalStickerPath(dokiTheme, context);
-  const stickerDataURL = createStickerUrl(localStickerPath);
-  return {
-    stickerDataURL,
-    backgroundImageURL: dokiTheme.sticker.name,
-  };
 }
 
 const fetchRemoteChecksum = async (remoteAssetUrl: string) => {
@@ -49,16 +62,16 @@ const resolveLocalStickerPath = (
   return path.join(context.globalStoragePath, "stickers", safeStickerPath);
 };
 
-const createStickerUrl = (localStickerPath: string): string => {
-  // todo: just use remote urls for code server
-  if (isCodeServer()) {
-    const base64ImageString = fs.readFileSync(localStickerPath, {
-      encoding: "base64",
-    });
-    return `data:image/png;base64,${base64ImageString}`;
-  }
+const resolveLocalWallpaperPath = (
+  currentTheme: DokiTheme,
+  context: vscode.ExtensionContext
+): string => {
+  const safeStickerPath = wallpaperPathToUrl(currentTheme);
+  return path.join(context.globalStoragePath, "wallpapers", safeStickerPath);
+};
 
-  return `file://${cleanPathToUrl(localStickerPath)}`;
+const createCssDokiAssetUrl = (localAssetPath: string): string => {
+  return `file://${cleanPathToUrl(localAssetPath)}`;
 };
 
 function cleanPathToUrl(stickerPath: string) {
@@ -67,6 +80,11 @@ function cleanPathToUrl(stickerPath: string) {
 
 function stickerPathToUrl(currentTheme: DokiTheme) {
   const stickerPath = currentTheme.sticker.path;
+  return cleanPathToUrl(stickerPath);
+}
+
+function wallpaperPathToUrl(currentTheme: DokiTheme) {
+  const stickerPath = currentTheme.sticker.name;
   return cleanPathToUrl(stickerPath);
 }
 
