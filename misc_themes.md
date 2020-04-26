@@ -1,3 +1,3 @@
 ### Hatsune Miku
-![miku code](assets/screenshots/miscellaneous/miku_code.png)
-![miku background](assets/screenshots/miscellaneous/miku_background.png)
+![miku code](screenshots/miscellaneous/miku_code.png)
+![miku background](screenshots/miscellaneous/miku_wallpaper.png)

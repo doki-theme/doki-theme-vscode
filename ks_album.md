@@ -1,4 +1,4 @@
 ### Megumin
-![megumin code](assets/screenshots/konoSuba/megumin_code.png)
-![megumin background](assets/screenshots/konoSuba/megumin_background.png)
+![megumin code](screenshots/konosuba/megumin_code.png)
+![megumin background](screenshots/konosuba/megumin_wallpaper.png)
 
