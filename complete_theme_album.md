@@ -15,7 +15,7 @@ Re:Zero
 ![ram code](screenshots/rezero/ram_code.png)
 ![ram background](screenshots/rezero/ram_wallpaper.png)
 
-danganronpa
+DanganRonpa
 ---
 
 ### Mioda Ibuki

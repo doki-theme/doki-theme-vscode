@@ -12,8 +12,6 @@ Steps demonstrated:
 
 [Complete Theme Album.](complete_theme_album.md)
 
-[Doki-Doki Literature Club Album](theme_album.md)
-
 [Re:Zero Album](r0_album.md)
 
 [DanganRonpa Album](dr_themes.md)
@@ -23,6 +21,8 @@ Steps demonstrated:
 [KonoSuba Album](ks_album.md)
 
 [Miscellaneous Album](misc_themes.md)
+
+[Doki-Doki Literature Club Album](theme_album.md)
 
 ## About!
 
