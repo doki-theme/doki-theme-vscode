@@ -3,8 +3,7 @@ import { Transform as Stream } from 'stream';
 
 export const performGet = (url: string): Promise<Stream> => {
   return new Promise((resolve, reject) => {
-    https.get({
-      href: url,
+    https.get(url, {
       timeout: 10000,
     }, (res) => {
       const inputStream = new Stream();

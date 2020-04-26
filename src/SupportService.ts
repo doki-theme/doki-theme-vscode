@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
-import { workbenchDirectory } from './StickerService';
-
+import { workbenchDirectory } from './ENV';
 
 export function showStickerInstallationSupportWindow(context: vscode.ExtensionContext) {
     const verbs = {

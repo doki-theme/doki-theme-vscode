@@ -1,21 +1,20 @@
 import * as vscode from "vscode";
-import { getCurrentTheme } from "./ThemeManager";
 import { performGet } from "./RESTClient";
 import { DokiTheme } from "./DokiTheme";
 import path from "path";
 import fs from "fs";
 import crypto from "crypto";
-import { VSCODE_ASSETS_URL, isCodeServer } from "./ENV";
+import { VSCODE_ASSETS_URL, isCodeServer, BACKGROUND_ASSETS_URL } from "./ENV";
 import { DokiStickers } from "./StickerService";
 
 export const attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentTheme: DokiTheme,
+  currentTheme: DokiTheme
 ): Promise<DokiStickers> => {
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
     currentTheme
   )}`;
-  const remoteWallpaperUrl = `${VSCODE_ASSETS_URL}${wallpaperPathToUrl(
+  const remoteWallpaperUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
     currentTheme
   )}`;
   if (isCodeServer()) {
@@ -42,7 +41,7 @@ async function attemptToUpdateAsset(
   remoteStickerUrl: string,
   localStickerPath: string
 ) {
-  if (await isStickerNotCurrent(remoteStickerUrl, localStickerPath)) {
+  if (await shouldDownloadNewAsset(remoteStickerUrl, localStickerPath)) {
     await installAsset(remoteStickerUrl, localStickerPath);
   }
 }
@@ -84,7 +83,7 @@ function stickerPathToUrl(currentTheme: DokiTheme) {
 }
 
 function wallpaperPathToUrl(currentTheme: DokiTheme) {
-  const stickerPath = currentTheme.sticker.name;
+  const stickerPath = `/${currentTheme.sticker.name}`;
   return cleanPathToUrl(stickerPath);
 }
 
@@ -103,7 +102,7 @@ const fetchLocalChecksum = async (localSticker: string) => {
     : "File not downloaded, bruv.";
 };
 
-const isStickerNotCurrent = async (
+const shouldDownloadNewAsset = async (
   remoteAssetUrl: string,
   localStickerPath: string
 ): Promise<boolean> => {
@@ -127,7 +126,7 @@ const downloadRemoteAsset = async (
   }
   console.log(`Downloading remote asset: ${remoteAssetUrl}`);
   const stickerInputStream = await performGet(remoteAssetUrl);
-  console.log("Image Downloaded!");
+  console.log("Remote asset Downloaded!");
   fs.writeFileSync(localDestination, stickerInputStream.read());
 };
 
