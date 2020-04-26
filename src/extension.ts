@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { activateTheme, ACTIVE_THEME, uninstallImages } from "./ThemeManager";
+import { activateTheme, uninstallImages } from "./ThemeManager";
 import { DokiTheme } from "./DokiTheme";
 import DokiThemeDefinitions from './DokiThemeDefinitions';
 import { StatusBarComponent } from './StatusBar';

@@ -1,46 +1,60 @@
-import * as vscode from 'vscode';
-import { getCurrentTheme } from './ThemeManager';
-import { performGet } from './RESTClient';
-import { DokiTheme } from './DokiTheme';
-import path from 'path';
-import fs from 'fs';
-import crypto from 'crypto';
-import { VSCODE_ASSETS_URL, isCodeServer } from './ENV';
-import { DokiStickers } from './StickerService';
+import * as vscode from "vscode";
+import { getCurrentTheme } from "./ThemeManager";
+import { performGet } from "./RESTClient";
+import { DokiTheme } from "./DokiTheme";
+import path from "path";
+import fs from "fs";
+import crypto from "crypto";
+import { VSCODE_ASSETS_URL, isCodeServer } from "./ENV";
+import { DokiStickers } from "./StickerService";
+
+export const attemptToUpdateSticker = async (
+  context: vscode.ExtensionContext
+) => {
+  const currentTheme = getCurrentTheme();
+  // todo: wallpaper
+  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
+  const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
+    currentTheme
+  )}`;
+  if (await isStickerNotCurrent(remoteStickerUrl, localStickerPath)) {
+    await installAsset(remoteStickerUrl, localStickerPath);
+  }
+};
+
+export async function getLatestStickerAndBackground(
+  dokiTheme: DokiTheme,
+  context: vscode.ExtensionContext
+): Promise<DokiStickers> {
+  const localStickerPath = resolveLocalStickerPath(dokiTheme, context);
+  const stickerDataURL = createStickerUrl(localStickerPath);
+  return {
+    stickerDataURL,
+    backgroundImageURL: dokiTheme.sticker.name,
+  };
+}
 
 const fetchRemoteChecksum = async (remoteAssetUrl: string) => {
   const checksumUrl = `${remoteAssetUrl}.checksum.txt`;
   console.log(`Fetching resource checksum: ${checksumUrl}`);
   const checkSumInputStream = await performGet(checksumUrl);
-  return checkSumInputStream.setEncoding('utf8').read();
+  return checkSumInputStream.setEncoding("utf8").read();
 };
 
-export const resolveLocalStickerPath = (
+const resolveLocalStickerPath = (
   currentTheme: DokiTheme,
-  context: vscode.ExtensionContext,
+  context: vscode.ExtensionContext
 ): string => {
   const safeStickerPath = stickerPathToUrl(currentTheme);
-  return path.join(context.globalStoragePath, 'stickers', safeStickerPath);
+  return path.join(context.globalStoragePath, "stickers", safeStickerPath);
 };
-
-export async function getLatestStickerAndBackground(
-  dokiTheme: DokiTheme,
-  context: vscode.ExtensionContext,
-): Promise<DokiStickers> {
-  const localStickerPath = resolveLocalStickerPath(
-    dokiTheme, context
-  );
-  const stickerDataURL = createStickerUrl(localStickerPath);
-  return {
-    stickerDataURL,
-    backgroundImageURL: dokiTheme.sticker.name
-  };
-}
 
 const createStickerUrl = (localStickerPath: string): string => {
   // todo: just use remote urls for code server
   if (isCodeServer()) {
-    const base64ImageString = fs.readFileSync(localStickerPath, { encoding: 'base64' });
+    const base64ImageString = fs.readFileSync(localStickerPath, {
+      encoding: "base64",
+    });
     return `data:image/png;base64,${base64ImageString}`;
   }
 
@@ -48,18 +62,16 @@ const createStickerUrl = (localStickerPath: string): string => {
 };
 
 function cleanPathToUrl(stickerPath: string) {
-  return stickerPath.replace(/\\/g, '/');
+  return stickerPath.replace(/\\/g, "/");
 }
 
-export function stickerPathToUrl(currentTheme: DokiTheme) {
+function stickerPathToUrl(currentTheme: DokiTheme) {
   const stickerPath = currentTheme.sticker.path;
   return cleanPathToUrl(stickerPath);
 }
 
-export function createChecksum(data: Buffer | string): string {
-  return crypto.createHash('md5')
-    .update(data)
-    .digest('hex');
+function createChecksum(data: Buffer | string): string {
+  return crypto.createHash("md5").update(data).digest("hex");
 }
 
 const calculateFileChecksum = (filePath: string): string => {
@@ -68,11 +80,12 @@ const calculateFileChecksum = (filePath: string): string => {
 };
 
 const fetchLocalChecksum = async (localSticker: string) => {
-  return fs.existsSync(localSticker) ?
-    calculateFileChecksum(localSticker) : 'File not downloaded, bruv.';
+  return fs.existsSync(localSticker)
+    ? calculateFileChecksum(localSticker)
+    : "File not downloaded, bruv.";
 };
 
-export const isStickerNotCurrent = async (
+const isStickerNotCurrent = async (
   remoteAssetUrl: string,
   localStickerPath: string
 ): Promise<boolean> => {
@@ -81,24 +94,8 @@ export const isStickerNotCurrent = async (
     const localChecksum = await fetchLocalChecksum(localStickerPath);
     return remoteChecksum !== localChecksum;
   } catch (e) {
-    console.error('Unable to check for updates', e);
+    console.error("Unable to check for updates", e);
     return false;
-  }
-};
-export enum StickerUpdateStatus {
-  CURRENT, STALE, NOT_CHECKED,
-}
-
-export const attemptToUpdateSticker = async (context: vscode.ExtensionContext) => {
-  const currentTheme = getCurrentTheme();
-  // todo: wallpaper
-  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
-  const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(currentTheme)}`;
-  if (await isStickerNotCurrent(remoteStickerUrl, localStickerPath)) {
-    await installAsset(
-      remoteStickerUrl, 
-      localStickerPath
-      );
   }
 };
 
@@ -112,23 +109,19 @@ const downloadRemoteAsset = async (
   }
   console.log(`Downloading remote asset: ${remoteAssetUrl}`);
   const stickerInputStream = await performGet(remoteAssetUrl);
-  console.log('Image Downloaded!');
+  console.log("Image Downloaded!");
   fs.writeFileSync(localDestination, stickerInputStream.read());
 };
 
 async function installAsset(
   remoteAssetUrl: string,
-  localAssetPath: string,
+  localAssetPath: string
 ): Promise<boolean> {
   try {
-    await downloadRemoteAsset(
-      remoteAssetUrl,
-      localAssetPath,
-    );
+    await downloadRemoteAsset(remoteAssetUrl, localAssetPath);
     return true;
   } catch (e) {
     console.error(`Unable to install asset ${remoteAssetUrl}!`, e);
   }
-
   return false;
 }

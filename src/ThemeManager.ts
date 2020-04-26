@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import {DokiTheme} from "./DokiTheme";
-import {InstallStatus, installAsset, removeStickers, installStickersAndWallPaper} from "./StickerService";
+import {InstallStatus, removeStickers, installStickersAndWallPaper} from "./StickerService";
 import {VSCodeGlobals} from "./VSCodeGlobals";
 import {StatusBarComponent} from "./StatusBar";
 import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow} from "./SupportService";
@@ -60,7 +60,6 @@ export function activateTheme(
     }
   });
 }
-
 
 // :(
 export function uninstallImages(
