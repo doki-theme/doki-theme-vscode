@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0 [Offline Mode]
+
+- Your theme's wallpaper is now available offline!
+- Small adjustments to the look and feel of the light Emilia theme.
+
+
 ## 2.1.1 [Better Update Experience]
 
 - The plugin will actually tell you if it could not install your specified sticker.

@@ -1,13 +1,12 @@
 import * as vscode from "vscode";
 import {DokiTheme} from "./DokiTheme";
-import {InstallStatus, installSticker, removeStickers} from "./StickerService";
+import {InstallStatus, removeStickers, installStickersAndWallPaper} from "./StickerService";
 import {VSCodeGlobals} from "./VSCodeGlobals";
 import {StatusBarComponent} from "./StatusBar";
 import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow} from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 
 export const ACTIVE_THEME = 'doki.theme.active';
-
 
 const FIRST_TIME_STICKER_INSTALL = 'doki.sticker.first.install';
 function isFirstTimeInstalling(context: vscode.ExtensionContext) {
@@ -41,7 +40,7 @@ async function performStickerInstall(
   dokiTheme: DokiTheme, 
   context: vscode.ExtensionContext
   ): Promise<InstallStatus>  {
-  const installResult = await installSticker(dokiTheme, context);
+  const installResult = await installStickersAndWallPaper(dokiTheme, context);
   return installResult ? InstallStatus.INSTALLED :
     InstallStatus.FAILURE;
 }
@@ -61,7 +60,6 @@ export function activateTheme(
     }
   });
 }
-
 
 // :(
 export function uninstallImages(

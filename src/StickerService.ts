@@ -1,35 +1,18 @@
 import * as vscode from "vscode";
 import { DokiTheme } from "./DokiTheme";
-import path from 'path';
 import fs from "fs";
-import { resolveLocalStickerPath, isStickerNotCurrent, StickerUpdateStatus, stickerPathToUrl, cleanPathToUrl } from "./StickerUpdateService";
-import { performGet } from "./RESTClient";
-import { ASSETS_URL, BACKGROUND_ASSETS_URL, VSCODE_ASSETS_URL } from "./ENV";
+import { ASSETS_URL, editorCss, editorCssCopy } from "./ENV";
+import { attemptToUpdateSticker } from "./StickerUpdateService";
 
 export enum InstallStatus {
-  INSTALLED, NOT_INSTALLED, FAILURE
+  INSTALLED,
+  NOT_INSTALLED,
+  FAILURE,
 }
-
-const main = require.main || { filename: 'yeet' };
-export const workbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
-
-const CODE_SERVER_FILE = 'web.api';
-const getFileName = () => {
-  return fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`)) ?
-    'desktop.main' : CODE_SERVER_FILE;
-};
-
-const fileName = getFileName();
-
-const editorCss = path.join(workbenchDirectory, `workbench.${fileName}.css`);
-const editorCssCopy = path.join(workbenchDirectory, `workbench.${fileName}.css.copy`);
-
-
-const isCodeServer = () => fileName === CODE_SERVER_FILE;
 
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
-  const currentCss = fs.readFileSync(editorCss, 'utf-8');
+  const currentCss = fs.readFileSync(editorCss, "utf-8");
   return currentCss.indexOf(ASSETS_URL) < 0;
 }
 
@@ -41,25 +24,26 @@ function ensureRightCssCopy() {
 
 function getVsCodeCss() {
   ensureRightCssCopy();
-  return fs.readFileSync(editorCssCopy, 'utf-8');
+  return fs.readFileSync(editorCssCopy, "utf-8");
 }
 
 function buildStickerCss({
   stickerDataURL: stickerUrl,
-  backgroundImageURL: backgroundImage
+  backgroundImageURL: wallpaperUrl,
 }: DokiStickers): string {
-  const style = 'content:\'\';pointer-events:none;position:absolute;z-index:99999;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;';
+  const style =
+    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;";
   return `
   /* Stickers */
   .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
   /* Background Image */
   .monaco-workbench .part.editor > .content {
-    background-image: url('${BACKGROUND_ASSETS_URL}/${backgroundImage}') !important;
+    background-image: url('${wallpaperUrl}') !important;
     background-position: center;
     background-size: cover;
     content:'';
-    z-index:99999;
+    z-index:9001;
     width:100%;
     height:100%;
     background-repeat:no-repeat;
@@ -70,10 +54,10 @@ function buildStickerCss({
 
 function buildStyles(dokiStickers: DokiStickers): string {
   return `${getVsCodeCss()}${buildStickerCss(dokiStickers)}`;
-
 }
+
 function installEditorStyles(styles: string) {
-  fs.writeFileSync(editorCss, styles, 'utf-8');
+  fs.writeFileSync(editorCss, styles, "utf-8");
 }
 
 function canWrite(): boolean {
@@ -90,67 +74,21 @@ export interface DokiStickers {
   backgroundImageURL: string;
 }
 
-const downloadSticker = async (stickerPath: string, localDestination: string) => {
-  const parentDirectory = path.dirname(localDestination);
-  if (!fs.existsSync(parentDirectory)) {
-    fs.mkdirSync(parentDirectory, { recursive: true });
-  }
-
-  const stickerUrl = `${VSCODE_ASSETS_URL}${stickerPath}`;
-  console.log(`Downloading image: ${stickerUrl}`);
-  const stickerInputStream = await performGet(stickerUrl);
-  console.log('Image Downloaded!');
-  fs.writeFileSync(localDestination, stickerInputStream.read());
-};
-
-const readFileToDataURL = (localStickerPath: string): string => {
-  if(isCodeServer()) {
-    const base64ImageString = fs.readFileSync(localStickerPath, {encoding: 'base64'});
-    return `data:image/png;base64,${base64ImageString}`; 
-  }
-  
-  return `file://${cleanPathToUrl(localStickerPath)}`;
-};
-
-export async function getLatestStickerAndBackground(
+export async function installStickersAndWallPaper(
   dokiTheme: DokiTheme,
-  context: vscode.ExtensionContext,
-  stickerStatus: StickerUpdateStatus
-): Promise<DokiStickers> {
-  const localStickerPath = resolveLocalStickerPath(
-    dokiTheme, context
-  );
-  if (stickerStatus === StickerUpdateStatus.STALE || 
-    !fs.existsSync(localStickerPath) ||
-    await isStickerNotCurrent(dokiTheme, localStickerPath)) {
-    await downloadSticker(stickerPathToUrl(dokiTheme), localStickerPath);
-  }
-
-  const stickerDataURL = readFileToDataURL(localStickerPath);
-
-  return {
-    stickerDataURL,
-    backgroundImageURL: dokiTheme.sticker.name
-  };
-}
-
-export async function installSticker(
-  dokiTheme: DokiTheme,
-  context: vscode.ExtensionContext,
-  stickerStatus: StickerUpdateStatus = StickerUpdateStatus.NOT_CHECKED
+  context: vscode.ExtensionContext
 ): Promise<boolean> {
   if (canWrite()) {
     try {
-      const stickersAndBackground = await getLatestStickerAndBackground(
-        dokiTheme,
+      const stickersAndWallpaper = await attemptToUpdateSticker(
         context,
-        stickerStatus
+        dokiTheme
       );
-      const stickerStyles = buildStyles(stickersAndBackground);
+      const stickerStyles = buildStyles(stickersAndWallpaper);
       installEditorStyles(stickerStyles);
       return true;
     } catch (e) {
-      console.error('Unable to install sticker!', e);
+      console.error("Unable to install sticker!", e);
     }
   }
 
