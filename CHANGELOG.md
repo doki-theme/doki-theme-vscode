@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.2.1 [Small Adjustments]
+
+- You will know when the stickers/wallpapers start and finish installing.
+- Small color adjustments.
+
 ## 2.2.0 [Offline Mode]
 
 - Your theme's wallpaper is now available offline!
