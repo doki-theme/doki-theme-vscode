@@ -10,19 +10,22 @@ Steps demonstrated:
 1. Reload/Restart VSCode
 1. Code!
 
-[Complete Theme Album.](complete_theme_album.md)
 
-[Re:Zero Album](r0_album.md)
+## Screen Samples!
 
-[DanganRonpa Album](dr_themes.md)
+[Complete Theme Album.](https://github.com/Unthrottled/doki-theme-vscode/blob/master/complete_theme_album.md)
 
-[Kill La Kill Album](klk_album.md)
+[Re:Zero Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/r0_album.md)
 
-[KonoSuba Album](ks_album.md)
+[DanganRonpa Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/dr_themes.md)
 
-[Miscellaneous Album](misc_themes.md)
+[Kill La Kill Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/klk_album.md)
 
-[Doki-Doki Literature Club Album](theme_album.md)
+[KonoSuba Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/ks_album.md)
+
+[Miscellaneous Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/misc_themes.md)
+
+[Doki-Doki Literature Club Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/theme_album.md)
 
 ## About!
 

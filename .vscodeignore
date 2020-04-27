@@ -13,3 +13,11 @@ vsc-extension-quickstart.md
 buildSrc/**
 todo
 themes/**
+.git/**
+masterThemes/**
+node_modules/**
+screenshots/**
+*.vsix
+*_album.md
+*_themes.md
+*.sh
