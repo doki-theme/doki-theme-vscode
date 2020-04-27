@@ -82,7 +82,9 @@
     "terminal.ansiBlue": "#9B6BDF",
     "terminal.ansiMagenta": "#E64747",
     "terminal.ansiCyan": "#75D7EC",
-    "editor.stackFrameHighlightBackground": "&nonProjectFileScopeColor&",
-    "editor.focusedStackFrameHighlightBackground": "&testScopeColor&"
+    "editor.stackFrameHighlightBackground": "&selectionBackground&",
+		"debugIcon.breakpointCurrentStackframeForeground": "&selectionBackground&",
+    "debugIcon.breakpointStackframeForeground": "&selectionInactive&",
+    "editor.focusedStackFrameHighlightBackground": "&selectionInactive&"
   }
 }
