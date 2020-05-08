@@ -40,8 +40,7 @@ Variety is the spice of life! So you can choose themes from the following Doki-D
 - KonoSuba
 - DanganRonpa
 
-Too distracted by the sticker in the corner of your IDE?
-No worries! You can configure them to be on or off at your leisure.
+Sticker in the way? No worries! You can configure them to be on or off at your leisure.
 
 # Got Contributions, fun ideas, or issues?
 
