@@ -10,6 +10,9 @@
   "laf": {
     "extends": "light",
     "ui": {
+      "editor.lineHighlightBackground": "&headerColor&",
+      "sideBarSectionHeader.background": "&headerColor&",
+      "activityBar.background": "&headerColor&",
       "list.highlightForeground": "&accentColorDarker&",
       "editorLineNumber.activeForeground": "&accentColorDarker&",
       "scrollbarSlider.hoverBackground": "&accentColorSecondary&9A",

@@ -13,6 +13,7 @@
     "list.activeSelectionForeground": "&selectionForeground&",
     "list.focusForeground": "&selectionForeground&",
     "list.inactiveSelectionBackground": "&selectionInactive&",
+    "list.inactiveSelectionForeground": "&foregroundColor&",
     "editor.background": "&editorBackground&",
     "tab.activeBackground": "&highlightColor&",
     "focusBorder": "&borderColor&",
