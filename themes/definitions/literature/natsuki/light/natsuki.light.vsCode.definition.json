@@ -1,7 +1,14 @@
 {
   "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "light",
+    "ui": {
+      "editor.lineHighlightBackground": "&headerColor&",
+      "sideBarSectionHeader.background": "&headerColor&",
+      "activityBar.background": "&headerColor&"
+    }
+  },
   "syntax": {},
   "colors": {}
 }
