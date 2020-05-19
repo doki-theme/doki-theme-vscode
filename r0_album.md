@@ -12,3 +12,7 @@
 ![ram code](screenshots/rezero/ram_code.png)
 ![ram background](screenshots/rezero/ram_wallpaper.png)
 
+
+### Ram
+![beatrice code](screenshots/rezero/beatrice_code.png)
+![beatrice background](screenshots/rezero/beatrice_wallpaper.png)

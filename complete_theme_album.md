@@ -15,6 +15,10 @@ Re:Zero
 ![ram code](screenshots/rezero/ram_code.png)
 ![ram background](screenshots/rezero/ram_wallpaper.png)
 
+### Ram
+![beatrice code](screenshots/rezero/beatrice_code.png)
+![beatrice background](screenshots/rezero/beatrice_wallpaper.png)
+
 DanganRonpa
 ---
 
@@ -54,21 +58,29 @@ Doki-Doki Literature Club
 ---
 
 ### Just Monika
-![only_monika](screenshots/literature/monika_light_code.png)
-![just_monika](screenshots/literature/monika_light_wallpaper.png)
-![just_monika](screenshots/literature/monika_dark_code.png)
-![only_monika](screenshots/literature/monika_dark_wallpaper.png)
+
+![Light Monika Code](screenshots/literature/monika_light_code.png)
+![Light Monika background](screenshots/literature/monika_light_wallpaper.png)
+![Dark Monika Code](screenshots/literature/monika_dark_code.png)
+![Dark Monika Background](screenshots/literature/monika_dark_wallpaper.png)
+
 ### Yuri
 
-![edgy](screenshots/literature/yuri_dark_code.png)
-![edgy](screenshots/literature/yuri_dark_wallpaper.png)
+![Yuri light Code](screenshots/literature/yuri_light_code.png)
+![Yuri light Background](screenshots/literature/yuri_light_wallpaper.png)
+![Yuri Dark Code](screenshots/literature/yuri_dark_code.png)
+![Yuri Dark Background](screenshots/literature/yuri_dark_wallpaper.png)
 
 ### Natsuki
 
-![only_play_with_me](screenshots/literature/natsuki_dark_code.png)
-![only_play_with_me](screenshots/literature/natsuki_dark_wallpaper.png)
+![Natsuki light Code](screenshots/literature/natsuki_light_code.png)
+![Natsuki light Background](screenshots/literature/natsuki_light_wallpaper.png)
+![Natsuki Dark Code](screenshots/literature/natsuki_dark_code.png)
+![Natsuki Dark Background](screenshots/literature/natsuki_dark_wallpaper.png)
 
 ### Sayori
 
-![deleted_character](screenshots/literature/sayori_dark_code.png)
-![deleted_character](screenshots/literature/sayori_dark_wallpaper.png)
+![Sayori light Code](screenshots/literature/sayori_light_code.png)
+![Sayori light Background](screenshots/literature/sayori_light_wallpaper.png)
+![Sayori Dark Code](screenshots/literature/sayori_dark_code.png)
+![Sayori Dark Background](screenshots/literature/sayori_dark_wallpaper.png)
