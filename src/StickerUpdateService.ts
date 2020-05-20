@@ -78,12 +78,12 @@ function cleanPathToUrl(stickerPath: string) {
 }
 
 function stickerPathToUrl(currentTheme: DokiTheme) {
-  const stickerPath = currentTheme.sticker.path;
+  const stickerPath = currentTheme.defaultSticker.path;
   return cleanPathToUrl(stickerPath);
 }
 
 function wallpaperPathToUrl(currentTheme: DokiTheme) {
-  const stickerPath = `/${currentTheme.sticker.name}`;
+  const stickerPath = `/${currentTheme.defaultSticker.name}`;
   return cleanPathToUrl(stickerPath);
 }
 

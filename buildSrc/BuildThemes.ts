@@ -1,31 +1,40 @@
 // @ts-ignore
 import GroupToNameMapping from "./GroupMappings";
 
-const path = require('path');
+const path = require("path");
 
-const repoDirectory = path.resolve(__dirname, '..');
+const repoDirectory = path.resolve(__dirname, "..");
 
-const fs = require('fs');
+const fs = require("fs");
 
-const masterThemeDefinitionDirectoryPath =
-  path.resolve(repoDirectory, 'masterThemes', 'definitions');
-const vsCodeDefinitionDirectoryPath =
-  path.resolve(repoDirectory, 'themes', 'definitions');
-const templateDirectoryPath =
-  path.resolve(repoDirectory, 'themes', 'templates');
+const masterThemeDefinitionDirectoryPath = path.resolve(
+  repoDirectory,
+  "masterThemes",
+  "definitions"
+);
+const vsCodeDefinitionDirectoryPath = path.resolve(
+  repoDirectory,
+  "themes",
+  "definitions"
+);
+const templateDirectoryPath = path.resolve(
+  repoDirectory,
+  "themes",
+  "templates"
+);
 
-
-const swapMasterThemeForLocalTheme =
-  (masterDokiThemeDefinitionPath: string): string => {
-    const masterThemeFilePath =
-      masterDokiThemeDefinitionPath.substring(
-        masterThemeDefinitionDirectoryPath.toString().length
-      );
-    return `${vsCodeDefinitionDirectoryPath}${masterThemeFilePath}`;
-  };
+const swapMasterThemeForLocalTheme = (
+  masterDokiThemeDefinitionPath: string
+): string => {
+  const masterThemeFilePath = masterDokiThemeDefinitionPath.substring(
+    masterThemeDefinitionDirectoryPath.toString().length
+  );
+  return `${vsCodeDefinitionDirectoryPath}${masterThemeFilePath}`;
+};
 
 function walkDir(dir: string): Promise<string[]> {
-  const values: Promise<string[]>[] = fs.readdirSync(dir)
+  const values: Promise<string[]>[] = fs
+    .readdirSync(dir)
     .map((file: string) => {
       const dirPath: string = path.join(dir, file);
       const isDirectory = fs.statSync(dirPath).isDirectory();
@@ -35,21 +44,21 @@ function walkDir(dir: string): Promise<string[]> {
         return Promise.resolve([path.join(dir, file)]);
       }
     });
-  return Promise.all(values)
-    .then((scannedDirectories) => scannedDirectories
-      .reduce((accum, files) => accum.concat(files), []));
+  return Promise.all(values).then((scannedDirectories) =>
+    scannedDirectories.reduce((accum, files) => accum.concat(files), [])
+  );
 }
 
-const LAF_TYPE = 'laf';
-const SYNTAX_TYPE = 'syntax';
-const NAMED_COLOR_TYPE = 'colorz';
+const LAF_TYPE = "laf";
+const SYNTAX_TYPE = "syntax";
+const NAMED_COLOR_TYPE = "colorz";
 
 function getTemplateType(templatePath: string) {
-  if (templatePath.endsWith('laf.template.json')) {
+  if (templatePath.endsWith("laf.template.json")) {
     return LAF_TYPE;
-  } else if (templatePath.endsWith('syntax.template.json')) {
+  } else if (templatePath.endsWith("syntax.template.json")) {
     return SYNTAX_TYPE;
-  } else if (templatePath.endsWith('colors.template.json')) {
+  } else if (templatePath.endsWith("colors.template.json")) {
     return NAMED_COLOR_TYPE;
   }
   throw new Error(`I do not know what template ${templatePath} is!`);
@@ -76,11 +85,11 @@ interface Overrides {
 interface VSCodeDefinitions {
   laf?: {
     extends: string;
-    ui: StringDictonary<string>
+    ui: StringDictonary<string>;
   };
   overrides?: {
     editorScheme?: {
-      colors: StringDictonary<string>
+      colors: StringDictonary<string>;
     };
   };
 }
@@ -100,7 +109,7 @@ export interface VSCodeDokiThemeDefinition {
   overrides: Overrides;
   laf: {
     extends: string;
-    ui: StringDictonary<string>
+    ui: StringDictonary<string>;
   };
   syntax: {};
   colors: {};
@@ -113,23 +122,20 @@ export interface MasterDokiThemeDefinition {
   dark: boolean;
   author: string;
   group: string;
-  product?: 'community' | 'ultimate';
+  product?: "community" | "ultimate";
   stickers: Stickers;
   colors: StringDictonary<string>;
 }
 
-function getThemeType(
-  dokiThemeTemplateJson: MasterDokiThemeDefinition
-) {
-  return dokiThemeTemplateJson.dark ?
-    "dark" : "light";
+function getThemeType(dokiThemeTemplateJson: MasterDokiThemeDefinition) {
+  return dokiThemeTemplateJson.dark ? "dark" : "light";
 }
 
 function resolveTemplate<T, R>(
   childTemplate: T,
   templateNameToTemplate: StringDictonary<T>,
   attributeResolver: (t: T) => R,
-  parentResolver: (t: T) => string,
+  parentResolver: (t: T) => string
 ): R {
   if (!parentResolver(childTemplate)) {
     return attributeResolver(childTemplate);
@@ -143,21 +149,22 @@ function resolveTemplate<T, R>(
     );
     return {
       ...resolvedParent,
-      ...attributeResolver(childTemplate)
+      ...attributeResolver(childTemplate),
     };
   }
 }
-
 
 function resolveColor(
   color: string,
   namedColors: StringDictonary<string>
 ): string {
-  const startingTemplateIndex = color.indexOf('&');
+  const startingTemplateIndex = color.indexOf("&");
   if (startingTemplateIndex > -1) {
-    const lastDelimeterIndex = color.lastIndexOf('&');
-    const namedColor =
-      color.substring(startingTemplateIndex + 1, lastDelimeterIndex);
+    const lastDelimeterIndex = color.lastIndexOf("&");
+    const namedColor = color.substring(
+      startingTemplateIndex + 1,
+      lastDelimeterIndex
+    );
     const namedColorValue = namedColors[namedColor];
     if (!namedColorValue) {
       throw new Error(`Named color: '${namedColor}' is not present!`);
@@ -165,14 +172,16 @@ function resolveColor(
 
     // todo: check for cyclic references
     if (color === namedColorValue) {
-      throw new Error(`Very Cheeky, you set ${namedColor} to resolve to itself 😒`);
+      throw new Error(
+        `Very Cheeky, you set ${namedColor} to resolve to itself 😒`
+      );
     }
 
     const resolvedNamedColor = resolveColor(namedColorValue, namedColors);
     if (!resolvedNamedColor) {
       throw new Error(`Cannot find named color '${namedColor}'.`);
     }
-    return resolvedNamedColor + color.substring(lastDelimeterIndex + 1) || '';
+    return resolvedNamedColor + color.substring(lastDelimeterIndex + 1) || "";
   }
 
   return color;
@@ -180,20 +189,18 @@ function resolveColor(
 
 function applyNamedColors(
   objectWithNamedColors: StringDictonary<string>,
-  namedColors: StringDictonary<string>,
+  namedColors: StringDictonary<string>
 ): StringDictonary<string> {
   return Object.keys(objectWithNamedColors)
-    .map(key => {
+    .map((key) => {
       const color = objectWithNamedColors[key];
-      const resolvedColor = resolveColor(
-        color,
-        namedColors
-      );
+      const resolvedColor = resolveColor(color, namedColors);
       return {
         key,
-        value: resolvedColor
+        value: resolvedColor,
       };
-    }).reduce((accum: StringDictonary<string>, kv) => {
+    })
+    .reduce((accum: StringDictonary<string>, kv) => {
       accum[kv.key] = kv.value;
       return accum;
     }, {});
@@ -205,28 +212,25 @@ function buildLAFColors(
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
   const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
-  const lafTemplate =
-    dokiVSCodeThemeTemplateJson.laf.extends ?
-      dokiVSCodeThemeTemplateJson.laf :
-      (dokiThemeTemplateJson.dark ?
-        lafTemplates.dark : lafTemplates.light);
+  const lafTemplate = dokiVSCodeThemeTemplateJson.laf.extends
+    ? dokiVSCodeThemeTemplateJson.laf
+    : dokiThemeTemplateJson.dark
+    ? lafTemplates.dark
+    : lafTemplates.light;
 
-  const resolvedLafTemplate =
-    resolveTemplate(
-      lafTemplate, lafTemplates,
-      template => template.ui,
-      template => template.extends
-    );
+  const resolvedLafTemplate = resolveTemplate(
+    lafTemplate,
+    lafTemplates,
+    (template) => template.ui,
+    (template) => template.extends
+  );
 
   const resolvedNameColors = resolveNamedColors(
     dokiTemplateDefinitions,
     dokiThemeTemplateJson
   );
 
-  return applyNamedColors(
-    resolvedLafTemplate,
-    resolvedNameColors
-  );
+  return applyNamedColors(resolvedLafTemplate, resolvedNameColors);
 }
 
 function resolveNamedColors(
@@ -237,22 +241,21 @@ function resolveNamedColors(
   return resolveTemplate(
     dokiThemeTemplateJson,
     colorTemplates,
-    template => template.colors,
-    // @ts-ignore
-    template => template.extends ||
-      template.dark !== undefined && (dokiThemeTemplateJson.dark ?
-        'dark' : 'light'));
+    (template) => template.colors,
+    (template) =>
+      // @ts-ignore
+      template.extends ||
+      (template.dark !== undefined &&
+        (dokiThemeTemplateJson.dark ? "dark" : "light"))
+  );
 }
 
 function getSyntaxColor(
   syntaxSettingsValue: string,
   resolvedNamedColors: StringDictonary<string>
 ) {
-  if (syntaxSettingsValue.indexOf('&') > -1) {
-    return resolveColor(
-      syntaxSettingsValue,
-      resolvedNamedColors
-    );
+  if (syntaxSettingsValue.indexOf("&") > -1) {
+    return resolveColor(syntaxSettingsValue, resolvedNamedColors);
   } else {
     return syntaxSettingsValue;
   }
@@ -263,39 +266,36 @@ function buildSyntaxColors(
   dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
   dokiTemplateDefinitions: DokiThemeDefinitions
 ) {
-  const syntaxTemplate: any[] = dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
+  const syntaxTemplate: any[] =
+    dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
 
-  const overrides = dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
+  const overrides =
+    dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {
-    ...resolveNamedColors(
-      dokiTemplateDefinitions, dokiThemeTemplateJson
-    ),
-    ...overrides
+    ...resolveNamedColors(dokiTemplateDefinitions, dokiThemeTemplateJson),
+    ...overrides,
   };
 
-  return syntaxTemplate.map(tokenSpecification => {
+  return syntaxTemplate.map((tokenSpecification) => {
     const newTokenSpec = {
-      ...tokenSpecification
+      ...tokenSpecification,
     };
 
     const newsettings = Object.keys(newTokenSpec.settings)
-      .map(key => {
+      .map((key) => {
         const oldValue = newTokenSpec.settings[key];
-        const value = getSyntaxColor(
-          oldValue,
-          resolvedNamedColors
-        );
-        return {key, value};
-      }).reduce((accum: StringDictonary<string>, next) => {
+        const value = getSyntaxColor(oldValue, resolvedNamedColors);
+        return { key, value };
+      })
+      .reduce((accum: StringDictonary<string>, next) => {
         accum[next.key] = next.value;
         return accum;
       }, {});
-    newTokenSpec.settings =
-      newsettings;
+    newTokenSpec.settings = newsettings;
 
     return {
       ...tokenSpecification,
-      settings: newsettings
+      settings: newsettings,
     };
   });
 }
@@ -316,7 +316,7 @@ function buildVSCodeTheme(
       dokiThemeDefinition,
       dokiThemeVSCodeDefinition,
       dokiTemplateDefinitions
-    )
+    ),
   };
 }
 
@@ -334,46 +334,51 @@ function createDokiTheme(
         dokiThemeDefinition,
         dokiThemeVSCodeDefinition,
         dokiTemplateDefinitions
-      )
+      ),
     };
   } catch (e) {
-    throw new Error(`Unable to build ${dokiThemeDefinition.name}'s theme for reasons ${e}`);
+    throw new Error(
+      `Unable to build ${dokiThemeDefinition.name}'s theme for reasons ${e}`
+    );
   }
 }
 
 const readJson = <T>(jsonPath: string): T =>
-  JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+  JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 
 type TemplateTypes = StringDictonary<StringDictonary<string>>;
 
 const readTemplates = (templatePaths: string[]): TemplateTypes => {
   return templatePaths
-    .map(templatePath => {
+    .map((templatePath) => {
       return {
         type: getTemplateType(templatePath),
-        template: readJson<any>(templatePath)
+        template: readJson<any>(templatePath),
       };
     })
-    .reduce((accum: TemplateTypes, templateRepresentation) => {
-      accum[templateRepresentation.type][templateRepresentation.template.name] =
-        templateRepresentation.template;
-      return accum;
-    }, {
-      [SYNTAX_TYPE]: {},
-      [LAF_TYPE]: {},
-      [NAMED_COLOR_TYPE]: {},
-    });
+    .reduce(
+      (accum: TemplateTypes, templateRepresentation) => {
+        accum[templateRepresentation.type][
+          templateRepresentation.template.name
+        ] = templateRepresentation.template;
+        return accum;
+      },
+      {
+        [SYNTAX_TYPE]: {},
+        [LAF_TYPE]: {},
+        [NAMED_COLOR_TYPE]: {},
+      }
+    );
 };
 
-function resolveStickerPath(
-  themeDefinitonPath: string,
-  themeDefinition: MasterDokiThemeDefinition,
-) {
+function resolveStickerPath(themeDefinitonPath: string, sticker: string) {
   const stickerPath = path.resolve(
-    path.resolve(themeDefinitonPath, '..'),
-    themeDefinition.stickers.normal || themeDefinition.stickers.default
+    path.resolve(themeDefinitonPath, ".."),
+    sticker
   );
-  return stickerPath.substring(vsCodeDefinitionDirectoryPath.length).replace(/\\/g, '/');
+  return stickerPath
+    .substring(vsCodeDefinitionDirectoryPath.length)
+    .replace(/\\/g, "/");
 }
 
 function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
@@ -388,188 +393,219 @@ function getThemeGroup(dokiDefinition: MasterDokiThemeDefinition) {
   return groupMapping;
 }
 
-const omit = require('lodash/omit');
+const getStickers = (
+  dokiDefinition: MasterDokiThemeDefinition,
+  dokiTheme: any
+) => {
+  const secondary =
+    dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
+  return {
+    default: {
+      path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default),
+      name: dokiDefinition.stickers.default,
+    },
+    ...(secondary
+      ? {
+          secondary: {
+            path: resolveStickerPath(dokiTheme.path, secondary),
+            name: secondary,
+          },
+        }
+      : {}),
+  };
+};
 
-console.log('Preparing to generate themes.');
+const omit = require("lodash/omit");
+
+console.log("Preparing to generate themes.");
 walkDir(templateDirectoryPath)
   .then(readTemplates)
-  .then(dokiTemplateDefinitions => {
+  .then((dokiTemplateDefinitions) => {
     return walkDir(vsCodeDefinitionDirectoryPath)
-      .then(files => files.filter(file => file.endsWith('vsCode.definition.json')))
-      .then(dokiThemeVSCodeDefinitionPaths => {
+      .then((files) =>
+        files.filter((file) => file.endsWith("vsCode.definition.json"))
+      )
+      .then((dokiThemeVSCodeDefinitionPaths) => {
         return {
           dokiTemplateDefinitions,
-          dokiThemeVSCodeDefinitions:
-            dokiThemeVSCodeDefinitionPaths
-              .map(dokiThemeVSCodeDefinitionPath => readJson<VSCodeDokiThemeDefinition>(dokiThemeVSCodeDefinitionPath))
-              .reduce((accum: StringDictonary<VSCodeDokiThemeDefinition>, def) => {
+          dokiThemeVSCodeDefinitions: dokiThemeVSCodeDefinitionPaths
+            .map((dokiThemeVSCodeDefinitionPath) =>
+              readJson<VSCodeDokiThemeDefinition>(dokiThemeVSCodeDefinitionPath)
+            )
+            .reduce(
+              (accum: StringDictonary<VSCodeDokiThemeDefinition>, def) => {
                 accum[def.id] = def;
                 return accum;
-              }, {}),
+              },
+              {}
+            ),
         };
       });
   })
-  .then(({
-           dokiTemplateDefinitions,
-           dokiThemeVSCodeDefinitions,
-         }) => {
+  .then(({ dokiTemplateDefinitions, dokiThemeVSCodeDefinitions }) => {
     return walkDir(masterThemeDefinitionDirectoryPath)
-      .then(files => files.filter(file => file.endsWith('master.definition.json')))
-      .then(dokiFileDefinitionPaths => {
+      .then((files) =>
+        files.filter((file) => file.endsWith("master.definition.json"))
+      )
+      .then((dokiFileDefinitionPaths) => {
         return {
           dokiTemplateDefinitions,
           dokiThemeVSCodeDefinitions,
-          dokiFileDefinitionPaths
+          dokiFileDefinitionPaths,
         };
       });
   })
-  .then(templatesAndDefinitions => {
+  .then((templatesAndDefinitions) => {
     const {
       dokiTemplateDefinitions,
       dokiThemeVSCodeDefinitions,
-      dokiFileDefinitionPaths
+      dokiFileDefinitionPaths,
     } = templatesAndDefinitions;
     return dokiFileDefinitionPaths
-      .map(dokiFileDefinitionPath => {
-        const dokiThemeDefinition = readJson<MasterDokiThemeDefinition>(dokiFileDefinitionPath);
-        const dokiThemeVSCodeDefinition = dokiThemeVSCodeDefinitions[dokiThemeDefinition.id];
+      .map((dokiFileDefinitionPath) => {
+        const dokiThemeDefinition = readJson<MasterDokiThemeDefinition>(
+          dokiFileDefinitionPath
+        );
+        const dokiThemeVSCodeDefinition =
+          dokiThemeVSCodeDefinitions[dokiThemeDefinition.id];
         if (!dokiThemeVSCodeDefinition) {
-          throw new Error(`${dokiThemeDefinition.displayName}'s theme does not have a VS Code Definition!!`);
+          throw new Error(
+            `${dokiThemeDefinition.displayName}'s theme does not have a VS Code Definition!!`
+          );
         }
-        return ({
-          dokiFileDefinitionPath,
-          dokiThemeDefinition,
-          dokiThemeVSCodeDefinition
-        });
-      })
-      .filter(pathAndDefinition =>
-        (pathAndDefinition.dokiThemeDefinition.product === 'ultimate' &&
-          process.env.PRODUCT === 'ultimate') ||
-        pathAndDefinition.dokiThemeDefinition.product !== 'ultimate'
-      )
-      .map(({
-              dokiFileDefinitionPath,
-              dokiThemeVSCodeDefinition,
-              dokiThemeDefinition,
-            }) =>
-        createDokiTheme(
+        return {
           dokiFileDefinitionPath,
           dokiThemeDefinition,
           dokiThemeVSCodeDefinition,
-          dokiTemplateDefinitions
-        )
+        };
+      })
+      .filter(
+        (pathAndDefinition) =>
+          (pathAndDefinition.dokiThemeDefinition.product === "ultimate" &&
+            process.env.PRODUCT === "ultimate") ||
+          pathAndDefinition.dokiThemeDefinition.product !== "ultimate"
+      )
+      .map(
+        ({
+          dokiFileDefinitionPath,
+          dokiThemeVSCodeDefinition,
+          dokiThemeDefinition,
+        }) =>
+          createDokiTheme(
+            dokiFileDefinitionPath,
+            dokiThemeDefinition,
+            dokiThemeVSCodeDefinition,
+            dokiTemplateDefinitions
+          )
       );
-  }).then(dokiThemes => {
-  // write things for extension
-  const dokiThemeDefinitions = dokiThemes.map(dokiTheme => {
-    const dokiDefinition = dokiTheme.definition;
-    return {
-      extensionName: getCommandName(dokiDefinition),
-      themeDefinition: {
-        information: omit(dokiDefinition, [
-          'colors',
-          'overrides',
-          'ui',
-          'icons'
-        ]),
-        sticker: {
-          path: resolveStickerPath(
-            dokiTheme.path,
-            dokiDefinition
-          ),
-          name: dokiDefinition.stickers.default,
+  })
+  .then((dokiThemes) => {
+    // write things for extension
+    const dokiThemeDefinitions = dokiThemes.map((dokiTheme) => {
+      const dokiDefinition = dokiTheme.definition;
+      return {
+        extensionName: getCommandName(dokiDefinition),
+        themeDefinition: {
+          information: omit(dokiDefinition, [
+            "colors",
+            "overrides",
+            "ui",
+            "icons",
+          ]),
+          stickers: getStickers(dokiDefinition, dokiTheme),
         },
-      }
-    };
-  });
-  const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
-  fs.writeFileSync(
-    path.resolve(repoDirectory, 'src', 'DokiThemeDefinitions.ts'),
-    `export default ${finalDokiDefinitions};`);
-
-  // copy to out directory
-  const themeOutputDirectory = 'generatedThemes';
-  const themePostfix = '.theme.json';
-  dokiThemes.forEach(dokiTheme => {
-    const vsCodeTheme = dokiTheme.theme;
+      };
+    });
+    const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
-      path.resolve(repoDirectory,
-        themeOutputDirectory,
-        `${dokiTheme.definition.name}${themePostfix}`),
-      JSON.stringify(vsCodeTheme, null, 2)
-    );
-  });
-
-
-  // write to package json
-  const dokiDefinitions = dokiThemes.map(d => d.definition);
-  const packageJsonPath =
-    path.resolve(repoDirectory, 'package.json');
-  const packageJson = readJson<any>(packageJsonPath);
-  const activationEvents =
-    dokiDefinitions.map(dokiDefinition =>
-      `onCommand:${getCommandName(dokiDefinition)}`
+      path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
+      `export default ${finalDokiDefinitions};`
     );
 
-  const commands = dokiDefinitions.map(dokiDefinition => ({
-    command: getCommandName(dokiDefinition),
-    title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`
-  }));
+    // copy to out directory
+    const themeOutputDirectory = "generatedThemes";
+    const themePostfix = ".theme.json";
+    dokiThemes.forEach((dokiTheme) => {
+      const vsCodeTheme = dokiTheme.theme;
+      fs.writeFileSync(
+        path.resolve(
+          repoDirectory,
+          themeOutputDirectory,
+          `${dokiTheme.definition.name}${themePostfix}`
+        ),
+        JSON.stringify(vsCodeTheme, null, 2)
+      );
+    });
 
-  const themes = dokiDefinitions.map(dokiDefinition => ({
-    id: dokiDefinition.id,
-    label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${dokiDefinition.displayName}`,
-    path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
-    uiTheme: dokiDefinition.dark ? 'vs-dark' : 'vs'
-  }));
+    // write to package json
+    const dokiDefinitions = dokiThemes.map((d) => d.definition);
+    const packageJsonPath = path.resolve(repoDirectory, "package.json");
+    const packageJson = readJson<any>(packageJsonPath);
+    const activationEvents = dokiDefinitions.map(
+      (dokiDefinition) => `onCommand:${getCommandName(dokiDefinition)}`
+    );
 
-  packageJson.activationEvents = [
-    ...packageJson.activationEvents.filter((activationEvent: string) =>
-      !activationEvent.startsWith("onCommand:extension.theme")),
-    ...activationEvents
-  ];
+    const commands = dokiDefinitions.map((dokiDefinition) => ({
+      command: getCommandName(dokiDefinition),
+      title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`,
+    }));
 
-  packageJson.contributes.commands =
-    [
-      ...packageJson.contributes.commands.filter((command: { command: string }) =>
-        !command.command.startsWith('extension.theme')),
-      ...commands
+    const themes = dokiDefinitions.map((dokiDefinition) => ({
+      id: dokiDefinition.id,
+      label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${
+        dokiDefinition.displayName
+      }`,
+      path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
+      uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
+    }));
+
+    packageJson.activationEvents = [
+      ...packageJson.activationEvents.filter(
+        (activationEvent: string) =>
+          !activationEvent.startsWith("onCommand:extension.theme")
+      ),
+      ...activationEvents,
     ];
-  packageJson.contributes.themes = themes;
-  return new Promise((resolve, reject) => fs.writeFile(
-    packageJsonPath,
-    JSON.stringify(packageJson, null, 2),
-    (err: any) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    }
-  ));
-})
-  .then(() => {
-    // UPDATE CHANGELOG
-    const MarkItDown = require('markdown-it');
-    const markdownConverter = new MarkItDown();
 
-    const changelogPath = path.join(
-      repoDirectory, 'CHANGELOG.md'
+    packageJson.contributes.commands = [
+      ...packageJson.contributes.commands.filter(
+        (command: { command: string }) =>
+          !command.command.startsWith("extension.theme")
+      ),
+      ...commands,
+    ];
+    packageJson.contributes.themes = themes;
+    return new Promise((resolve, reject) =>
+      fs.writeFile(
+        packageJsonPath,
+        JSON.stringify(packageJson, null, 2),
+        (err: any) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        }
+      )
     );
-    const changelogText = fs.readFileSync(
-      changelogPath, 'utf-8'
-    );
-
-    const changelogHTML = markdownConverter.render(
-      changelogText
-    );
-
-    fs.writeFileSync(
-      path.resolve(repoDirectory, 'src', 'ChangelogHtml.ts'),
-      `export default \`${changelogHTML}\`;`);
   })
   .then(() => {
-    console.log('Theme Generation Complete!');
+    // UPDATE CHANGELOG
+    const MarkItDown = require("markdown-it");
+    const markdownConverter = new MarkItDown();
+
+    const changelogPath = path.join(repoDirectory, "CHANGELOG.md");
+    const changelogText = fs.readFileSync(changelogPath, "utf-8");
+
+    const changelogHTML = markdownConverter.render(changelogText);
+
+    fs.writeFileSync(
+      path.resolve(repoDirectory, "src", "ChangelogHtml.ts"),
+      `export default \`${changelogHTML}\`;`
+    );
+  })
+  .then(() => {
+    console.log("Theme Generation Complete!");
   });
 
 function getCommandName(dokiDefinition: MasterDokiThemeDefinition) {

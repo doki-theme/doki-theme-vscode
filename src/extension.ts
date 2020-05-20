@@ -12,10 +12,15 @@ import { attemptToNotifyUpdates } from "./NotificationService";
 import { showChanglog } from "./ChangelogService";
 import { attemptToUpdateSticker } from "./StickerUpdateService";
 
+export interface Sticker {
+  path: string;
+  name: string;
+}
+
 export interface DokiThemeDefinition {
-  sticker: {
-    path: string;
-    name: string;
+  stickers: {
+    default: Sticker;
+    secondary?: Sticker;
   };
   information: any;
 }
