@@ -6,16 +6,17 @@ import fs from "fs";
 import crypto from "crypto";
 import { VSCODE_ASSETS_URL, isCodeServer, BACKGROUND_ASSETS_URL } from "./ENV";
 import { DokiStickers } from "./StickerService";
+import { Sticker } from "./extension";
 
 export const attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentTheme: DokiTheme
+  currentSticker: Sticker,
 ): Promise<DokiStickers> => {
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
-    currentTheme
+    currentSticker
   )}`;
   const remoteWallpaperUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
-    currentTheme
+    currentSticker
   )}`;
   if (isCodeServer()) {
     return {
@@ -24,8 +25,8 @@ export const attemptToUpdateSticker = async (
     };
   }
 
-  const localStickerPath = resolveLocalStickerPath(currentTheme, context);
-  const localWallpaperPath = resolveLocalWallpaperPath(currentTheme, context);
+  const localStickerPath = resolveLocalStickerPath(currentSticker, context);
+  const localWallpaperPath = resolveLocalWallpaperPath(currentSticker, context);
   await Promise.all([
     attemptToUpdateAsset(remoteStickerUrl, localStickerPath),
     attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath),
@@ -54,18 +55,18 @@ const fetchRemoteChecksum = async (remoteAssetUrl: string) => {
 };
 
 const resolveLocalStickerPath = (
-  currentTheme: DokiTheme,
+  currentSticker: Sticker,
   context: vscode.ExtensionContext
 ): string => {
-  const safeStickerPath = stickerPathToUrl(currentTheme);
+  const safeStickerPath = stickerPathToUrl(currentSticker);
   return path.join(context.globalStoragePath, "stickers", safeStickerPath);
 };
 
 const resolveLocalWallpaperPath = (
-  currentTheme: DokiTheme,
+  currentSticker: Sticker,
   context: vscode.ExtensionContext
 ): string => {
-  const safeStickerPath = wallpaperPathToUrl(currentTheme);
+  const safeStickerPath = wallpaperPathToUrl(currentSticker);
   return path.join(context.globalStoragePath, "wallpapers", safeStickerPath);
 };
 
@@ -77,13 +78,13 @@ function cleanPathToUrl(stickerPath: string) {
   return stickerPath.replace(/\\/g, "/");
 }
 
-function stickerPathToUrl(currentTheme: DokiTheme) {
-  const stickerPath = currentTheme.sticker.path;
+function stickerPathToUrl(currentSticker: Sticker) {
+  const stickerPath = currentSticker.path;
   return cleanPathToUrl(stickerPath);
 }
 
-function wallpaperPathToUrl(currentTheme: DokiTheme) {
-  const stickerPath = `/${currentTheme.sticker.name}`;
+function wallpaperPathToUrl(currentSticker: Sticker) {
+  const stickerPath = `/${currentSticker.name}`;
   return cleanPathToUrl(stickerPath);
 }
 

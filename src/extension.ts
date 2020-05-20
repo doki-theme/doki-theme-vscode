@@ -2,9 +2,10 @@ import * as vscode from "vscode";
 import {
   activateTheme,
   uninstallImages,
-  getCurrentTheme,
+  getCurrentThemeAndSticker,
+  getSticker,
 } from "./ThemeManager";
-import { DokiTheme } from "./DokiTheme";
+import { DokiTheme, StickerType, DokiSticker } from "./DokiTheme";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { StatusBarComponent } from "./StatusBar";
 import { VSCodeGlobals } from "./VSCodeGlobals";
@@ -12,18 +13,36 @@ import { attemptToNotifyUpdates } from "./NotificationService";
 import { showChanglog } from "./ChangelogService";
 import { attemptToUpdateSticker } from "./StickerUpdateService";
 
+export interface Sticker {
+  path: string;
+  name: string;
+}
+
 export interface DokiThemeDefinition {
-  sticker: {
-    path: string;
-    name: string;
+  stickers: {
+    default: Sticker;
+    secondary?: Sticker;
   };
   information: any;
 }
 
 export interface VSCodeDokiThemeDefinition {
-  extensionName: string;
+  extensionNames: string[];
   themeDefinition: DokiThemeDefinition;
 }
+
+const getCurrentSticker = (
+  extensionCommand: string,
+  dokiThemeDefinition: DokiThemeDefinition
+): DokiSticker =>{
+  const stickerType = extensionCommand.endsWith('secondary') ? 
+  StickerType.SECONDARY : StickerType.DEFAULT;
+  const sticker = getSticker(dokiThemeDefinition, stickerType);
+    return {
+      sticker,
+      type: stickerType,
+    };
+};
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -45,13 +64,26 @@ export function activate(context: vscode.ExtensionContext) {
 
   attemptToNotifyUpdates(context);
 
-  attemptToUpdateSticker(context, getCurrentTheme());
+  const {sticker} = getCurrentThemeAndSticker();
+  attemptToUpdateSticker(context, sticker.sticker);
 
   DokiThemeDefinitions.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
-    vscode.commands.registerCommand(dokiThemeDefinition.extensionName, () =>
-      activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition), context)
+    dokiThemeDefinition.extensionNames.map((extensionCommand) => ({
+      extensionCommand,
+      dokiThemeDefinition,
+    }))
+  )
+    .reduce((accum, next) => accum.concat(next), [])
+    .map(({ dokiThemeDefinition, extensionCommand }) =>
+      vscode.commands.registerCommand(extensionCommand, () =>
+        activateTheme(
+          new DokiTheme(dokiThemeDefinition.themeDefinition),
+          getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition),          
+          context
+        )
+      )
     )
-  ).forEach((disposableHero) => context.subscriptions.push(disposableHero));
+    .forEach((disposableHero) => context.subscriptions.push(disposableHero));
 }
 
 export function deactivate() {}

@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
-import { DokiTheme } from "./DokiTheme";
 import fs from "fs";
 import { ASSETS_URL, editorCss, editorCssCopy } from "./ENV";
 import { attemptToUpdateSticker } from "./StickerUpdateService";
+import { Sticker } from "./extension";
 
 export enum InstallStatus {
   INSTALLED,
@@ -75,14 +75,14 @@ export interface DokiStickers {
 }
 
 export async function installStickersAndWallPaper(
-  dokiTheme: DokiTheme,
+  sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<boolean> {
   if (canWrite()) {
     try {
       const stickersAndWallpaper = await attemptToUpdateSticker(
         context,
-        dokiTheme
+        sticker
       );
       const stickerStyles = buildStyles(stickersAndWallpaper);
       installEditorStyles(stickerStyles);

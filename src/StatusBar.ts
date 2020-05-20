@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import {getCurrentTheme} from './ThemeManager';
+import {getCurrentThemeAndSticker} from './ThemeManager';
 
 
 class StatusBar implements vscode.Disposable {
@@ -15,8 +15,8 @@ class StatusBar implements vscode.Disposable {
     }
 
     initialize() {
-        const currentTheme = getCurrentTheme();
-        this.setText(currentTheme.displayName);
+        const {theme} = getCurrentThemeAndSticker();
+        this.setText(theme.displayName);
     }
 
     dispose() {
