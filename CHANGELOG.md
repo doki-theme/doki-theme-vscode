@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.4.0 [Secondary Sticker Port]
+
+- Brought the secondary stickers from the Intellij themes over to VSCode!
+  - Themes that have a secondary sticker now:
+    - Monika (Light/Dark)
+    - Natsuki (Light/Dark)
+    - Sayori (Light/Dark)
+    - Yuri (Light/Dark)
+
 ## 2.3.0 [Light Theme Adjustments]
 
 - Revisited most of the light themes so they are all consistent with the other products.
