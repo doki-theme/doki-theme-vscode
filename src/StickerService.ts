@@ -1,5 +1,4 @@
 import * as vscode from "vscode";
-import { DokiTheme } from "./DokiTheme";
 import fs from "fs";
 import { ASSETS_URL, editorCss, editorCssCopy } from "./ENV";
 import { attemptToUpdateSticker } from "./StickerUpdateService";

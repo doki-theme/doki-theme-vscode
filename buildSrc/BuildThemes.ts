@@ -1,6 +1,6 @@
 // @ts-ignore
 import GroupToNameMapping from "./GroupMappings";
-import toPairs from "lodash/toPairs";
+import keys from "lodash/keys";
 
 const path = require("path");
 
@@ -620,9 +620,9 @@ walkDir(templateDirectoryPath)
   });
 
 function getCommandNames(dokiDefinition: MasterDokiThemeDefinition) {
-  return toPairs(dokiDefinition.stickers)
-    .filter(([type]) => type !== "normal")
-    .map(([type, stickerPath]) => {
+  return keys(dokiDefinition.stickers)
+    .filter((type) => type !== "normal")
+    .map((type) => {
       if (type === "default") {
         return `extension.theme.${dokiDefinition.name}`;
       }
