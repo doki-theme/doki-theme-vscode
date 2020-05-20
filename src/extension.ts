@@ -26,7 +26,7 @@ export interface DokiThemeDefinition {
 }
 
 export interface VSCodeDokiThemeDefinition {
-  extensionName: string;
+  extensionNames: string[];
   themeDefinition: DokiThemeDefinition;
 }
 
@@ -53,10 +53,21 @@ export function activate(context: vscode.ExtensionContext) {
   attemptToUpdateSticker(context, getCurrentTheme());
 
   DokiThemeDefinitions.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
-    vscode.commands.registerCommand(dokiThemeDefinition.extensionName, () =>
-      activateTheme(new DokiTheme(dokiThemeDefinition.themeDefinition), context)
+    dokiThemeDefinition.extensionNames.map((extensionCommand) => ({
+      extensionCommand,
+      dokiThemeDefinition,
+    }))
+  )
+    .reduce((accum, next) => accum.concat(next), [])
+    .map(({ dokiThemeDefinition, extensionCommand }) =>
+      vscode.commands.registerCommand(extensionCommand, () =>
+        activateTheme(
+          new DokiTheme(dokiThemeDefinition.themeDefinition),
+          context
+        )
+      )
     )
-  ).forEach((disposableHero) => context.subscriptions.push(disposableHero));
+    .forEach((disposableHero) => context.subscriptions.push(disposableHero));
 }
 
 export function deactivate() {}

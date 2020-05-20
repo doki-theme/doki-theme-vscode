@@ -1,5 +1,6 @@
 // @ts-ignore
 import GroupToNameMapping from "./GroupMappings";
+import toPairs from "lodash/toPairs";
 
 const path = require("path");
 
@@ -504,7 +505,7 @@ walkDir(templateDirectoryPath)
     const dokiThemeDefinitions = dokiThemes.map((dokiTheme) => {
       const dokiDefinition = dokiTheme.definition;
       return {
-        extensionName: getCommandName(dokiDefinition),
+        extensionNames: getCommandNames(dokiDefinition),
         themeDefinition: {
           information: omit(dokiDefinition, [
             "colors",
@@ -541,13 +542,23 @@ walkDir(templateDirectoryPath)
     const dokiDefinitions = dokiThemes.map((d) => d.definition);
     const packageJsonPath = path.resolve(repoDirectory, "package.json");
     const packageJson = readJson<any>(packageJsonPath);
-    const activationEvents = dokiDefinitions.map(
-      (dokiDefinition) => `onCommand:${getCommandName(dokiDefinition)}`
+    const stickerInstallCommands = dokiDefinitions
+      .map((definition) =>
+        getCommandNames(definition).map((command) => ({
+          command,
+          definition,
+        }))
+      )
+      .reduce((accum, next) => accum.concat(next), []);
+    const activationEvents = stickerInstallCommands.map(
+      (command) => `onCommand:${command.command}`
     );
 
-    const commands = dokiDefinitions.map((dokiDefinition) => ({
-      command: getCommandName(dokiDefinition),
-      title: `Doki-Theme: Install ${dokiDefinition.name}'s Stickers`,
+    const commands = stickerInstallCommands.map((commandAndDefinition) => ({
+      command: commandAndDefinition.command,
+      title: `Doki-Theme: Install ${commandAndDefinition.definition.name}'s${
+        commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
+      } Stickers`,
     }));
 
     const themes = dokiDefinitions.map((dokiDefinition) => ({
@@ -608,6 +619,13 @@ walkDir(templateDirectoryPath)
     console.log("Theme Generation Complete!");
   });
 
-function getCommandName(dokiDefinition: MasterDokiThemeDefinition) {
-  return `extension.theme.${dokiDefinition.name}`;
+function getCommandNames(dokiDefinition: MasterDokiThemeDefinition) {
+  return toPairs(dokiDefinition.stickers)
+    .filter(([type]) => type !== "normal")
+    .map(([type, stickerPath]) => {
+      if (type === "default") {
+        return `extension.theme.${dokiDefinition.name}`;
+      }
+      return `extension.theme.${dokiDefinition.name}.secondary`;
+    });
 }

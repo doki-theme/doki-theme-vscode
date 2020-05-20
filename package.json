@@ -34,13 +34,21 @@
     "onCommand:extension.theme.Satsuki",
     "onCommand:extension.theme.Megumin",
     "onCommand:extension.theme.Monika Dark",
+    "onCommand:extension.theme.Monika Dark.secondary",
     "onCommand:extension.theme.Monika Light",
+    "onCommand:extension.theme.Monika Light.secondary",
     "onCommand:extension.theme.Natsuki Dark",
+    "onCommand:extension.theme.Natsuki Dark.secondary",
     "onCommand:extension.theme.Natsuki Light",
+    "onCommand:extension.theme.Natsuki Light.secondary",
     "onCommand:extension.theme.Sayori Dark",
+    "onCommand:extension.theme.Sayori Dark.secondary",
     "onCommand:extension.theme.Sayori Light",
+    "onCommand:extension.theme.Sayori Light.secondary",
     "onCommand:extension.theme.Yuri Dark",
+    "onCommand:extension.theme.Yuri Dark.secondary",
     "onCommand:extension.theme.Yuri Light",
+    "onCommand:extension.theme.Yuri Light.secondary",
     "onCommand:extension.theme.Hatsune Miku",
     "onCommand:extension.theme.Beatrice",
     "onCommand:extension.theme.Emilia Dark",
@@ -84,32 +92,64 @@
         "title": "Doki-Theme: Install Monika Dark's Stickers"
       },
       {
+        "command": "extension.theme.Monika Dark.secondary",
+        "title": "Doki-Theme: Install Monika Dark's Secondary Stickers"
+      },
+      {
         "command": "extension.theme.Monika Light",
         "title": "Doki-Theme: Install Monika Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Monika Light.secondary",
+        "title": "Doki-Theme: Install Monika Light's Secondary Stickers"
       },
       {
         "command": "extension.theme.Natsuki Dark",
         "title": "Doki-Theme: Install Natsuki Dark's Stickers"
       },
       {
+        "command": "extension.theme.Natsuki Dark.secondary",
+        "title": "Doki-Theme: Install Natsuki Dark's Secondary Stickers"
+      },
+      {
         "command": "extension.theme.Natsuki Light",
         "title": "Doki-Theme: Install Natsuki Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Natsuki Light.secondary",
+        "title": "Doki-Theme: Install Natsuki Light's Secondary Stickers"
       },
       {
         "command": "extension.theme.Sayori Dark",
         "title": "Doki-Theme: Install Sayori Dark's Stickers"
       },
       {
+        "command": "extension.theme.Sayori Dark.secondary",
+        "title": "Doki-Theme: Install Sayori Dark's Secondary Stickers"
+      },
+      {
         "command": "extension.theme.Sayori Light",
         "title": "Doki-Theme: Install Sayori Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Sayori Light.secondary",
+        "title": "Doki-Theme: Install Sayori Light's Secondary Stickers"
       },
       {
         "command": "extension.theme.Yuri Dark",
         "title": "Doki-Theme: Install Yuri Dark's Stickers"
       },
       {
+        "command": "extension.theme.Yuri Dark.secondary",
+        "title": "Doki-Theme: Install Yuri Dark's Secondary Stickers"
+      },
+      {
         "command": "extension.theme.Yuri Light",
         "title": "Doki-Theme: Install Yuri Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Yuri Light.secondary",
+        "title": "Doki-Theme: Install Yuri Light's Secondary Stickers"
       },
       {
         "command": "extension.theme.Hatsune Miku",
@@ -269,6 +309,7 @@
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
+    "@types/lodash": "^4.14.152",
     "@types/markdown-it": "^0.0.9",
     "@types/mocha": "^5.2.7",
     "@types/node": "^13.5.3",
