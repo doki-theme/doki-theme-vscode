@@ -2,9 +2,10 @@ import * as vscode from "vscode";
 import {
   activateTheme,
   uninstallImages,
-  getCurrentTheme,
+  getCurrentThemeAndSticker,
+  getSticker,
 } from "./ThemeManager";
-import { DokiTheme } from "./DokiTheme";
+import { DokiTheme, StickerType, DokiSticker } from "./DokiTheme";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { StatusBarComponent } from "./StatusBar";
 import { VSCodeGlobals } from "./VSCodeGlobals";
@@ -30,6 +31,19 @@ export interface VSCodeDokiThemeDefinition {
   themeDefinition: DokiThemeDefinition;
 }
 
+const getCurrentSticker = (
+  extensionCommand: string,
+  dokiThemeDefinition: DokiThemeDefinition
+): DokiSticker =>{
+  const stickerType = extensionCommand.endsWith('secondary') ? 
+  StickerType.SECONDARY : StickerType.DEFAULT;
+  const sticker = getSticker(dokiThemeDefinition, stickerType);
+    return {
+      sticker,
+      type: stickerType,
+    };
+};
+
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand("extension.remove.sticker", () =>
@@ -50,7 +64,8 @@ export function activate(context: vscode.ExtensionContext) {
 
   attemptToNotifyUpdates(context);
 
-  attemptToUpdateSticker(context, getCurrentTheme());
+  const {sticker} = getCurrentThemeAndSticker();
+  attemptToUpdateSticker(context, sticker.sticker);
 
   DokiThemeDefinitions.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
     dokiThemeDefinition.extensionNames.map((extensionCommand) => ({
@@ -63,6 +78,7 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.commands.registerCommand(extensionCommand, () =>
         activateTheme(
           new DokiTheme(dokiThemeDefinition.themeDefinition),
+          getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition),          
           context
         )
       )

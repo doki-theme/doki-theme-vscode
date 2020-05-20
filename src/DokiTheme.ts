@@ -16,6 +16,14 @@ export class DokiTheme {
     };
   }
 }
+export enum StickerType {
+  DEFAULT, SECONDARY
+}
+
+export interface DokiSticker {
+  type: StickerType;
+  sticker: Sticker;
+}
 
 export interface Sticker {
   path: string;
