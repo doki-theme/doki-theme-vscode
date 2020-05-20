@@ -72,5 +72,5 @@ Enhance your command line experience! Install [the Doki Theme for Hyper!](https:
 ---
 
 <div align="center">
-    <img src="https://doki.assets.unthrottled.io/misc/logo.svg" ></img>
+    <img src="https://doki.assets.unthrottled.io/misc/logo.png" ></img>
 </div>
