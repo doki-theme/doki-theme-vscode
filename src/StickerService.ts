@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import fs from "fs";
-import { ASSETS_URL, editorCss, editorCssCopy } from "./ENV";
+import { editorCss, editorCssCopy } from "./ENV";
 import { attemptToUpdateSticker } from "./StickerUpdateService";
 import { Sticker } from "./extension";
 
@@ -10,10 +10,14 @@ export enum InstallStatus {
   FAILURE,
 }
 
+const stickerComment = "/* Stickers */";
+
+const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
+
 // Was VS Code upgraded when stickers where installed?
 function isCssPrestine() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
-  return currentCss.indexOf(ASSETS_URL) < 0;
+  return getStickerIndex(currentCss) < 0;
 }
 
 function ensureRightCssCopy() {
@@ -34,7 +38,7 @@ function buildStickerCss({
   const style =
     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;";
   return `
-  /* Stickers */
+  ${stickerComment}
   .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element::after{background-image: url('${stickerUrl}');${style}}
 
   /* Background Image */
@@ -95,6 +99,14 @@ export async function installStickersAndWallPaper(
   return false;
 }
 
+const scrubFileIfNecessary = () => {
+  const currentCss = fs.readFileSync(editorCss, "utf-8");
+  const stickerIndex = getStickerIndex(currentCss);
+  if (stickerIndex >= 0){
+    fs.writeFileSync(editorCss, currentCss.substr(0, stickerIndex).trim(), "utf-8");
+  }
+};
+
 // :(
 export function removeStickers(): InstallStatus {
   if (canWrite()) {
@@ -102,6 +114,7 @@ export function removeStickers(): InstallStatus {
       fs.unlinkSync(editorCss);
       fs.copyFileSync(editorCssCopy, editorCss);
       fs.unlinkSync(editorCssCopy);
+      scrubFileIfNecessary();
       return InstallStatus.INSTALLED;
     }
     return InstallStatus.NOT_INSTALLED;
