@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.4.1 [Sticker Removal Fix]
+
+- Fixed the issue with the sticker not being removed after installing multiple stickers.
+
 ## 2.4.0 [Secondary Sticker Port]
 
 - Brought the secondary stickers from the Intellij themes over to VSCode!
