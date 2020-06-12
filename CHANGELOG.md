@@ -1,5 +1,10 @@
 # Change Log
 
+
+## 2.4.2 [Sticker Removal Fix (Revisited)]
+
+- Scrubs CSS file after removal.
+
 ## 2.4.1 [Sticker Removal Fix]
 
 - Fixed the issue with the sticker not being removed after installing multiple stickers.
