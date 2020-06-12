@@ -117,6 +117,7 @@ export function removeStickers(): InstallStatus {
       scrubFileIfNecessary();
       return InstallStatus.INSTALLED;
     }
+    scrubFileIfNecessary();
     return InstallStatus.NOT_INSTALLED;
   }
 
