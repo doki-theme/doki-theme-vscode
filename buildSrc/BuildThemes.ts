@@ -274,7 +274,7 @@ function buildSyntaxColors(
 ) {
   const syntaxTemplate: any[] =
     dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
-
+  
   const overrides =
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {

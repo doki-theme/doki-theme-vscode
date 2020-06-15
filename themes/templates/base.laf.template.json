@@ -69,6 +69,7 @@
     "statusBar.noFolderBackground": "&accentColor&",
     "panelTitle.activeBorder":"&accentColor&",
     "statusBar.debuggingBackground": "&accentColor&",
+    "gitDecoration.modifiedResourceForeground": "&accentColor&",
     "activityBar.foreground": "&accentColor&",
     "activityBarBadge.background": "&accentColor&",
     "badge.background": "&accentColor&",
