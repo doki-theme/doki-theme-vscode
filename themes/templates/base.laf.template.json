@@ -3,6 +3,8 @@
   "ui": {
     "editor.foreground": "&foregroundColor&",
     "dropdown.foreground": "&foregroundColor&",
+    "panelTitle.activeForeground": "&foregroundColor&",
+    "panelTitle.inactiveForeground": "&foregroundColor&",
     "gitDecoration.ignoredResourceForeground": "&disabledColor&",
     "input.background": "&secondaryBackground&",
     "peekViewResult.background": "&secondaryBackground&",
@@ -65,6 +67,7 @@
     "peekView.border": "&accentColor&",
     "statusBar.background": "&accentColor&",
     "statusBar.noFolderBackground": "&accentColor&",
+    "panelTitle.activeBorder":"&accentColor&",
     "statusBar.debuggingBackground": "&accentColor&",
     "activityBar.foreground": "&accentColor&",
     "activityBarBadge.background": "&accentColor&",

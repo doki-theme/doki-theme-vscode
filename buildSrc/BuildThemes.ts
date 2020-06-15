@@ -254,7 +254,7 @@ function resolveNamedColors(
     ),
     ...dokiThemeVSCodeTemplateJson.colors,
   };
-} 
+}  
 
 function getSyntaxColor(
   syntaxSettingsValue: string,
