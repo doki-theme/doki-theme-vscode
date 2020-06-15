@@ -12,8 +12,10 @@
     "ui": {
       "foreground":"#ffffff",
       "tab.activeForeground": "#fff",
-      "icon.foreground": "#fff"
-      
+      "icon.foreground": "#fff",
+      "gitDecoration.modifiedResourceForeground": "#60ff62",
+      "activityBar.foreground": "#60ff62",
+      "activityBar.inactiveForeground": "#60ff62BB"
     }
   },
   "syntax": {},
