@@ -12,23 +12,13 @@ Steps demonstrated:
 
 ## Screen Samples!
 
-[Complete Theme Album.](https://github.com/Unthrottled/doki-theme-vscode/blob/master/complete_theme_album.md)
+# [Complete Theme Album.](albums/complete_theme_album.md)
 
-[Re:Zero Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/r0_album.md)
-
-[DanganRonpa Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/dr_themes.md)
-
-[Kill La Kill Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/klk_album.md)
-
-[KonoSuba Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/ks_album.md)
-
-[Miscellaneous Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/misc_themes.md)
-
-[Doki-Doki Literature Club Album](https://github.com/Unthrottled/doki-theme-vscode/blob/master/theme_album.md)
+Themes grouped [by anime](./albums/grouping.md)
 
 ## About!
 
-With well over **10 themes** (light and dark) I think you will be able to find your favorite.
+With well over **20 themes** (light and dark) I think you will be able to find your favorite.
 You can even find a theme that fits your mood for the day.
 
 Variety is the spice of life! So you can choose themes from the following Doki-Doki Theme Suites:
@@ -38,6 +28,9 @@ Variety is the spice of life! So you can choose themes from the following Doki-D
 - Kill La Kill
 - KonoSuba
 - DanganRonpa
+- High School DxD
+- Lucky Star
+- Sword Art Online
 
 Sticker in the way? No worries! You can configure them to be on or off at your leisure.
 
