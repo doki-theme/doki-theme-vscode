@@ -46,7 +46,7 @@ Be sure to share it with others who also may enjoy it as well!
 
 ## Not your thing or something bothering you?
 
-Feel free to submit your feedback as [an issue](https://github.com/Unthrottled/doki-theme-vscode/issues/new).
+Feel free to submit your feedback as [an issue](https://github.com/doki-theme/doki-theme-vscode/issues/new).
 Help make this plugin better!
 
 # Even more Doki-Theme!
@@ -55,12 +55,12 @@ Help make this plugin better!
 ## JetBrains IDEs
 
 Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? 
-Then be sure to install also install [the Doki Theme there as well!](https://github.com/Unthrottled/doki-theme-jetbrains)
+Then be sure to install also install [the Doki Theme there as well!](https://github.com/doki-theme/doki-theme-jetbrains)
 
 ![Hyper.js Terminal](./readmeStuff/hyper.png)
 ## Hyper.js
 
-Enhance your command line experience! Install [the Doki Theme for Hyper!](https://github.com/Unthrottled/doki-theme-hyper)
+Enhance your command line experience! Install [the Doki Theme for Hyper!](https://github.com/doki-theme/doki-theme-hyper)
 
 ---
 
