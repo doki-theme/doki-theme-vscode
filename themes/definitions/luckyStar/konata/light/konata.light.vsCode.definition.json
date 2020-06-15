@@ -1,7 +1,16 @@
 {
   "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "light",
+    "ui": {
+      "foreground":"#ffffff",
+      "tab.activeForeground": "#fff"
+    }
+  },
   "syntax": {},
-  "colors": {}
+  "colors": {
+    "foregroundColorEditor":"#FFFFFF",
+    "commentColor":"#BFDAF8"
+  }
 }

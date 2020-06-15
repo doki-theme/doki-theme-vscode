@@ -12,7 +12,6 @@ const GroupToNameMapping: StringDictonary<string> = {
   "High School DxD" : "DxD: ",
   "Sword Art Online" : "SAO: ",
   "Lucky Star" : "LS: ",
-
 };
 
 export default GroupToNameMapping;

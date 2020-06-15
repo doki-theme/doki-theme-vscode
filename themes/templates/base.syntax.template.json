@@ -858,6 +858,7 @@
                 "punctuation.section.embedded.begin.jsx",
                 "punctuation.section.embedded.end.jsx",
                 "punctuation.separator.list.comma.css",
+                "text.html.markdown",
                 "constant.language.empty-list.haskell"
             ],
             "settings": {
