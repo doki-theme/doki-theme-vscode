@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import { performGet } from "./RESTClient";
-import { DokiTheme } from "./DokiTheme";
 import path from "path";
 import fs from "fs";
 import crypto from "crypto";

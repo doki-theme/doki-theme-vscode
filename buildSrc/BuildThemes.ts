@@ -228,28 +228,33 @@ function buildLAFColors(
 
   const resolvedNameColors = resolveNamedColors(
     dokiTemplateDefinitions,
-    dokiThemeTemplateJson
+    dokiThemeTemplateJson,
+    dokiVSCodeThemeTemplateJson
   );
 
   return applyNamedColors(resolvedLafTemplate, resolvedNameColors);
-}
+} 
 
 function resolveNamedColors(
   dokiTemplateDefinitions: DokiThemeDefinitions,
-  dokiThemeTemplateJson: MasterDokiThemeDefinition
+  dokiThemeTemplateJson: MasterDokiThemeDefinition,
+  dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition
 ) {
   const colorTemplates = dokiTemplateDefinitions[NAMED_COLOR_TYPE];
-  return resolveTemplate(
-    dokiThemeTemplateJson,
-    colorTemplates,
-    (template) => template.colors,
-    (template) =>
-      // @ts-ignore
-      template.extends ||
-      (template.dark !== undefined &&
-        (dokiThemeTemplateJson.dark ? "dark" : "light"))
-  );
-}
+  return {
+    ...resolveTemplate(
+      dokiThemeTemplateJson,
+      colorTemplates,
+      (template) => template.colors,
+      (template) =>
+        // @ts-ignore
+        template.extends ||
+        (template.dark !== undefined &&
+          (dokiThemeTemplateJson.dark ? "dark" : "light"))
+    ),
+    ...dokiThemeVSCodeTemplateJson.colors,
+  };
+}  
 
 function getSyntaxColor(
   syntaxSettingsValue: string,
@@ -269,11 +274,15 @@ function buildSyntaxColors(
 ) {
   const syntaxTemplate: any[] =
     dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
-
+  
   const overrides =
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {
-    ...resolveNamedColors(dokiTemplateDefinitions, dokiThemeTemplateJson),
+    ...resolveNamedColors(
+      dokiTemplateDefinitions,
+      dokiThemeTemplateJson,
+      dokiThemeVSCodeTemplateJson
+    ),
     ...overrides,
   };
 

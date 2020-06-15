@@ -1,0 +1,26 @@
+{
+  "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "accentColor": "#60ff62"
+      }
+    }
+  },
+  "laf": {
+    "extends": "light",
+    "ui": {
+      "foreground":"#ffffff",
+      "tab.activeForeground": "#fff",
+      "icon.foreground": "#fff",
+      "gitDecoration.modifiedResourceForeground": "#60ff62",
+      "activityBar.foreground": "#60ff62",
+      "activityBar.inactiveForeground": "#60ff62BB"
+    }
+  },
+  "syntax": {},
+  "colors": {
+    "foregroundColorEditor":"#FFFFFF",
+    "commentColor":"#BFDAF8"
+  }
+}

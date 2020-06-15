@@ -9,6 +9,9 @@ const GroupToNameMapping: StringDictonary<string> = {
   "Mistress": "Miss: ",
   "DanganRonpa": "DR: ",
   "Miscellaneous": "Misc: ",
+  "High School DxD" : "DxD: ",
+  "Sword Art Online" : "SAO: ",
+  "Lucky Star" : "LS: ",
 };
 
 export default GroupToNameMapping;

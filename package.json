@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "Themes based on various anime and visual novel characters.",
   "publisher": "unthrottled",
-  "version": "2.4.2",
+  "version": "3.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -30,8 +30,11 @@
     "onCommand:extension.remove.sticker",
     "onCommand:extension.theme.Mioda Ibuki Dark",
     "onCommand:extension.theme.Mioda Ibuki Light",
+    "onCommand:extension.theme.Rias",
     "onCommand:extension.theme.Ryuko",
     "onCommand:extension.theme.Satsuki",
+    "onCommand:extension.theme.Darkness Dark",
+    "onCommand:extension.theme.Darkness Light",
     "onCommand:extension.theme.Megumin",
     "onCommand:extension.theme.Monika Dark",
     "onCommand:extension.theme.Monika Dark.secondary",
@@ -49,12 +52,15 @@
     "onCommand:extension.theme.Yuri Dark.secondary",
     "onCommand:extension.theme.Yuri Light",
     "onCommand:extension.theme.Yuri Light.secondary",
+    "onCommand:extension.theme.Konata",
+    "onCommand:extension.theme.Konata.secondary",
     "onCommand:extension.theme.Hatsune Miku",
     "onCommand:extension.theme.Beatrice",
     "onCommand:extension.theme.Emilia Dark",
     "onCommand:extension.theme.Emilia Light",
     "onCommand:extension.theme.Ram",
-    "onCommand:extension.theme.Rem"
+    "onCommand:extension.theme.Rem",
+    "onCommand:extension.theme.Asuna"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -76,12 +82,24 @@
         "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
       },
       {
+        "command": "extension.theme.Rias",
+        "title": "Doki-Theme: Install Rias's Stickers"
+      },
+      {
         "command": "extension.theme.Ryuko",
         "title": "Doki-Theme: Install Ryuko's Stickers"
       },
       {
         "command": "extension.theme.Satsuki",
         "title": "Doki-Theme: Install Satsuki's Stickers"
+      },
+      {
+        "command": "extension.theme.Darkness Dark",
+        "title": "Doki-Theme: Install Darkness Dark's Stickers"
+      },
+      {
+        "command": "extension.theme.Darkness Light",
+        "title": "Doki-Theme: Install Darkness Light's Stickers"
       },
       {
         "command": "extension.theme.Megumin",
@@ -152,6 +170,14 @@
         "title": "Doki-Theme: Install Yuri Light's Secondary Stickers"
       },
       {
+        "command": "extension.theme.Konata",
+        "title": "Doki-Theme: Install Konata's Stickers"
+      },
+      {
+        "command": "extension.theme.Konata.secondary",
+        "title": "Doki-Theme: Install Konata's Secondary Stickers"
+      },
+      {
         "command": "extension.theme.Hatsune Miku",
         "title": "Doki-Theme: Install Hatsune Miku's Stickers"
       },
@@ -174,6 +200,10 @@
       {
         "command": "extension.theme.Rem",
         "title": "Doki-Theme: Install Rem's Stickers"
+      },
+      {
+        "command": "extension.theme.Asuna",
+        "title": "Doki-Theme: Install Asuna's Stickers"
       }
     ],
     "themes": [
@@ -190,6 +220,12 @@
         "uiTheme": "vs"
       },
       {
+        "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
+        "label": "Doki Theme: DxD:  Rias",
+        "path": "./generatedThemes/Rias.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
         "label": "Doki Theme: KillLaKill:  Ryuko",
         "path": "./generatedThemes/Ryuko.theme.json",
@@ -199,6 +235,18 @@
         "id": "3a78b13e-dbf2-410f-bb20-12b57bff7735",
         "label": "Doki Theme: KillLaKill:  Satsuki",
         "path": "./generatedThemes/Satsuki.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
+        "label": "Doki Theme: KonoSuba:  Darkness",
+        "path": "./generatedThemes/Darkness Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
+        "label": "Doki Theme: KonoSuba:  Darkness",
+        "path": "./generatedThemes/Darkness Light.theme.json",
         "uiTheme": "vs"
       },
       {
@@ -256,6 +304,12 @@
         "uiTheme": "vs"
       },
       {
+        "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
+        "label": "Doki Theme: LS:  Konata",
+        "path": "./generatedThemes/Konata.theme.json",
+        "uiTheme": "vs"
+      },
+      {
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
         "label": "Doki Theme: Misc:  Miku",
         "path": "./generatedThemes/Hatsune Miku.theme.json",
@@ -290,6 +344,12 @@
         "label": "Doki Theme: Re:Zero:  Rem",
         "path": "./generatedThemes/Rem.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
+        "label": "Doki Theme: SAO:  Asuna",
+        "path": "./generatedThemes/Asuna.theme.json",
+        "uiTheme": "vs"
       }
     ]
   },

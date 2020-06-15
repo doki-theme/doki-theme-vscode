@@ -2,6 +2,7 @@
     "name": "light",
     "extends": "base",
     "colors": {
+        "constantsColor": "&constantColor&",
         "caretForeground": "#ffffff",
         "lineNumberColor":"#aaaaaa",
         "foregroundColorEditor":"#4D4D4A",
