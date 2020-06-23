@@ -36,7 +36,7 @@ function buildStickerCss({
   backgroundImageURL: wallpaperUrl,
 }: DokiStickers): string {
   const style =
-    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:95% 95%;background-repeat:no-repeat;opacity:1;";
+    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
   return `
   ${stickerComment}
   body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after{background-image: url('${stickerUrl}');${style}}
