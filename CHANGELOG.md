@@ -1,5 +1,10 @@
 # Change Log
 
+# 3.1.0 [New Sticker Placement]
+
+- Moved the sticker to the bottom right hand corner of the window instead of being in the bottom right hand corner of the code editor window.
+  - Please re-install your sticker to have this take effect!
+
 # 3.0.0 [New Themes!]
 
 - Added 5 new themes based on various new characters!
