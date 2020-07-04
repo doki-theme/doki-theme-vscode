@@ -18,10 +18,11 @@ Themes grouped [by anime](./albums/grouping.md)
 
 ## About!
 
-With well over **20 themes** (light and dark) I think you will be able to find your favorite.
-You can even find a theme that fits your mood for the day.
+This plugin is for serious Otaku programmers.
+With over **20** themes, based off of various waifus,
+I think you will find your best girl.
 
-Variety is the spice of life! So you can choose themes from the following Doki-Doki Theme Suites:
+Variety is the spice of life! So you can choose themes from various, Anime, Manga, or Visual Novels:
 
 - Doki-Doki Literature Club
 - Re:Zero
