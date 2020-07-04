@@ -1,5 +1,11 @@
 # Change Log
 
+# 3.1.1 [Non-Functional]
+
+- Updated repository links in package.json
+- Replaced extension icon.
+- Security patches.
+
 # 3.1.0 [New Sticker Placement]
 
 - Moved the sticker to the bottom right hand corner of the window instead of being in the bottom right hand corner of the code editor window.
