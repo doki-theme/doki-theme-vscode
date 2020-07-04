@@ -1,9 +1,9 @@
 {
   "name": "doki-theme",
   "displayName": "The Doki Theme",
-  "description": "Themes based on various anime and visual novel characters.",
+  "description": "Code with your waifu.",
   "publisher": "unthrottled",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -11,11 +11,11 @@
     "theme": "dark"
   },
   "bugs": {
-    "url": "https://github.com/cyclic-reference/doki-theme-vscode/issues"
+    "url": "https://github.com/doki-theme/doki-theme-vscode/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyclic-reference/doki-theme-vscode.git"
+    "url": "https://github.com/doki-theme/doki-theme-vscode.git"
   },
   "engines": {
     "vscode": "^1.40.0"
@@ -383,5 +383,8 @@
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
     "vscode-test": "^1.2.2"
+  },
+  "resolutions": {
+    "minimist": "0.2.1"
   }
 }
