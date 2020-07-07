@@ -18,7 +18,14 @@ const vsCodeDefinitionDirectoryPath = path.resolve(
   "themes",
   "definitions"
 );
-const templateDirectoryPath = path.resolve(
+
+const masterThemeTemplateDirectoryPath = path.resolve(
+  masterThemeDefinitionDirectoryPath,
+  "..",
+  "templates"
+);
+
+const vsCodeTemplateDirectoryPath = path.resolve(
   repoDirectory,
   "themes",
   "templates"
@@ -210,7 +217,8 @@ function applyNamedColors(
 function buildLAFColors(
   dokiThemeTemplateJson: MasterDokiThemeDefinition,
   dokiVSCodeThemeTemplateJson: VSCodeDokiThemeDefinition,
-  dokiTemplateDefinitions: DokiThemeDefinitions
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplateDefinitions: DokiThemeDefinitions
 ) {
   const lafTemplates = dokiTemplateDefinitions[LAF_TYPE];
   const lafTemplate = dokiVSCodeThemeTemplateJson.laf.extends
@@ -226,14 +234,23 @@ function buildLAFColors(
     (template) => template.extends
   );
 
-  const resolvedNameColors = resolveNamedColors(
+  const resolvedNamedColors = resolveNamedColors(
     dokiTemplateDefinitions,
     dokiThemeTemplateJson,
     dokiVSCodeThemeTemplateJson
   );
 
-  return applyNamedColors(resolvedLafTemplate, resolvedNameColors);
-} 
+  const resolvedMasterNameColors = resolveNamedColors(
+    masterTemplateDefinitions,
+    dokiThemeTemplateJson,
+    dokiVSCodeThemeTemplateJson
+  );  
+
+  return applyNamedColors(resolvedLafTemplate, {
+    ...resolvedMasterNameColors,
+    ...resolvedNamedColors,
+  });
+}
 
 function resolveNamedColors(
   dokiTemplateDefinitions: DokiThemeDefinitions,
@@ -254,7 +271,7 @@ function resolveNamedColors(
     ),
     ...dokiThemeVSCodeTemplateJson.colors,
   };
-}  
+}
 
 function getSyntaxColor(
   syntaxSettingsValue: string,
@@ -270,14 +287,20 @@ function getSyntaxColor(
 function buildSyntaxColors(
   dokiThemeTemplateJson: MasterDokiThemeDefinition,
   dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
-  dokiTemplateDefinitions: DokiThemeDefinitions
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplateDefinitions: DokiThemeDefinitions
 ) {
   const syntaxTemplate: any[] =
     dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
-  
+
   const overrides =
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {
+    ...resolveNamedColors(
+      masterTemplateDefinitions,
+      dokiThemeTemplateJson,
+      dokiThemeVSCodeTemplateJson
+    ),
     ...resolveNamedColors(
       dokiTemplateDefinitions,
       dokiThemeTemplateJson,
@@ -313,19 +336,22 @@ function buildSyntaxColors(
 function buildVSCodeTheme(
   dokiThemeDefinition: MasterDokiThemeDefinition,
   dokiThemeVSCodeDefinition: VSCodeDokiThemeDefinition,
-  dokiTemplateDefinitions: DokiThemeDefinitions
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplateDefinitions: DokiThemeDefinitions,
 ) {
   return {
     type: getThemeType(dokiThemeDefinition),
     colors: buildLAFColors(
       dokiThemeDefinition,
       dokiThemeVSCodeDefinition,
-      dokiTemplateDefinitions
+      dokiTemplateDefinitions,
+      masterTemplateDefinitions
     ),
     tokenColors: buildSyntaxColors(
       dokiThemeDefinition,
       dokiThemeVSCodeDefinition,
-      dokiTemplateDefinitions
+      dokiTemplateDefinitions,
+      masterTemplateDefinitions
     ),
   };
 }
@@ -334,7 +360,8 @@ function createDokiTheme(
   dokiFileDefinitionPath: string,
   dokiThemeDefinition: MasterDokiThemeDefinition,
   dokiThemeVSCodeDefinition: VSCodeDokiThemeDefinition,
-  dokiTemplateDefinitions: DokiThemeDefinitions
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplateDefinitions: DokiThemeDefinitions
 ) {
   try {
     return {
@@ -343,7 +370,8 @@ function createDokiTheme(
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
         dokiThemeVSCodeDefinition,
-        dokiTemplateDefinitions
+        dokiTemplateDefinitions,
+        masterTemplateDefinitions
       ),
     };
   } catch (e) {
@@ -428,16 +456,25 @@ const getStickers = (
 const omit = require("lodash/omit");
 
 console.log("Preparing to generate themes.");
-walkDir(templateDirectoryPath)
+walkDir(masterThemeTemplateDirectoryPath)
   .then(readTemplates)
-  .then((dokiTemplateDefinitions) => {
+  .then((masterDokiTemplateDefinitions) =>
+    walkDir(vsCodeTemplateDirectoryPath)
+      .then(readTemplates)
+      .then((vsCodeDokiTemplateDefinitions) => ({
+        masterDokiTemplateDefinitions,
+        vsCodeDokiTemplateDefinitions,
+      }))
+  )
+  .then(({ vsCodeDokiTemplateDefinitions, masterDokiTemplateDefinitions }) => {
     return walkDir(vsCodeDefinitionDirectoryPath)
       .then((files) =>
         files.filter((file) => file.endsWith("vsCode.definition.json"))
       )
       .then((dokiThemeVSCodeDefinitionPaths) => {
         return {
-          dokiTemplateDefinitions,
+          masterTemplateDefinitions: masterDokiTemplateDefinitions,
+          dokiTemplateDefinitions: vsCodeDokiTemplateDefinitions,
           dokiThemeVSCodeDefinitions: dokiThemeVSCodeDefinitionPaths
             .map((dokiThemeVSCodeDefinitionPath) =>
               readJson<VSCodeDokiThemeDefinition>(dokiThemeVSCodeDefinitionPath)
@@ -452,13 +489,18 @@ walkDir(templateDirectoryPath)
         };
       });
   })
-  .then(({ dokiTemplateDefinitions, dokiThemeVSCodeDefinitions }) => {
+  .then(({ 
+    masterTemplateDefinitions,
+    dokiTemplateDefinitions, 
+    dokiThemeVSCodeDefinitions 
+  }) => {
     return walkDir(masterThemeDefinitionDirectoryPath)
       .then((files) =>
         files.filter((file) => file.endsWith("master.definition.json"))
       )
       .then((dokiFileDefinitionPaths) => {
         return {
+          masterTemplateDefinitions,
           dokiTemplateDefinitions,
           dokiThemeVSCodeDefinitions,
           dokiFileDefinitionPaths,
@@ -467,6 +509,7 @@ walkDir(templateDirectoryPath)
   })
   .then((templatesAndDefinitions) => {
     const {
+      masterTemplateDefinitions,
       dokiTemplateDefinitions,
       dokiThemeVSCodeDefinitions,
       dokiFileDefinitionPaths,
@@ -484,6 +527,7 @@ walkDir(templateDirectoryPath)
           );
         }
         return {
+          masterTemplateDefinitions,
           dokiFileDefinitionPath,
           dokiThemeDefinition,
           dokiThemeVSCodeDefinition,
@@ -497,6 +541,7 @@ walkDir(templateDirectoryPath)
       )
       .map(
         ({
+          masterTemplateDefinitions,
           dokiFileDefinitionPath,
           dokiThemeVSCodeDefinition,
           dokiThemeDefinition,
@@ -505,7 +550,8 @@ walkDir(templateDirectoryPath)
             dokiFileDefinitionPath,
             dokiThemeDefinition,
             dokiThemeVSCodeDefinition,
-            dokiTemplateDefinitions
+            dokiTemplateDefinitions,
+            masterTemplateDefinitions,
           )
       );
   })
