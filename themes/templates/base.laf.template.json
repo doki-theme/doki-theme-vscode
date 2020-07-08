@@ -74,6 +74,7 @@
     "activityBar.foreground": "&accentColor&",
     "activityBarBadge.background": "&accentColor&",
     "badge.background": "&accentColor&",
+    "badge.foreground": "&accentContrastColor&",
     "progressBar.background": "&accentColor&",
     "scrollbarSlider.hoverBackground": "&accentColor&9A",
     "notificationToast.border": "&accentColor&9A",
