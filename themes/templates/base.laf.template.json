@@ -21,6 +21,7 @@
     "list.inactiveSelectionForeground": "&foregroundColor&",
     "editor.background": "&editorBackground&",
     "tab.activeBackground": "&highlightColor&",
+    "panelSectionHeader.background": "&headerColor&",
     "focusBorder": "&borderColor&",
     "pickerGroup.border": "&borderColor&",
     "pickerGroup.foreground": "&borderColor&",
