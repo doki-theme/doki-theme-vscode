@@ -1,5 +1,15 @@
 # Change Log
 
+# 3.2.0 [Many Small Improvements]
+
+- Notification toasts now appear in front of the sticker, so you can actually read it :)
+  - Please re-install your sticker to have this take effect!
+- Added action buttons to notifications, so you can perform the required step by just clicking a button.
+- Changed the comparison/diff colors to theme standards.
+- Increased Satsuki's selected foreground readability.
+- More small consistency changes.
+
+
 # 3.1.1 [Non-Functional]
 
 - Updated repository links in package.json
@@ -91,7 +101,7 @@
         - Mioda Ibuki (Dark/Light Theme)
     - Hatsune Miku (Dark Theme)
 
-![Miku](https://doki.assets.unthrottled.io/backgrounds/miku.png)
+![The New Girls](https://doki.assets.unthrottled.io/misc/v7_girls.png?version=1)
 
 ## 1.0.1 [Non-Functional]
 

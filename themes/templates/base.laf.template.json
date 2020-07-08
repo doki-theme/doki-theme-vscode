@@ -115,6 +115,6 @@
     "debugIcon.breakpointStackframeForeground": "&selectionInactive&",
     "editor.focusedStackFrameHighlightBackground": "&selectionInactive&",
     "diffEditor.removedTextBackground": "&diff.deleted&50",
-		"diffEditor.insertedTextBackground": "&diff.inserted&50"
+    "diffEditor.insertedTextBackground": "&diff.inserted&50"
   }
 }
