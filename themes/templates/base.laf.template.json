@@ -21,6 +21,7 @@
     "list.inactiveSelectionForeground": "&foregroundColor&",
     "editor.background": "&editorBackground&",
     "tab.activeBackground": "&highlightColor&",
+    "panelSectionHeader.background": "&headerColor&",
     "focusBorder": "&borderColor&",
     "pickerGroup.border": "&borderColor&",
     "pickerGroup.foreground": "&borderColor&",
@@ -73,6 +74,7 @@
     "activityBar.foreground": "&accentColor&",
     "activityBarBadge.background": "&accentColor&",
     "badge.background": "&accentColor&",
+    "badge.foreground": "&accentContrastColor&",
     "progressBar.background": "&accentColor&",
     "scrollbarSlider.hoverBackground": "&accentColor&9A",
     "notificationToast.border": "&accentColor&9A",
@@ -112,6 +114,8 @@
     "editor.stackFrameHighlightBackground": "&selectionBackground&",
     "debugIcon.breakpointCurrentStackframeForeground": "&selectionBackground&",
     "debugIcon.breakpointStackframeForeground": "&selectionInactive&",
-    "editor.focusedStackFrameHighlightBackground": "&selectionInactive&"
+    "editor.focusedStackFrameHighlightBackground": "&selectionInactive&",
+    "diffEditor.removedTextBackground": "&diff.deleted&50",
+    "diffEditor.insertedTextBackground": "&diff.inserted&50"
   }
 }

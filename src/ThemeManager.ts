@@ -72,9 +72,16 @@ export function activateTheme(
       VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
       VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
       StatusBarComponent.setText(dokiTheme.displayName);
-      vscode.window.showInformationMessage(
-        `${dokiTheme.name} installed!\n Please restart your IDE`
-      );
+      vscode.window
+        .showInformationMessage(
+          `${dokiTheme.name} installed!\n Please restart your IDE`,
+          { title: "Restart VSCode" }
+        )
+        .then((item) => {
+          if (item) {
+            vscode.commands.executeCommand("workbench.action.reloadWindow");
+          }
+        });
     } else if (didInstall === InstallStatus.FAILURE) {
       showStickerInstallationSupportWindow(context);
       vscode.window.showErrorMessage(
@@ -91,9 +98,16 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     stickersRemoved === InstallStatus.INSTALLED ||
     stickersRemoved === InstallStatus.NOT_INSTALLED
   ) {
-    vscode.window.showInformationMessage(
-      `Removed Images. Please restart your restored IDE`
-    );
+    vscode.window
+      .showInformationMessage(
+        `Removed Images. Please restart your restored IDE`,
+        { title: "Restart VSCode" }
+      )
+      .then((item) => {
+        if (item) {
+          vscode.commands.executeCommand("workbench.action.reloadWindow");
+        }
+      });
   } else if (stickersRemoved === InstallStatus.FAILURE) {
     showStickerRemovalSupportWindow(context);
     vscode.window.showErrorMessage(

@@ -41,6 +41,10 @@ function buildStickerCss({
   ${stickerComment}
   body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after{background-image: url('${stickerUrl}');${style}}
 
+  .notifications-toasts {
+    z-index: 9002 !important;
+  }
+
   /* Background Image */
   .monaco-workbench .part.editor > .content {
     background-image: url('${wallpaperUrl}') !important;
