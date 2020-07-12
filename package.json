@@ -1,9 +1,9 @@
 {
   "name": "doki-theme",
   "displayName": "The Doki Theme",
-  "description": "Code with your waifu.",
+  "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -23,6 +23,10 @@
   "categories": [
     "Themes",
     "Other"
+  ],
+  "keywords": [
+    "Anime",
+    "Otaku"
   ],
   "activationEvents": [
     "*",
