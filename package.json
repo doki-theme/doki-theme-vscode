@@ -30,6 +30,7 @@
     "onCommand:extension.remove.sticker",
     "onCommand:extension.theme.Mioda Ibuki Dark",
     "onCommand:extension.theme.Mioda Ibuki Light",
+    "onCommand:extension.theme.Misato Katsuragi",
     "onCommand:extension.theme.Rias",
     "onCommand:extension.theme.Ryuko",
     "onCommand:extension.theme.Satsuki",
@@ -80,6 +81,10 @@
       {
         "command": "extension.theme.Mioda Ibuki Light",
         "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Misato Katsuragi",
+        "title": "Doki-Theme: Install Misato Katsuragi's Stickers"
       },
       {
         "command": "extension.theme.Rias",
@@ -218,6 +223,12 @@
         "label": "Doki Theme: DR:  Ibuki",
         "path": "./generatedThemes/Mioda Ibuki Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "8e8773ee-4bbb-4812-b311-005f04f6bb20",
+        "label": "Doki Theme: EVA:  Misato",
+        "path": "./generatedThemes/Misato Katsuragi.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
