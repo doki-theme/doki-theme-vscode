@@ -1,5 +1,12 @@
 # Change Log
 
+# 4.0.0 [Misato Katsuragi]
+
+- Added Neon Genesis Evangelion's `Misato Katsuragi` as a dark theme!
+
+![The New Woman](https://doki.assets.unthrottled.io/misc/v9_girl.png?version=1)
+
+
 # 3.2.0 [Many Small Improvements]
 
 - Notification toasts now appear in front of the sticker, so you can actually read it :)

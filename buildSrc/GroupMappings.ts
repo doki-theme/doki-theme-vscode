@@ -8,6 +8,7 @@ const GroupToNameMapping: StringDictonary<string> = {
   "KonoSuba": "KonoSuba: ",
   "Mistress": "Miss: ",
   "DanganRonpa": "DR: ",
+  "Evangelion": "EVA: ",
   "Miscellaneous": "Misc: ",
   "High School DxD" : "DxD: ",
   "Sword Art Online" : "SAO: ",
