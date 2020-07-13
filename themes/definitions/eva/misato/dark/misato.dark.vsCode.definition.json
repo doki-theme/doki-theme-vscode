@@ -3,5 +3,8 @@
   "overrides": {},
   "laf": {},
   "syntax": {},
-  "colors": {}
+  "colors": {
+    "selectionBackground":"#5a293f",
+    "selectionInactive":"#4b283c"
+  }
 }
