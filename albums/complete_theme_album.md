@@ -19,6 +19,15 @@ Re:Zero
 ![beatrice code](../screenshots/rezero/beatrice_code.png)
 ![beatrice code](../screenshots/rezero/beatrice_wallpaper.png)
 
+Miss Kobayashi's Dragon Maid
+---
+
+### Kanna
+  
+![kanna_dark code](../screenshots/dragonMaid/kanna_dark_code.png)
+![kanna_dark_secondary code](../screenshots/dragonMaid/kanna_dark_secondary_code.png)
+![kanna_dark code](../screenshots/dragonMaid/kanna_dark_wallpaper.png)
+
 DanganRonpa
 ---
 

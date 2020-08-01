@@ -7,6 +7,8 @@ Themes grouped by album
 
 [DanganRonpa Album](dr_themes.md)
 
+[Miss Kobayashi's Dragon Maid](dm_album.md)
+
 [Neon Genesis Evangelion](eva_album.md)
 
 [Kill La Kill Album](klk_album.md)
