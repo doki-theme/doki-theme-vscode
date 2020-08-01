@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -34,6 +34,8 @@
     "onCommand:extension.remove.sticker",
     "onCommand:extension.theme.Mioda Ibuki Dark",
     "onCommand:extension.theme.Mioda Ibuki Light",
+    "onCommand:extension.theme.Kanna",
+    "onCommand:extension.theme.Kanna.secondary",
     "onCommand:extension.theme.Misato Katsuragi",
     "onCommand:extension.theme.Rias",
     "onCommand:extension.theme.Ryuko",
@@ -85,6 +87,14 @@
       {
         "command": "extension.theme.Mioda Ibuki Light",
         "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Kanna",
+        "title": "Doki-Theme: Install Kanna's Stickers"
+      },
+      {
+        "command": "extension.theme.Kanna.secondary",
+        "title": "Doki-Theme: Install Kanna's Secondary Stickers"
       },
       {
         "command": "extension.theme.Misato Katsuragi",
@@ -227,6 +237,12 @@
         "label": "Doki Theme: DR:  Ibuki",
         "path": "./generatedThemes/Mioda Ibuki Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "b93ab4ea-ff96-4459-8fa2-0caae5bc7116",
+        "label": "Doki Theme: DM:  Kanna",
+        "path": "./generatedThemes/Kanna.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "8e8773ee-4bbb-4812-b311-005f04f6bb20",
