@@ -4,6 +4,7 @@
 
 - Added Miss Kobayashi's Dragon Maid's `Kanna` as a dark theme!
     - This theme has 2 stickers to choose from!
+- Updated all of the dark theme deleted diff colors.
 
 ![The New Girl](https://doki.assets.unthrottled.io/misc/v10_girl.png?version=1)
 
