@@ -21,7 +21,7 @@ Last addition to the Konosuba series:
 
 ## Other Stuff
 
-- Updated de-emphasized foregrounds
+- Updated placeholder text
 - Updated Darkness's dark accent foreground.
 
 # 5.0.0 [Kanna Kamui]
