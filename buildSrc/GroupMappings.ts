@@ -4,6 +4,8 @@ import {StringDictonary} from "./BuildThemes";
 const GroupToNameMapping: StringDictonary<string> = {
   "Kill la Kill": "KillLaKill: ",
   "Re Zero": "Re:Zero: ",
+  "Fate": "Fate: ",
+  "Gate": "Gate: ",
   "Literature Club": "DDLC: ",
   "KonoSuba": "KonoSuba: ",
   "Miss Kobayashi's Dragon Maid": "DM: ",
