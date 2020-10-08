@@ -5,6 +5,10 @@ Themes grouped by album
 
 [Re:Zero Album](r0_album.md)
 
+[Fate](fate_themes.md)
+
+[Gate](gate_themes.md)
+
 [DanganRonpa Album](dr_themes.md)
 
 [Miss Kobayashi's Dragon Maid](dm_album.md)
