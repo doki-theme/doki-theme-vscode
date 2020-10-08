@@ -10,5 +10,7 @@
     }
   },
   "syntax": {},
-  "colors": {}
+  "colors": {
+    "constantsColor":"&htmlTagColor&"
+  }
 }

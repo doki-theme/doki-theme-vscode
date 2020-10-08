@@ -3,5 +3,7 @@
   "overrides": {},
   "laf": {},
   "syntax": {},
-  "colors": {}
+  "colors": {
+    "constantsColor":"&secondaryAccentColor&"
+  }
 }
