@@ -19,10 +19,10 @@ Themes grouped [by anime](./albums/grouping.md)
 ## About!
 
 This plugin is for serious Otaku programmers.
-With over **20** themes, based off of various waifus,
-I think you will find your best girl.
+With over **20** themes, based off of various waifu,
+I think you will find best girl.
 
-Variety is the spice of life! So you can choose themes from various, Anime, Manga, or Visual Novels:
+You can choose themes from various, Anime, Manga, or Visual Novels such as:
 
 - Doki-Doki Literature Club
 - Re:Zero
@@ -32,6 +32,9 @@ Variety is the spice of life! So you can choose themes from various, Anime, Mang
 - High School DxD
 - Lucky Star
 - Sword Art Online
+- Fate
+- Gate
+- Miss Kobayashi's Dragon Maid
 
 Sticker in the way? No worries! You can configure them to be on or off at your leisure.
 
