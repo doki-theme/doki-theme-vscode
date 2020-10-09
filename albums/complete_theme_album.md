@@ -1,3 +1,56 @@
+Fate
+---
+
+### Tohsaka Rin
+
+![rin dark code](../screenshots/fate/rin_dark_code.png)
+![rin dark code](../screenshots/fate/rin_dark_wallpaper.png)
+
+### Ishtar
+
+
+![ishtar dark code](../screenshots/fate/ishtar_dark_code.png)
+![ishtar dark code](../screenshots/fate/ishtar_dark_wallpaper.png)
+
+![ishtar light code](../screenshots/fate/ishtar_light_code.png)
+![ishtar light code](../screenshots/fate/ishtar_light_wallpaper.png)
+
+
+Gate
+---
+
+### Rory Mercury
+
+![rory dark code](../screenshots/gate/rory_dark_code.png)
+![rory dark code](../screenshots/gate/rory_dark_wallpaper.png)
+
+
+Miscellaneous
+---
+
+### Hatsune Miku
+![miku code](../screenshots/miscellaneous/miku_code.png)
+![miku code](../screenshots/miscellaneous/miku_wallpaper.png)
+
+KonoSuba
+---
+
+### Megumin
+![megumin code](../screenshots/konosuba/megumin_code.png)
+![megumin code](../screenshots/konosuba/megumin_wallpaper.png)
+
+### Aqua
+
+![aqua code](../screenshots/konosuba/aqua_dark_code.png)
+![aqua background](../screenshots/konosuba/aqua_dark_wallpaper.png)
+
+### Darkness
+![darkness code](../screenshots/konosuba/darkness_dark_code.png)
+![darkness code](../screenshots/konosuba/darkness_dark_wallpaper.png)
+![darkness code](../screenshots/konosuba/darkness_light_code.png)
+![darkness code](../screenshots/konosuba/darkness_light_wallpaper.png)
+
+
 Re:Zero
 ---
 
@@ -43,26 +96,6 @@ Neon Genesis Evangelion
 ### Misato Katsuragi
 ![misato_dark code](../screenshots/eva/misato_dark_code.png)
 ![misato_dark code](../screenshots/eva/misato_dark_wallpaper.png)
-
-Miscellaneous
----
-
-### Hatsune Miku
-![miku code](../screenshots/miscellaneous/miku_code.png)
-![miku code](../screenshots/miscellaneous/miku_wallpaper.png)
-
-KonoSuba
----
-
-### Megumin
-![megumin code](../screenshots/konosuba/megumin_code.png)
-![megumin code](../screenshots/konosuba/megumin_wallpaper.png)
-
-### Darkness
-![darkness code](../screenshots/konosuba/darkness_dark_code.png)
-![darkness code](../screenshots/konosuba/darkness_dark_wallpaper.png)
-![darkness code](../screenshots/konosuba/darkness_light_code.png)
-![darkness code](../screenshots/konosuba/darkness_light_wallpaper.png)
 
 Sword Art Online
 ---

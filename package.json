@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -37,9 +37,14 @@
     "onCommand:extension.theme.Kanna",
     "onCommand:extension.theme.Kanna.secondary",
     "onCommand:extension.theme.Misato Katsuragi",
+    "onCommand:extension.theme.Ishtar Dark",
+    "onCommand:extension.theme.Ishtar Light",
+    "onCommand:extension.theme.Tohsaka Rin",
+    "onCommand:extension.theme.Rory Mercury",
     "onCommand:extension.theme.Rias",
     "onCommand:extension.theme.Ryuko",
     "onCommand:extension.theme.Satsuki",
+    "onCommand:extension.theme.Aqua",
     "onCommand:extension.theme.Darkness Dark",
     "onCommand:extension.theme.Darkness Light",
     "onCommand:extension.theme.Megumin",
@@ -101,6 +106,22 @@
         "title": "Doki-Theme: Install Misato Katsuragi's Stickers"
       },
       {
+        "command": "extension.theme.Ishtar Dark",
+        "title": "Doki-Theme: Install Ishtar Dark's Stickers"
+      },
+      {
+        "command": "extension.theme.Ishtar Light",
+        "title": "Doki-Theme: Install Ishtar Light's Stickers"
+      },
+      {
+        "command": "extension.theme.Tohsaka Rin",
+        "title": "Doki-Theme: Install Tohsaka Rin's Stickers"
+      },
+      {
+        "command": "extension.theme.Rory Mercury",
+        "title": "Doki-Theme: Install Rory Mercury's Stickers"
+      },
+      {
         "command": "extension.theme.Rias",
         "title": "Doki-Theme: Install Rias's Stickers"
       },
@@ -111,6 +132,10 @@
       {
         "command": "extension.theme.Satsuki",
         "title": "Doki-Theme: Install Satsuki's Stickers"
+      },
+      {
+        "command": "extension.theme.Aqua",
+        "title": "Doki-Theme: Install Aqua's Stickers"
       },
       {
         "command": "extension.theme.Darkness Dark",
@@ -251,6 +276,30 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "62a4f26f-34b2-46f8-a10c-798e48c1ce9d",
+        "label": "Doki Theme: Fate:  Ishtar",
+        "path": "./generatedThemes/Ishtar Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "325c5d4d-5614-4c58-b296-18924f2f6928",
+        "label": "Doki Theme: Fate:  Ishtar",
+        "path": "./generatedThemes/Ishtar Light.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "3546f7be-b84f-4b8e-8cad-effa3f4603af",
+        "label": "Doki Theme: Fate:  Rin",
+        "path": "./generatedThemes/Tohsaka Rin.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "355d711c-2fa6-4df2-9504-dd44d8f5e350",
+        "label": "Doki Theme: Gate:  Rory",
+        "path": "./generatedThemes/Rory Mercury.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
         "path": "./generatedThemes/Rias.theme.json",
@@ -267,6 +316,12 @@
         "label": "Doki Theme: KillLaKill:  Satsuki",
         "path": "./generatedThemes/Satsuki.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "15e51483-1ccd-46b7-90cf-885cccaaaf2c",
+        "label": "Doki Theme: KonoSuba:  Aqua",
+        "path": "./generatedThemes/Aqua.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
