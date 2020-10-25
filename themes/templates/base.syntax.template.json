@@ -24,8 +24,8 @@
         },
         {
             "scope": [
-                "string.quoted",
-                "variable.parameter"
+                "variable.parameter",
+                "string"
             ],
             "settings": {
                 "foreground": "&stringColor&"
@@ -48,7 +48,8 @@
         {
             "scope": [
                 "variable.other.constant",
-                "meta.definition.method"            
+                "meta.definition.method",
+                "meta.embedded.line"        
             ],
             "settings": {
                 "foreground": "&classNameColor&"
@@ -57,7 +58,8 @@
         {
             "scope": [
                 "keyword.operator",
-                "entity.name.tag"
+                "entity.name.tag",
+                "meta.template.expression"
             ],
             "settings": {
                 "foreground": "&htmlTagColor&"
@@ -98,6 +100,14 @@
             ],
             "settings": {
                 "foreground": "&constantColor&"
+            }
+        },
+        {
+            "scope": [
+            ],
+            "settings": {
+                "foreground": "&constantColor&",
+                "fontStyle": "italic"
             }
         }
     ]
