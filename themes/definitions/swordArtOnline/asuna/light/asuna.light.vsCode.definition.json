@@ -1,6 +1,12 @@
 {
   "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
-  "overrides": {},
+  "overrides": {
+    "editorScheme": {
+      "colors": {
+        "accentColor": "#212121"
+      }
+    }
+  },
   "laf": {},
   "syntax": {},
   "colors": {}

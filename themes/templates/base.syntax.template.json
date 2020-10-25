@@ -40,6 +40,7 @@
                 "storage.type",
                 "storage.modifier",
                 "keyword.operator.new",
+                "keyword.operator.expression.typeof",
                 "constant.language.boolean",
                 "variable.language.this",
                 "constant.language.undefined"
