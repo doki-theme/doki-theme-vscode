@@ -5,7 +5,9 @@
             "scope": [
                 "support.type.property-name.json.comments",
                 "meta.object-literal.key",
-                "variable.object.property"
+                "variable.object.property",
+                "variable.other.readwrite.alias",
+                "variable.other.property"
             ],
             "settings": {
                 "foreground": "&foregroundColorEditor&",
@@ -34,7 +36,10 @@
                 "constant.language.json",
                 "keyword",
                 "storage.type",
-                "constant.language.boolean"
+                "storage.modifier",
+                "keyword.operator.new",
+                "constant.language.boolean",
+                "variable.language.this"
             ],
             "settings": {
                 "foreground": "&keywordColor&"
@@ -43,7 +48,7 @@
         {
             "scope": [
                 "variable.other.constant",
-                "variable.other.readwrite"
+                "meta.definition.method"            
             ],
             "settings": {
                 "foreground": "&classNameColor&"
@@ -51,7 +56,8 @@
         },
         {
             "scope": [
-                "keyword.operator"
+                "keyword.operator",
+                "entity.name.tag"
             ],
             "settings": {
                 "foreground": "&htmlTagColor&"
@@ -61,7 +67,9 @@
             "scope": [
                 "entity.name.type.class",
                 "meta.type",
-                "variable.other.object"
+                "variable.other.object",
+                "entity.name.type",
+                "support.type.primitive"
             ],
             "settings": {
                 "foreground": "&keyColor&"
@@ -73,6 +81,23 @@
             ],
             "settings": {
                 "foreground": "&accentColor&"
+            }
+        },
+        {
+            "scope": [
+                "entity.other.attribute-name"
+            ],
+            "settings": {
+                "foreground": "&accentColor&",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "constant.numeric"
+            ],
+            "settings": {
+                "foreground": "&constantColor&"
             }
         }
     ]
