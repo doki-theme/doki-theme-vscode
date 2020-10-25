@@ -616,6 +616,7 @@ walkDir(masterThemeTemplateDirectoryPath)
       } Stickers`,
     }));
 
+    const ishtarId = '62a4f26f-34b2-46f8-a10c-798e48c1ce9d';
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
       label: `Doki Theme: ${getThemeGroup(dokiDefinition)} ${
@@ -623,7 +624,15 @@ walkDir(masterThemeTemplateDirectoryPath)
       }`,
       path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
-    }));
+    })).sort((a, b) => {
+      if(a.id === ishtarId) {
+        return -1;
+      } else if (b.id === ishtarId) {
+        return 1;
+      } else {
+        return a.label.localeCompare(b.label)
+      }
+    });
 
     packageJson.activationEvents = [
       ...packageJson.activationEvents.filter(
