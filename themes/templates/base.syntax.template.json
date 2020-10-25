@@ -3,7 +3,9 @@
     "tokenColors": [
         {
             "scope": [
-                "support.type.property-name.json.comments"
+                "support.type.property-name.json.comments",
+                "meta.object-literal.key",
+                "variable.object.property"
             ],
             "settings": {
                 "foreground": "&foregroundColorEditor&",
@@ -12,7 +14,16 @@
         },
         {
             "scope": [
-                "string.quoted.double.json.comments"
+                "source"
+            ],
+            "settings": {
+                "foreground": "&foregroundColorEditor&"
+            }
+        },
+        {
+            "scope": [
+                "string.quoted",
+                "variable.parameter"
             ],
             "settings": {
                 "foreground": "&stringColor&"
@@ -20,10 +31,48 @@
         },
         {
             "scope": [
-                "constant.language.json.comments"
+                "constant.language.json",
+                "keyword",
+                "storage.type",
+                "constant.language.boolean"
             ],
             "settings": {
                 "foreground": "&keywordColor&"
+            }
+        },
+        {
+            "scope": [
+                "variable.other.constant",
+                "variable.other.readwrite"
+            ],
+            "settings": {
+                "foreground": "&classNameColor&"
+            }
+        },
+        {
+            "scope": [
+                "keyword.operator"
+            ],
+            "settings": {
+                "foreground": "&htmlTagColor&"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.type.class",
+                "meta.type",
+                "variable.other.object"
+            ],
+            "settings": {
+                "foreground": "&keyColor&"
+            }
+        },
+        {
+            "scope": [
+                "meta.function-call"
+            ],
+            "settings": {
+                "foreground": "&accentColor&"
             }
         }
     ]
