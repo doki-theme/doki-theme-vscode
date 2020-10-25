@@ -41,10 +41,12 @@
                 "storage.type",
                 "storage.modifier",
                 "keyword.operator.new",
+                "keyword.operator.instanceof",
                 "keyword.operator.expression.typeof",
                 "constant.language.boolean",
                 "variable.language.this",
-                "constant.language.undefined"
+                "constant.language.undefined",
+                "constant.language.java"
             ],
             "settings": {
                 "foreground": "&keywordColor&"
@@ -56,7 +58,9 @@
                 "meta.definition.method",
                 "meta.definition.function",
                 "meta.embedded.line",
-                "markup.inline.raw.string"  
+                "markup.inline.raw.string",
+                
+                "meta.method.identifier"
             ],
             "settings": {
                 "foreground": "&classNameColor&"
@@ -79,7 +83,10 @@
                 "variable.other.object",
                 "entity.name.type",
                 "markup.heading",
-                "string.other.link.title"
+                "string.other.link.title",
+                "storage.modifier.import",
+                "meta.import",
+                "storage.type.java"
             ],
             "settings": {
                 "foreground": "&keyColor&"
@@ -98,7 +105,10 @@
             "scope": [
                 "meta.function-call",
                 "meta.decorator",
-                "meta.link"
+                "meta.link",
+                "meta.method-call",
+                "storage.type.annotation",
+                "meta.declaration.annotation"
             ],
             "settings": {
                 "foreground": "&accentColor&"
@@ -116,7 +126,9 @@
         {
             "scope": [
                 "constant.numeric",
-                "support.type.object.module"
+                "support.type.object.module",
+                "variable.other.enummember",
+                "meta.enum.declaration"
             ],
             "settings": {
                 "foreground": "&constantColor&"
@@ -146,6 +158,13 @@
             ],
             "settings": {
                 "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": [
+            ],
+            "settings": {
+                "foreground": "&infoForeground&"
             }
         }
     ]
