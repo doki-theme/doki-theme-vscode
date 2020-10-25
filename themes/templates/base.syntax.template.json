@@ -18,7 +18,8 @@
             "scope": [
                 "source",
                 "punctuation.definition.parameters",
-                "punctuation.definition.block"
+                "punctuation.definition.block",
+                "text.html.markdown"
             ],
             "settings": {
                 "foreground": "&foregroundColorEditor&"
@@ -54,7 +55,8 @@
                 "variable.other.constant",
                 "meta.definition.method",
                 "meta.definition.function",
-                "meta.embedded.line"        
+                "meta.embedded.line",
+                "markup.inline.raw.string"  
             ],
             "settings": {
                 "foreground": "&classNameColor&"
@@ -75,7 +77,9 @@
                 "entity.name.type.class",
                 "meta.type",
                 "variable.other.object",
-                "entity.name.type"
+                "entity.name.type",
+                "markup.heading",
+                "string.other.link.title"
             ],
             "settings": {
                 "foreground": "&keyColor&"
@@ -93,7 +97,8 @@
         {
             "scope": [
                 "meta.function-call",
-                "meta.decorator"
+                "meta.decorator",
+                "meta.link"
             ],
             "settings": {
                 "foreground": "&accentColor&"
