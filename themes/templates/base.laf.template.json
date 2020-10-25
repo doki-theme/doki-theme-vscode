@@ -1,6 +1,7 @@
 {
   "name": "base",
   "ui": {
+    "foreground": "&foregroundColor&",    
     "editor.foreground": "&foregroundColor&",
     "dropdown.foreground": "&foregroundColor&",
     "panelTitle.activeForeground": "&foregroundColor&",

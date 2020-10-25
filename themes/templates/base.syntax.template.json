@@ -3,7 +3,7 @@
     "tokenColors": [
         {
             "scope": [
-                "support.type.property-name.json.comments",
+                "support.type.property-name.json",
                 "meta.object-literal.key",
                 "variable.object.property",
                 "variable.other.readwrite.alias",
@@ -16,7 +16,9 @@
         },
         {
             "scope": [
-                "source"
+                "source",
+                "punctuation.definition.parameters",
+                "punctuation.definition.block"
             ],
             "settings": {
                 "foreground": "&foregroundColorEditor&"
@@ -39,7 +41,8 @@
                 "storage.modifier",
                 "keyword.operator.new",
                 "constant.language.boolean",
-                "variable.language.this"
+                "variable.language.this",
+                "constant.language.undefined"
             ],
             "settings": {
                 "foreground": "&keywordColor&"
@@ -49,6 +52,7 @@
             "scope": [
                 "variable.other.constant",
                 "meta.definition.method",
+                "meta.definition.function",
                 "meta.embedded.line"        
             ],
             "settings": {
@@ -70,8 +74,7 @@
                 "entity.name.type.class",
                 "meta.type",
                 "variable.other.object",
-                "entity.name.type",
-                "support.type.primitive"
+                "entity.name.type"
             ],
             "settings": {
                 "foreground": "&keyColor&"
@@ -79,7 +82,17 @@
         },
         {
             "scope": [
-                "meta.function-call"
+                "support.type.primitive"
+            ],
+            "settings": {
+                "foreground": "&keyColor&",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "meta.function-call",
+                "meta.decorator"
             ],
             "settings": {
                 "foreground": "&accentColor&"
@@ -107,6 +120,15 @@
             ],
             "settings": {
                 "foreground": "&constantColor&",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "comment"
+            ],
+            "settings": {
+                "foreground": "&commentColor&",
                 "fontStyle": "italic"
             }
         }
