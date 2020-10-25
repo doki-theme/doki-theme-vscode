@@ -115,7 +115,8 @@
         },
         {
             "scope": [
-                "constant.numeric"
+                "constant.numeric",
+                "support.type.object.module"
             ],
             "settings": {
                 "foreground": "&constantColor&"
@@ -131,11 +132,20 @@
         },
         {
             "scope": [
-                "comment"
+                "comment",
+                "markup.quote"
             ],
             "settings": {
                 "foreground": "&commentColor&",
                 "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "markup.fenced_code.block"
+            ],
+            "settings": {
+                "fontStyle": "bold"
             }
         }
     ]
