@@ -630,7 +630,7 @@ walkDir(masterThemeTemplateDirectoryPath)
       } else if (b.id === ishtarId) {
         return 1;
       } else {
-        return a.label.localeCompare(b.label)
+        return a.label.localeCompare(b.label);
       }
     });
 

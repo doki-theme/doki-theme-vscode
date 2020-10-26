@@ -10,7 +10,14 @@
       }
     }
   },
-  "laf": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "activityBarBadge.foreground": "&accentContrastColor&",
+      "statusBar.foreground": "&accentContrastColor&",
+      "badge.foreground": "&accentContrastColor&"
+    }
+  },
   "syntax": {},
   "colors": {}
 }
