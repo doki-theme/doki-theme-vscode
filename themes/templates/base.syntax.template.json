@@ -3,6 +3,67 @@
     "tokenColors": [
         {
             "scope": [
+                "emphasis"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "strong"
+            ],
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": [
+                "invalid"
+            ],
+            "settings": {
+                "foreground": "&errorColor&",
+                "fontStyle": "underline strikethrough"
+            }
+        },
+        {
+            "scope": [
+                "invalid.deprecated"
+            ],
+            "settings": {
+                "foreground": "&infoForeground&",
+                "fontStyle": "underline italic"
+            }
+        },
+        {
+            "name": "Underlined markup",
+            "scope": [
+                "markup.underline"
+            ],
+            "settings": {
+                "fontStyle": "underline"
+            }
+        },
+        {
+            "name": "Bold markup",
+            "scope": [
+                "markup.bold"
+            ],
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Markup italic",
+            "scope": [
+                "markup.italic"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+                {
+            "scope": [
                 "support.type.property-name.json",
                 "meta.object-literal.key",
                 "variable.object.property",
@@ -59,7 +120,7 @@
                 "meta.definition.function",
                 "meta.embedded.line",
                 "markup.inline.raw.string",
-                
+                "variable.css",
                 "meta.method.identifier"
             ],
             "settings": {
@@ -70,7 +131,9 @@
             "scope": [
                 "keyword.operator",
                 "entity.name.tag",
-                "meta.template.expression"
+                "meta.template.expression",
+                "punctuation.definition.list.begin",
+                "punctuation.definition.link.restructuredtext"
             ],
             "settings": {
                 "foreground": "&htmlTagColor&"
@@ -86,7 +149,9 @@
                 "string.other.link.title",
                 "storage.modifier.import",
                 "meta.import",
-                "storage.type.java"
+                "storage.type.java",
+                "support.type.property-name",
+                "meta.property-name"
             ],
             "settings": {
                 "foreground": "&keyColor&"
@@ -108,7 +173,9 @@
                 "meta.link",
                 "meta.method-call",
                 "storage.type.annotation",
-                "meta.declaration.annotation"
+                "meta.declaration.annotation",
+                "support.function",
+                "meta.assertion.look-ahead.regexp"
             ],
             "settings": {
                 "foreground": "&accentColor&"
@@ -128,7 +195,8 @@
                 "constant.numeric",
                 "support.type.object.module",
                 "variable.other.enummember",
-                "meta.enum.declaration"
+                "meta.enum.declaration",
+                "constant.other.color"
             ],
             "settings": {
                 "foreground": "&constantColor&"
