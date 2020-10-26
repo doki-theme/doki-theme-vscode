@@ -27,17 +27,24 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 </p>
                 <h2>Themes!</h2>
                 <p>
-                    With over 10 themes (light and dark) I think you will be able to find your favorite.
-                    You can even find one that fits your mood for the day.
+                    With over 30+ themes (light and dark) I think you will be able to find 
+                    find best girl.
                 </p>
                 <p>
-                    You can choose themes from the following Doki-Doki Theme Suites:
+                    You can choose themes from the following Doki-Doki Theme Suites such as:
                 </p>
                 <ul>
                     <li>Doki-Doki Literature Club</li>
                     <li>Re:Zero</li>
                     <li>Kill La Kill</li>
                     <li>KonoSuba</li>
+                    <li>DanganRonpa</li>
+                    <li>High School DxD</li>
+                    <li>Lucky Star</li>
+                    <li>Sword Art Online</li>
+                    <li>Fate</li>
+                    <li>Gate</li>
+                    <li>Miss Kobayashi's Dragon Maid</li>
                 </ul>
                 <h2>Stickers!</h2>
                     <p>
