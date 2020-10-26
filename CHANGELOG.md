@@ -1,5 +1,11 @@
 # Change Log
 
+# 7.0.0 [Platform Consistency]
+
+- Migrated all theme's syntax coloring to look like the Jetbrains themes
+  - [Please see the pull request for more information](https://github.com/doki-theme/doki-theme-vscode/pull/29)
+- Updated Ram's status bar usability
+
 # 6.0.0 [Fate, Gate, Konosuba]
 
 ## 5 New Themes!

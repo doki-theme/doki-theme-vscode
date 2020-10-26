@@ -3,7 +3,8 @@
   "overrides": {
     "editorScheme": {
       "colors": {
-        "accentColor": "#b6323f"
+        "accentColor": "#b6323f",
+        "startColor": "#c79c19"
       }
     }
   },
