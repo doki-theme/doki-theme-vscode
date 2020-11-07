@@ -1,5 +1,9 @@
 # Change Log
 
+# 7.0.1 [Code Insiders Support]
+
+- Restored support for all stickers in VSCode-Insiders 1.52.0.
+
 # 7.0.0 [Platform Consistency]
 
 - Migrated all theme's syntax coloring to look like the Jetbrains themes
