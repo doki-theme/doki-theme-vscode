@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -270,16 +270,16 @@
         "uiTheme": "vs"
       },
       {
-        "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
-        "label": "Doki Theme: DDLC:  Natsuki",
-        "path": "./generatedThemes/Natsuki Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
         "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
+        "label": "Doki Theme: DDLC:  Natsuki",
+        "path": "./generatedThemes/Natsuki Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
@@ -294,16 +294,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
-        "label": "Doki Theme: DDLC:  Yuri",
-        "path": "./generatedThemes/Yuri Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
         "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
+        "label": "Doki Theme: DDLC:  Yuri",
+        "path": "./generatedThemes/Yuri Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "b93ab4ea-ff96-4459-8fa2-0caae5bc7116",

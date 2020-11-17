@@ -3,7 +3,13 @@ import { performGet } from "./RESTClient";
 import path from "path";
 import fs from "fs";
 import crypto from "crypto";
-import { VSCODE_ASSETS_URL, isCodeServer, BACKGROUND_ASSETS_URL } from "./ENV";
+import {
+  VSCODE_ASSETS_URL,
+  isCodeServer,
+  BACKGROUND_ASSETS_URL,
+  isWSL,
+  workbenchDirectory,
+} from "./ENV";
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
 
@@ -58,15 +64,40 @@ const resolveLocalStickerPath = (
   context: vscode.ExtensionContext
 ): string => {
   const safeStickerPath = stickerPathToUrl(currentSticker);
-  return path.join(context.globalStoragePath, "stickers", safeStickerPath);
+  return path.join(getStoragePath(context), "stickers", safeStickerPath);
 };
+
+function getWSLStoragePath(): string  {
+  const appDataDirectory = 'AppData';
+  const userAppDataIndex = workbenchDirectory.indexOf(appDataDirectory);
+  if(userAppDataIndex > -1) {
+    const windowsGlobalStorageDirectory = path.resolve(
+        workbenchDirectory.substring(0, userAppDataIndex + appDataDirectory.length),
+        "Roaming", "Code", "User", "globalStorage", "unthrottled.doki-theme");
+    try {
+      if(!fs.existsSync(windowsGlobalStorageDirectory)) {
+        fs.mkdirSync(windowsGlobalStorageDirectory, {recursive: true});
+      }
+      return windowsGlobalStorageDirectory;
+    }catch (e) {
+      console.error("Unable to create roaming directory", e);
+    }
+  }
+  throw Error("Unable to set up WSL asset directory!");
+}
+
+function getStoragePath(context: vscode.ExtensionContext) {
+  return isWSL() ?
+      getWSLStoragePath() :
+      context.globalStoragePath;
+}
 
 const resolveLocalWallpaperPath = (
   currentSticker: Sticker,
   context: vscode.ExtensionContext
 ): string => {
   const safeStickerPath = wallpaperPathToUrl(currentSticker);
-  return path.join(context.globalStoragePath, "wallpapers", safeStickerPath);
+  return path.join(getStoragePath(context), "wallpapers", safeStickerPath);
 };
 
 const createCssDokiAssetUrl = (localAssetPath: string): string => {
@@ -74,7 +105,10 @@ const createCssDokiAssetUrl = (localAssetPath: string): string => {
 };
 
 function cleanPathToUrl(stickerPath: string) {
-  return stickerPath.replace(/\\/g, "/");
+  const scrubbedUrl = stickerPath.replace(/\\/g, "/");
+  return isWSL() ?
+      scrubbedUrl.replace('/mnt/c', 'c:') :
+      scrubbedUrl;
 }
 
 function stickerPathToUrl(currentSticker: Sticker) {

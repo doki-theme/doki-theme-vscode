@@ -1,17 +1,12 @@
 import * as vscode from "vscode";
-import {
-  activateTheme,
-  uninstallImages,
-  getCurrentThemeAndSticker,
-  getSticker,
-} from "./ThemeManager";
-import { DokiTheme, StickerType, DokiSticker } from "./DokiTheme";
+import {activateTheme, getCurrentThemeAndSticker, getSticker, uninstallImages,} from "./ThemeManager";
+import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import { StatusBarComponent } from "./StatusBar";
-import { VSCodeGlobals } from "./VSCodeGlobals";
-import { attemptToNotifyUpdates } from "./NotificationService";
-import { showChanglog } from "./ChangelogService";
-import { attemptToUpdateSticker } from "./StickerUpdateService";
+import {StatusBarComponent} from "./StatusBar";
+import {VSCodeGlobals} from "./VSCodeGlobals";
+import {attemptToNotifyUpdates} from "./NotificationService";
+import {showChanglog} from "./ChangelogService";
+import {attemptToUpdateSticker} from "./StickerUpdateService";
 
 export interface Sticker {
   path: string;
@@ -35,7 +30,7 @@ const getCurrentSticker = (
   extensionCommand: string,
   dokiThemeDefinition: DokiThemeDefinition
 ): DokiSticker =>{
-  const stickerType = extensionCommand.endsWith('secondary') ? 
+  const stickerType = extensionCommand.endsWith('secondary') ?
   StickerType.SECONDARY : StickerType.DEFAULT;
   const sticker = getSticker(dokiThemeDefinition, stickerType);
     return {
@@ -65,7 +60,10 @@ export function activate(context: vscode.ExtensionContext) {
   attemptToNotifyUpdates(context);
 
   const {sticker} = getCurrentThemeAndSticker();
-  attemptToUpdateSticker(context, sticker.sticker);
+  attemptToUpdateSticker(context, sticker.sticker)
+      .catch(error => {
+        console.error("Unable to update sticker for reasons", error);
+      });
 
   DokiThemeDefinitions.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
     dokiThemeDefinition.extensionNames.map((extensionCommand) => ({
@@ -78,7 +76,7 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.commands.registerCommand(extensionCommand, () =>
         activateTheme(
           new DokiTheme(dokiThemeDefinition.themeDefinition),
-          getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition),          
+          getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition),
           context
         )
       )
