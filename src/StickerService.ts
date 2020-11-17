@@ -1,9 +1,8 @@
 import * as vscode from "vscode";
 import fs from "fs";
-import {CSS_COPY_FILE_NAME, editorCss} from "./ENV";
-import { attemptToUpdateSticker } from "./StickerUpdateService";
-import { Sticker } from "./extension";
-import path from "path";
+import {editorCss, editorCssCopy} from "./ENV";
+import {attemptToUpdateSticker} from "./StickerUpdateService";
+import {Sticker} from "./extension";
 
 export enum InstallStatus {
   INSTALLED,
@@ -15,24 +14,8 @@ const stickerComment = "/* Stickers */";
 
 const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
 
-// Was VS Code upgraded when stickers where installed?
-function isCssPrestine() {
-  const currentCss = fs.readFileSync(editorCss, "utf-8");
-  return getStickerIndex(currentCss) < 0;
-}
-
-// todo: this
-export const editorCssCopy = path.resolve('/tmp', CSS_COPY_FILE_NAME);
-
-function ensureRightCssCopy() {
-  if (!fs.existsSync(editorCssCopy) || isCssPrestine()) {
-    fs.copyFileSync(editorCss, editorCssCopy);
-  }
-}
-
 function getVsCodeCss() {
-  ensureRightCssCopy();
-  return fs.readFileSync(editorCssCopy, "utf-8");
+  return getScrubbedCSS();
 }
 
 function buildStickerCss({
@@ -109,31 +92,35 @@ export async function installStickersAndWallPaper(
   return false;
 }
 
-const scrubFileIfNecessary = () => {
+function getScrubbedCSS() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
   const stickerIndex = getStickerIndex(currentCss);
-  if (stickerIndex >= 0){
-    fs.writeFileSync(editorCss, currentCss.substr(0, stickerIndex).trim(), "utf-8");
+  if (stickerIndex >= 0) {
+    return currentCss.substr(0, stickerIndex).trim();
   }
+  return currentCss;
+}
+
+const scrubCSSFile = () => {
+  const scrubbedCSS = getScrubbedCSS();
+  fs.writeFileSync(editorCss, scrubbedCSS, "utf-8");
 };
 
 // :(
 export function removeStickers(): InstallStatus {
   if (canWrite()) {
-    if (fs.existsSync(editorCssCopy)) {
-      try {
-        // fs.unlinkSync(editorCss);
-        // fs.copyFileSync(editorCssCopy, editorCss);
-        // fs.unlinkSync(editorCssCopy);
-        scrubFileIfNecessary();
+    try {
+      if (fs.existsSync(editorCssCopy)) {
+        fs.unlinkSync(editorCssCopy);
+        scrubCSSFile();
         return InstallStatus.INSTALLED;
-      } catch (e) {
-        console.error("Unable to remove stickers!", e);
-        return InstallStatus.FAILURE;
       }
+      scrubCSSFile();
+      return InstallStatus.NOT_INSTALLED;
+    } catch (e) {
+      console.error("Unable to remove stickers!", e);
+      return InstallStatus.FAILURE;
     }
-    scrubFileIfNecessary();
-    return InstallStatus.NOT_INSTALLED;
   }
 
   return InstallStatus.FAILURE;

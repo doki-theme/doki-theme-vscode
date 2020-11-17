@@ -9,7 +9,7 @@ export const SCREENSHOT_ASSETS_URL = `${ASSETS_URL}/screenshots`;
 
 const main = require.main || { filename: 'yeet' };
 const defaultWorkbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
-const isWSL = !fs.existsSync(defaultWorkbenchDirectory);
+export const isWSL = !fs.existsSync(defaultWorkbenchDirectory);
 
 const resolveWorkbench = () => {
   if (!isWSL) {
@@ -20,7 +20,7 @@ const resolveWorkbench = () => {
   const users = fs.readdirSync(userPath);
 
   return users.map(user => path.resolve(userPath, user, 'AppData',
-      'Local', 'Programs', 'Microsoft\ VS\ Code', 'resources',
+      'Local', 'Programs', 'Microsoft VS Code', 'resources',
       'app', 'out', 'vs', 'workbench'))
       .filter(path => fs.existsSync(path))
       .find(Boolean) || defaultWorkbenchDirectory;
@@ -41,6 +41,6 @@ const CSS_FILE_NAME = `workbench.${fileName}.css`;
 export const CSS_COPY_FILE_NAME = `${CSS_FILE_NAME}.copy`;
 
 export const editorCss = path.join(workbenchDirectory, CSS_FILE_NAME);
-export const legacyEditorCssCopy = path.join(workbenchDirectory, CSS_COPY_FILE_NAME);
+export const editorCssCopy = path.join(workbenchDirectory, CSS_COPY_FILE_NAME);
 
 export const isCodeServer = () => fileName === CODE_SERVER_FILE;
