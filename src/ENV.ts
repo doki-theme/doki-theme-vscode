@@ -16,10 +16,10 @@ const resolveWorkbench = () => {
     return defaultWorkbenchDirectory;
   }
 
-  const userPath = path.resolve('/mnt', 'c', 'Users');
-  const users = fs.readdirSync(userPath);
+  const usersPath = path.resolve('/mnt', 'c', 'Users');
+  const users = fs.readdirSync(usersPath);
 
-  return users.map(user => path.resolve(userPath, user, 'AppData',
+  return users.map(user => path.resolve(usersPath, user, 'AppData',
       'Local', 'Programs', 'Microsoft VS Code', 'resources',
       'app', 'out', 'vs', 'workbench'))
       .filter(path => fs.existsSync(path))

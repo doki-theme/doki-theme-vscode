@@ -81,7 +81,9 @@ function getWSLStoragePath(): string | undefined {
 }
 
 function getStoragePath(context: vscode.ExtensionContext) {
-  return isWSL ? getWSLStoragePath() || context.globalStoragePath : context.globalStoragePath;
+  return isWSL ?
+      getWSLStoragePath() || context.globalStoragePath :
+      context.globalStoragePath;
 }
 
 const resolveLocalWallpaperPath = (
