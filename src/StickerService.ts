@@ -117,11 +117,16 @@ const scrubFileIfNecessary = () => {
 export function removeStickers(): InstallStatus {
   if (canWrite()) {
     if (fs.existsSync(editorCssCopy)) {
-      fs.unlinkSync(editorCss);
-      fs.copyFileSync(editorCssCopy, editorCss);
-      fs.unlinkSync(editorCssCopy);
-      scrubFileIfNecessary();
-      return InstallStatus.INSTALLED;
+      try {
+        // fs.unlinkSync(editorCss);
+        // fs.copyFileSync(editorCssCopy, editorCss);
+        // fs.unlinkSync(editorCssCopy);
+        scrubFileIfNecessary();
+        return InstallStatus.INSTALLED;
+      } catch (e) {
+        console.error("Unable to remove stickers!", e);
+        return InstallStatus.FAILURE;
+      }
     }
     scrubFileIfNecessary();
     return InstallStatus.NOT_INSTALLED;
