@@ -1,5 +1,10 @@
 # Change Log
 
+# 7.1.0 [WSL Sticker Installation Support]
+
+- Enabled of stickers when working on a remote WSL VSCode session. [See issue for more details](https://github.com/doki-theme/doki-theme-vscode/issues/32)
+- Enhanced Rin & Ishtar's syntax colorings.
+
 # 7.0.1 [Code Insiders Support]
 
 - Restored support for all stickers in VSCode-Insiders 1.52.0.
