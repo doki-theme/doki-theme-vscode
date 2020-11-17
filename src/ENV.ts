@@ -11,9 +11,23 @@ const main = require.main || { filename: 'yeet' };
 const defaultWorkbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
 const isWSL = !fs.existsSync(defaultWorkbenchDirectory);
 
-export const workbenchDirectory = resolveWorkbench();
+const resolveWorkbench = () => {
+  if (!isWSL) {
+    return defaultWorkbenchDirectory;
+  }
 
-console.log('dis workbench', workbenchDirectory, fs.existsSync(workbenchDirectory));
+  const userPath = path.resolve('/mnt', 'c', 'Users');
+  const users = fs.readdirSync(userPath);
+
+  return users.map(user => path.resolve(userPath, user, 'AppData',
+      'Local', 'Programs', 'Microsoft\ VS\ Code', 'resources',
+      'app', 'out', 'vs', 'workbench'))
+      .filter(path => fs.existsSync(path))
+      .find(Boolean) || defaultWorkbenchDirectory;
+
+};
+
+export const workbenchDirectory = resolveWorkbench();
 
 const CODE_SERVER_FILE = 'web.api';
 const getFileName = () => {
@@ -23,23 +37,10 @@ const getFileName = () => {
 
 const fileName = getFileName();
 
-export const editorCss = path.join(workbenchDirectory, `workbench.${fileName}.css`);
-export const editorCssCopy = path.resolve('/tmp', `workbench.${fileName}.css.copy`);
+const CSS_FILE_NAME = `workbench.${fileName}.css`;
+export const CSS_COPY_FILE_NAME = `${CSS_FILE_NAME}.copy`;
+
+export const editorCss = path.join(workbenchDirectory, CSS_FILE_NAME);
+export const legacyEditorCssCopy = path.join(workbenchDirectory, CSS_COPY_FILE_NAME);
 
 export const isCodeServer = () => fileName === CODE_SERVER_FILE;
-function resolveWorkbench() {
-  if (!isWSL) {
-    return defaultWorkbenchDirectory;
-  }
-
-  const userPath = path.resolve('/mnt', 'c', 'Users');
-  const users = fs.readdirSync(userPath);
-
-  return users.map(user => path.resolve(userPath, user, 'AppData',
-    'Local', 'Programs', 'Microsoft\ VS\ Code', 'resources',
-    'app', 'out', 'vs', 'workbench'))
-    .filter(path => fs.existsSync(path))
-    .find(Boolean) || defaultWorkbenchDirectory;
-
-}
-

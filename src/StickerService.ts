@@ -1,8 +1,9 @@
 import * as vscode from "vscode";
 import fs from "fs";
-import { editorCss, editorCssCopy } from "./ENV";
+import {CSS_COPY_FILE_NAME, editorCss} from "./ENV";
 import { attemptToUpdateSticker } from "./StickerUpdateService";
 import { Sticker } from "./extension";
+import path from "path";
 
 export enum InstallStatus {
   INSTALLED,
@@ -19,6 +20,9 @@ function isCssPrestine() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
   return getStickerIndex(currentCss) < 0;
 }
+
+// todo: this
+export const editorCssCopy = path.resolve('/tmp', CSS_COPY_FILE_NAME);
 
 function ensureRightCssCopy() {
   if (!fs.existsSync(editorCssCopy) || isCssPrestine()) {

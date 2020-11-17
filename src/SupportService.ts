@@ -45,6 +45,16 @@ function showStickerHelp(context: vscode.ExtensionContext, verbs: any) {
                 <code>sudo chown -R $(whoami) ${workbenchDirectory}</code>
                 <p>After you have given yourself permission to write that directory, feel free to run the sticker ${verbs.commandAction} command again.</p>
 
+                <h2>Windows Subsystem for Linux (WSL)</h2>
+                <p>Looks like I was unable to correctly find and modify your Windows 10 VSCode CSS, sorry friend!</p>
+                <p>To get around this issue you can:</p>
+                <ol>
+                    <li>Close your WSL remote connection <code>File > Close Remote Connection</code></li>
+                    <li>Run Previous Sticker installation command.</li>
+                </ol>
+                <p>After that you should be able to use the WSL remote connection and have stickers!</p>
+                <p><a href="https://github.com/doki-theme/doki-theme-vscode/issues/32">Please see this issue for more details.</a></p>
+                            
                 <h2>Windows</h2>
                 <p>You can run VS Code as an administrator so I can write to <strong>${workbenchDirectory}</strong>.</p>
                 <p>After that you do not need to run as admin. 
