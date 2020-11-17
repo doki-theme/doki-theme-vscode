@@ -3,7 +3,13 @@ import { performGet } from "./RESTClient";
 import path from "path";
 import fs from "fs";
 import crypto from "crypto";
-import {VSCODE_ASSETS_URL, isCodeServer, BACKGROUND_ASSETS_URL, isWSL, workbenchDirectory} from "./ENV";
+import {
+  VSCODE_ASSETS_URL,
+  isCodeServer,
+  BACKGROUND_ASSETS_URL,
+  isWSL,
+  workbenchDirectory,
+} from "./ENV";
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
 
@@ -65,14 +71,14 @@ function getWSLStoragePath(): string  {
   const appDataDirectory = 'AppData';
   const userAppDataIndex = workbenchDirectory.indexOf(appDataDirectory);
   if(userAppDataIndex > -1) {
-    const roamingDirectory = path.resolve(
+    const windowsGlobalStorageDirectory = path.resolve(
         workbenchDirectory.substring(0, userAppDataIndex + appDataDirectory.length),
-        "Roaming", "dokiThemeAssets");
+        "Roaming", "Code", "User", "globalStorage", "unthrottled.doki-theme");
     try {
-      if(!fs.existsSync(roamingDirectory)) {
-        fs.mkdirSync(roamingDirectory, {recursive: true});
+      if(!fs.existsSync(windowsGlobalStorageDirectory)) {
+        fs.mkdirSync(windowsGlobalStorageDirectory, {recursive: true});
       }
-      return roamingDirectory;
+      return windowsGlobalStorageDirectory;
     }catch (e) {
       console.error("Unable to create roaming directory", e);
     }
@@ -81,7 +87,7 @@ function getWSLStoragePath(): string  {
 }
 
 function getStoragePath(context: vscode.ExtensionContext) {
-  return isWSL ?
+  return isWSL() ?
       getWSLStoragePath() :
       context.globalStoragePath;
 }
@@ -100,7 +106,7 @@ const createCssDokiAssetUrl = (localAssetPath: string): string => {
 
 function cleanPathToUrl(stickerPath: string) {
   const scrubbedUrl = stickerPath.replace(/\\/g, "/");
-  return isWSL ?
+  return isWSL() ?
       scrubbedUrl.replace('/mnt/c', 'c:') :
       scrubbedUrl;
 }

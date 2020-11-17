@@ -8,11 +8,11 @@ export const SCREENSHOT_ASSETS_URL = `${ASSETS_URL}/screenshots`;
 
 
 const main = require.main || { filename: 'yeet' };
-const defaultWorkbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
-export const isWSL = !fs.existsSync(defaultWorkbenchDirectory);
+export const defaultWorkbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
+export const isWSL = () => !fs.existsSync(defaultWorkbenchDirectory);
 
 const resolveWorkbench = () => {
-  if (!isWSL) {
+  if (!isWSL()) {
     return defaultWorkbenchDirectory;
   }
 
