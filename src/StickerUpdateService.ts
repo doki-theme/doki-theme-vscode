@@ -61,7 +61,7 @@ const resolveLocalStickerPath = (
   return path.join(getStoragePath(context), "stickers", safeStickerPath);
 };
 
-function getWSLStoragePath(): string | undefined {
+function getWSLStoragePath(): string  {
   const appDataDirectory = 'AppData';
   const userAppDataIndex = workbenchDirectory.indexOf(appDataDirectory);
   if(userAppDataIndex > -1) {
@@ -77,12 +77,12 @@ function getWSLStoragePath(): string | undefined {
       console.error("Unable to create roaming directory", e);
     }
   }
-  return;
+  throw Error("Unable to set up WSL asset directory!");
 }
 
 function getStoragePath(context: vscode.ExtensionContext) {
   return isWSL ?
-      getWSLStoragePath() || context.globalStoragePath :
+      getWSLStoragePath() :
       context.globalStoragePath;
 }
 
