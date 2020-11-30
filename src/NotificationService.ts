@@ -17,7 +17,7 @@ export function attemptToNotifyUpdates(context: vscode.ExtensionContext) {
       )
       .then((item) => {
         if (item) {
-          vscode.commands.executeCommand("extension.doki.changelog");
+          vscode.commands.executeCommand("doki-theme.doki.changelog");
         }
       });
   } else if (!savedVersion) {
