@@ -1,5 +1,9 @@
 # Change Log
 
+# 7.1.1 [Code Insiders Support]
+
+- Restored support for all extension commands for VSCode-Insiders 1.52.0 `f47aae014cf8567f648e68369d66b4106ae89f08`.
+
 # 7.1.0 [WSL Sticker Installation Support]
 
 - Enabled of stickers when working on a remote WSL VSCode session. [See issue for more details](https://github.com/doki-theme/doki-theme-vscode/issues/32)

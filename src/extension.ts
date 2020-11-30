@@ -41,13 +41,13 @@ const getCurrentSticker = (
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("extension.remove.sticker", () =>
+    vscode.commands.registerCommand("doki-theme.remove.sticker", () =>
       uninstallImages(context)
     )
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("extension.doki.changelog", () =>
+    vscode.commands.registerCommand("doki-theme.doki.changelog", () =>
       showChanglog(context)
     )
   );
