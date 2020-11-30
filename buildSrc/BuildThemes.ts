@@ -637,7 +637,7 @@ walkDir(masterThemeTemplateDirectoryPath)
     packageJson.activationEvents = [
       ...packageJson.activationEvents.filter(
         (activationEvent: string) =>
-          !activationEvent.startsWith("onCommand:extension.theme")
+          !activationEvent.startsWith("onCommand:doki-theme.theme")
       ),
       ...activationEvents,
     ];
@@ -645,7 +645,7 @@ walkDir(masterThemeTemplateDirectoryPath)
     packageJson.contributes.commands = [
       ...packageJson.contributes.commands.filter(
         (command: { command: string }) =>
-          !command.command.startsWith("extension.theme")
+          !command.command.startsWith("doki-theme.theme")
       ),
       ...commands,
     ];
@@ -688,8 +688,8 @@ function getCommandNames(dokiDefinition: MasterDokiThemeDefinition) {
     .filter((type) => type !== "normal")
     .map((type) => {
       if (type === "default") {
-        return `extension.theme.${dokiDefinition.name}`;
+        return `doki-theme.theme.${dokiDefinition.name}`;
       }
-      return `extension.theme.${dokiDefinition.name}.secondary`;
+      return `doki-theme.theme.${dokiDefinition.name}.secondary`;
     });
 }

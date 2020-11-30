@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -18,7 +18,7 @@
     "url": "https://github.com/doki-theme/doki-theme-vscode.git"
   },
   "engines": {
-    "vscode": "^1.40.0"
+    "vscode": "^1.51.0"
   },
   "categories": [
     "Themes",
@@ -30,223 +30,223 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:extension.doki.changelog",
-    "onCommand:extension.remove.sticker",
-    "onCommand:extension.theme.Mioda Ibuki Dark",
-    "onCommand:extension.theme.Mioda Ibuki Light",
-    "onCommand:extension.theme.Kanna",
-    "onCommand:extension.theme.Kanna.secondary",
-    "onCommand:extension.theme.Misato Katsuragi",
-    "onCommand:extension.theme.Ishtar Dark",
-    "onCommand:extension.theme.Ishtar Light",
-    "onCommand:extension.theme.Tohsaka Rin",
-    "onCommand:extension.theme.Rory Mercury",
-    "onCommand:extension.theme.Rias",
-    "onCommand:extension.theme.Ryuko",
-    "onCommand:extension.theme.Satsuki",
-    "onCommand:extension.theme.Aqua",
-    "onCommand:extension.theme.Darkness Dark",
-    "onCommand:extension.theme.Darkness Light",
-    "onCommand:extension.theme.Megumin",
-    "onCommand:extension.theme.Monika Dark",
-    "onCommand:extension.theme.Monika Dark.secondary",
-    "onCommand:extension.theme.Monika Light",
-    "onCommand:extension.theme.Monika Light.secondary",
-    "onCommand:extension.theme.Natsuki Dark",
-    "onCommand:extension.theme.Natsuki Dark.secondary",
-    "onCommand:extension.theme.Natsuki Light",
-    "onCommand:extension.theme.Natsuki Light.secondary",
-    "onCommand:extension.theme.Sayori Dark",
-    "onCommand:extension.theme.Sayori Dark.secondary",
-    "onCommand:extension.theme.Sayori Light",
-    "onCommand:extension.theme.Sayori Light.secondary",
-    "onCommand:extension.theme.Yuri Dark",
-    "onCommand:extension.theme.Yuri Dark.secondary",
-    "onCommand:extension.theme.Yuri Light",
-    "onCommand:extension.theme.Yuri Light.secondary",
-    "onCommand:extension.theme.Konata",
-    "onCommand:extension.theme.Konata.secondary",
-    "onCommand:extension.theme.Hatsune Miku",
-    "onCommand:extension.theme.Beatrice",
-    "onCommand:extension.theme.Emilia Dark",
-    "onCommand:extension.theme.Emilia Light",
-    "onCommand:extension.theme.Ram",
-    "onCommand:extension.theme.Rem",
-    "onCommand:extension.theme.Asuna"
+    "onCommand:doki-theme.doki.changelog",
+    "onCommand:doki-theme.remove.sticker",
+    "onCommand:doki-theme.theme.Mioda Ibuki Dark",
+    "onCommand:doki-theme.theme.Mioda Ibuki Light",
+    "onCommand:doki-theme.theme.Kanna",
+    "onCommand:doki-theme.theme.Kanna.secondary",
+    "onCommand:doki-theme.theme.Misato Katsuragi",
+    "onCommand:doki-theme.theme.Ishtar Dark",
+    "onCommand:doki-theme.theme.Ishtar Light",
+    "onCommand:doki-theme.theme.Tohsaka Rin",
+    "onCommand:doki-theme.theme.Rory Mercury",
+    "onCommand:doki-theme.theme.Rias",
+    "onCommand:doki-theme.theme.Ryuko",
+    "onCommand:doki-theme.theme.Satsuki",
+    "onCommand:doki-theme.theme.Aqua",
+    "onCommand:doki-theme.theme.Darkness Dark",
+    "onCommand:doki-theme.theme.Darkness Light",
+    "onCommand:doki-theme.theme.Megumin",
+    "onCommand:doki-theme.theme.Monika Dark",
+    "onCommand:doki-theme.theme.Monika Dark.secondary",
+    "onCommand:doki-theme.theme.Monika Light",
+    "onCommand:doki-theme.theme.Monika Light.secondary",
+    "onCommand:doki-theme.theme.Natsuki Dark",
+    "onCommand:doki-theme.theme.Natsuki Dark.secondary",
+    "onCommand:doki-theme.theme.Natsuki Light",
+    "onCommand:doki-theme.theme.Natsuki Light.secondary",
+    "onCommand:doki-theme.theme.Sayori Dark",
+    "onCommand:doki-theme.theme.Sayori Dark.secondary",
+    "onCommand:doki-theme.theme.Sayori Light",
+    "onCommand:doki-theme.theme.Sayori Light.secondary",
+    "onCommand:doki-theme.theme.Yuri Dark",
+    "onCommand:doki-theme.theme.Yuri Dark.secondary",
+    "onCommand:doki-theme.theme.Yuri Light",
+    "onCommand:doki-theme.theme.Yuri Light.secondary",
+    "onCommand:doki-theme.theme.Konata",
+    "onCommand:doki-theme.theme.Konata.secondary",
+    "onCommand:doki-theme.theme.Hatsune Miku",
+    "onCommand:doki-theme.theme.Beatrice",
+    "onCommand:doki-theme.theme.Emilia Dark",
+    "onCommand:doki-theme.theme.Emilia Light",
+    "onCommand:doki-theme.theme.Ram",
+    "onCommand:doki-theme.theme.Rem",
+    "onCommand:doki-theme.theme.Asuna"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.doki.changelog",
+        "command": "doki-theme.doki.changelog",
         "title": "Doki-Theme: Show Changelog"
       },
       {
-        "command": "extension.remove.sticker",
+        "command": "doki-theme.remove.sticker",
         "title": "Doki-Theme: Remove Sticker/Background"
       },
       {
-        "command": "extension.theme.Mioda Ibuki Dark",
+        "command": "doki-theme.theme.Mioda Ibuki Dark",
         "title": "Doki-Theme: Install Mioda Ibuki Dark's Stickers"
       },
       {
-        "command": "extension.theme.Mioda Ibuki Light",
+        "command": "doki-theme.theme.Mioda Ibuki Light",
         "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
       },
       {
-        "command": "extension.theme.Kanna",
+        "command": "doki-theme.theme.Kanna",
         "title": "Doki-Theme: Install Kanna's Stickers"
       },
       {
-        "command": "extension.theme.Kanna.secondary",
+        "command": "doki-theme.theme.Kanna.secondary",
         "title": "Doki-Theme: Install Kanna's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Misato Katsuragi",
+        "command": "doki-theme.theme.Misato Katsuragi",
         "title": "Doki-Theme: Install Misato Katsuragi's Stickers"
       },
       {
-        "command": "extension.theme.Ishtar Dark",
+        "command": "doki-theme.theme.Ishtar Dark",
         "title": "Doki-Theme: Install Ishtar Dark's Stickers"
       },
       {
-        "command": "extension.theme.Ishtar Light",
+        "command": "doki-theme.theme.Ishtar Light",
         "title": "Doki-Theme: Install Ishtar Light's Stickers"
       },
       {
-        "command": "extension.theme.Tohsaka Rin",
+        "command": "doki-theme.theme.Tohsaka Rin",
         "title": "Doki-Theme: Install Tohsaka Rin's Stickers"
       },
       {
-        "command": "extension.theme.Rory Mercury",
+        "command": "doki-theme.theme.Rory Mercury",
         "title": "Doki-Theme: Install Rory Mercury's Stickers"
       },
       {
-        "command": "extension.theme.Rias",
+        "command": "doki-theme.theme.Rias",
         "title": "Doki-Theme: Install Rias's Stickers"
       },
       {
-        "command": "extension.theme.Ryuko",
+        "command": "doki-theme.theme.Ryuko",
         "title": "Doki-Theme: Install Ryuko's Stickers"
       },
       {
-        "command": "extension.theme.Satsuki",
+        "command": "doki-theme.theme.Satsuki",
         "title": "Doki-Theme: Install Satsuki's Stickers"
       },
       {
-        "command": "extension.theme.Aqua",
+        "command": "doki-theme.theme.Aqua",
         "title": "Doki-Theme: Install Aqua's Stickers"
       },
       {
-        "command": "extension.theme.Darkness Dark",
+        "command": "doki-theme.theme.Darkness Dark",
         "title": "Doki-Theme: Install Darkness Dark's Stickers"
       },
       {
-        "command": "extension.theme.Darkness Light",
+        "command": "doki-theme.theme.Darkness Light",
         "title": "Doki-Theme: Install Darkness Light's Stickers"
       },
       {
-        "command": "extension.theme.Megumin",
+        "command": "doki-theme.theme.Megumin",
         "title": "Doki-Theme: Install Megumin's Stickers"
       },
       {
-        "command": "extension.theme.Monika Dark",
+        "command": "doki-theme.theme.Monika Dark",
         "title": "Doki-Theme: Install Monika Dark's Stickers"
       },
       {
-        "command": "extension.theme.Monika Dark.secondary",
+        "command": "doki-theme.theme.Monika Dark.secondary",
         "title": "Doki-Theme: Install Monika Dark's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Monika Light",
+        "command": "doki-theme.theme.Monika Light",
         "title": "Doki-Theme: Install Monika Light's Stickers"
       },
       {
-        "command": "extension.theme.Monika Light.secondary",
+        "command": "doki-theme.theme.Monika Light.secondary",
         "title": "Doki-Theme: Install Monika Light's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Natsuki Dark",
+        "command": "doki-theme.theme.Natsuki Dark",
         "title": "Doki-Theme: Install Natsuki Dark's Stickers"
       },
       {
-        "command": "extension.theme.Natsuki Dark.secondary",
+        "command": "doki-theme.theme.Natsuki Dark.secondary",
         "title": "Doki-Theme: Install Natsuki Dark's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Natsuki Light",
+        "command": "doki-theme.theme.Natsuki Light",
         "title": "Doki-Theme: Install Natsuki Light's Stickers"
       },
       {
-        "command": "extension.theme.Natsuki Light.secondary",
+        "command": "doki-theme.theme.Natsuki Light.secondary",
         "title": "Doki-Theme: Install Natsuki Light's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Sayori Dark",
+        "command": "doki-theme.theme.Sayori Dark",
         "title": "Doki-Theme: Install Sayori Dark's Stickers"
       },
       {
-        "command": "extension.theme.Sayori Dark.secondary",
+        "command": "doki-theme.theme.Sayori Dark.secondary",
         "title": "Doki-Theme: Install Sayori Dark's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Sayori Light",
+        "command": "doki-theme.theme.Sayori Light",
         "title": "Doki-Theme: Install Sayori Light's Stickers"
       },
       {
-        "command": "extension.theme.Sayori Light.secondary",
+        "command": "doki-theme.theme.Sayori Light.secondary",
         "title": "Doki-Theme: Install Sayori Light's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Yuri Dark",
+        "command": "doki-theme.theme.Yuri Dark",
         "title": "Doki-Theme: Install Yuri Dark's Stickers"
       },
       {
-        "command": "extension.theme.Yuri Dark.secondary",
+        "command": "doki-theme.theme.Yuri Dark.secondary",
         "title": "Doki-Theme: Install Yuri Dark's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Yuri Light",
+        "command": "doki-theme.theme.Yuri Light",
         "title": "Doki-Theme: Install Yuri Light's Stickers"
       },
       {
-        "command": "extension.theme.Yuri Light.secondary",
+        "command": "doki-theme.theme.Yuri Light.secondary",
         "title": "Doki-Theme: Install Yuri Light's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Konata",
+        "command": "doki-theme.theme.Konata",
         "title": "Doki-Theme: Install Konata's Stickers"
       },
       {
-        "command": "extension.theme.Konata.secondary",
+        "command": "doki-theme.theme.Konata.secondary",
         "title": "Doki-Theme: Install Konata's Secondary Stickers"
       },
       {
-        "command": "extension.theme.Hatsune Miku",
+        "command": "doki-theme.theme.Hatsune Miku",
         "title": "Doki-Theme: Install Hatsune Miku's Stickers"
       },
       {
-        "command": "extension.theme.Beatrice",
+        "command": "doki-theme.theme.Beatrice",
         "title": "Doki-Theme: Install Beatrice's Stickers"
       },
       {
-        "command": "extension.theme.Emilia Dark",
+        "command": "doki-theme.theme.Emilia Dark",
         "title": "Doki-Theme: Install Emilia Dark's Stickers"
       },
       {
-        "command": "extension.theme.Emilia Light",
+        "command": "doki-theme.theme.Emilia Light",
         "title": "Doki-Theme: Install Emilia Light's Stickers"
       },
       {
-        "command": "extension.theme.Ram",
+        "command": "doki-theme.theme.Ram",
         "title": "Doki-Theme: Install Ram's Stickers"
       },
       {
-        "command": "extension.theme.Rem",
+        "command": "doki-theme.theme.Rem",
         "title": "Doki-Theme: Install Rem's Stickers"
       },
       {
-        "command": "extension.theme.Asuna",
+        "command": "doki-theme.theme.Asuna",
         "title": "Doki-Theme: Install Asuna's Stickers"
       }
     ],
@@ -270,16 +270,16 @@
         "uiTheme": "vs"
       },
       {
-        "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
-        "label": "Doki Theme: DDLC:  Natsuki",
-        "path": "./generatedThemes/Natsuki Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
         "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
+        "label": "Doki Theme: DDLC:  Natsuki",
+        "path": "./generatedThemes/Natsuki Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
@@ -294,16 +294,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
-        "label": "Doki Theme: DDLC:  Yuri",
-        "path": "./generatedThemes/Yuri Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
         "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
+        "label": "Doki Theme: DDLC:  Yuri",
+        "path": "./generatedThemes/Yuri Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "b93ab4ea-ff96-4459-8fa2-0caae5bc7116",
@@ -454,12 +454,12 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
+    "@types/glob": "^7.1.3",
     "@types/lodash": "^4.14.152",
     "@types/markdown-it": "^0.0.9",
     "@types/mocha": "^5.2.7",
     "@types/node": "^13.5.3",
-    "@types/vscode": "^1.40.0",
+    "@types/vscode": "^1.51.0",
     "base64-img": "^1.0.4",
     "glob": "^7.1.5",
     "lodash": "^4.17.15",
