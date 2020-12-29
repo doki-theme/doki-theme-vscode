@@ -1,5 +1,46 @@
 # Change Log
 
+# 8.0.0 [Echidna, Yukino, Kurisu, Asuna, Umi, & Konata]
+
+## 5 New Themes!
+
+Love Live! series:
+
+- Sonoda Umi (Dark)
+
+From the OreGairu series:
+
+- Yukinoshita Yukino (Dark)
+
+Addition to Re:Zero series:
+
+- Echidna (Dark)
+
+From the Steins Gate series:
+
+- Makise Kurisu (Dark)
+
+Addition to the Sword Art Online series:
+
+- Yuuki Asuna (Dark)
+
+![v12 Girls](http://doki.assets.unthrottled.io/misc/v12_girls.png)
+
+## Other Stuff
+
+### Updates
+
+- Konata's theme is now a bit darker to aid in usability
+
+### Miscellaneous
+
+- Update Rin's syntax coloring just a bit.
+- Migrated editor scheme color overrides to all themes.
+- "Last Name First Name"'d Misato.
+- Current line number is now `infoForeground` colored for dark themes.
+
+### [See pull request for more information](https://github.com/doki-theme/doki-theme-jetbrains/pull/298)
+
 # 7.1.1 [Code Insiders Support]
 
 - Restored support for all extension commands for VSCode-Insiders 1.52.0 `f47aae014cf8567f648e68369d66b4106ae89f08`.
