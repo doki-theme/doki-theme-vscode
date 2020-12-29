@@ -9,7 +9,7 @@
     }
   },
   "laf": {
-    "extends": "light",
+    "extends": "dark",
     "ui": {
       "foreground":"#ffffff",
       "tab.activeForeground": "#fff",
