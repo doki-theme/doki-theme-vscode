@@ -1,12 +1,6 @@
 {
   "id": "15e51483-1ccd-46b7-90cf-885cccaaaf2c",
-  "overrides": {
-    "editorScheme": {
-      "colors": {
-        "startColor": "#00c69a"
-      }
-    }
-  },
+  "overrides": {},
   "laf": {},
   "syntax": {},
   "colors": {

@@ -1,15 +1,6 @@
 {
   "id": "f770dcfc-f41e-4b49-aa17-66e9ffc208fd",
-  "overrides": {
-    "editorScheme": {
-      "colors": {
-        "accentColor": "#a87ff8",
-        "startColor": "#688dee",
-        "nonProjectFileScopeColor": "#343635",
-        "testScopeColor": "#2f393a"
-      }
-    }
-  },
+  "overrides": {},
   "laf": {},
   "syntax": {},
   "colors": {}
