@@ -24,7 +24,7 @@ Addition to the Sword Art Online series:
 
 - Yuuki Asuna (Dark)
 
-![v12 Girls](http://doki.assets.unthrottled.io/misc/v12_girls.png)
+![v12 Girls](https://doki.assets.unthrottled.io/misc/v12_girls.png)
 
 ## Other Stuff
 
