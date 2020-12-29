@@ -39,7 +39,7 @@ Addition to the Sword Art Online series:
 - "Last Name First Name"'d Misato.
 - Current line number is now `infoForeground` colored for dark themes.
 
-### [See pull request for more information](https://github.com/doki-theme/doki-theme-jetbrains/pull/298)
+### [See pull request for more information](https://github.com/doki-theme/doki-theme-vscode/pull/39)
 
 # 7.1.1 [Code Insiders Support]
 
