@@ -2,12 +2,8 @@
   "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
   "overrides": {},
   "laf": {
-    "extends": "dark",
-    "ui": {
-      "activityBarBadge.foreground": "&accentContrastColor&",
-      "statusBar.foreground": "&accentContrastColor&",
-      "badge.foreground": "&accentContrastColor&"
-    }
+    "extends": "dark-contrast",
+    "ui": {}
   },
   "syntax": {},
   "colors": {
