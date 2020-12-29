@@ -11,12 +11,9 @@
   "laf": {
     "extends": "dark",
     "ui": {
-      "foreground":"#ffffff",
-      "tab.activeForeground": "#fff",
-      "icon.foreground": "#fff",
-      "gitDecoration.modifiedResourceForeground": "#60ff62",
-      "activityBar.foreground": "#60ff62",
-      "activityBar.inactiveForeground": "#60ff62BB"
+      "activityBarBadge.foreground": "&accentContrastColor&",
+      "statusBar.foreground": "&accentContrastColor&",
+      "badge.foreground": "&accentContrastColor&"
     }
   },
   "syntax": {},

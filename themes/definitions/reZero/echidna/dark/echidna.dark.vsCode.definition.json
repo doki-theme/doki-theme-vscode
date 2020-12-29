@@ -1,7 +1,14 @@
 {
   "id": "b4d08c16-a891-4186-884d-e469cba72e99",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "activityBarBadge.foreground": "&accentContrastColor&",
+      "statusBar.foreground": "&accentContrastColor&",
+      "badge.foreground": "&accentContrastColor&"
+    }
+  },
   "syntax": {},
   "colors": {}
 }
