@@ -216,7 +216,7 @@
                 "markup.quote"
             ],
             "settings": {
-                "foreground": "&commentColor&",
+                "foreground": "&comments&",
                 "fontStyle": "italic"
             }
         },

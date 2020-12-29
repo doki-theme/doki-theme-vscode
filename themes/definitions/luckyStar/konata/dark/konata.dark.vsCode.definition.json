@@ -6,8 +6,5 @@
     "ui": {}
   },
   "syntax": {},
-  "colors": {
-    "foregroundColorEditor":"#FFFFFF",
-    "commentColor":"#BFDAF8"
-  }
+  "colors": {}
 }
