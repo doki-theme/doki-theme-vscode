@@ -42,7 +42,7 @@ KonoSuba
 ### Aqua
 
 ![aqua code](../screenshots/konosuba/aqua_dark_code.png)
-![aqua background](../screenshots/konosuba/aqua_dark_wallpaper.png)
+![aqua wallpaper](../screenshots/konosuba/aqua_dark_wallpaper.png)
 
 ### Darkness
 ![darkness code](../screenshots/konosuba/darkness_dark_code.png)
@@ -50,9 +50,35 @@ KonoSuba
 ![darkness code](../screenshots/konosuba/darkness_light_code.png)
 ![darkness code](../screenshots/konosuba/darkness_light_wallpaper.png)
 
+OreGairu
+---
+
+### Yukinoshita Yukino
+![yukino_dark code](../screenshots/oreGairu/yukino_dark_code.png)
+![yukino_dark wallpaper](../screenshots/oreGairu/yukino_dark_wallpaper.png)
+
+
+Steins Gate
+---
+
+### Makise Kurisu
+![kurisu_dark code](../screenshots/steinsGate/kurisu_dark_code.png)
+![kurisu_dark wallpaper](../screenshots/steinsGate/kurisu_dark_wallpaper.png)
+
+Love Live!
+---
+
+### Sonoda Umi
+![umi_dark code](../screenshots/loveLive/umi_dark_code.png)
+![umi_dark wallpaper](../screenshots/loveLive/umi_dark_wallpaper.png)
+
 
 Re:Zero
 ---
+
+### Echidna
+![echidna_dark code](../screenshots/rezero/echidna_dark_code.png)
+![echidna_dark wallpaper](../screenshots/rezero/echidna_dark_wallpaper.png)
 
 ### Emilia
 ![emilia_light code](../screenshots/rezero/emilia_light_code.png)
@@ -103,6 +129,11 @@ Sword Art Online
 ![asuna code](../screenshots/swordArtOnline/asuna_light_code.png)
 ![asuna code](../screenshots/swordArtOnline/asuna_light_wallpaper.png)
 
+
+![asuna code](../screenshots/swordArtOnline/asuna_dark_code.png)
+![asuna wallpaper](../screenshots/swordArtOnline/asuna_dark_wallpaper.png)
+
+
 Kill La Kill
 ---
 
@@ -125,10 +156,10 @@ Lucky Star
 ---
 
 ### Izumi Konata
-![konata code](../screenshots/luckyStar/konata_light_code.png)
-![konata code](../screenshots/luckyStar/konata_light_wallpaper.png)
-![konata code](../screenshots/luckyStar/konata_light_secondary_code.png)
-![konata code](../screenshots/luckyStar/konata_light_secondary_wallpaper.png)
+![konata code](../screenshots/luckyStar/konata_dark_code.png)
+![konata wallpaper](../screenshots/luckyStar/konata_dark_wallpaper.png)
+![konata code](../screenshots/luckyStar/konata_dark_secondary_code.png)
+![konata wallpaper](../screenshots/luckyStar/konata_dark_secondary_wallpaper.png)
 
 
 Doki-Doki Literature Club

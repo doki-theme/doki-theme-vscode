@@ -3,7 +3,7 @@
     "colors": {
         "constantsColor":"&constantColor&",
         "parameterColor":"#FFB86C",
-        "commentColor": "#6272A4",
+        "comments": "#6272A4",
         "completionWindowBackground": "&contrastColor&",
         "quotesColor": "&accentColor&",
         "otherQuotesColor": "&quotesColor&",

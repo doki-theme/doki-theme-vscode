@@ -1,239 +1,239 @@
 {
-    "name": "base",
-    "tokenColors": [
-        {
-            "scope": [
-                "emphasis"
-            ],
-            "settings": {
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "strong"
-            ],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": [
-                "invalid"
-            ],
-            "settings": {
-                "foreground": "&errorColor&",
-                "fontStyle": "underline strikethrough"
-            }
-        },
-        {
-            "scope": [
-                "invalid.deprecated"
-            ],
-            "settings": {
-                "foreground": "&infoForeground&",
-                "fontStyle": "underline italic"
-            }
-        },
-        {
-            "name": "Underlined markup",
-            "scope": [
-                "markup.underline"
-            ],
-            "settings": {
-                "fontStyle": "underline"
-            }
-        },
-        {
-            "name": "Bold markup",
-            "scope": [
-                "markup.bold"
-            ],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "name": "Markup italic",
-            "scope": [
-                "markup.italic"
-            ],
-            "settings": {
-                "fontStyle": "italic"
-            }
-        },
-                {
-            "scope": [
-                "support.type.property-name.json",
-                "meta.object-literal.key",
-                "variable.object.property",
-                "variable.other.readwrite.alias",
-                "variable.other.property"
-            ],
-            "settings": {
-                "foreground": "&foregroundColorEditor&",
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": [
-                "source",
-                "punctuation.definition.parameters",
-                "punctuation.definition.block",
-                "text.html.markdown"
-            ],
-            "settings": {
-                "foreground": "&foregroundColorEditor&"
-            }
-        },
-        {
-            "scope": [
-                "variable.parameter",
-                "string"
-            ],
-            "settings": {
-                "foreground": "&stringColor&"
-            }
-        },
-        {
-            "scope": [
-                "constant.language.json",
-                "keyword",
-                "storage.type",
-                "storage.modifier",
-                "keyword.operator.new",
-                "keyword.operator.instanceof",
-                "keyword.operator.expression.typeof",
-                "constant.language.boolean",
-                "variable.language.this",
-                "constant.language.undefined",
-                "constant.language.java"
-            ],
-            "settings": {
-                "foreground": "&keywordColor&"
-            }
-        },
-        {
-            "scope": [
-                "variable.other.constant",
-                "meta.definition.method",
-                "meta.definition.function",
-                "meta.embedded.line",
-                "markup.inline.raw.string",
-                "variable.css",
-                "meta.method.identifier"
-            ],
-            "settings": {
-                "foreground": "&classNameColor&"
-            }
-        },
-        {
-            "scope": [
-                "keyword.operator",
-                "entity.name.tag",
-                "meta.template.expression",
-                "punctuation.definition.list.begin",
-                "punctuation.definition.link.restructuredtext"
-            ],
-            "settings": {
-                "foreground": "&htmlTagColor&"
-            }
-        },
-        {
-            "scope": [
-                "entity.name.type.class",
-                "meta.type",
-                "variable.other.object",
-                "entity.name.type",
-                "markup.heading",
-                "string.other.link.title",
-                "storage.modifier.import",
-                "meta.import",
-                "storage.type.java",
-                "support.type.property-name",
-                "meta.property-name"
-            ],
-            "settings": {
-                "foreground": "&keyColor&"
-            }
-        },
-        {
-            "scope": [
-                "support.type.primitive"
-            ],
-            "settings": {
-                "foreground": "&keyColor&",
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "meta.function-call",
-                "meta.decorator",
-                "meta.link",
-                "meta.method-call",
-                "storage.type.annotation",
-                "meta.declaration.annotation",
-                "support.function",
-                "meta.assertion.look-ahead.regexp"
-            ],
-            "settings": {
-                "foreground": "&accentColor&"
-            }
-        },
-        {
-            "scope": [
-                "entity.other.attribute-name"
-            ],
-            "settings": {
-                "foreground": "&accentColor&",
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "constant.numeric",
-                "support.type.object.module",
-                "variable.other.enummember",
-                "meta.enum.declaration",
-                "constant.other.color"
-            ],
-            "settings": {
-                "foreground": "&constantColor&"
-            }
-        },
-        {
-            "scope": [
-            ],
-            "settings": {
-                "foreground": "&constantColor&",
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "comment",
-                "markup.quote"
-            ],
-            "settings": {
-                "foreground": "&commentColor&",
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "markup.fenced_code.block"
-            ],
-            "settings": {
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": [
-            ],
-            "settings": {
-                "foreground": "&infoForeground&"
-            }
-        }
-    ]
+  "name": "base",
+  "tokenColors": [
+    {
+      "scope": [
+        "emphasis"
+      ],
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "strong"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "invalid"
+      ],
+      "settings": {
+        "foreground": "&errorColor&",
+        "fontStyle": "underline strikethrough"
+      }
+    },
+    {
+      "scope": [
+        "invalid.deprecated"
+      ],
+      "settings": {
+        "foreground": "&infoForeground&",
+        "fontStyle": "underline italic"
+      }
+    },
+    {
+      "name": "Underlined markup",
+      "scope": [
+        "markup.underline"
+      ],
+      "settings": {
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "name": "Bold markup",
+      "scope": [
+        "markup.bold"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Markup italic",
+      "scope": [
+        "markup.italic"
+      ],
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "support.type.property-name.json",
+        "meta.object-literal.key",
+        "variable.object.property",
+        "variable.other.readwrite.alias",
+        "variable.other.property"
+      ],
+      "settings": {
+        "foreground": "&foregroundColorEditor&",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "source",
+        "punctuation.definition.parameters",
+        "punctuation.definition.block",
+        "text.html.markdown"
+      ],
+      "settings": {
+        "foreground": "&foregroundColorEditor&"
+      }
+    },
+    {
+      "scope": [
+        "variable.parameter",
+        "string"
+      ],
+      "settings": {
+        "foreground": "&stringColor&"
+      }
+    },
+    {
+      "scope": [
+        "constant.language.json",
+        "keyword",
+        "storage.type",
+        "storage.modifier",
+        "keyword.operator.new",
+        "keyword.operator.instanceof",
+        "keyword.operator.expression.typeof",
+        "constant.language.boolean",
+        "variable.language.this",
+        "constant.language.undefined",
+        "constant.language.java"
+      ],
+      "settings": {
+        "foreground": "&keywordColor&"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.constant",
+        "meta.definition.method",
+        "meta.definition.function",
+        "meta.embedded.line",
+        "markup.inline.raw.string",
+        "variable.css",
+        "meta.method.identifier"
+      ],
+      "settings": {
+        "foreground": "&classNameColor&"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator",
+        "entity.name.tag",
+        "meta.template.expression",
+        "punctuation.definition.list.begin",
+        "punctuation.definition.link.restructuredtext"
+      ],
+      "settings": {
+        "foreground": "&htmlTagColor&"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type.class",
+        "meta.type",
+        "variable.other.object",
+        "entity.name.type",
+        "markup.heading",
+        "string.other.link.title",
+        "storage.modifier.import",
+        "meta.import",
+        "storage.type.java",
+        "support.type.property-name",
+        "meta.property-name"
+      ],
+      "settings": {
+        "foreground": "&keyColor&"
+      }
+    },
+    {
+      "scope": [
+        "support.type.primitive"
+      ],
+      "settings": {
+        "foreground": "&keyColor&",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "meta.function-call",
+        "meta.decorator",
+        "meta.link",
+        "meta.method-call",
+        "storage.type.annotation",
+        "meta.declaration.annotation",
+        "support.function",
+        "meta.assertion.look-ahead.regexp"
+      ],
+      "settings": {
+        "foreground": "&accentColor&"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "&accentColor&",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric",
+        "support.type.object.module",
+        "variable.other.enummember",
+        "meta.enum.declaration",
+        "constant.other.color"
+      ],
+      "settings": {
+        "foreground": "&constantColor&"
+      }
+    },
+    {
+      "scope": [
+      ],
+      "settings": {
+        "foreground": "&constantColor&",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "comment",
+        "markup.quote"
+      ],
+      "settings": {
+        "foreground": "&comments&",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "markup.fenced_code.block"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+      ],
+      "settings": {
+        "foreground": "&infoForeground&"
+      }
+    }
+  ]
 }

@@ -36,7 +36,7 @@
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
     "onCommand:doki-theme.theme.Kanna",
     "onCommand:doki-theme.theme.Kanna.secondary",
-    "onCommand:doki-theme.theme.Misato Katsuragi",
+    "onCommand:doki-theme.theme.Katsuragi Misato",
     "onCommand:doki-theme.theme.Ishtar Dark",
     "onCommand:doki-theme.theme.Ishtar Light",
     "onCommand:doki-theme.theme.Tohsaka Rin",
@@ -64,15 +64,20 @@
     "onCommand:doki-theme.theme.Yuri Dark.secondary",
     "onCommand:doki-theme.theme.Yuri Light",
     "onCommand:doki-theme.theme.Yuri Light.secondary",
+    "onCommand:doki-theme.theme.Sonoda Umi",
     "onCommand:doki-theme.theme.Konata",
     "onCommand:doki-theme.theme.Konata.secondary",
     "onCommand:doki-theme.theme.Hatsune Miku",
+    "onCommand:doki-theme.theme.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.Beatrice",
+    "onCommand:doki-theme.theme.Echidna",
     "onCommand:doki-theme.theme.Emilia Dark",
     "onCommand:doki-theme.theme.Emilia Light",
     "onCommand:doki-theme.theme.Ram",
     "onCommand:doki-theme.theme.Rem",
-    "onCommand:doki-theme.theme.Asuna"
+    "onCommand:doki-theme.theme.Makise Kurisu",
+    "onCommand:doki-theme.theme.Asuna Dark",
+    "onCommand:doki-theme.theme.Asuna Light"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -102,8 +107,8 @@
         "title": "Doki-Theme: Install Kanna's Secondary Stickers"
       },
       {
-        "command": "doki-theme.theme.Misato Katsuragi",
-        "title": "Doki-Theme: Install Misato Katsuragi's Stickers"
+        "command": "doki-theme.theme.Katsuragi Misato",
+        "title": "Doki-Theme: Install Katsuragi Misato's Stickers"
       },
       {
         "command": "doki-theme.theme.Ishtar Dark",
@@ -214,6 +219,10 @@
         "title": "Doki-Theme: Install Yuri Light's Secondary Stickers"
       },
       {
+        "command": "doki-theme.theme.Sonoda Umi",
+        "title": "Doki-Theme: Install Sonoda Umi's Stickers"
+      },
+      {
         "command": "doki-theme.theme.Konata",
         "title": "Doki-Theme: Install Konata's Stickers"
       },
@@ -226,8 +235,16 @@
         "title": "Doki-Theme: Install Hatsune Miku's Stickers"
       },
       {
+        "command": "doki-theme.theme.Yukinoshita Yukino",
+        "title": "Doki-Theme: Install Yukinoshita Yukino's Stickers"
+      },
+      {
         "command": "doki-theme.theme.Beatrice",
         "title": "Doki-Theme: Install Beatrice's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Echidna",
+        "title": "Doki-Theme: Install Echidna's Stickers"
       },
       {
         "command": "doki-theme.theme.Emilia Dark",
@@ -246,8 +263,16 @@
         "title": "Doki-Theme: Install Rem's Stickers"
       },
       {
-        "command": "doki-theme.theme.Asuna",
-        "title": "Doki-Theme: Install Asuna's Stickers"
+        "command": "doki-theme.theme.Makise Kurisu",
+        "title": "Doki-Theme: Install Makise Kurisu's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Asuna Dark",
+        "title": "Doki-Theme: Install Asuna Dark's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Asuna Light",
+        "title": "Doki-Theme: Install Asuna Light's Stickers"
       }
     ],
     "themes": [
@@ -332,7 +357,7 @@
       {
         "id": "8e8773ee-4bbb-4812-b311-005f04f6bb20",
         "label": "Doki Theme: EVA:  Misato",
-        "path": "./generatedThemes/Misato Katsuragi.theme.json",
+        "path": "./generatedThemes/Katsuragi Misato.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -390,10 +415,16 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "2d1112ac-04ab-4f78-82c4-22e5e2c1754b",
+        "label": "Doki Theme: Love Live:  Umi",
+        "path": "./generatedThemes/Sonoda Umi.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
         "label": "Doki Theme: LS:  Konata",
         "path": "./generatedThemes/Konata.theme.json",
-        "uiTheme": "vs"
+        "uiTheme": "vs-dark"
       },
       {
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
@@ -402,10 +433,22 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "06143cbe-2d51-4423-9a93-73a02c828119",
+        "label": "Doki Theme: OreGairu:  Yukino",
+        "path": "./generatedThemes/Yukinoshita Yukino.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "35422aa4-1396-4e76-8ec6-c5560884df22",
         "label": "Doki Theme: Re:Zero:  Beatrice",
         "path": "./generatedThemes/Beatrice.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "b4d08c16-a891-4186-884d-e469cba72e99",
+        "label": "Doki Theme: Re:Zero:  Echidna",
+        "path": "./generatedThemes/Echidna.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "696de7c1-3a8e-4445-83ee-3eb7e9dca47f",
@@ -432,10 +475,22 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "bac375a4-abb3-44d5-9bef-8039eb83fec0",
+        "label": "Doki Theme: SAO:  Asuna",
+        "path": "./generatedThemes/Asuna Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
         "label": "Doki Theme: SAO:  Asuna",
-        "path": "./generatedThemes/Asuna.theme.json",
+        "path": "./generatedThemes/Asuna Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "d39df813-8701-463b-a964-b8cb7714d1cc",
+        "label": "Doki Theme: Steins Gate:  Kurisu",
+        "path": "./generatedThemes/Makise Kurisu.theme.json",
+        "uiTheme": "vs-dark"
       }
     ]
   },

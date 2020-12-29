@@ -129,6 +129,7 @@ export interface MasterDokiThemeDefinition {
   displayName: string;
   dark: boolean;
   author: string;
+  overrides?: Overrides;
   group: string;
   product?: "community" | "ultimate";
   stickers: Stickers;
@@ -294,6 +295,7 @@ function buildSyntaxColors(
     dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
 
   const overrides =
+    dokiThemeTemplateJson.overrides?.editorScheme?.colors ||
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
   const resolvedNamedColors = {
     ...resolveNamedColors(
