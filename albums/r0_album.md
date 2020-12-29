@@ -1,3 +1,7 @@
+### Echidna
+![echidna_dark code](../screenshots/rezero/echidna_dark_code.png)
+![echidna_dark wallpaper](../screenshots/rezero/echidna_dark_wallpaper.png)
+
 ### Emilia
 ![emilia_light code](../screenshots/rezero/emilia_light_code.png)
 ![emilia_light code](../screenshots/rezero/emilia_light_wallpaper.png)
