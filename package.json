@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -32,6 +32,10 @@
     "*",
     "onCommand:doki-theme.doki.changelog",
     "onCommand:doki-theme.remove.sticker",
+    "onCommand:doki-theme.theme.Mai Dark",
+    "onCommand:doki-theme.theme.Mai Dark.secondary",
+    "onCommand:doki-theme.theme.Mai Light",
+    "onCommand:doki-theme.theme.Mai Light.secondary",
     "onCommand:doki-theme.theme.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
     "onCommand:doki-theme.theme.Kanna",
@@ -40,6 +44,8 @@
     "onCommand:doki-theme.theme.Ishtar Dark",
     "onCommand:doki-theme.theme.Ishtar Light",
     "onCommand:doki-theme.theme.Tohsaka Rin",
+    "onCommand:doki-theme.theme.Zero Two Dark",
+    "onCommand:doki-theme.theme.Zero Two Light",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.Rias",
     "onCommand:doki-theme.theme.Ryuko",
@@ -91,6 +97,22 @@
         "title": "Doki-Theme: Remove Sticker/Background"
       },
       {
+        "command": "doki-theme.theme.Mai Dark",
+        "title": "Doki-Theme: Install Mai Dark's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Mai Dark.secondary",
+        "title": "Doki-Theme: Install Mai Dark's Secondary Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Mai Light",
+        "title": "Doki-Theme: Install Mai Light's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Mai Light.secondary",
+        "title": "Doki-Theme: Install Mai Light's Secondary Stickers"
+      },
+      {
         "command": "doki-theme.theme.Mioda Ibuki Dark",
         "title": "Doki-Theme: Install Mioda Ibuki Dark's Stickers"
       },
@@ -121,6 +143,14 @@
       {
         "command": "doki-theme.theme.Tohsaka Rin",
         "title": "Doki-Theme: Install Tohsaka Rin's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Dark",
+        "title": "Doki-Theme: Install Zero Two Dark's Stickers"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Light",
+        "title": "Doki-Theme: Install Zero Two Light's Stickers"
       },
       {
         "command": "doki-theme.theme.Rory Mercury",
@@ -283,6 +313,18 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "98878c8e-9f91-4e25-930d-dd7d280d9e35",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Light.theme.json",
+        "uiTheme": "vs"
+      },
+      {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
         "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Dark.theme.json",
@@ -371,6 +413,18 @@
         "label": "Doki Theme: Fate:  Rin",
         "path": "./generatedThemes/Tohsaka Rin.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b",
+        "label": "Doki Theme: Franxx:  Zero Two",
+        "path": "./generatedThemes/Zero Two Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "4fd5cb34-d36e-4a3c-8639-052b19b26ba1",
+        "label": "Doki Theme: Franxx:  Zero Two",
+        "path": "./generatedThemes/Zero Two Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "355d711c-2fa6-4df2-9504-dd44d8f5e350",

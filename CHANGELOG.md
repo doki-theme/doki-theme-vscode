@@ -1,5 +1,22 @@
 # Change Log
 
+# 9.0.0 [Zero Two, Sakurajima Mai]
+
+## 4 New Themes
+
+From the Darling in the Franxx series:
+
+- Zero Two (Dark/light)
+
+From the Rascal does not dream of bunny girl senpai series:
+
+- Sakurajima Mai (Dark/light)
+  - 2 Stickers:
+    - A Mild One
+    - A Spicy One
+
+![v13 Girls](https://doki.assets.unthrottled.io/misc/v13_girls.png)
+
 # 8.0.0 [Echidna, Yukino, Kurisu, Asuna, Umi, & Konata]
 
 ## 5 New Themes!

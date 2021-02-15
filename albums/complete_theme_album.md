@@ -1,3 +1,13 @@
+Darling in the Franxx
+---
+
+### Zero Two
+
+![zero two code](../screenshots/franxx/zero_two_dark_code.png)
+![zero two code](../screenshots/franxx/zero_two_dark_wallpaper.png)
+![zero two code](../screenshots/franxx/zero_two_light_code.png)
+![zero two code](../screenshots/franxx/zero_two_light_wallpaper.png)
+
 Fate
 ---
 
@@ -14,6 +24,23 @@ Fate
 
 ![ishtar light code](../screenshots/fate/ishtar_light_code.png)
 ![ishtar light code](../screenshots/fate/ishtar_light_wallpaper.png)
+
+Rascal does not dream of bunny girl senpai
+---
+
+### Sakurajima Mai
+
+![mai dark code](../screenshots/bunnySenpai/mai_dark_code.png)
+![mai dark code](../screenshots/bunnySenpai/mai_dark_wallpaper.png)
+![mai dark code](../screenshots/bunnySenpai/mai_dark_secondary_code.png)
+![mai dark code](../screenshots/bunnySenpai/mai_dark_secondary_wallpaper.png)
+
+
+![mai light code](../screenshots/bunnySenpai/mai_light_code.png)
+![mai light code](../screenshots/bunnySenpai/mai_light_wallpaper.png)
+![mai light code](../screenshots/bunnySenpai/mai_light_secondary_code.png)
+![mai light code](../screenshots/bunnySenpai/mai_light_secondary_wallpaper.png)
+
 
 
 Gate

@@ -3,6 +3,8 @@ Themes grouped by album
 
 [DanganRonpa Album](dr_themes.md)
 
+[Darling in the Franxx](dif_album.md)
+
 [Doki-Doki Literature Club Album](theme_album.md)
 
 [Fate](fate_themes.md)
@@ -26,6 +28,8 @@ Themes grouped by album
 [Neon Genesis Evangelion](eva_album.md)
 
 [OreGairu](og_themes.md)
+
+[Rascal does not dream of bunny girl senpai](bgs_album.md)
 
 [Re:Zero Album](r0_album.md)
 
