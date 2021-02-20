@@ -112,6 +112,15 @@ interface Stickers {
   normal?: string;
 }
 
+interface BackgroundPositioning {
+  anchor: string;
+}
+
+interface BackgroundPositionings {
+  default?: BackgroundPositioning;
+  secondary?: BackgroundPositioning; 
+}
+
 export interface VSCodeDokiThemeDefinition {
   id: string;
   overrides: Overrides;
@@ -119,6 +128,7 @@ export interface VSCodeDokiThemeDefinition {
     extends: string;
     ui: StringDictonary<string>;
   };
+  backgrounds?: BackgroundPositionings;
   syntax: {};
   colors: {};
 }
@@ -369,6 +379,7 @@ function createDokiTheme(
     return {
       path: swapMasterThemeForLocalTheme(dokiFileDefinitionPath),
       definition: dokiThemeDefinition,
+      backgrounds: dokiThemeVSCodeDefinition.backgrounds,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
         dokiThemeVSCodeDefinition,
@@ -571,6 +582,7 @@ walkDir(masterThemeTemplateDirectoryPath)
             "icons",
           ]),
           stickers: getStickers(dokiDefinition, dokiTheme),
+          ...(dokiTheme.backgrounds ? dokiTheme.backgrounds : {}),
         },
       };
     });

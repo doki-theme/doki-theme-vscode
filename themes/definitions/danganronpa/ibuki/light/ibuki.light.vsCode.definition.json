@@ -2,6 +2,11 @@
   "id": "697e8564-0975-4907-a34c-51f65177ebf3",
   "overrides": {},
   "laf": {},
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  },
   "syntax": {},
   "colors": {}
 }

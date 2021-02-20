@@ -9,6 +9,11 @@
       "activityBar.background": "&headerColor&"
     }
   },
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  },
   "syntax": {},
   "colors": {}
 }
