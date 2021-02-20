@@ -450,16 +450,19 @@ const getStickers = (
 ) => {
   const secondary =
     dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
+  const backgrounds = dokiTheme.backgrounds;
   return {
     default: {
       path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default),
       name: dokiDefinition.stickers.default,
+      anchoring: backgrounds?.default?.anchor || "center",
     },
     ...(secondary
       ? {
           secondary: {
             path: resolveStickerPath(dokiTheme.path, secondary),
             name: secondary,
+            anchoring: backgrounds?.secondary?.anchor || "center",
           },
         }
       : {}),
@@ -582,7 +585,6 @@ walkDir(masterThemeTemplateDirectoryPath)
             "icons",
           ]),
           stickers: getStickers(dokiDefinition, dokiTheme),
-          ...(dokiTheme.backgrounds ? dokiTheme.backgrounds : {}),
         },
       };
     });

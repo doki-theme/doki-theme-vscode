@@ -21,6 +21,7 @@ function getVsCodeCss() {
 function buildStickerCss({
   stickerDataURL: stickerUrl,
   backgroundImageURL: wallpaperUrl,
+  backgroundAnchoring,
 }: DokiStickers): string {
   const style =
     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
@@ -37,7 +38,7 @@ function buildStickerCss({
   /* Background Image */
   .monaco-workbench .part.editor > .content {
     background-image: url('${wallpaperUrl}') !important;
-    background-position: center;
+    background-position: ${backgroundAnchoring};
     background-size: cover;
     content:'';
     z-index:9001;
@@ -69,6 +70,7 @@ function canWrite(): boolean {
 export interface DokiStickers {
   stickerDataURL: string;
   backgroundImageURL: string;
+  backgroundAnchoring: string;
 }
 
 export async function installStickersAndWallPaper(

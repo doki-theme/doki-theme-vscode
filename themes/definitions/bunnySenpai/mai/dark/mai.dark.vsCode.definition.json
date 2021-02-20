@@ -6,7 +6,7 @@
     "ui": {}
   },
   "backgrounds": {
-    "default": {
+    "secondary": {
       "anchor": "right"
     }
   },
