@@ -34,17 +34,23 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                     You can choose themes from the following Doki-Doki Theme Suites such as:
                 </p>
                 <ul>
-                    <li>Doki-Doki Literature Club</li>
-                    <li>Re:Zero</li>
-                    <li>Kill La Kill</li>
-                    <li>KonoSuba</li>
+                    <li>Darling in the Franxx</li>
                     <li>DanganRonpa</li>
-                    <li>High School DxD</li>
-                    <li>Lucky Star</li>
-                    <li>Sword Art Online</li>
+                    <li>Doki-Doki Literature Club</li>
                     <li>Fate</li>
                     <li>Gate</li>
+                    <li>High School DxD</li>
+                    <li>Kill La Kill</li>
+                    <li>KonoSuba</li>
+                    <li>Live Live!</li>
+                    <li>Lucky Star</li>
                     <li>Miss Kobayashi's Dragon Maid</li>
+                    <li>Neon Genesis Evangelion</li>
+                    <li>OreGairu</li>
+                    <li>Re:Zero</li>
+                    <li>Rascal does not dream of bunny girl senpai</li>
+                    <li>Steins Gate</li>
+                    <li>Sword Art Online</li>
                 </ul>
                 <h2>Stickers!</h2>
                     <p>
