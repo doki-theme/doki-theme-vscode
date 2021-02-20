@@ -27,6 +27,7 @@ export const attemptToUpdateSticker = async (
     return {
       stickerDataURL: remoteStickerUrl,
       backgroundImageURL: remoteWallpaperUrl,
+      backgroundAnchoring: currentSticker.anchoring,
     };
   }
 
@@ -40,6 +41,7 @@ export const attemptToUpdateSticker = async (
   return {
     stickerDataURL: createCssDokiAssetUrl(localStickerPath),
     backgroundImageURL: createCssDokiAssetUrl(localWallpaperPath),
+    backgroundAnchoring: currentSticker.anchoring,
   };
 };
 

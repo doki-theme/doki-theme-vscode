@@ -11,6 +11,7 @@ import {attemptToUpdateSticker} from "./StickerUpdateService";
 export interface Sticker {
   path: string;
   name: string;
+  anchoring: string;
 }
 
 export interface DokiThemeDefinition {

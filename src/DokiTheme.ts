@@ -24,4 +24,5 @@ export interface DokiSticker {
 export interface Sticker {
   path: string;
   name: string;
+  anchoring: string;
 }

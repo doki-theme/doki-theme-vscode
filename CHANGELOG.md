@@ -1,5 +1,14 @@
 # Change Log
 
+# 9.0.1 [Wallpaper Anchoring]
+
+- Updated the anchoring of various theme's wallpapers so that you can see your waifu!
+  - Be sure to re-install the stickers for this to take effect.
+
+| Before | After |
+| --- | --- |
+| ![Screenshot from 2021-02-20 06-10-01](https://user-images.githubusercontent.com/15972415/108594985-e14eb680-7342-11eb-8afc-09afe2bc9af0.png) | ![Screenshot from 2021-02-20 06-09-22](https://user-images.githubusercontent.com/15972415/108594986-e3187a00-7342-11eb-819c-30e49ea16cfe.png) |
+
 # 9.0.0 [Zero Two, Sakurajima Mai]
 
 ## 4 New Themes
