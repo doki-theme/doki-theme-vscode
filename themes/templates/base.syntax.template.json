@@ -89,6 +89,7 @@
     {
       "scope": [
         "variable.parameter",
+        "meta.function-call.arguments",
         "string"
       ],
       "settings": {
@@ -107,7 +108,8 @@
         "constant.language.boolean",
         "variable.language.this",
         "constant.language.undefined",
-        "constant.language.java"
+        "constant.language.java",
+        "constant.language.python"
       ],
       "settings": {
         "foreground": "&keywordColor&"
@@ -121,6 +123,7 @@
         "meta.embedded.line",
         "markup.inline.raw.string",
         "variable.css",
+        "entity.name.function",
         "meta.method.identifier"
       ],
       "settings": {
@@ -159,7 +162,8 @@
     },
     {
       "scope": [
-        "support.type.primitive"
+        "support.type.primitive",
+        "variable.parameter.function-call"
       ],
       "settings": {
         "foreground": "&keyColor&",
@@ -196,7 +200,8 @@
         "support.type.object.module",
         "variable.other.enummember",
         "meta.enum.declaration",
-        "constant.other.color"
+        "constant.other.color",
+        "variable.language.special"
       ],
       "settings": {
         "foreground": "&constantColor&"
