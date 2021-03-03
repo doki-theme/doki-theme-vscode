@@ -1,5 +1,14 @@
 # Change Log
 
+# 9.1.0 [Better Python Support]
+
+- Added better syntax coloring for Python code.
+
+| Before | After |
+| --- | --- |
+| ![Screenshot from 2021-03-03 17-08-15](https://user-images.githubusercontent.com/15972415/109885062-8c187c00-7c43-11eb-9f1d-7557b280e79d.png) | ![Screenshot from 2021-03-03 17-07-25](https://user-images.githubusercontent.com/15972415/109885082-920e5d00-7c43-11eb-889d-7d2055cce7d8.png) |
+
+
 # 9.0.1 [Wallpaper Anchoring]
 
 - Updated the anchoring of various theme's wallpapers so that you can see your waifu!
