@@ -54,8 +54,9 @@ function buildStickerCss({
   .monaco-scrollable-element, .editor-scrollable,
   .overflow-guard, .tab, .split-view-view, .monaco-pane-view,
   .composite.title, .content, .xterm-cursor-layer, .monaco-select-box, 
-  .pane-header, .monaco-list-rows, canvas, .decorationsOverviewRuler,
-  .monaco-breadcrumbs
+  .pane-header, [id="workbench.view.explorer"] .monaco-list-rows, canvas, .decorationsOverviewRuler,
+  .monaco-breadcrumbs,
+  .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows
   {
     background-image: url('${wallpaperURL}') !important;
     background-position: ${backgroundAnchoring} !important;
