@@ -1,36 +1,31 @@
 import * as vscode from "vscode";
-import { DokiTheme, DokiSticker, StickerType } from "./DokiTheme";
-import {
-  InstallStatus,
-  removeStickers,
-  installStickersAndWallPaper,
-} from "./StickerService";
-import { VSCodeGlobals } from "./VSCodeGlobals";
-import { StatusBarComponent } from "./StatusBar";
-import {
-  showStickerInstallationSupportWindow,
-  showStickerRemovalSupportWindow,
-} from "./SupportService";
+import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
+import {InstallStatus, installStickers, installWallPaper, removeStickers,} from "./StickerService";
+import {VSCodeGlobals} from "./VSCodeGlobals";
+import {StatusBarComponent} from "./StatusBar";
+import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow,} from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import { Sticker, DokiThemeDefinition } from "./extension";
+import {DokiThemeDefinition, Sticker} from "./extension";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
 export const ACTIVE_STICKER = "doki.sticker.active";
 
 const FIRST_TIME_STICKER_INSTALL = "doki.sticker.first.install";
+
 function isFirstTimeInstalling(context: vscode.ExtensionContext) {
   return !context.globalState.get(FIRST_TIME_STICKER_INSTALL);
 }
 
-async function attemptToInstall(
+async function attemptToInstallAsset(
+  context: vscode.ExtensionContext,
   sticker: Sticker,
-  context: vscode.ExtensionContext
+  installAsset: () => Promise<InstallStatus>
 ): Promise<InstallStatus> {
   if (isFirstTimeInstalling(context)) {
-    const stickerInstall = "Install Stickers";
+    const stickerInstall = "Install Theme Assets";
     const result = await vscode.window.showWarningMessage(
-      `Installing stickers requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`,
+      `Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`,
       {
         modal: true,
       },
@@ -42,40 +37,104 @@ async function attemptToInstall(
 
     if (result && result.title === stickerInstall) {
       context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
-      return performStickerInstall(sticker, context);
+      return installAsset();
     } else {
       return InstallStatus.NOT_INSTALLED;
     }
   } else {
-    return performStickerInstall(sticker, context);
+    return installAsset();
   }
+}
+
+async function attemptToInstallSticker(
+  sticker: Sticker,
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  return attemptToInstallAsset(
+    context,
+    sticker,
+    () => performStickerInstall(sticker, context),
+  );
+}
+
+async function attemptToInstallWallpaper(
+  sticker: Sticker,
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  return attemptToInstallAsset(
+    context,
+    sticker,
+    () => performWallpaperInstall(sticker, context),
+  );
+}
+
+function getInstallStatus(installResult: boolean) {
+  return installResult ? InstallStatus.INSTALLED : InstallStatus.FAILURE;
 }
 
 async function performStickerInstall(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  const installResult = await installStickersAndWallPaper(sticker, context);
-  return installResult ? InstallStatus.INSTALLED : InstallStatus.FAILURE;
+  const installResult = await installStickers(sticker, context);
+  return getInstallStatus(installResult);
 }
 
-export function activateTheme(
+async function performWallpaperInstall(
+  sticker: Sticker,
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  const installResult = await installWallPaper(sticker, context);
+  return getInstallStatus(installResult);
+}
+
+export function activateThemeSticker(
   dokiTheme: DokiTheme,
   currentSticker: DokiSticker,
   context: vscode.ExtensionContext
 ) {
-  vscode.window.showInformationMessage(
-    `Please wait, installing ${dokiTheme.name}.`
+  return activateThemeAsset(
+    dokiTheme,
+    currentSticker,
+    context,
+    "Sticker",
+    sticker => attemptToInstallSticker(sticker, context)
   );
-  attemptToInstall(currentSticker.sticker, context).then((didInstall) => {
+}
+
+export function activateThemeWallpaper(
+  dokiTheme: DokiTheme,
+  currentSticker: DokiSticker,
+  context: vscode.ExtensionContext
+) {
+  return activateThemeAsset(
+    dokiTheme,
+    currentSticker,
+    context,
+    "Sticker",
+    sticker => attemptToInstallWallpaper(sticker, context)
+  );
+}
+
+export function activateThemeAsset(
+  dokiTheme: DokiTheme,
+  currentSticker: DokiSticker,
+  context: vscode.ExtensionContext,
+  assetType: string,
+  installer: (sticker: Sticker) => Promise<InstallStatus>
+) {
+  vscode.window.showInformationMessage(
+    `Please wait, installing ${dokiTheme.name}'s ${assetType}.`
+  );
+  installer(currentSticker.sticker).then((didInstall) => {
     if (didInstall === InstallStatus.INSTALLED) {
       VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
       VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
       StatusBarComponent.setText(dokiTheme.displayName);
       vscode.window
         .showInformationMessage(
-          `${dokiTheme.name} installed!\n Please restart your IDE`,
-          { title: "Restart VSCode" }
+          `${dokiTheme.name}'s ${assetType} installed!\n Please restart your VSCode`,
+          {title: "Restart VSCode"}
         )
         .then((item) => {
           if (item) {
@@ -101,7 +160,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     vscode.window
       .showInformationMessage(
         `Removed Images. Please restart your restored IDE`,
-        { title: "Restart VSCode" }
+        {title: "Restart VSCode"}
       )
       .then((item) => {
         if (item) {

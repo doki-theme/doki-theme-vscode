@@ -11,35 +11,18 @@ export enum InstallStatus {
 }
 
 const stickerComment = "/* Stickers */";
+const wallpaperComment = "/* Wallpaper */";
 
 const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
+const getWallpaperIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
 
-function getVsCodeCss() {
-  return getScrubbedCSS();
-}
 
-function buildStickerCss({
-  stickerDataURL: stickerUrl,
-  backgroundImageURL: backgroundUrl,
-  wallpaperImageURL: wallpaperURL,
-  backgroundAnchoring,
-}: DokiStickers): string {
-  const style =
-    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
-  const style2 =     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;";
-
-  return `
-  ${stickerComment}
-  body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after,
-  body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .monaco-scrollable-element > .split-view-container::after
-  {background-image: url('${stickerUrl}');${style}}
-
-  .notifications-toasts {
-    z-index: 9002 !important;
-  }
-
-  /* Background Image */
-
+function buildWallpaperCss({
+                             backgroundImageURL: backgroundUrl,
+                             wallpaperImageURL: wallpaperURL,
+                             backgroundAnchoring,
+                           }: DokiStickers): string {
+  return `${wallpaperComment}
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor
   .overflow-guard>.monaco-scrollable-element::before  {
     background-image: url('${wallpaperURL}') !important;
@@ -81,11 +64,32 @@ function buildStickerCss({
     height:100%;
     opacity:1;
 }
+  `;
+}
+
+function buildStickerCss({
+                           stickerDataURL: stickerUrl,
+                         }: DokiStickers): string {
+  const style =
+    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
+  return `
+  ${stickerComment}
+  body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after,
+  body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .monaco-scrollable-element > .split-view-container::after
+  {background-image: url('${stickerUrl}');${style}}
+
+  .notifications-toasts {
+    z-index: 9002 !important;
+  }
 `;
 }
 
-function buildStyles(dokiStickers: DokiStickers): string {
-  return `${getVsCodeCss()}${buildStickerCss(dokiStickers)}`;
+function buildCSSWithStickers(dokiStickers: DokiStickers): string {
+  return `${getStickerScrubbedCSS()}${buildStickerCss(dokiStickers)}`;
+}
+
+function buildCSSWithWallpaper(dokiStickers: DokiStickers): string {
+  return `${getWallpaperScrubbedCSS()}${buildWallpaperCss(dokiStickers)}`;
 }
 
 function installEditorStyles(styles: string) {
@@ -108,9 +112,30 @@ export interface DokiStickers {
   backgroundAnchoring: string;
 }
 
-export async function installStickersAndWallPaper(
+export async function installStickers(
   sticker: Sticker,
   context: vscode.ExtensionContext
+): Promise<boolean> {
+  return installStyles(
+    sticker,
+    context,
+    stickersAndWallpaper => buildCSSWithStickers(stickersAndWallpaper));
+}
+
+export async function installWallPaper(
+  sticker: Sticker,
+  context: vscode.ExtensionContext
+): Promise<boolean> {
+  return installStyles(
+    sticker,
+    context,
+    stickersAndWallpaper => buildCSSWithWallpaper(stickersAndWallpaper));
+}
+
+async function installStyles(
+  sticker: Sticker,
+  context: vscode.ExtensionContext,
+  cssDecorator: (assets: DokiStickers) => string
 ): Promise<boolean> {
   if (canWrite()) {
     try {
@@ -118,7 +143,7 @@ export async function installStickersAndWallPaper(
         context,
         sticker
       );
-      const stickerStyles = buildStyles(stickersAndWallpaper);
+      const stickerStyles = cssDecorator(stickersAndWallpaper);
       installEditorStyles(stickerStyles);
       return true;
     } catch (e) {
@@ -132,8 +157,43 @@ export async function installStickersAndWallPaper(
 function getScrubbedCSS() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
   const stickerIndex = getStickerIndex(currentCss);
-  if (stickerIndex >= 0) {
-    return currentCss.substr(0, stickerIndex).trim();
+  const trimmedCss = trimCss(currentCss, stickerIndex);
+  return trimCss(trimmedCss, getWallpaperIndex(trimmedCss));
+}
+
+function scrubCssOfAsset(getAssetOneIndex: (currentCss: string) => number,
+                         getAssetToRemoveIndex: (currentCss: string) => number) {
+  const currentCss = fs.readFileSync(editorCss, "utf-8");
+  const otherAssetIndex = getAssetOneIndex(currentCss);
+  const assetToRemoveIndex = getAssetToRemoveIndex(currentCss);
+  if (otherAssetIndex < 0) {
+    return trimCss(currentCss, assetToRemoveIndex);
+  } else if (assetToRemoveIndex > -1) {
+    return currentCss.substring(0, assetToRemoveIndex) + (
+      assetToRemoveIndex < otherAssetIndex ?
+        '\n' + currentCss.substring(otherAssetIndex, currentCss.length) :
+        ''
+    );
+  }
+  return currentCss;
+}
+
+function getWallpaperScrubbedCSS() {
+  return scrubCssOfAsset(
+    getStickerIndex,
+    getWallpaperIndex,
+  );
+}
+function getStickerScrubbedCSS() {
+  return scrubCssOfAsset(
+    getWallpaperIndex,
+    getStickerIndex,
+  );
+}
+
+function trimCss(currentCss: string, index: number): string {
+  if (index >= 0) {
+    return currentCss.substr(0, index).trim();
   }
   return currentCss;
 }
