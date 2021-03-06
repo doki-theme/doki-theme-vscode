@@ -20,11 +20,14 @@ function getVsCodeCss() {
 
 function buildStickerCss({
   stickerDataURL: stickerUrl,
-  backgroundImageURL: wallpaperUrl,
+  backgroundImageURL: backgroundUrl,
+  wallpaperImageURL: wallpaperURL,
   backgroundAnchoring,
 }: DokiStickers): string {
   const style =
     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
+  const style2 =     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 100%;background-repeat:no-repeat;opacity:1;";
+
   return `
   ${stickerComment}
   body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after,
@@ -36,15 +39,45 @@ function buildStickerCss({
   }
 
   /* Background Image */
+
+  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor
+  .overflow-guard>.monaco-scrollable-element::before  {
+    background-image: url('${wallpaperURL}') !important;
+    background-position: ${backgroundAnchoring} !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+
+  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
+
+  .monaco-scrollable-element, .editor-scrollable,
+  .overflow-guard, .tab, .split-view-view, .monaco-pane-view,
+  .composite.title, .content, .xterm-cursor-layer, .monaco-select-box, 
+  .pane-header, .monaco-list-rows, canvas, .decorationsOverviewRuler,
+  .monaco-breadcrumbs
+  {
+    background-image: url('${wallpaperURL}') !important;
+    background-position: ${backgroundAnchoring} !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+  
+  .monaco-icon-label-container {
+    background: none !important;
+  }
+
   .monaco-workbench .part.editor > .content {
-    background-image: url('${wallpaperUrl}') !important;
+    background-image: url('${backgroundUrl}') !important;
     background-position: ${backgroundAnchoring};
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     content:'';
     z-index:9001;
     width:100%;
     height:100%;
-    background-repeat:no-repeat;
     opacity:1;
 }
 `;
@@ -70,6 +103,7 @@ function canWrite(): boolean {
 export interface DokiStickers {
   stickerDataURL: string;
   backgroundImageURL: string;
+  wallpaperImageURL: string;
   backgroundAnchoring: string;
 }
 

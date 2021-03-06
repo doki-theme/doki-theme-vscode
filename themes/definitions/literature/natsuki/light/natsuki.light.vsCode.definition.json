@@ -4,7 +4,7 @@
   "laf": {
     "extends": "light",
     "ui": {
-      "editor.lineHighlightBackground": "&headerColor&",
+      "editor.lineHighlightBackground": "&headerColor&77",
       "sideBarSectionHeader.background": "&headerColor&",
       "activityBar.background": "&headerColor&"
     }

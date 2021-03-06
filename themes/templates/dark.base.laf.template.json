@@ -2,7 +2,8 @@
   "name":"dark",
   "extends":"base",
   "ui": {
-    "editor.lineHighlightBackground": "&baseBackground&",
+    "editor.lineHighlightBackground": "&baseBackground&77",
+    "editor.lineHighlightBorder": "&baseBackground&00",
     "sideBarSectionHeader.background": "&baseBackground&",
     "activityBar.background": "&baseBackground&"
   }

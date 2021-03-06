@@ -9,6 +9,7 @@ import {
   BACKGROUND_ASSETS_URL,
   isWSL,
   workbenchDirectory,
+  WALLPAPER_ASSETS_URL,
 } from "./ENV";
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
@@ -20,27 +21,34 @@ export const attemptToUpdateSticker = async (
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
     currentSticker
   )}`;
-  const remoteWallpaperUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
+  const remoteWallpaperUrl = `${WALLPAPER_ASSETS_URL}${wallpaperPathToUrl(
+    currentSticker
+  )}`;
+  const remoteBackgroundUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
     currentSticker
   )}`;
   if (isCodeServer()) {
     return {
       stickerDataURL: remoteStickerUrl,
-      backgroundImageURL: remoteWallpaperUrl,
+      backgroundImageURL: remoteBackgroundUrl,
+      wallpaperImageURL: remoteWallpaperUrl,
       backgroundAnchoring: currentSticker.anchoring,
     };
   }
 
   const localStickerPath = resolveLocalStickerPath(currentSticker, context);
   const localWallpaperPath = resolveLocalWallpaperPath(currentSticker, context);
+  const localBackgroundPath = resolveLocalBackgroundPath(currentSticker, context);
   await Promise.all([
     attemptToUpdateAsset(remoteStickerUrl, localStickerPath),
     attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath),
+    attemptToUpdateAsset(remoteBackgroundUrl, localBackgroundPath),
   ]);
 
   return {
     stickerDataURL: createCssDokiAssetUrl(localStickerPath),
-    backgroundImageURL: createCssDokiAssetUrl(localWallpaperPath),
+    backgroundImageURL: createCssDokiAssetUrl(localBackgroundPath),
+    wallpaperImageURL: createCssDokiAssetUrl(localWallpaperPath),
     backgroundAnchoring: currentSticker.anchoring,
   };
 };
@@ -101,6 +109,15 @@ const resolveLocalWallpaperPath = (
   const safeStickerPath = wallpaperPathToUrl(currentSticker);
   return path.join(getStoragePath(context), "wallpapers", safeStickerPath);
 };
+const resolveLocalBackgroundPath = (
+  currentSticker: Sticker,
+  context: vscode.ExtensionContext
+): string => {
+  const safeStickerPath = wallpaperPathToUrl(currentSticker);
+  return path.join(getStoragePath(context), "backgrounds", safeStickerPath);
+};
+
+
 
 const createCssDokiAssetUrl = (localAssetPath: string): string => {
   return `file://${cleanPathToUrl(localAssetPath)}`;
