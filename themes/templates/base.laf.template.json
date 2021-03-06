@@ -10,6 +10,7 @@
     "input.background": "&secondaryBackground&",
     "peekViewResult.background": "&secondaryBackground&",
     "list.focusBackground": "&selectionBackground&",
+    "quickInput.list.focusBackground": "&selectionBackground&AA",
     "selection.background": "&selectionBackground&",
     "list.activeSelectionBackground": "&selectionBackground&",
     "peekViewResult.selectionBackground": "&selectionBackground&",
