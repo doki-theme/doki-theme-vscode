@@ -23,17 +23,10 @@ function buildWallpaperCss({
                              backgroundAnchoring,
                            }: DokiStickers): string {
   return `${wallpaperComment}
-  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor
-  .overflow-guard>.monaco-scrollable-element::before  {
-    background-image: url('${wallpaperURL}') !important;
-    background-position: ${backgroundAnchoring} !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
-
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
+  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor
+  .overflow-guard>.monaco-scrollable-element::before,
   .monaco-scrollable-element, .editor-scrollable,
   .overflow-guard, .tab, .split-view-view, .monaco-pane-view,
   .composite.title, .content, .xterm-cursor-layer, .monaco-select-box, 
