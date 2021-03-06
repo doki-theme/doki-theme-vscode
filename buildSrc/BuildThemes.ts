@@ -621,6 +621,7 @@ walkDir(masterThemeTemplateDirectoryPath)
         }))
       )
       .reduce((accum, next) => accum.concat(next), []);
+
     const activationEvents = stickerInstallCommands.map(
       (command) => `onCommand:${command.command}`
     );

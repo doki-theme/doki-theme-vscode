@@ -11,7 +11,7 @@ export enum InstallStatus {
 }
 
 const stickerComment = "/* Stickers */";
-const wallpaperComment = "/* Wallpaper */";
+const wallpaperComment = "/* Background Image */";
 
 const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
 const getWallpaperIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
