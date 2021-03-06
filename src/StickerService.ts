@@ -14,7 +14,7 @@ const stickerComment = "/* Stickers */";
 const wallpaperComment = "/* Background Image */";
 
 const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
-const getWallpaperIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
+const getWallpaperIndex = (currentCss: string) => currentCss.indexOf(wallpaperComment);
 
 
 function buildWallpaperCss({

@@ -111,7 +111,7 @@ export function activateThemeWallpaper(
     dokiTheme,
     currentSticker,
     context,
-    "Sticker",
+    "Wallpaper",
     sticker => attemptToInstallWallpaper(sticker, context)
   );
 }
