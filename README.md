@@ -62,7 +62,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 **Background Wallpaper** is probably one of the best features of the plugin.
 This feature will set the background image to the current theme's official wallpaper.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. 
 [This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
 
 **Glass Pane effect**
@@ -74,7 +74,7 @@ This feature will set the background image to the current theme's official wallp
 
 **Show sticker** allows you to control the presence of the cute sticker in the bottom right-hand corner of your IDE.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling.
 [This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
