@@ -2,13 +2,13 @@
 
 # Feature Preview
 
-![Ryuko's Theme Usage](https://doki.assets.unthrottled.io/screenshots/doki-theme-vscode-usage.gif)
+![Ryuko's Theme Usage](./readmeStuff/usage.gif)
 
 Steps demonstrated:
-1. Choose Color Theme
-1. Enable Theme's Stickers
+1. Choose Ryuko's Color Theme
+1. Enable Ryuko's wallpaper
 1. Reload/Restart VSCode
-1. Code!
+1. Demonstrate glass pane feature
 
 ## Screen Samples!
 
