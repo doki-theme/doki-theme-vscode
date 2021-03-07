@@ -108,7 +108,7 @@ Also, giving it a good [review on the extension marketplace](marketplace.visuals
 
 ## Contributions?
 
-I think your voice needs to be heard! You probably have good ideas, so feel free to submit your feedback as [an issue](https://github.com/doki-theme/doki-theme-jetbrains/issues/new).
+I think your voice needs to be heard! You probably have good ideas, so feel free to submit your feedback as [an issue](https://github.com/doki-theme/doki-theme-vscode/issues/new).
 
 Help make this plugin better!
 
