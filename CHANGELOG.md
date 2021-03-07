@@ -6,6 +6,9 @@
   - Be sure to run the `Install ... Wallpaper` action!
 - Sticker and Wallpaper actions are now separate. (Mix and match if you so choose!)
 
+![Screenshot 2021-03-07 095027](https://user-images.githubusercontent.com/15972415/110246286-aba5f200-7f2c-11eb-8ddc-51a4867997fd.png)
+![Screenshot 2021-03-07 094953](https://user-images.githubusercontent.com/15972415/110246284-ab0d5b80-7f2c-11eb-8b7b-136c8496a980.png)
+
 
 # 9.1.0 [Better Python Support]
 
