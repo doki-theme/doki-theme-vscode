@@ -621,6 +621,7 @@ walkDir(masterThemeTemplateDirectoryPath)
         }))
       )
       .reduce((accum, next) => accum.concat(next), []);
+
     const activationEvents = stickerInstallCommands.map(
       (command) => `onCommand:${command.command}`
     );
@@ -629,7 +630,9 @@ walkDir(masterThemeTemplateDirectoryPath)
       command: commandAndDefinition.command,
       title: `Doki-Theme: Install ${commandAndDefinition.definition.name}'s${
         commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
-      } Stickers`,
+      } ${
+        commandAndDefinition.command.indexOf('wallpaper') >=0 ? 'Wallpaper' : 'Sticker'
+      }`,
     }));
 
     const ishtarId = '62a4f26f-34b2-46f8-a10c-798e48c1ce9d';
@@ -699,13 +702,19 @@ walkDir(masterThemeTemplateDirectoryPath)
     console.log("Theme Generation Complete!");
   });
 
-function getCommandNames(dokiDefinition: MasterDokiThemeDefinition) {
+function getCommandNames(dokiDefinition: MasterDokiThemeDefinition): string[] {
   return keys(dokiDefinition.stickers)
     .filter((type) => type !== "normal")
     .map((type) => {
       if (type === "default") {
-        return `doki-theme.theme.${dokiDefinition.name}`;
+        return [
+          `doki-theme.theme.${dokiDefinition.name}`,
+          `doki-theme.theme.wallpaper.${dokiDefinition.name}`
+        ];
       }
-      return `doki-theme.theme.${dokiDefinition.name}.secondary`;
-    });
+      return [
+        `doki-theme.theme.${dokiDefinition.name}.secondary`,
+        `doki-theme.theme.wallpaper.${dokiDefinition.name}.secondary`,
+      ];
+    }).reduce((accum, next) => accum.concat(next), []);
 }

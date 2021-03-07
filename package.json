@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "9.1.0",
+  "version": "10.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -33,57 +33,109 @@
     "onCommand:doki-theme.doki.changelog",
     "onCommand:doki-theme.remove.sticker",
     "onCommand:doki-theme.theme.Mai Dark",
+    "onCommand:doki-theme.theme.wallpaper.Mai Dark",
     "onCommand:doki-theme.theme.Mai Dark.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Mai Dark.secondary",
     "onCommand:doki-theme.theme.Mai Light",
+    "onCommand:doki-theme.theme.wallpaper.Mai Light",
     "onCommand:doki-theme.theme.Mai Light.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Mai Light.secondary",
     "onCommand:doki-theme.theme.Mioda Ibuki Dark",
+    "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
+    "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Light",
     "onCommand:doki-theme.theme.Kanna",
+    "onCommand:doki-theme.theme.wallpaper.Kanna",
     "onCommand:doki-theme.theme.Kanna.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Kanna.secondary",
     "onCommand:doki-theme.theme.Katsuragi Misato",
+    "onCommand:doki-theme.theme.wallpaper.Katsuragi Misato",
     "onCommand:doki-theme.theme.Ishtar Dark",
+    "onCommand:doki-theme.theme.wallpaper.Ishtar Dark",
     "onCommand:doki-theme.theme.Ishtar Light",
+    "onCommand:doki-theme.theme.wallpaper.Ishtar Light",
     "onCommand:doki-theme.theme.Tohsaka Rin",
+    "onCommand:doki-theme.theme.wallpaper.Tohsaka Rin",
     "onCommand:doki-theme.theme.Zero Two Dark",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Dark",
     "onCommand:doki-theme.theme.Zero Two Light",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Light",
     "onCommand:doki-theme.theme.Rory Mercury",
+    "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
     "onCommand:doki-theme.theme.Rias",
+    "onCommand:doki-theme.theme.wallpaper.Rias",
     "onCommand:doki-theme.theme.Ryuko",
+    "onCommand:doki-theme.theme.wallpaper.Ryuko",
     "onCommand:doki-theme.theme.Satsuki",
+    "onCommand:doki-theme.theme.wallpaper.Satsuki",
     "onCommand:doki-theme.theme.Aqua",
+    "onCommand:doki-theme.theme.wallpaper.Aqua",
     "onCommand:doki-theme.theme.Darkness Dark",
+    "onCommand:doki-theme.theme.wallpaper.Darkness Dark",
     "onCommand:doki-theme.theme.Darkness Light",
+    "onCommand:doki-theme.theme.wallpaper.Darkness Light",
     "onCommand:doki-theme.theme.Megumin",
+    "onCommand:doki-theme.theme.wallpaper.Megumin",
     "onCommand:doki-theme.theme.Monika Dark",
+    "onCommand:doki-theme.theme.wallpaper.Monika Dark",
     "onCommand:doki-theme.theme.Monika Dark.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Monika Dark.secondary",
     "onCommand:doki-theme.theme.Monika Light",
+    "onCommand:doki-theme.theme.wallpaper.Monika Light",
     "onCommand:doki-theme.theme.Monika Light.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Monika Light.secondary",
     "onCommand:doki-theme.theme.Natsuki Dark",
+    "onCommand:doki-theme.theme.wallpaper.Natsuki Dark",
     "onCommand:doki-theme.theme.Natsuki Dark.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Natsuki Dark.secondary",
     "onCommand:doki-theme.theme.Natsuki Light",
+    "onCommand:doki-theme.theme.wallpaper.Natsuki Light",
     "onCommand:doki-theme.theme.Natsuki Light.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Natsuki Light.secondary",
     "onCommand:doki-theme.theme.Sayori Dark",
+    "onCommand:doki-theme.theme.wallpaper.Sayori Dark",
     "onCommand:doki-theme.theme.Sayori Dark.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Sayori Dark.secondary",
     "onCommand:doki-theme.theme.Sayori Light",
+    "onCommand:doki-theme.theme.wallpaper.Sayori Light",
     "onCommand:doki-theme.theme.Sayori Light.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Sayori Light.secondary",
     "onCommand:doki-theme.theme.Yuri Dark",
+    "onCommand:doki-theme.theme.wallpaper.Yuri Dark",
     "onCommand:doki-theme.theme.Yuri Dark.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Yuri Dark.secondary",
     "onCommand:doki-theme.theme.Yuri Light",
+    "onCommand:doki-theme.theme.wallpaper.Yuri Light",
     "onCommand:doki-theme.theme.Yuri Light.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Yuri Light.secondary",
     "onCommand:doki-theme.theme.Sonoda Umi",
+    "onCommand:doki-theme.theme.wallpaper.Sonoda Umi",
     "onCommand:doki-theme.theme.Konata",
+    "onCommand:doki-theme.theme.wallpaper.Konata",
     "onCommand:doki-theme.theme.Konata.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Konata.secondary",
     "onCommand:doki-theme.theme.Hatsune Miku",
+    "onCommand:doki-theme.theme.wallpaper.Hatsune Miku",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
+    "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.Beatrice",
+    "onCommand:doki-theme.theme.wallpaper.Beatrice",
     "onCommand:doki-theme.theme.Echidna",
+    "onCommand:doki-theme.theme.wallpaper.Echidna",
     "onCommand:doki-theme.theme.Emilia Dark",
+    "onCommand:doki-theme.theme.wallpaper.Emilia Dark",
     "onCommand:doki-theme.theme.Emilia Light",
+    "onCommand:doki-theme.theme.wallpaper.Emilia Light",
     "onCommand:doki-theme.theme.Ram",
+    "onCommand:doki-theme.theme.wallpaper.Ram",
     "onCommand:doki-theme.theme.Rem",
+    "onCommand:doki-theme.theme.wallpaper.Rem",
     "onCommand:doki-theme.theme.Makise Kurisu",
+    "onCommand:doki-theme.theme.wallpaper.Makise Kurisu",
     "onCommand:doki-theme.theme.Asuna Dark",
-    "onCommand:doki-theme.theme.Asuna Light"
+    "onCommand:doki-theme.theme.wallpaper.Asuna Dark",
+    "onCommand:doki-theme.theme.Asuna Light",
+    "onCommand:doki-theme.theme.wallpaper.Asuna Light"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -98,211 +150,419 @@
       },
       {
         "command": "doki-theme.theme.Mai Dark",
-        "title": "Doki-Theme: Install Mai Dark's Stickers"
+        "title": "Doki-Theme: Install Mai Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mai Dark",
+        "title": "Doki-Theme: Install Mai Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mai Dark.secondary",
-        "title": "Doki-Theme: Install Mai Dark's Secondary Stickers"
+        "title": "Doki-Theme: Install Mai Dark's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mai Dark.secondary",
+        "title": "Doki-Theme: Install Mai Dark's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mai Light",
-        "title": "Doki-Theme: Install Mai Light's Stickers"
+        "title": "Doki-Theme: Install Mai Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mai Light",
+        "title": "Doki-Theme: Install Mai Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mai Light.secondary",
-        "title": "Doki-Theme: Install Mai Light's Secondary Stickers"
+        "title": "Doki-Theme: Install Mai Light's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mai Light.secondary",
+        "title": "Doki-Theme: Install Mai Light's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mioda Ibuki Dark",
-        "title": "Doki-Theme: Install Mioda Ibuki Dark's Stickers"
+        "title": "Doki-Theme: Install Mioda Ibuki Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mioda Ibuki Dark",
+        "title": "Doki-Theme: Install Mioda Ibuki Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mioda Ibuki Light",
-        "title": "Doki-Theme: Install Mioda Ibuki Light's Stickers"
+        "title": "Doki-Theme: Install Mioda Ibuki Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Mioda Ibuki Light",
+        "title": "Doki-Theme: Install Mioda Ibuki Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Kanna",
-        "title": "Doki-Theme: Install Kanna's Stickers"
+        "title": "Doki-Theme: Install Kanna's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Kanna",
+        "title": "Doki-Theme: Install Kanna's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Kanna.secondary",
-        "title": "Doki-Theme: Install Kanna's Secondary Stickers"
+        "title": "Doki-Theme: Install Kanna's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Kanna.secondary",
+        "title": "Doki-Theme: Install Kanna's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Katsuragi Misato",
-        "title": "Doki-Theme: Install Katsuragi Misato's Stickers"
+        "title": "Doki-Theme: Install Katsuragi Misato's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Katsuragi Misato",
+        "title": "Doki-Theme: Install Katsuragi Misato's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ishtar Dark",
-        "title": "Doki-Theme: Install Ishtar Dark's Stickers"
+        "title": "Doki-Theme: Install Ishtar Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Ishtar Dark",
+        "title": "Doki-Theme: Install Ishtar Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ishtar Light",
-        "title": "Doki-Theme: Install Ishtar Light's Stickers"
+        "title": "Doki-Theme: Install Ishtar Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Ishtar Light",
+        "title": "Doki-Theme: Install Ishtar Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Tohsaka Rin",
-        "title": "Doki-Theme: Install Tohsaka Rin's Stickers"
+        "title": "Doki-Theme: Install Tohsaka Rin's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Tohsaka Rin",
+        "title": "Doki-Theme: Install Tohsaka Rin's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Zero Two Dark",
-        "title": "Doki-Theme: Install Zero Two Dark's Stickers"
+        "title": "Doki-Theme: Install Zero Two Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Dark",
+        "title": "Doki-Theme: Install Zero Two Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Zero Two Light",
-        "title": "Doki-Theme: Install Zero Two Light's Stickers"
+        "title": "Doki-Theme: Install Zero Two Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Light",
+        "title": "Doki-Theme: Install Zero Two Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Rory Mercury",
-        "title": "Doki-Theme: Install Rory Mercury's Stickers"
+        "title": "Doki-Theme: Install Rory Mercury's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rory Mercury",
+        "title": "Doki-Theme: Install Rory Mercury's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Rias",
-        "title": "Doki-Theme: Install Rias's Stickers"
+        "title": "Doki-Theme: Install Rias's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rias",
+        "title": "Doki-Theme: Install Rias's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ryuko",
-        "title": "Doki-Theme: Install Ryuko's Stickers"
+        "title": "Doki-Theme: Install Ryuko's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Ryuko",
+        "title": "Doki-Theme: Install Ryuko's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Satsuki",
-        "title": "Doki-Theme: Install Satsuki's Stickers"
+        "title": "Doki-Theme: Install Satsuki's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Satsuki",
+        "title": "Doki-Theme: Install Satsuki's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Aqua",
-        "title": "Doki-Theme: Install Aqua's Stickers"
+        "title": "Doki-Theme: Install Aqua's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Aqua",
+        "title": "Doki-Theme: Install Aqua's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Darkness Dark",
-        "title": "Doki-Theme: Install Darkness Dark's Stickers"
+        "title": "Doki-Theme: Install Darkness Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Darkness Dark",
+        "title": "Doki-Theme: Install Darkness Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Darkness Light",
-        "title": "Doki-Theme: Install Darkness Light's Stickers"
+        "title": "Doki-Theme: Install Darkness Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Darkness Light",
+        "title": "Doki-Theme: Install Darkness Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Megumin",
-        "title": "Doki-Theme: Install Megumin's Stickers"
+        "title": "Doki-Theme: Install Megumin's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Megumin",
+        "title": "Doki-Theme: Install Megumin's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Monika Dark",
-        "title": "Doki-Theme: Install Monika Dark's Stickers"
+        "title": "Doki-Theme: Install Monika Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Monika Dark",
+        "title": "Doki-Theme: Install Monika Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Monika Dark.secondary",
-        "title": "Doki-Theme: Install Monika Dark's Secondary Stickers"
+        "title": "Doki-Theme: Install Monika Dark's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Monika Dark.secondary",
+        "title": "Doki-Theme: Install Monika Dark's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Monika Light",
-        "title": "Doki-Theme: Install Monika Light's Stickers"
+        "title": "Doki-Theme: Install Monika Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Monika Light",
+        "title": "Doki-Theme: Install Monika Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Monika Light.secondary",
-        "title": "Doki-Theme: Install Monika Light's Secondary Stickers"
+        "title": "Doki-Theme: Install Monika Light's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Monika Light.secondary",
+        "title": "Doki-Theme: Install Monika Light's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Natsuki Dark",
-        "title": "Doki-Theme: Install Natsuki Dark's Stickers"
+        "title": "Doki-Theme: Install Natsuki Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Natsuki Dark",
+        "title": "Doki-Theme: Install Natsuki Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Natsuki Dark.secondary",
-        "title": "Doki-Theme: Install Natsuki Dark's Secondary Stickers"
+        "title": "Doki-Theme: Install Natsuki Dark's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Natsuki Dark.secondary",
+        "title": "Doki-Theme: Install Natsuki Dark's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Natsuki Light",
-        "title": "Doki-Theme: Install Natsuki Light's Stickers"
+        "title": "Doki-Theme: Install Natsuki Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Natsuki Light",
+        "title": "Doki-Theme: Install Natsuki Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Natsuki Light.secondary",
-        "title": "Doki-Theme: Install Natsuki Light's Secondary Stickers"
+        "title": "Doki-Theme: Install Natsuki Light's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Natsuki Light.secondary",
+        "title": "Doki-Theme: Install Natsuki Light's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Sayori Dark",
-        "title": "Doki-Theme: Install Sayori Dark's Stickers"
+        "title": "Doki-Theme: Install Sayori Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sayori Dark",
+        "title": "Doki-Theme: Install Sayori Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Sayori Dark.secondary",
-        "title": "Doki-Theme: Install Sayori Dark's Secondary Stickers"
+        "title": "Doki-Theme: Install Sayori Dark's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sayori Dark.secondary",
+        "title": "Doki-Theme: Install Sayori Dark's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Sayori Light",
-        "title": "Doki-Theme: Install Sayori Light's Stickers"
+        "title": "Doki-Theme: Install Sayori Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sayori Light",
+        "title": "Doki-Theme: Install Sayori Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Sayori Light.secondary",
-        "title": "Doki-Theme: Install Sayori Light's Secondary Stickers"
+        "title": "Doki-Theme: Install Sayori Light's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sayori Light.secondary",
+        "title": "Doki-Theme: Install Sayori Light's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Yuri Dark",
-        "title": "Doki-Theme: Install Yuri Dark's Stickers"
+        "title": "Doki-Theme: Install Yuri Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yuri Dark",
+        "title": "Doki-Theme: Install Yuri Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Yuri Dark.secondary",
-        "title": "Doki-Theme: Install Yuri Dark's Secondary Stickers"
+        "title": "Doki-Theme: Install Yuri Dark's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yuri Dark.secondary",
+        "title": "Doki-Theme: Install Yuri Dark's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Yuri Light",
-        "title": "Doki-Theme: Install Yuri Light's Stickers"
+        "title": "Doki-Theme: Install Yuri Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yuri Light",
+        "title": "Doki-Theme: Install Yuri Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Yuri Light.secondary",
-        "title": "Doki-Theme: Install Yuri Light's Secondary Stickers"
+        "title": "Doki-Theme: Install Yuri Light's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yuri Light.secondary",
+        "title": "Doki-Theme: Install Yuri Light's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Sonoda Umi",
-        "title": "Doki-Theme: Install Sonoda Umi's Stickers"
+        "title": "Doki-Theme: Install Sonoda Umi's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sonoda Umi",
+        "title": "Doki-Theme: Install Sonoda Umi's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Konata",
-        "title": "Doki-Theme: Install Konata's Stickers"
+        "title": "Doki-Theme: Install Konata's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Konata",
+        "title": "Doki-Theme: Install Konata's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Konata.secondary",
-        "title": "Doki-Theme: Install Konata's Secondary Stickers"
+        "title": "Doki-Theme: Install Konata's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Konata.secondary",
+        "title": "Doki-Theme: Install Konata's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Hatsune Miku",
-        "title": "Doki-Theme: Install Hatsune Miku's Stickers"
+        "title": "Doki-Theme: Install Hatsune Miku's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Hatsune Miku",
+        "title": "Doki-Theme: Install Hatsune Miku's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Yukinoshita Yukino",
-        "title": "Doki-Theme: Install Yukinoshita Yukino's Stickers"
+        "title": "Doki-Theme: Install Yukinoshita Yukino's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yukinoshita Yukino",
+        "title": "Doki-Theme: Install Yukinoshita Yukino's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Beatrice",
-        "title": "Doki-Theme: Install Beatrice's Stickers"
+        "title": "Doki-Theme: Install Beatrice's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Beatrice",
+        "title": "Doki-Theme: Install Beatrice's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Echidna",
-        "title": "Doki-Theme: Install Echidna's Stickers"
+        "title": "Doki-Theme: Install Echidna's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Echidna",
+        "title": "Doki-Theme: Install Echidna's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Emilia Dark",
-        "title": "Doki-Theme: Install Emilia Dark's Stickers"
+        "title": "Doki-Theme: Install Emilia Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Emilia Dark",
+        "title": "Doki-Theme: Install Emilia Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Emilia Light",
-        "title": "Doki-Theme: Install Emilia Light's Stickers"
+        "title": "Doki-Theme: Install Emilia Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Emilia Light",
+        "title": "Doki-Theme: Install Emilia Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ram",
-        "title": "Doki-Theme: Install Ram's Stickers"
+        "title": "Doki-Theme: Install Ram's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Ram",
+        "title": "Doki-Theme: Install Ram's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Rem",
-        "title": "Doki-Theme: Install Rem's Stickers"
+        "title": "Doki-Theme: Install Rem's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rem",
+        "title": "Doki-Theme: Install Rem's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Makise Kurisu",
-        "title": "Doki-Theme: Install Makise Kurisu's Stickers"
+        "title": "Doki-Theme: Install Makise Kurisu's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Makise Kurisu",
+        "title": "Doki-Theme: Install Makise Kurisu's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Asuna Dark",
-        "title": "Doki-Theme: Install Asuna Dark's Stickers"
+        "title": "Doki-Theme: Install Asuna Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Asuna Dark",
+        "title": "Doki-Theme: Install Asuna Dark's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Asuna Light",
-        "title": "Doki-Theme: Install Asuna Light's Stickers"
+        "title": "Doki-Theme: Install Asuna Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Asuna Light",
+        "title": "Doki-Theme: Install Asuna Light's Wallpaper"
       }
     ],
     "themes": [

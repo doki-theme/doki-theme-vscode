@@ -4,7 +4,7 @@
   "laf": {
     "extends": "dark",
     "ui": {
-      "editor.lineHighlightBackground": "&caretRow&",
+      "editor.lineHighlightBackground": "&caretRow&77",
       "list.focusBackground": "#2c1c32"
     }
   },

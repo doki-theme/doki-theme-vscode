@@ -1,5 +1,11 @@
 import * as vscode from "vscode";
-import {activateTheme, getCurrentThemeAndSticker, getSticker, uninstallImages,} from "./ThemeManager";
+import {
+  activateThemeSticker,
+  activateThemeWallpaper,
+  getCurrentThemeAndSticker,
+  getSticker,
+  uninstallImages,
+} from "./ThemeManager";
 import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import {StatusBarComponent} from "./StatusBar";
@@ -30,15 +36,19 @@ export interface VSCodeDokiThemeDefinition {
 const getCurrentSticker = (
   extensionCommand: string,
   dokiThemeDefinition: DokiThemeDefinition
-): DokiSticker =>{
+): DokiSticker => {
   const stickerType = extensionCommand.endsWith('secondary') ?
-  StickerType.SECONDARY : StickerType.DEFAULT;
+    StickerType.SECONDARY : StickerType.DEFAULT;
   const sticker = getSticker(dokiThemeDefinition, stickerType);
-    return {
-      sticker,
-      type: stickerType,
-    };
+  return {
+    sticker,
+    type: stickerType,
+  };
 };
+
+function isStickerCommand(extensionCommand: string) {
+  return extensionCommand.indexOf("wallpaper") < 0;
+}
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -62,9 +72,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   const {sticker} = getCurrentThemeAndSticker();
   attemptToUpdateSticker(context, sticker.sticker)
-      .catch(error => {
-        console.error("Unable to update sticker for reasons", error);
-      });
+    .catch(error => {
+      console.error("Unable to update sticker for reasons", error);
+    });
 
   DokiThemeDefinitions.map((dokiThemeDefinition: VSCodeDokiThemeDefinition) =>
     dokiThemeDefinition.extensionNames.map((extensionCommand) => ({
@@ -73,16 +83,20 @@ export function activate(context: vscode.ExtensionContext) {
     }))
   )
     .reduce((accum, next) => accum.concat(next), [])
-    .map(({ dokiThemeDefinition, extensionCommand }) =>
-      vscode.commands.registerCommand(extensionCommand, () =>
-        activateTheme(
-          new DokiTheme(dokiThemeDefinition.themeDefinition),
-          getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition),
-          context
-        )
+    .map(({dokiThemeDefinition, extensionCommand}) =>
+      vscode.commands.registerCommand(extensionCommand, () => {
+          const dokiTheme = new DokiTheme(dokiThemeDefinition.themeDefinition);
+          const currentSticker = getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition);
+          if (isStickerCommand(extensionCommand)) {
+            activateThemeSticker(dokiTheme, currentSticker, context);
+          } else {
+            activateThemeWallpaper(dokiTheme, currentSticker, context);
+          }
+        }
       )
     )
     .forEach((disposableHero) => context.subscriptions.push(disposableHero));
 }
 
-export function deactivate() {}
+export function deactivate() {
+}
