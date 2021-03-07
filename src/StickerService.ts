@@ -25,12 +25,21 @@ function buildWallpaperCss({
   return `${wallpaperComment}
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
-  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor
-  .overflow-guard>.monaco-scrollable-element::before,
-  .monaco-scrollable-element, .editor-scrollable,
-  .overflow-guard, .tab, .split-view-view, .monaco-pane-view,
-  .composite.title, .content, .xterm-cursor-layer, .monaco-select-box, 
-  .pane-header, [id="workbench.view.explorer"] .monaco-list-rows, canvas, .decorationsOverviewRuler,
+  [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor  .overflow-guard>.monaco-scrollable-element::before,
+  .monaco-scrollable-element, 
+  .editor-scrollable,
+  .overflow-guard, 
+  .tab, 
+  .split-view-view, 
+  .monaco-pane-view,
+  .composite.title, 
+  .content, 
+  .monaco-select-box, 
+  .pane-header, 
+  [id="workbench.view.explorer"] .monaco-list-rows, 
+  .minimap-decorations-layer,
+  .xterm-cursor-layer,
+  .decorationsOverviewRuler,
   .monaco-breadcrumbs,
   .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows
   {
@@ -40,7 +49,7 @@ function buildWallpaperCss({
     background-repeat: no-repeat !important;
     background-size: cover !important;
   }
-  
+
   .monaco-icon-label-container {
     background: none !important;
   }
