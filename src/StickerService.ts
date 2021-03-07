@@ -26,10 +26,9 @@ function buildWallpaperCss({
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor  .overflow-guard>.monaco-scrollable-element::before,
-  .monaco-scrollable-element, 
-  .editor-scrollable,
   .overflow-guard, 
   .tab, 
+  .tabs-container,
   .split-view-view, 
   .monaco-pane-view,
   .composite.title, 
