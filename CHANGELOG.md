@@ -1,5 +1,12 @@
 # Change Log
 
+# 10.0.0 [Glass Pane Wallpapers!]
+
+- Changed the behavior of the wallpapers to look like they are behind a glass pane!
+  - Be sure to run the `Install ... Wallpaper` action!
+- Sticker and Wallpaper actions are now separate. (Mix and match if you so choose!)
+
+
 # 9.1.0 [Better Python Support]
 
 - Added better syntax coloring for Python code.
