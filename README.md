@@ -104,7 +104,7 @@ Great! I am glad you like it!
 
 Be sure to ⭐ and share it with other weebs!
 
-Also, giving it a good [review on the plugins page](https://plugins.jetbrains.com/plugin/10804-doki-doki-literature-club-theme) will help this plugin become visible to more otaku!
+Also, giving it a good [review on the extension marketplace](marketplace.visualstudio.com/items?itemName=unthrottled.doki-theme) will help this plugin become visible to more otaku!
 
 ## Contributions?
 
