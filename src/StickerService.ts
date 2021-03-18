@@ -35,7 +35,6 @@ function buildWallpaperCss({
   .content, 
   .monaco-select-box, 
   .pane-header, 
-  [id="workbench.view.explorer"] .monaco-list-rows, 
   .minimap-decorations-layer,
   .xterm-cursor-layer,
   .decorationsOverviewRuler,
@@ -56,7 +55,18 @@ function buildWallpaperCss({
     background-color: #00000000 !important;
   }
 
-  
+  [id="workbench.view.explorer"] .monaco-list-rows,
+  [id="workbench.view.explorer"] .pane-header,
+  [id="workbench.view.explorer"] .monaco-pane-view,
+  [id="workbench.view.explorer"] .split-view-view,
+  [id="workbench.view.explorer"] .monaco-tl-twistie,
+  [id="workbench.view.explorer"] .monaco-icon-label-container
+  {
+    background-color: #00000000 !important;
+    background-image: none !important;
+    border: none !important;
+  }
+
   .monaco-icon-label-container {
     background: none !important;
   }
