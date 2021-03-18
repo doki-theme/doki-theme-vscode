@@ -60,7 +60,8 @@ function buildWallpaperCss({
   [id="workbench.view.explorer"] .monaco-pane-view,
   [id="workbench.view.explorer"] .split-view-view,
   [id="workbench.view.explorer"] .monaco-tl-twistie,
-  [id="workbench.view.explorer"] .monaco-icon-label-container
+  [id="workbench.view.explorer"] .monaco-icon-label-container,
+  .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows 
   {
     background-color: #00000000 !important;
     background-image: none !important;
