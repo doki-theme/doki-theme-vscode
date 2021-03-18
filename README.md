@@ -25,6 +25,7 @@ I think you will find best girl.
 You can choose themes from various, Anime, Manga, or Visual Novels:
 
 - DanganRonpa
+- Darling in the Franxx
 - Doki-Doki Literature Club
 - Fate
 - Gate
@@ -36,6 +37,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Miss Kobayashi's Dragon Maid
 - Neon Genesis Evangelion
 - OreGairu
+- Rascal does not dream of bunny girl senpai
 - Re:Zero
 - Steins Gate
 - Sword Art Online
