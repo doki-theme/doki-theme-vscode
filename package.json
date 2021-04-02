@@ -29,7 +29,7 @@
     "Otaku"
   ],
   "activationEvents": [
-    "*",
+    "onStartupFinish",
     "onCommand:doki-theme.doki.changelog",
     "onCommand:doki-theme.remove.sticker",
     "onCommand:doki-theme.theme.Maika",
