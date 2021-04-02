@@ -1,11 +1,19 @@
 import * as vscode from "vscode";
-import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
-import {InstallStatus, installStickers, installWallPaper, removeStickers,} from "./StickerService";
-import {VSCodeGlobals} from "./VSCodeGlobals";
-import {StatusBarComponent} from "./StatusBar";
-import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow,} from "./SupportService";
+import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
+import {
+  InstallStatus,
+  installStickers,
+  installWallPaper,
+  removeStickers,
+} from "./StickerService";
+import { VSCodeGlobals } from "./VSCodeGlobals";
+import { StatusBarComponent } from "./StatusBar";
+import {
+  showStickerInstallationSupportWindow,
+  showStickerRemovalSupportWindow,
+} from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import {DokiThemeDefinition, Sticker} from "./extension";
+import { DokiThemeDefinition, Sticker } from "./extension";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
@@ -13,8 +21,41 @@ export const ACTIVE_STICKER = "doki.sticker.active";
 
 const FIRST_TIME_STICKER_INSTALL = "doki.sticker.first.install";
 
+const createCulturedInstall = (themeId: string): string =>
+  `doki.cultured.${themeId}`;
+
+const CULTURED_STICKER_INSTALL = createCulturedInstall(
+  "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160_test"
+);
+
 function isFirstTimeInstalling(context: vscode.ExtensionContext) {
   return !context.globalState.get(FIRST_TIME_STICKER_INSTALL);
+}
+
+async function conditionalInstall(
+  storageKey: string,
+  actionText: string,
+  messageBody: string,
+  installAsset: () => Promise<InstallStatus>,
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  const result = await vscode.window.showWarningMessage(
+    messageBody,
+    {
+      modal: true,
+    },
+    {
+      title: actionText,
+      isCloseAffordance: false,
+    }
+  );
+
+  if (result && result.title === actionText) {
+    context.globalState.update(storageKey, true);
+    return installAsset();
+  } else {
+    return InstallStatus.NOT_INSTALLED;
+  }
 }
 
 async function attemptToInstallAsset(
@@ -22,25 +63,27 @@ async function attemptToInstallAsset(
   sticker: Sticker,
   installAsset: () => Promise<InstallStatus>
 ): Promise<InstallStatus> {
-  if (isFirstTimeInstalling(context)) {
-    const stickerInstall = "Install Theme Assets";
-    const result = await vscode.window.showWarningMessage(
-      `Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`,
-      {
-        modal: true,
-      },
-      {
-        title: stickerInstall,
-        isCloseAffordance: false,
-      }
+  if (isCultured(context, sticker)) {
+    const storageKey = CULTURED_STICKER_INSTALL;
+    const actionText = "Yes, Please!";
+    const messageBody = `You are about to install sexually suggestive content. Are you sure you want to continue? I won't show you this message again in the future if you choose to install.`;
+    return conditionalInstall(
+      storageKey,
+      actionText,
+      messageBody,
+      installAsset,
+      context
     );
-
-    if (result && result.title === stickerInstall) {
-      context.globalState.update(FIRST_TIME_STICKER_INSTALL, true);
-      return installAsset();
-    } else {
-      return InstallStatus.NOT_INSTALLED;
-    }
+  } else if (isFirstTimeInstalling(context)) {
+    const actionText = "Install Theme Assets";
+    const messageBody = `Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`;
+    return conditionalInstall(
+      FIRST_TIME_STICKER_INSTALL,
+      actionText,
+      messageBody,
+      installAsset,
+      context
+    );
   } else {
     return installAsset();
   }
@@ -50,10 +93,8 @@ async function attemptToInstallSticker(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return attemptToInstallAsset(
-    context,
-    sticker,
-    () => performStickerInstall(sticker, context),
+  return attemptToInstallAsset(context, sticker, () =>
+    performStickerInstall(sticker, context)
   );
 }
 
@@ -61,10 +102,8 @@ async function attemptToInstallWallpaper(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return attemptToInstallAsset(
-    context,
-    sticker,
-    () => performWallpaperInstall(sticker, context),
+  return attemptToInstallAsset(context, sticker, () =>
+    performWallpaperInstall(sticker, context)
   );
 }
 
@@ -98,7 +137,7 @@ export function activateThemeSticker(
     currentSticker,
     context,
     "Sticker",
-    sticker => attemptToInstallSticker(sticker, context)
+    (sticker) => attemptToInstallSticker(sticker, context)
   );
 }
 
@@ -112,7 +151,7 @@ export function activateThemeWallpaper(
     currentSticker,
     context,
     "Wallpaper",
-    sticker => attemptToInstallWallpaper(sticker, context)
+    (sticker) => attemptToInstallWallpaper(sticker, context)
   );
 }
 
@@ -134,7 +173,7 @@ export function activateThemeAsset(
       vscode.window
         .showInformationMessage(
           `${dokiTheme.name}'s ${assetType} installed!\n Please restart your VSCode`,
-          {title: "Restart VSCode"}
+          { title: "Restart VSCode" }
         )
         .then((item) => {
           if (item) {
@@ -160,7 +199,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     vscode.window
       .showInformationMessage(
         `Removed Images. Please restart your restored IDE`,
-        {title: "Restart VSCode"}
+        { title: "Restart VSCode" }
       )
       .then((item) => {
         if (item) {
@@ -208,4 +247,13 @@ export function getSticker(
   return StickerType.SECONDARY === stickerType
     ? dokiThemeDefinition.stickers.secondary || defaultSticker
     : defaultSticker;
+}
+function isCultured(
+  context: vscode.ExtensionContext,
+  sticker: Sticker
+): boolean {
+  return (
+    sticker.name.indexOf("rias_onyx_spicy.png") > -1 &&
+    !context.globalState.get(CULTURED_STICKER_INSTALL)
+  );
 }
