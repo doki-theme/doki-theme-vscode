@@ -40,7 +40,8 @@ function buildWallpaperCss({
   .xterm-cursor-layer,
   .decorationsOverviewRuler,
   .monaco-breadcrumbs,
-  .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows
+  .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows,
+  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
   {
     background-image: url('${wallpaperURL}') !important;
     background-position: ${backgroundAnchoring} !important;
