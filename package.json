@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -29,9 +29,11 @@
     "Otaku"
   ],
   "activationEvents": [
-    "*",
+    "onStartupFinish",
     "onCommand:doki-theme.doki.changelog",
     "onCommand:doki-theme.remove.sticker",
+    "onCommand:doki-theme.theme.Maika",
+    "onCommand:doki-theme.theme.wallpaper.Maika",
     "onCommand:doki-theme.theme.Mai Dark",
     "onCommand:doki-theme.theme.wallpaper.Mai Dark",
     "onCommand:doki-theme.theme.Mai Dark.secondary",
@@ -50,6 +52,10 @@
     "onCommand:doki-theme.theme.wallpaper.Kanna.secondary",
     "onCommand:doki-theme.theme.Katsuragi Misato",
     "onCommand:doki-theme.theme.wallpaper.Katsuragi Misato",
+    "onCommand:doki-theme.theme.Rei",
+    "onCommand:doki-theme.theme.wallpaper.Rei",
+    "onCommand:doki-theme.theme.Astolfo",
+    "onCommand:doki-theme.theme.wallpaper.Astolfo",
     "onCommand:doki-theme.theme.Ishtar Dark",
     "onCommand:doki-theme.theme.wallpaper.Ishtar Dark",
     "onCommand:doki-theme.theme.Ishtar Light",
@@ -62,8 +68,12 @@
     "onCommand:doki-theme.theme.wallpaper.Zero Two Light",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
-    "onCommand:doki-theme.theme.Rias",
-    "onCommand:doki-theme.theme.wallpaper.Rias",
+    "onCommand:doki-theme.theme.Rias Crimson",
+    "onCommand:doki-theme.theme.wallpaper.Rias Crimson",
+    "onCommand:doki-theme.theme.Rias Onyx",
+    "onCommand:doki-theme.theme.wallpaper.Rias Onyx",
+    "onCommand:doki-theme.theme.Rias Onyx.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Rias Onyx.secondary",
     "onCommand:doki-theme.theme.Ryuko",
     "onCommand:doki-theme.theme.wallpaper.Ryuko",
     "onCommand:doki-theme.theme.Satsuki",
@@ -149,6 +159,14 @@
         "title": "Doki-Theme: Remove Sticker/Background"
       },
       {
+        "command": "doki-theme.theme.Maika",
+        "title": "Doki-Theme: Install Maika's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Maika",
+        "title": "Doki-Theme: Install Maika's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Mai Dark",
         "title": "Doki-Theme: Install Mai Dark's Sticker"
       },
@@ -221,6 +239,22 @@
         "title": "Doki-Theme: Install Katsuragi Misato's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Rei",
+        "title": "Doki-Theme: Install Rei's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rei",
+        "title": "Doki-Theme: Install Rei's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Astolfo",
+        "title": "Doki-Theme: Install Astolfo's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Astolfo",
+        "title": "Doki-Theme: Install Astolfo's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Ishtar Dark",
         "title": "Doki-Theme: Install Ishtar Dark's Sticker"
       },
@@ -269,12 +303,28 @@
         "title": "Doki-Theme: Install Rory Mercury's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Rias",
-        "title": "Doki-Theme: Install Rias's Sticker"
+        "command": "doki-theme.theme.Rias Crimson",
+        "title": "Doki-Theme: Install Rias Crimson's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Rias",
-        "title": "Doki-Theme: Install Rias's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Rias Crimson",
+        "title": "Doki-Theme: Install Rias Crimson's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Rias Onyx",
+        "title": "Doki-Theme: Install Rias Onyx's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rias Onyx",
+        "title": "Doki-Theme: Install Rias Onyx's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Rias Onyx.secondary",
+        "title": "Doki-Theme: Install Rias Onyx's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rias Onyx.secondary",
+        "title": "Doki-Theme: Install Rias Onyx's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ryuko",
@@ -573,6 +623,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "6106e529-efef-444d-9db0-a9b0b444cf1b",
+        "label": "Doki Theme: BlendS:  Maika",
+        "path": "./generatedThemes/Maika.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "98878c8e-9f91-4e25-930d-dd7d280d9e35",
         "label": "Doki Theme: BunnySenpai:  Mai",
         "path": "./generatedThemes/Mai Light.theme.json",
@@ -647,13 +703,31 @@
       {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
-        "path": "./generatedThemes/Rias.theme.json",
+        "path": "./generatedThemes/Rias Crimson.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
+        "label": "Doki Theme: DxD:  Rias",
+        "path": "./generatedThemes/Rias Onyx.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "8e8773ee-4bbb-4812-b311-005f04f6bb20",
         "label": "Doki Theme: EVA:  Misato",
         "path": "./generatedThemes/Katsuragi Misato.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "c262185d-9682-413b-9143-85a2dda76b2f",
+        "label": "Doki Theme: EVA:  Rei",
+        "path": "./generatedThemes/Rei.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "930c70c8-474e-4e2d-a223-d1e2b9da4fb1",
+        "label": "Doki Theme: Fate:  Astolfo",
+        "path": "./generatedThemes/Astolfo.theme.json",
         "uiTheme": "vs-dark"
       },
       {

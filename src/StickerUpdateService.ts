@@ -16,7 +16,7 @@ import { Sticker } from "./extension";
 
 export const attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentSticker: Sticker,
+  currentSticker: Sticker
 ): Promise<DokiStickers> => {
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
     currentSticker
@@ -38,11 +38,14 @@ export const attemptToUpdateSticker = async (
 
   const localStickerPath = resolveLocalStickerPath(currentSticker, context);
   const localWallpaperPath = resolveLocalWallpaperPath(currentSticker, context);
-  const localBackgroundPath = resolveLocalBackgroundPath(currentSticker, context);
+  const localBackgroundPath = resolveLocalBackgroundPath(
+    currentSticker,
+    context
+  );
   await Promise.all([
-    attemptToUpdateAsset(remoteStickerUrl, localStickerPath),
-    attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath),
-    attemptToUpdateAsset(remoteBackgroundUrl, localBackgroundPath),
+    attemptToUpdateAsset(remoteStickerUrl, localStickerPath, context),
+    attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath, context),
+    attemptToUpdateAsset(remoteBackgroundUrl, localBackgroundPath, context),
   ]);
 
   return {
@@ -55,8 +58,11 @@ export const attemptToUpdateSticker = async (
 
 async function attemptToUpdateAsset(
   remoteStickerUrl: string,
-  localStickerPath: string
+  localStickerPath: string,
+  context: vscode.ExtensionContext
 ) {
+  if (hasCheckedToday(remoteStickerUrl, context)) { return false; }
+
   if (await shouldDownloadNewAsset(remoteStickerUrl, localStickerPath)) {
     await installAsset(remoteStickerUrl, localStickerPath);
   }
@@ -77,19 +83,27 @@ const resolveLocalStickerPath = (
   return path.join(getStoragePath(context), "stickers", safeStickerPath);
 };
 
-function getWSLStoragePath(): string  {
-  const appDataDirectory = 'AppData';
+function getWSLStoragePath(): string {
+  const appDataDirectory = "AppData";
   const userAppDataIndex = workbenchDirectory.indexOf(appDataDirectory);
-  if(userAppDataIndex > -1) {
+  if (userAppDataIndex > -1) {
     const windowsGlobalStorageDirectory = path.resolve(
-        workbenchDirectory.substring(0, userAppDataIndex + appDataDirectory.length),
-        "Roaming", "Code", "User", "globalStorage", "unthrottled.doki-theme");
+      workbenchDirectory.substring(
+        0,
+        userAppDataIndex + appDataDirectory.length
+      ),
+      "Roaming",
+      "Code",
+      "User",
+      "globalStorage",
+      "unthrottled.doki-theme"
+    );
     try {
-      if(!fs.existsSync(windowsGlobalStorageDirectory)) {
-        fs.mkdirSync(windowsGlobalStorageDirectory, {recursive: true});
+      if (!fs.existsSync(windowsGlobalStorageDirectory)) {
+        fs.mkdirSync(windowsGlobalStorageDirectory, { recursive: true });
       }
       return windowsGlobalStorageDirectory;
-    }catch (e) {
+    } catch (e) {
       console.error("Unable to create roaming directory", e);
     }
   }
@@ -97,9 +111,7 @@ function getWSLStoragePath(): string  {
 }
 
 function getStoragePath(context: vscode.ExtensionContext) {
-  return isWSL() ?
-      getWSLStoragePath() :
-      context.globalStoragePath;
+  return isWSL() ? getWSLStoragePath() : context.globalStoragePath;
 }
 
 const resolveLocalWallpaperPath = (
@@ -117,17 +129,13 @@ const resolveLocalBackgroundPath = (
   return path.join(getStoragePath(context), "backgrounds", safeStickerPath);
 };
 
-
-
 const createCssDokiAssetUrl = (localAssetPath: string): string => {
   return `file://${cleanPathToUrl(localAssetPath)}`;
 };
 
 function cleanPathToUrl(stickerPath: string) {
   const scrubbedUrl = stickerPath.replace(/\\/g, "/");
-  return isWSL() ?
-      scrubbedUrl.replace('/mnt/c', 'c:') :
-      scrubbedUrl;
+  return isWSL() ? scrubbedUrl.replace("/mnt/c", "c:") : scrubbedUrl;
 }
 
 function stickerPathToUrl(currentSticker: Sticker) {
@@ -194,4 +202,24 @@ async function installAsset(
     console.error(`Unable to install asset ${remoteAssetUrl}!`, e);
   }
   return false;
+}
+
+const DAY_IN_MILLIS = 24 * 60 * 60 * 1000;
+
+function hasCheckedToday(
+  remoteAssetUrl: string,
+  context: vscode.ExtensionContext
+): boolean {
+  const assetCheckKey = `check.${remoteAssetUrl}`;
+  const checkDate = context.globalState.get(assetCheckKey) as number | undefined;
+  const meow = new Date().valueOf();
+  if(!checkDate) {
+    context.globalState.update(assetCheckKey, meow);
+    return false;
+  } else if ((meow - checkDate) >= DAY_IN_MILLIS) {
+    context.globalState.update(assetCheckKey, meow);
+    return false;
+  } else {
+    return true;
+  }
 }

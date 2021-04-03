@@ -1,5 +1,35 @@
 # Change Log
 
+# 11.0.0 [Astolfo, Maika, Rias, & Rei]
+
+## 4 New Themes
+
+From the Fate series:
+
+- Astolfo (Dark)
+
+From the Highschool DxD series:
+
+- Rias: Onyx (a darker theme)
+  - 2 Stickers:
+    - A Mild One
+    - A Cultured One
+
+From the Blend S series:
+
+- Sakuranomiya Maika (Dark)
+
+From the Neon Genesis Evangelion series:
+
+- Ayanami Rei (Dark)
+
+## Other stuff
+
+- Added [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) theming integration.
+- Updated activation events to enhance user startup experience.
+
+![v14 Girls](https://doki.assets.unthrottled.io/misc/v14_girls.png)
+
 # 10.0.0 [Glass Pane Wallpapers!]
 
 - Changed the behavior of the wallpapers to look like they are behind a glass pane!

@@ -27,13 +27,14 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 </p>
                 <h2>Themes!</h2>
                 <p>
-                    With over 30+ themes (light and dark) I think you will be able to find 
+                    With over 40+ themes (light and dark) I think you will be able to find 
                     find best girl.
                 </p>
                 <p>
                     You can choose themes from the following Doki-Doki Theme Suites such as:
                 </p>
                 <ul>
+                    <li>Blend S</li>
                     <li>Darling in the Franxx</li>
                     <li>DanganRonpa</li>
                     <li>Doki-Doki Literature Club</li>

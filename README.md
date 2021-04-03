@@ -24,6 +24,7 @@ I think you will find best girl.
 
 You can choose themes from various, Anime, Manga, or Visual Novels:
 
+- Blend S
 - DanganRonpa
 - Darling in the Franxx
 - Doki-Doki Literature Club
@@ -49,6 +50,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - [Configuration](#configuration)
     - [Background Images](#background-images)
     - [Stickers](#sticker)
+    - [Suggestive Content](#suggestive-content)
     - [Asset Removal](#remove-assets)
     - [Show Changelog](#changelog)
 - [Miscellaneous](#miscellaneous)
@@ -80,6 +82,24 @@ This feature will set the background image to the current theme's official wallp
 [This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
+
+## Suggestive Content
+
+<div align="center">
+    <img src="https://doki.assets.unthrottled.io/misc/suggestive/cultured.gif" ></img>
+</div>
+
+So I thought it was a good idea to add a bit of culture to this plugin.
+<sup><sup>Ya boi is horny on main.</sup></sup>
+
+I will give you a bit of a warning before you install suggestive content.
+Some of us are professional Otaku, who want to remain, well...professional.
+Don't worry if you choose to continue, I won't ask you again for that specific theme.
+
+Applies for the following content:
+
+- Rias Onyx: Secondary Content
+
 
 ## Remove Assets
 

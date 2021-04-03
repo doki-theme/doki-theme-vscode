@@ -20,6 +20,7 @@
     "list.activeSelectionForeground": "&selectionForeground&",
     "list.focusForeground": "&selectionForeground&",
     "pickerGroup.foreground": "&infoForeground&",
+    "gitlens.trailingLineForegroundColor": "&infoForeground&99",
     "input.placeholderForeground": "&infoForeground&",
     "list.deemphasizedForeground": "&infoForeground&",
     "list.inactiveSelectionBackground": "&selectionInactive&99",
@@ -63,6 +64,7 @@
     "editorGroupHeader.tabsBackground": "&editorBackground&",
     "dropdown.background": "&editorBackground&",
     "editorLineNumber.foreground": "&lineNumberColor&",
+    "gitlens.gutterForegroundColor": "&lineNumberColor&",
     "editorCursor.foreground": "&accentColor&",
     "editorWidget.border": "&accentColor&",
     "list.highlightForeground": "&accentColor&",
@@ -88,6 +90,7 @@
     "button.background": "&buttonColor&",
     "button.foreground": "&buttonFont&",
     "editor.lineHighlightBackground": "&caretRow&77",
+    "gitlens.trailingLineBackgroundColor": "&caretRow&77",
     "editor.lineHighlightBorder": "&caretRow&00",
     "sideBarSectionHeader.background": "&caretRow&77",
     "activityBar.background": "&caretRow&",
@@ -109,6 +112,7 @@
     "scrollbar.shadow": "#1111113a",
     "titleBar.activeBackground": "&headerColor&",
     "titleBar.inactiveBackground": "&headerColor&",
+    "gitlens.gutterBackgroundColor": "&codeBlock&",
     "peekViewEditor.background": "&codeBlock&",
     "peekViewEditorGutter.background": "&codeBlock&",
     "terminal.ansiRed": "#E356A7",
@@ -122,6 +126,8 @@
     "debugIcon.breakpointStackframeForeground": "&selectionInactive&",
     "editor.focusedStackFrameHighlightBackground": "&selectionInactive&",
     "diffEditor.removedTextBackground": "&diff.deleted&50",
-    "diffEditor.insertedTextBackground": "&diff.inserted&50"
+    "diffEditor.insertedTextBackground": "&diff.inserted&50",
+    "gitlens.gutterUncommittedForegroundColor": "&diff.modified&",
+    "gitlens.lineHighlightBackgroundColor": "&diff.inserted&50"
   }
 }
