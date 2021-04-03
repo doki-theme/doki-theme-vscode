@@ -210,14 +210,14 @@ function hasCheckedToday(
   remoteAssetUrl: string,
   context: vscode.ExtensionContext
 ): boolean {
-  const checkKey = `check.${remoteAssetUrl}`;
-  const checkDate = context.globalState.get(checkKey) as number | undefined;
+  const assetCheckKey = `check.${remoteAssetUrl}`;
+  const checkDate = context.globalState.get(assetCheckKey) as number | undefined;
   const meow = new Date().valueOf();
   if(!checkDate) {
-    context.globalState.update(checkKey, meow)
+    context.globalState.update(assetCheckKey, meow)
     return false
   } else if ((meow - checkDate) >= DAY_IN_MILLIS) {
-    context.globalState.update(checkKey, meow);
+    context.globalState.update(assetCheckKey, meow);
     return false;
   } else {
     return true;
