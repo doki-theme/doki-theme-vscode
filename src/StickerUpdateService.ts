@@ -61,7 +61,7 @@ async function attemptToUpdateAsset(
   localStickerPath: string,
   context: vscode.ExtensionContext
 ) {
-  if (hasCheckedToday(remoteStickerUrl, context)) return false;
+  if (hasCheckedToday(remoteStickerUrl, context)) { return false; }
 
   if (await shouldDownloadNewAsset(remoteStickerUrl, localStickerPath)) {
     await installAsset(remoteStickerUrl, localStickerPath);
@@ -204,7 +204,7 @@ async function installAsset(
   return false;
 }
 
-const DAY_IN_MILLIS = 24 * 60 * 60 * 1000
+const DAY_IN_MILLIS = 24 * 60 * 60 * 1000;
 
 function hasCheckedToday(
   remoteAssetUrl: string,
@@ -214,8 +214,8 @@ function hasCheckedToday(
   const checkDate = context.globalState.get(assetCheckKey) as number | undefined;
   const meow = new Date().valueOf();
   if(!checkDate) {
-    context.globalState.update(assetCheckKey, meow)
-    return false
+    context.globalState.update(assetCheckKey, meow);
+    return false;
   } else if ((meow - checkDate) >= DAY_IN_MILLIS) {
     context.globalState.update(assetCheckKey, meow);
     return false;
