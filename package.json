@@ -68,12 +68,12 @@
     "onCommand:doki-theme.theme.wallpaper.Zero Two Light",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
-    "onCommand:doki-theme.theme.Rias: Crimson",
-    "onCommand:doki-theme.theme.wallpaper.Rias: Crimson",
-    "onCommand:doki-theme.theme.Rias: Onyx",
-    "onCommand:doki-theme.theme.wallpaper.Rias: Onyx",
-    "onCommand:doki-theme.theme.Rias: Onyx.secondary",
-    "onCommand:doki-theme.theme.wallpaper.Rias: Onyx.secondary",
+    "onCommand:doki-theme.theme.Rias Crimson",
+    "onCommand:doki-theme.theme.wallpaper.Rias Crimson",
+    "onCommand:doki-theme.theme.Rias Onyx",
+    "onCommand:doki-theme.theme.wallpaper.Rias Onyx",
+    "onCommand:doki-theme.theme.Rias Onyx.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Rias Onyx.secondary",
     "onCommand:doki-theme.theme.Ryuko",
     "onCommand:doki-theme.theme.wallpaper.Ryuko",
     "onCommand:doki-theme.theme.Satsuki",
@@ -303,28 +303,28 @@
         "title": "Doki-Theme: Install Rory Mercury's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Rias: Crimson",
-        "title": "Doki-Theme: Install Rias: Crimson's Sticker"
+        "command": "doki-theme.theme.Rias Crimson",
+        "title": "Doki-Theme: Install Rias Crimson's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Rias: Crimson",
-        "title": "Doki-Theme: Install Rias: Crimson's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Rias Crimson",
+        "title": "Doki-Theme: Install Rias Crimson's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Rias: Onyx",
-        "title": "Doki-Theme: Install Rias: Onyx's Sticker"
+        "command": "doki-theme.theme.Rias Onyx",
+        "title": "Doki-Theme: Install Rias Onyx's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Rias: Onyx",
-        "title": "Doki-Theme: Install Rias: Onyx's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Rias Onyx",
+        "title": "Doki-Theme: Install Rias Onyx's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Rias: Onyx.secondary",
-        "title": "Doki-Theme: Install Rias: Onyx's Secondary Sticker"
+        "command": "doki-theme.theme.Rias Onyx.secondary",
+        "title": "Doki-Theme: Install Rias Onyx's Secondary Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Rias: Onyx.secondary",
-        "title": "Doki-Theme: Install Rias: Onyx's Secondary Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Rias Onyx.secondary",
+        "title": "Doki-Theme: Install Rias Onyx's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ryuko",
@@ -703,13 +703,13 @@
       {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
-        "path": "./generatedThemes/Rias: Crimson.theme.json",
+        "path": "./generatedThemes/Rias Crimson.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
         "label": "Doki Theme: DxD:  Rias",
-        "path": "./generatedThemes/Rias: Onyx.theme.json",
+        "path": "./generatedThemes/Rias Onyx.theme.json",
         "uiTheme": "vs-dark"
       },
       {

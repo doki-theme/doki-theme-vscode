@@ -255,7 +255,7 @@ evaluateTemplates(
         path.resolve(
           repoDirectory,
           themeOutputDirectory,
-          `${dokiTheme.definition.name}${themePostfix}`
+          `${getName(dokiTheme.definition)}${themePostfix}`
         ),
         JSON.stringify(vsCodeTheme, null, 2)
       );
@@ -280,7 +280,7 @@ evaluateTemplates(
 
     const commands = stickerInstallCommands.map((commandAndDefinition) => ({
       command: commandAndDefinition.command,
-      title: `Doki-Theme: Install ${commandAndDefinition.definition.name}'s${
+      title: `Doki-Theme: Install ${getName(commandAndDefinition.definition)}'s${
         commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
       } ${
         commandAndDefinition.command.indexOf('wallpaper') >=0 ? 'Wallpaper' : 'Sticker'
@@ -293,7 +293,7 @@ evaluateTemplates(
       label: `Doki Theme: ${getGroupName(dokiDefinition)} ${
         dokiDefinition.displayName
       }`,
-      path: `./${themeOutputDirectory}/${dokiDefinition.name}${themePostfix}`,
+      path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
     })).sort((a, b) => {
       if(a.id === sakurajimaMaiID) {
@@ -360,13 +360,17 @@ function getCommandNames(dokiDefinition: MasterDokiThemeDefinition): string[] {
     .map((type) => {
       if (type === "default") {
         return [
-          `doki-theme.theme.${dokiDefinition.name}`,
-          `doki-theme.theme.wallpaper.${dokiDefinition.name}`
+          `doki-theme.theme.${getName(dokiDefinition)}`,
+          `doki-theme.theme.wallpaper.${getName(dokiDefinition)}`
         ];
       }
       return [
-        `doki-theme.theme.${dokiDefinition.name}.secondary`,
-        `doki-theme.theme.wallpaper.${dokiDefinition.name}.secondary`,
+        `doki-theme.theme.${getName(dokiDefinition)}.secondary`,
+        `doki-theme.theme.wallpaper.${getName(dokiDefinition)}.secondary`,
       ];
     }).reduce((accum, next) => accum.concat(next), []);
 }
+function getName(dokiDefinition: MasterDokiThemeDefinition) {
+  return dokiDefinition.name.replace(':', '');
+}
+

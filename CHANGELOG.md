@@ -28,6 +28,8 @@ From the Neon Genesis Evangelion series:
 - Added [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) theming integration.
 - Updated activation events to enhance user startup experience.
 
+![v14 Girls](https://doki.assets.unthrottled.io/misc/v14_girls.png)
+
 # 10.0.0 [Glass Pane Wallpapers!]
 
 - Changed the behavior of the wallpapers to look like they are behind a glass pane!
