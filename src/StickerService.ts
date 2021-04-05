@@ -40,6 +40,8 @@ function buildWallpaperCss({
   .xterm-cursor-layer,
   .decorationsOverviewRuler,
   .monaco-breadcrumbs,
+  .ref-tree, /* find usages */
+  .head, /* find usages */
   .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
   {
