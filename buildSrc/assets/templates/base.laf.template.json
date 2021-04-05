@@ -11,7 +11,7 @@
     "peekViewResult.background": "&secondaryBackground&",
     "list.focusBackground": "&selectionBackground&",
     "quickInput.list.focusBackground": "&selectionBackground&AA",
-    "selection.background": "&selectionBackground&",
+    "selection.background": "&accentColor&",
     "list.activeSelectionBackground": "&selectionBackground&",
     "peekViewResult.selectionBackground": "&selectionBackground&",
     "list.hoverBackground": "&selectionBackground&2A",
