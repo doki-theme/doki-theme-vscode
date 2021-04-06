@@ -39,7 +39,9 @@ function buildWallpaperCss({
   .minimap-decorations-layer,
   .xterm-cursor-layer,
   .decorationsOverviewRuler,
-  .monaco-breadcrumbs,
+  .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
+  .ref-tree, /* find usages */
+  .head, /* find usages */
   .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
   {
@@ -50,6 +52,11 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
 
+  .monaco-breadcrumbs {
+    background-color: #00000000 !important;
+  }
+
+  
   .monaco-icon-label-container {
     background: none !important;
   }

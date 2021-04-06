@@ -1,5 +1,9 @@
 # Change Log
 
+# 11.1.0 [Usability Updates]
+
+- Fixed all theme usability issues found in [#46](https://github.com/doki-theme/doki-theme-vscode/issues/46).
+
 # 11.0.0 [Astolfo, Maika, Rias, & Rei]
 
 ## 4 New Themes
