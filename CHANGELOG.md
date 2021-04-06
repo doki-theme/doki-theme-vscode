@@ -2,7 +2,7 @@
 
 # 11.1.1 [Better Glass Pane Experience]
 
-- Fixed annoying background dragging in file tree.
+- Fixed annoying background dragging in file tree. Be sure to re-install the wallpaper for this to take effect.
 
 | Before | After |
 | --- | --- |
