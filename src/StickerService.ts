@@ -41,7 +41,6 @@ function buildWallpaperCss({
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
-  .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
   {
     background-image: url('${wallpaperURL}') !important;
