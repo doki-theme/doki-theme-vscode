@@ -35,14 +35,12 @@ function buildWallpaperCss({
   .content, 
   .monaco-select-box, 
   .pane-header, 
-  [id="workbench.view.explorer"] .monaco-list-rows, 
   .minimap-decorations-layer,
   .xterm-cursor-layer,
   .decorationsOverviewRuler,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
-  .monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view .monaco-list-rows,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
   {
     background-image: url('${wallpaperURL}') !important;
@@ -56,7 +54,21 @@ function buildWallpaperCss({
     background-color: #00000000 !important;
   }
 
-  
+  [id="workbench.view.explorer"] .monaco-list-rows,
+  [id="workbench.view.explorer"] .pane-header,
+  [id="workbench.view.explorer"] .monaco-pane-view,
+  [id="workbench.view.explorer"] .split-view-view,
+  [id="workbench.view.explorer"] .monaco-tl-twistie,
+  [id="workbench.view.explorer"] .monaco-icon-label-container,
+  .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  .show-file-icons > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows
+  {
+    background-color: #00000000 !important;
+    background-image: none !important;
+    border: none !important;
+  }
+
   .monaco-icon-label-container {
     background: none !important;
   }

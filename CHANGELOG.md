@@ -1,5 +1,14 @@
 # Change Log
 
+# 11.1.1 [Better Glass Pane Experience]
+
+- Fixed annoying background dragging in file tree. Be sure to re-install the wallpaper for this to take effect.
+
+| Before | After |
+| --- | --- |
+| ![Peek 2021-03-18 17-57](https://user-images.githubusercontent.com/15972415/111708429-d38e3300-8813-11eb-916c-bdbb05388c2f.gif) | ![Peek 2021-03-18 17-53](https://user-images.githubusercontent.com/15972415/111708430-d426c980-8813-11eb-84f5-960b0bb6673d.gif) |
+
+
 # 11.1.0 [Usability Updates]
 
 - Fixed all theme usability issues found in [#46](https://github.com/doki-theme/doki-theme-vscode/issues/46).
