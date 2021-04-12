@@ -29,7 +29,7 @@ function buildWallpaperCss({
   .overflow-guard, 
   .tab, 
   .tabs-container,
-  .split-view-view, 
+  /* .split-view-view, */ /* draws the wallpaper over the bckground */
   .monaco-pane-view,
   .composite.title, 
   .content, 
@@ -41,10 +41,9 @@ function buildWallpaperCss({
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
-  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,
+  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,  
   .editor-container, /* welcome screen */
-  .terminal-outer-container,  /* Terminal outer edge */
-  .markers-panel-container /* Problems */
+  .terminal-outer-container /* Terminal outer edge */
   {
     background-image: url('${wallpaperURL}') !important;
     background-position: ${backgroundAnchoring} !important;
@@ -53,15 +52,18 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
 
-  /* Output panel */
+  /* Output panel transparency*/
   .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
-  .margin-view-overlays, 
-  .margin, 
-  /* Welcome screen */
-  .editor-instance,
-  .welcomePageContainer,
-  .welcomePage,
-  .welcomePageFocusElement
+  div.overflow-guard > div.margin > div.margin-view-overlays, 
+  div.overflow-guard > div.margin
+  {
+    background-color: transparent !important;
+  }
+
+  /* Glass items - common for both */
+  .monaco-list,
+  .monaco-list-rows,
+  .monaco-list-row
   {
     background-color: transparent !important;
   }
@@ -73,9 +75,6 @@ function buildWallpaperCss({
     background-color: rgba(0, 255, 0, 0.4) !important;
   }
 
-  .monaco-list,
-  .monaco-list-rows,
-  .monaco-list-row,
   .notifications-toasts,
   .notification-toast-container,
   .notifications-list-container,
