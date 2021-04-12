@@ -61,7 +61,7 @@ function buildWallpaperCss({
   }
 
   /* Glass items - common for both */
-  notifications-list-container > .monaco-list,
+  .monaco-list,
   .monaco-list-rows,
   .monaco-list-row
   {
