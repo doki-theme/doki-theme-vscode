@@ -41,13 +41,58 @@ function buildWallpaperCss({
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
-  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
+  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,
+  .editor-container, /* welcome screen */
+  .terminal-outer-container,  /* Terminal outer edge */
+  .markers-panel-container /* Problems */
   {
     background-image: url('${wallpaperURL}') !important;
     background-position: ${backgroundAnchoring} !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+  }
+
+  /* Output panel */
+  .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
+  .margin-view-overlays, 
+  .margin, 
+  /* Welcome screen */
+  .editor-instance,
+  .welcomePageContainer,
+  .welcomePage,
+  .welcomePageFocusElement
+  {
+    background-color: transparent !important;
+  }
+
+  /* Glass notifications */
+  .notification-toast 
+  {
+    backdrop-filter: blur(3px) !important;
+    background-color: rgba(0, 255, 0, 0.4) !important;
+  }
+
+  .monaco-list,
+  .monaco-list-rows,
+  .monaco-list-row,
+  .notifications-toasts,
+  .notification-toast-container,
+  .notifications-list-container,
+  .notification-list-item,
+  .notification-list-item
+  {
+    background-color: transparent !important;
+  }
+
+  /* Glass quick task */
+  .quick-input-list
+  {
+    background-color: transparent !important;
+  }
+  .quick-input-widget {
+    backdrop-filter: blur(3px) !important;
+    background-color: rgba(255, 0, 0, 0.2) !important;
   }
 
   .monaco-breadcrumbs {
