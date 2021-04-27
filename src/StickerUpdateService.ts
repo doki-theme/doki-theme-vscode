@@ -196,12 +196,6 @@ const fetchLocalChecksum = async (localSticker: string) => {
     : "File not downloaded, bruv.";
 };
 
-enum AssetCheck {
-  YES,
-  NO,
-  ERROR,
-}
-
 const shouldDownloadNewAsset = async (
   remoteAssetUrl: string,
   localStickerPath: string

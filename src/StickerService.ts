@@ -2,7 +2,6 @@ import * as vscode from "vscode";
 import fs from "fs";
 import { editorCss, editorCssCopy } from "./ENV";
 import {
-  attemptToUpdateSticker,
   forceUpdateSticker,
   NetworkError,
 } from "./StickerUpdateService";
