@@ -3,7 +3,7 @@
 # 11.1.2 [Network Error Handling]
 
 - Alerting user that asset installation has failed because of network issues.
-- Restored word highlighting ([#61](https://github.com/doki-theme/doki-theme-vscode/issues/62))
+- Restored word highlighting ([#62](https://github.com/doki-theme/doki-theme-vscode/issues/62))
 
 # 11.1.1 [Better Glass Pane Experience]
 
