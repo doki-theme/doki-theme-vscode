@@ -116,7 +116,7 @@ async function performStickerInstall(
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
   const installResult = await installStickers(sticker, context);
-  return getInstallStatus(installResult);
+  return installResult;
 }
 
 async function performWallpaperInstall(
@@ -124,7 +124,7 @@ async function performWallpaperInstall(
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
   const installResult = await installWallPaper(sticker, context);
-  return getInstallStatus(installResult);
+  return installResult;
 }
 
 export function activateThemeSticker(
@@ -184,6 +184,10 @@ export function activateThemeAsset(
       showStickerInstallationSupportWindow(context);
       vscode.window.showErrorMessage(
         `Unable to install ${dokiTheme.name}, please see active tab for more information.`
+      );
+    } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
+      vscode.window.showErrorMessage(
+        `Unable to install ${dokiTheme.name}, please check your network connection.`
       );
     }
   });
