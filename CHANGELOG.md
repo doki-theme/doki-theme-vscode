@@ -1,5 +1,9 @@
 # Change Log
 
+# 11.1.2 [Network Error Handling]
+
+- Alerting user that asset installation has failed because of network issues.
+
 # 11.1.1 [Better Glass Pane Experience]
 
 - Fixed annoying background dragging in file tree. Be sure to re-install the wallpaper for this to take effect.
