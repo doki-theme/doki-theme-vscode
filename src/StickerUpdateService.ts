@@ -14,9 +14,26 @@ import {
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
 
+export const forceUpdateSticker = async (
+  context: vscode.ExtensionContext,
+  currentSticker: Sticker
+): Promise<DokiStickers> =>
+  _attemptToUpdateSticker(context, currentSticker, forceUpdateAsset);
+
 export const attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
   currentSticker: Sticker
+): Promise<DokiStickers> =>
+  _attemptToUpdateSticker(context, currentSticker, attemptToUpdateAsset);
+
+const _attemptToUpdateSticker = async (
+  context: vscode.ExtensionContext,
+  currentSticker: Sticker,
+  assetUpdater: (
+    remoteStickerUrl: string,
+    localStickerPath: string,
+    context: vscode.ExtensionContext
+  ) => Promise<void>
 ): Promise<DokiStickers> => {
   const remoteStickerUrl = `${VSCODE_ASSETS_URL}${stickerPathToUrl(
     currentSticker
@@ -43,9 +60,9 @@ export const attemptToUpdateSticker = async (
     context
   );
   await Promise.all([
-    attemptToUpdateAsset(remoteStickerUrl, localStickerPath, context),
-    attemptToUpdateAsset(remoteWallpaperUrl, localWallpaperPath, context),
-    attemptToUpdateAsset(remoteBackgroundUrl, localBackgroundPath, context),
+    assetUpdater(remoteStickerUrl, localStickerPath, context),
+    assetUpdater(remoteWallpaperUrl, localWallpaperPath, context),
+    assetUpdater(remoteBackgroundUrl, localBackgroundPath, context),
   ]);
 
   return {
@@ -61,10 +78,26 @@ async function attemptToUpdateAsset(
   localStickerPath: string,
   context: vscode.ExtensionContext
 ) {
-  if (hasCheckedToday(remoteStickerUrl, context)) { return false; }
+  if (hasCheckedToday(remoteStickerUrl, context)) {
+    return;
+  }
 
-  if (await shouldDownloadNewAsset(remoteStickerUrl, localStickerPath)) {
-    await installAsset(remoteStickerUrl, localStickerPath);
+  await forceUpdateAsset(remoteStickerUrl, localStickerPath);
+}
+
+export class NetworkError extends Error {}
+
+async function forceUpdateAsset(
+  remoteStickerUrl: string,
+  localStickerPath: string
+) {
+  try {
+    if (await shouldDownloadNewAsset(remoteStickerUrl, localStickerPath)) {
+      await installAsset(remoteStickerUrl, localStickerPath);
+    }
+  } catch (e) {
+    console.error(`Unable to get remote asset ${remoteStickerUrl}!`, e);
+    throw new NetworkError();
   }
 }
 
@@ -167,14 +200,9 @@ const shouldDownloadNewAsset = async (
   remoteAssetUrl: string,
   localStickerPath: string
 ): Promise<boolean> => {
-  try {
-    const remoteChecksum = await fetchRemoteChecksum(remoteAssetUrl);
-    const localChecksum = await fetchLocalChecksum(localStickerPath);
-    return remoteChecksum !== localChecksum;
-  } catch (e) {
-    console.error("Unable to check for updates", e);
-    return false;
-  }
+  const remoteChecksum = await fetchRemoteChecksum(remoteAssetUrl);
+  const localChecksum = await fetchLocalChecksum(localStickerPath);
+  return remoteChecksum !== localChecksum;
 };
 
 const downloadRemoteAsset = async (
@@ -194,14 +222,8 @@ const downloadRemoteAsset = async (
 async function installAsset(
   remoteAssetUrl: string,
   localAssetPath: string
-): Promise<boolean> {
-  try {
-    await downloadRemoteAsset(remoteAssetUrl, localAssetPath);
-    return true;
-  } catch (e) {
-    console.error(`Unable to install asset ${remoteAssetUrl}!`, e);
-  }
-  return false;
+): Promise<void> {
+  await downloadRemoteAsset(remoteAssetUrl, localAssetPath);
 }
 
 const DAY_IN_MILLIS = 24 * 60 * 60 * 1000;
@@ -211,12 +233,14 @@ function hasCheckedToday(
   context: vscode.ExtensionContext
 ): boolean {
   const assetCheckKey = `check.${remoteAssetUrl}`;
-  const checkDate = context.globalState.get(assetCheckKey) as number | undefined;
-  const meow = new Date().valueOf();
-  if(!checkDate) {
+  const checkDate = context.globalState.get(assetCheckKey) as
+    | number
+    | undefined;
+  const meow = Date.now();
+  if (!checkDate) {
     context.globalState.update(assetCheckKey, meow);
     return false;
-  } else if ((meow - checkDate) >= DAY_IN_MILLIS) {
+  } else if (meow - checkDate >= DAY_IN_MILLIS) {
     context.globalState.update(assetCheckKey, meow);
     return false;
   } else {

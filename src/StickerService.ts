@@ -1,27 +1,32 @@
 import * as vscode from "vscode";
 import fs from "fs";
-import {editorCss, editorCssCopy} from "./ENV";
-import {attemptToUpdateSticker} from "./StickerUpdateService";
-import {Sticker} from "./extension";
+import { editorCss, editorCssCopy } from "./ENV";
+import {
+  forceUpdateSticker,
+  NetworkError,
+} from "./StickerUpdateService";
+import { Sticker } from "./extension";
 
 export enum InstallStatus {
   INSTALLED,
   NOT_INSTALLED,
   FAILURE,
+  NETWORK_FAILURE,
 }
 
 const stickerComment = "/* Stickers */";
 const wallpaperComment = "/* Background Image */";
 
-const getStickerIndex = (currentCss: string) => currentCss.indexOf(stickerComment);
-const getWallpaperIndex = (currentCss: string) => currentCss.indexOf(wallpaperComment);
-
+const getStickerIndex = (currentCss: string) =>
+  currentCss.indexOf(stickerComment);
+const getWallpaperIndex = (currentCss: string) =>
+  currentCss.indexOf(wallpaperComment);
 
 function buildWallpaperCss({
-                             backgroundImageURL: backgroundUrl,
-                             wallpaperImageURL: wallpaperURL,
-                             backgroundAnchoring,
-                           }: DokiStickers): string {
+  backgroundImageURL: backgroundUrl,
+  wallpaperImageURL: wallpaperURL,
+  backgroundAnchoring,
+}: DokiStickers): string {
   return `${wallpaperComment}
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
@@ -88,9 +93,7 @@ function buildWallpaperCss({
   `;
 }
 
-function buildStickerCss({
-                           stickerDataURL: stickerUrl,
-                         }: DokiStickers): string {
+function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
   const style =
     "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
   return `
@@ -136,43 +139,41 @@ export interface DokiStickers {
 export async function installStickers(
   sticker: Sticker,
   context: vscode.ExtensionContext
-): Promise<boolean> {
-  return installStyles(
-    sticker,
-    context,
-    stickersAndWallpaper => buildCSSWithStickers(stickersAndWallpaper));
+): Promise<InstallStatus> {
+  return installStyles(sticker, context, (stickersAndWallpaper) =>
+    buildCSSWithStickers(stickersAndWallpaper)
+  );
 }
 
 export async function installWallPaper(
   sticker: Sticker,
   context: vscode.ExtensionContext
-): Promise<boolean> {
-  return installStyles(
-    sticker,
-    context,
-    stickersAndWallpaper => buildCSSWithWallpaper(stickersAndWallpaper));
+): Promise<InstallStatus> {
+  return installStyles(sticker, context, (stickersAndWallpaper) =>
+    buildCSSWithWallpaper(stickersAndWallpaper)
+  );
 }
 
 async function installStyles(
   sticker: Sticker,
   context: vscode.ExtensionContext,
   cssDecorator: (assets: DokiStickers) => string
-): Promise<boolean> {
+): Promise<InstallStatus> {
   if (canWrite()) {
     try {
-      const stickersAndWallpaper = await attemptToUpdateSticker(
-        context,
-        sticker
-      );
+      const stickersAndWallpaper = await forceUpdateSticker(context, sticker);
       const stickerStyles = cssDecorator(stickersAndWallpaper);
       installEditorStyles(stickerStyles);
-      return true;
+      return InstallStatus.INSTALLED;
     } catch (e) {
       console.error("Unable to install sticker!", e);
+      if (e instanceof NetworkError) {
+        return InstallStatus.NETWORK_FAILURE;
+      }
     }
   }
 
-  return false;
+  return InstallStatus.FAILURE;
 }
 
 function getScrubbedCSS() {
@@ -182,34 +183,31 @@ function getScrubbedCSS() {
   return trimCss(trimmedCss, getWallpaperIndex(trimmedCss));
 }
 
-function scrubCssOfAsset(getAssetOneIndex: (currentCss: string) => number,
-                         getAssetToRemoveIndex: (currentCss: string) => number) {
+function scrubCssOfAsset(
+  getAssetOneIndex: (currentCss: string) => number,
+  getAssetToRemoveIndex: (currentCss: string) => number
+) {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
   const otherAssetIndex = getAssetOneIndex(currentCss);
   const assetToRemoveIndex = getAssetToRemoveIndex(currentCss);
   if (otherAssetIndex < 0) {
     return trimCss(currentCss, assetToRemoveIndex);
   } else if (assetToRemoveIndex > -1) {
-    return currentCss.substring(0, assetToRemoveIndex) + (
-      assetToRemoveIndex < otherAssetIndex ?
-        '\n' + currentCss.substring(otherAssetIndex, currentCss.length) :
-        ''
+    return (
+      currentCss.substring(0, assetToRemoveIndex) +
+      (assetToRemoveIndex < otherAssetIndex
+        ? "\n" + currentCss.substring(otherAssetIndex, currentCss.length)
+        : "")
     );
   }
   return currentCss;
 }
 
 function getWallpaperScrubbedCSS() {
-  return scrubCssOfAsset(
-    getStickerIndex,
-    getWallpaperIndex,
-  );
+  return scrubCssOfAsset(getStickerIndex, getWallpaperIndex);
 }
 function getStickerScrubbedCSS() {
-  return scrubCssOfAsset(
-    getWallpaperIndex,
-    getStickerIndex,
-  );
+  return scrubCssOfAsset(getWallpaperIndex, getStickerIndex);
 }
 
 function trimCss(currentCss: string, index: number): string {
