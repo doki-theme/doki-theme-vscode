@@ -236,7 +236,7 @@ function hasCheckedToday(
   const checkDate = context.globalState.get(assetCheckKey) as
     | number
     | undefined;
-  const meow = new Date().valueOf();
+  const meow = Date.now();
   if (!checkDate) {
     context.globalState.update(assetCheckKey, meow);
     return false;
