@@ -1,11 +1,19 @@
 import * as vscode from "vscode";
-import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
-import {InstallStatus, installStickers, installWallPaper, removeStickers,} from "./StickerService";
-import {VSCodeGlobals} from "./VSCodeGlobals";
-import {StatusBarComponent} from "./StatusBar";
-import {showStickerInstallationSupportWindow, showStickerRemovalSupportWindow,} from "./SupportService";
+import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
+import {
+  InstallStatus,
+  installStickers,
+  installWallPaper,
+  removeStickers,
+} from "./StickerService";
+import { VSCodeGlobals } from "./VSCodeGlobals";
+import { StatusBarComponent } from "./StatusBar";
+import {
+  showStickerInstallationSupportWindow,
+  showStickerRemovalSupportWindow,
+} from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import {DokiThemeDefinition, Sticker} from "./extension";
+import { DokiThemeDefinition, Sticker } from "./extension";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
