@@ -1,5 +1,9 @@
 # Change Log
 
+# 11.1.3 [Handling non-url characters better]
+
+- Mitigated issues where a user's local file path is not url-friendly, preventing assets from showing up. ([#63](https://github.com/doki-theme/doki-theme-vscode/issues/63)))
+
 # 11.1.2 [Network Error Handling]
 
 - Alerting user that asset installation has failed because of network issues.
