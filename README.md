@@ -81,7 +81,7 @@ This causes some usability issues, however installing your theme's wallpaper fix
 
 | Before | After |
 | --- | --- | 
-| ![not usable](./readmeStuff/unusable_quickinput.png) | ![not usable](./readmeStuff/useable_quickinput.png)
+| ![not usable](./readmeStuff/unusable_quickinput.png) | ![usable](./readmeStuff/useable_quickinput.png)
 
 > Note: colors can be adjusted using the [Quick picker colors](https://code.visualstudio.com/api/references/theme-color#quick-picker-colors)
 
