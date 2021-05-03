@@ -71,7 +71,7 @@ function buildWallpaperCss({
 
   .quick-input-widget
   {
-    backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(5px) !important;
   }
 
   .monaco-breadcrumbs {

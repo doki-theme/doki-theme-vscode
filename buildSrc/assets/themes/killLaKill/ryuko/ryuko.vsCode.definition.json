@@ -1,7 +1,12 @@
 {
   "id": "19b65ec8-133c-4655-a77b-13623d8e97d3",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "quickInput.foreground": "&foregroundColor&"
+    }
+  },
   "backgrounds": {
     "default": {
       "anchor": "right"
