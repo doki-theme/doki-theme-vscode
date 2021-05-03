@@ -69,6 +69,11 @@ function buildWallpaperCss({
     background-color: transparent !important;
   }
 
+  .quick-input-widget
+  {
+    backdrop-filter: blur(4px) !important;
+  }
+
   .monaco-breadcrumbs {
     background-color: #00000000 !important;
   }
@@ -116,8 +121,14 @@ function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
   body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .monaco-scrollable-element > .split-view-container::after
   {background-image: url('${stickerUrl}');${style}}
 
+  /* Makes sure notification shows on top of sticker */
   .notifications-toasts {
     z-index: 9002 !important;
+  }
+
+  /* glass pane to show sticker */
+  .notification-toast {
+    backdrop-filter: blur(2px) !important;
   }
 `;
 }
