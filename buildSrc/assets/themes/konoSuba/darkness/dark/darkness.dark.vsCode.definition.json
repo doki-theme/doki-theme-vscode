@@ -3,7 +3,9 @@
   "overrides": {},
   "laf": {
     "extends": "dark-contrast",
-    "ui": {}
+    "ui": {
+      "quickInput.foreground": "&foregroundColor&"
+    }
   },
   "syntax": {},
   "colors": {}
