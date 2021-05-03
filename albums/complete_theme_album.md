@@ -6,9 +6,24 @@ Darling in the Franxx
 ![zero two code](../screenshots/franxx/zero_two_dark_code.png)
 ![zero two code](../screenshots/franxx/zero_two_light_code.png)
 
-Fate
+Quintessential Quintuplets
 ---
-## Astolfo
+
+### Nakano Nino
+
+![nino_dark code](../screenshots/quintuplets/nino_dark_code.png)
+
+### Nakano Miku
+
+![nakano_miku_dark code](../screenshots/quintuplets/nakano_miku_dark_code.png)
+
+
+Type-Moon
+---
+
+# Fate
+
+### Astolfo
 
 ![astolfo dark code](../screenshots/fate/astolfo_dark_code.png)
 
@@ -22,6 +37,13 @@ Fate
 ![ishtar dark code](../screenshots/fate/ishtar_dark_code.png)
 
 ![ishtar light code](../screenshots/fate/ishtar_light_code.png)
+
+# Lord El-Melloi II Case Files
+
+### Gray
+
+![gray_dark code](../screenshots/fate/gray_dark_code.png)
+
 
 Blend S
 ---
@@ -57,6 +79,7 @@ Miscellaneous
 
 ### Hatsune Miku
 ![miku code](../screenshots/miscellaneous/miku_code.png)
+![miku_secondary code](../screenshots/miscellaneous/miku_secondary_code.png)
 
 KonoSuba
 ---
@@ -71,6 +94,14 @@ KonoSuba
 ### Darkness
 ![darkness code](../screenshots/konosuba/darkness_dark_code.png)
 ![darkness code](../screenshots/konosuba/darkness_light_code.png)
+
+Daily Life With a Monster Girl
+---
+
+### Miia
+
+![miia_dark code](../screenshots/monsterMusume/miia_dark_code.png)
+
 
 OreGairu
 ---
@@ -118,6 +149,11 @@ Miss Kobayashi's Dragon Maid
   
 ![kanna_dark code](../screenshots/dragonMaid/kanna_dark_code.png)
 ![kanna_dark_secondary code](../screenshots/dragonMaid/kanna_dark_secondary_code.png)
+
+### Tohru
+
+![tohru_light code](../screenshots/dragonMaid/tohru_light_code.png)
+
 
 DanganRonpa
 ---
