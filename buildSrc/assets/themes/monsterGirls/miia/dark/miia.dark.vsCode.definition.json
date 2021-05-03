@@ -1,0 +1,16 @@
+{
+  "id": "5903b523-ea0a-4724-85d4-f0d0652c3010",
+  "overrides": {},
+  "laf": {
+    "extends": "dark-contrast",
+    "ui": {
+    }
+  },
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  },
+  "syntax": {},
+  "colors": {}
+}

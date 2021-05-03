@@ -52,7 +52,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
     - [Stickers](#sticker)
     - [Suggestive Content](#suggestive-content)
     - [Asset Removal](#remove-assets)
-    - [Show Changelog](#changelog)
+    - [Show Changelog](#show-changelog)
 - [Miscellaneous](#miscellaneous)
     - [Theme Requests](#theme-requests)
     - [Helping the community](#enjoying-the-plugin)
@@ -73,6 +73,17 @@ This feature will set the background image to the current theme's official wallp
 
 ![Zero Two Code](./readmeStuff/wallpaper_code.png)
 ![Zero Two Code](./readmeStuff/wallpaper_background.png)
+
+**Quick Input Usability**
+
+Inorder to create a more immersive weeb experience, some panels have become see-through.
+This causes some usability issues, however installing your theme's wallpaper fixes that problem.
+
+| Before | After |
+| --- | --- | 
+| ![not usable](./readmeStuff/unusable_quickinput.png) | ![usable](./readmeStuff/useable_quickinput.png)
+
+> Note: colors can be adjusted using the [Quick picker colors](https://code.visualstudio.com/api/references/theme-color#quick-picker-colors)
 
 ## Stickers
 
