@@ -35,7 +35,6 @@ function buildWallpaperCss({
   .overflow-guard,
   .tab,
   .tabs-container,
-  /* .split-view-view, */ /* draws the wallpaper over the bckground */
   .monaco-pane-view, 
   .composite.title,
   .content,
@@ -58,33 +57,16 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
   
-   /* source control diff editor */  
+  /* source control diff editor */  
   .lines-content.monaco-editor-background,
   /* output panel */
   .overflow-guard > .margin,
   .overflow-guard > .margin > .margin-view-overlays,
   .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
-   /* glass items - common for all */
-  .monaco-list,
-  .monaco-list-rows,
-  .monaco-list-row,
-   /* glass notifications */  
-   .notifications-toasts,
-  .notification-toast-container,
-  .notifications-list-container,
-  .notification-list-item,
-  .notification-list-item-buttons-container,
-   /* quick task */
-  .quick-input-list
-  {
+  /* debugger panel */
+  [id="workbench.panel.repl"] *
+   {
     background-color: transparent !important;
-  }
- 
-  .notification-toast,
-  .quick-input-widget
-  {
-    backdrop-filter: blur(3px) !important;
-    background-color: #53b0b42A !important; /* accentColorMoreTransparent is a fairly good choice, this one is from Miku*/
   }
 
   .monaco-breadcrumbs {
