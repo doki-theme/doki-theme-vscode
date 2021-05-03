@@ -108,7 +108,7 @@
     "editorWidget.background": "&headerColor&",
     "debugToolBar.background": "&headerColor&",
     "editorSuggestWidget.background": "&headerColor&",
-    "notifications.background": "&headerColor&2a",
+    "notifications.background": "&headerColor&80",
     "peekViewTitle.background": "&headerColor&",
     "widget.shadow": "#1111115a",
     "scrollbar.shadow": "#1111113a",

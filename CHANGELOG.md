@@ -1,5 +1,12 @@
 # Change Log
 
+# 11.2.0 [Glass-Pane Enhancements]
+
+- Made more panels transparent to show your background/sticker.
+  - Please be sure to re-install the wallpaper & sticker for this to take effect!
+
+Thank you, @JohnEdwa for your contributions!
+
 # 11.1.3 [Handling non-url characters better]
 
 - Mitigated issues where a user's local file path is not url-friendly, preventing assets from showing up. ([#63](https://github.com/doki-theme/doki-theme-vscode/issues/63)))
