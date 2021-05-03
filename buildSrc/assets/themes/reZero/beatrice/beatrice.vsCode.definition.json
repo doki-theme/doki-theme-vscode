@@ -14,11 +14,11 @@
       "scrollbarSlider.activeBackground": "&accentColorSecondary&9A"
     }
   },
+  "syntax": {},
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "syntax": {},
-  "colors": {}
+  }
 }

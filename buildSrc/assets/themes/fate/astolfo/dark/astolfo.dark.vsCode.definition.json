@@ -5,11 +5,11 @@
     "extends": "dark-contrast",
     "ui": {}
   },
+  "syntax": {},
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "syntax": {},
-  "colors": {}
+  }
 }

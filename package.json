@@ -50,6 +50,8 @@
     "onCommand:doki-theme.theme.wallpaper.Kanna",
     "onCommand:doki-theme.theme.Kanna.secondary",
     "onCommand:doki-theme.theme.wallpaper.Kanna.secondary",
+    "onCommand:doki-theme.theme.Tohru",
+    "onCommand:doki-theme.theme.wallpaper.Tohru",
     "onCommand:doki-theme.theme.Katsuragi Misato",
     "onCommand:doki-theme.theme.wallpaper.Katsuragi Misato",
     "onCommand:doki-theme.theme.Rei",
@@ -126,8 +128,16 @@
     "onCommand:doki-theme.theme.wallpaper.Konata.secondary",
     "onCommand:doki-theme.theme.Hatsune Miku",
     "onCommand:doki-theme.theme.wallpaper.Hatsune Miku",
+    "onCommand:doki-theme.theme.Hatsune Miku.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Hatsune Miku.secondary",
+    "onCommand:doki-theme.theme.Miia",
+    "onCommand:doki-theme.theme.wallpaper.Miia",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
+    "onCommand:doki-theme.theme.Nakano Miku",
+    "onCommand:doki-theme.theme.wallpaper.Nakano Miku",
+    "onCommand:doki-theme.theme.Nakano Nino",
+    "onCommand:doki-theme.theme.wallpaper.Nakano Nino",
     "onCommand:doki-theme.theme.Beatrice",
     "onCommand:doki-theme.theme.wallpaper.Beatrice",
     "onCommand:doki-theme.theme.Echidna",
@@ -145,7 +155,9 @@
     "onCommand:doki-theme.theme.Asuna Dark",
     "onCommand:doki-theme.theme.wallpaper.Asuna Dark",
     "onCommand:doki-theme.theme.Asuna Light",
-    "onCommand:doki-theme.theme.wallpaper.Asuna Light"
+    "onCommand:doki-theme.theme.wallpaper.Asuna Light",
+    "onCommand:doki-theme.theme.Gray",
+    "onCommand:doki-theme.theme.wallpaper.Gray"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -229,6 +241,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Kanna.secondary",
         "title": "Doki-Theme: Install Kanna's Secondary Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Tohru",
+        "title": "Doki-Theme: Install Tohru's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Tohru",
+        "title": "Doki-Theme: Install Tohru's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Katsuragi Misato",
@@ -535,12 +555,44 @@
         "title": "Doki-Theme: Install Hatsune Miku's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Hatsune Miku.secondary",
+        "title": "Doki-Theme: Install Hatsune Miku's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Hatsune Miku.secondary",
+        "title": "Doki-Theme: Install Hatsune Miku's Secondary Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Miia",
+        "title": "Doki-Theme: Install Miia's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Miia",
+        "title": "Doki-Theme: Install Miia's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Yukinoshita Yukino",
         "title": "Doki-Theme: Install Yukinoshita Yukino's Sticker"
       },
       {
         "command": "doki-theme.theme.wallpaper.Yukinoshita Yukino",
         "title": "Doki-Theme: Install Yukinoshita Yukino's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Nakano Miku",
+        "title": "Doki-Theme: Install Nakano Miku's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nakano Miku",
+        "title": "Doki-Theme: Install Nakano Miku's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Nakano Nino",
+        "title": "Doki-Theme: Install Nakano Nino's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nakano Nino",
+        "title": "Doki-Theme: Install Nakano Nino's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Beatrice",
@@ -613,6 +665,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Asuna Light",
         "title": "Doki-Theme: Install Asuna Light's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Gray",
+        "title": "Doki-Theme: Install Gray's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Gray",
+        "title": "Doki-Theme: Install Gray's Wallpaper"
       }
     ],
     "themes": [
@@ -689,6 +749,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "2d049451-6e89-4325-af38-6ce889991e5b",
+        "label": "Doki Theme: DM:  Tohru",
+        "path": "./generatedThemes/Tohru.theme.json",
+        "uiTheme": "vs"
+      },
+      {
         "id": "420b0ed5-803c-4127-97e3-dae6aa1a5972",
         "label": "Doki Theme: DR:  Ibuki",
         "path": "./generatedThemes/Mioda Ibuki Dark.theme.json",
@@ -722,30 +788,6 @@
         "id": "c262185d-9682-413b-9143-85a2dda76b2f",
         "label": "Doki Theme: EVA:  Rei",
         "path": "./generatedThemes/Rei.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
-        "id": "930c70c8-474e-4e2d-a223-d1e2b9da4fb1",
-        "label": "Doki Theme: Fate:  Astolfo",
-        "path": "./generatedThemes/Astolfo.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
-        "id": "62a4f26f-34b2-46f8-a10c-798e48c1ce9d",
-        "label": "Doki Theme: Fate:  Ishtar",
-        "path": "./generatedThemes/Ishtar Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
-        "id": "325c5d4d-5614-4c58-b296-18924f2f6928",
-        "label": "Doki Theme: Fate:  Ishtar",
-        "path": "./generatedThemes/Ishtar Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
-        "id": "3546f7be-b84f-4b8e-8cad-effa3f4603af",
-        "label": "Doki Theme: Fate:  Rin",
-        "path": "./generatedThemes/Tohsaka Rin.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -815,15 +857,27 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
-        "label": "Doki Theme: Misc:  Miku",
-        "path": "./generatedThemes/Hatsune Miku.theme.json",
+        "id": "5903b523-ea0a-4724-85d4-f0d0652c3010",
+        "label": "Doki Theme: MonsterMusume:  Miia",
+        "path": "./generatedThemes/Miia.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "06143cbe-2d51-4423-9a93-73a02c828119",
         "label": "Doki Theme: OreGairu:  Yukino",
         "path": "./generatedThemes/Yukinoshita Yukino.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "d96c6599-ebf8-4359-ae26-19f79b69e919",
+        "label": "Doki Theme: QQ:  Miku",
+        "path": "./generatedThemes/Nakano Miku.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "5e6a266f-c6d5-4891-a065-a2c2b857016a",
+        "label": "Doki Theme: QQ:  Nino",
+        "path": "./generatedThemes/Nakano Nino.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -878,6 +932,42 @@
         "id": "d39df813-8701-463b-a964-b8cb7714d1cc",
         "label": "Doki Theme: Steins Gate:  Kurisu",
         "path": "./generatedThemes/Makise Kurisu.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "930c70c8-474e-4e2d-a223-d1e2b9da4fb1",
+        "label": "Doki Theme: TypeMoon:  Astolfo",
+        "path": "./generatedThemes/Astolfo.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "5de1c901-2a12-411f-b75b-64e43aaf2c9d",
+        "label": "Doki Theme: TypeMoon:  Gray",
+        "path": "./generatedThemes/Gray.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "62a4f26f-34b2-46f8-a10c-798e48c1ce9d",
+        "label": "Doki Theme: TypeMoon:  Ishtar",
+        "path": "./generatedThemes/Ishtar Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "325c5d4d-5614-4c58-b296-18924f2f6928",
+        "label": "Doki Theme: TypeMoon:  Ishtar",
+        "path": "./generatedThemes/Ishtar Light.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "3546f7be-b84f-4b8e-8cad-effa3f4603af",
+        "label": "Doki Theme: TypeMoon:  Rin",
+        "path": "./generatedThemes/Tohsaka Rin.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
+        "label": "Doki Theme: Vocaloid:  Miku",
+        "path": "./generatedThemes/Hatsune Miku.theme.json",
         "uiTheme": "vs-dark"
       }
     ]
