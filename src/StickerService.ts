@@ -30,15 +30,16 @@ function buildWallpaperCss({
   return `${wallpaperComment}
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor .overflow-guard>.monaco-scrollable-element>.monaco-editor-background{background: none;}
 
+
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor  .overflow-guard>.monaco-scrollable-element::before,
-  .overflow-guard, 
-  .tab, 
+  .overflow-guard,
+  .tab,
   .tabs-container,
-  .split-view-view, 
-  .monaco-pane-view,
-  .composite.title, 
-  .content, 
-  .monaco-select-box, 
+  /* .split-view-view, */ /* draws the wallpaper over the bckground */
+  .monaco-pane-view, 
+  .composite.title,
+  .content,
+  .monaco-select-box,
   .pane-header, 
   .minimap-decorations-layer,
   .xterm-cursor-layer,
@@ -46,13 +47,44 @@ function buildWallpaperCss({
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
-  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions
+  .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,  
+  .welcomePageFocusElement, /* welcome screen */
+  .terminal-outer-container /* Terminal outer edge */
   {
     background-image: url('${wallpaperURL}') !important;
     background-position: ${backgroundAnchoring} !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+  }
+  
+   /* source control diff editor */  
+  .lines-content.monaco-editor-background,
+  /* output panel */
+  .overflow-guard > .margin,
+  .overflow-guard > .margin > .margin-view-overlays,
+  .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
+   /* glass items - common for all */
+  .monaco-list,
+  .monaco-list-rows,
+  .monaco-list-row,
+   /* glass notifications */  
+   .notifications-toasts,
+  .notification-toast-container,
+  .notifications-list-container,
+  .notification-list-item,
+  .notification-list-item-buttons-container,
+   /* quick task */
+  .quick-input-list
+  {
+    background-color: transparent !important;
+  }
+ 
+  .notification-toast,
+  .quick-input-widget
+  {
+    backdrop-filter: blur(3px) !important;
+    background-color: #53b0b42A !important; /* accentColorMoreTransparent is a fairly good choice, this one is from Miku*/
   }
 
   .monaco-breadcrumbs {
