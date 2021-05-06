@@ -1,0 +1,7 @@
+{
+  "name":"dark-dim",
+  "extends":"dark",
+  "ui": {
+    "editor.selectionBackground": "&selectionBackground&66"
+  }
+}

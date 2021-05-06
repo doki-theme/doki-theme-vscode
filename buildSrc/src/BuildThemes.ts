@@ -5,7 +5,7 @@ import {
   resolveNamedColors,
   BaseAppDokiThemeDefinition,
   DokiThemeDefinitions,
-  resolveTemplate,
+  composeTemplate,
   resolveColor,
   applyNamedColors,
   SYNTAX_TYPE,
@@ -54,11 +54,11 @@ function buildLAFColors(
     ? lafTemplates.dark
     : lafTemplates.light;
 
-  const resolvedLafTemplate = resolveTemplate(
+  const resolvedLafTemplate = composeTemplate(
     lafTemplate,
     lafTemplates,
     (template) => template.ui,
-    (template) => template.extends
+    (template) => template.extends?.split(',') || []
   );
 
   const resolvedNamedColors = resolveNamedColors(
