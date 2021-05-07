@@ -4,6 +4,7 @@
   "laf": {
     "extends": "dark",
     "ui": {
+      "editor.selectionBackground": "&selectionBackground&AA",
       "quickInput.foreground": "&foregroundColor&"
     }
   },
