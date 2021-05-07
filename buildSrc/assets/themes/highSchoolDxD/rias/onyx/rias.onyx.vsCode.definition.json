@@ -4,7 +4,6 @@
   "laf": {
     "extends": "dark",
     "ui": {
-      "quickInput.foreground": "&keywordColor&"
     }
   },
   "syntax": {},
