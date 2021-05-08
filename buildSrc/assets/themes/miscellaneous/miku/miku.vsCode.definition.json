@@ -1,7 +1,12 @@
 {
   "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "editor.selectionBackground": "&selectionBackground&66"
+    }
+  },
   "syntax": {},
   "backgrounds": {
     "secondary": {

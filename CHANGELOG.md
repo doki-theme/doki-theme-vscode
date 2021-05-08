@@ -1,7 +1,11 @@
 # Change Log
 
-# 12.0.0 [Nino, Nakano Miku, Gray, & Tohru]
+# 12.1.0 [Usability Updates]
 
+- Fixed selection usability issues for all themes [#68](https://github.com/doki-theme/doki-theme-vscode/issues/68)
+- Changed the quick input panel to be opaque again. If you want it to be transparent, feel free to customize the [quick picker colors](https://code.visualstudio.com/api/references/theme-color#quick-picker-colors). I left the blurred effect on when you've installed the wallpaper.
+
+# 12.0.0 [Nino, Nakano Miku, Gray, & Tohru]
 ## 5 New Themes
 
 From the Quintessential Quintuplets series:

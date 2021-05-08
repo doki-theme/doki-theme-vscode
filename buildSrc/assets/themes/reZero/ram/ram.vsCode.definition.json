@@ -3,7 +3,9 @@
   "overrides": {},
   "laf": {
     "extends": "dark-contrast",
-    "ui": {}
+    "ui": {
+      "editor.selectionBackground": "&selectionBackground&88"
+    }
   },
   "syntax": {},
   "colors": {},
