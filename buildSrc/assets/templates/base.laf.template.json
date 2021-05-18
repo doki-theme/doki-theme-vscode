@@ -98,6 +98,7 @@
     "gitDecoration.modifiedResourceForeground": "&accentColor&",
     "activityBar.foreground": "&accentColor&",
     "activityBarBadge.background": "&accentColor&",
+    "activityBarBadge.foreground": "&accentContrastColor&",
     "badge.background": "&accentColor&",
     "badge.foreground": "&accentContrastColor&",
     "progressBar.background": "&accentColor&",
