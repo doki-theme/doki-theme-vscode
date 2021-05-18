@@ -7,6 +7,8 @@
     "panelTitle.activeForeground": "&foregroundColor&",
     "panelTitle.inactiveForeground": "&foregroundColor&",
     "gitDecoration.ignoredResourceForeground": "&disabledColor&",
+    "list.invalidItemForeground": "&disabledColor&",
+    "list.errorForeground": "&errorColor&",
     "input.background": "&secondaryBackground&AA",
     "peekViewResult.background": "&secondaryBackground&",
     "list.focusBackground": "&selectionBackground&",
