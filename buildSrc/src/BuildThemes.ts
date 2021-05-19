@@ -71,10 +71,15 @@ function buildLAFColors(
     dokiThemeTemplateJson,
   );  
 
-  return applyNamedColors(resolvedLafTemplate, {
+  const evaluatedColors: StringDictionary<string> = {
     ...resolvedMasterNameColors,
     ...resolvedNamedColors,
     ...dokiVSCodeThemeTemplateJson.colors,
+  };
+  return applyNamedColors(resolvedLafTemplate, {
+    ...evaluatedColors,
+    editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor || 
+    evaluatedColors.accentColor,
   });
 }
 

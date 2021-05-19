@@ -1,5 +1,9 @@
 # Change Log
 
+# 12.2.0 [Theme Color Enhancements]
+
+- Combed over the [Theme Colors](https://code.visualstudio.com/api/references/theme-color) provided by VS-Code to give the look and feel more themed colors!
+
 # 12.1.0 [Usability Updates]
 
 - Fixed selection usability issues for all themes [#68](https://github.com/doki-theme/doki-theme-vscode/issues/68)
