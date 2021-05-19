@@ -134,6 +134,7 @@
     "editorGutter.background": "#00000000",
     "editor.findMatchBackground": "&selectionBackground&",
     "editor.wordHighlightStrongBackground": "&identifierHighlight&AA",
+    "editor.snippetTabstopHighlightBackground": "&identifierHighlight&AA",
     "editor.findMatchHighlightBackground": "&selectionInactive&",
     "peekViewEditor.matchHighlightBackground": "&selectionInactive&",
     "editor.wordHighlightBackground": "&identifierHighlight&AA",
