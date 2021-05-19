@@ -4,7 +4,8 @@
   "laf": {
     "extends": "dark-contrast",
     "ui": {
-      "editor.selectionBackground": "&selectionBackground&99"
+      "editor.selectionBackground": "&selectionBackground&99",
+      "selection.background": "&selectionBackground&aa"
     }
   },
   "syntax": {},
