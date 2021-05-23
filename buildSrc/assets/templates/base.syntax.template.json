@@ -136,6 +136,7 @@
         "entity.name.tag",
         "meta.template.expression",
         "punctuation.definition.list.begin",
+        "meta.tag.start.svelte",
         "punctuation.definition.link.restructuredtext"
       ],
       "settings": {
