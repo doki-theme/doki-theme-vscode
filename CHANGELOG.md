@@ -1,5 +1,9 @@
 # Change Log
 
+# 12.2.1 [Text Link Consistency]
+
+- Updated the text link color for all themes to be conistent with the other platforms' text link color.
+
 # 12.2.0 [Theme Color Enhancements]
 
 - Combed over the [Theme Colors](https://code.visualstudio.com/api/references/theme-color) provided by VS-Code to give the look and feel more themed colors!

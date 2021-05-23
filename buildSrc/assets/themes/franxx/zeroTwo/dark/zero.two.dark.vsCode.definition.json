@@ -5,7 +5,9 @@
     "extends": "dark-contrast",
     "ui": {
       "editor.selectionBackground": "&selectionBackground&66",
-      "selection.background": "&selectionBackground&aa"
+      "selection.background": "&selectionBackground&aa",
+      "textLink.foreground": "&editorAccentColor&AA",
+      "textLink.activeForeground": "&editorAccentColor&"
     }
   },
   "syntax": {},
