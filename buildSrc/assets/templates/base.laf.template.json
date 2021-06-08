@@ -109,6 +109,8 @@
     "tab.activeBorder": "&accentColor&",
     "peekView.border": "&accentColor&",
     "statusBar.background": "&accentColor&",
+    "statusBarItem.remoteBackground": "&selectionBackground&",
+    "statusBarItem.remoteForeground": "&selectionForeground&",
     "statusBar.noFolderBackground": "&accentColor&",
     "panelTitle.activeBorder": "&accentColor&",
     "statusBar.debuggingBackground": "&accentColor&",

@@ -1,5 +1,9 @@
 # Change Log
 
+# 12.2.2 [WSL Button Usability]
+
+- Updated the WSL remote button in the status bar to be more visible.
+
 # 12.2.1 [Text Link Consistency]
 
 - Updated the text link color for all themes to be conistent with the other platforms' text link color.
