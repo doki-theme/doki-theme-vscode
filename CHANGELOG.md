@@ -1,5 +1,36 @@
 # Change Log
 
+# 13.0.0 [Hanekawa, Shima Rin, Nagatoro, Yumeko, & Yuno]
+
+## 5 New Themes
+
+From the Monogatari series:
+
+- Hanekawa Tsubasa (Dark)
+
+From the Yuru Camp series:
+
+- Shima Rin (Dark)
+
+From the Don't Toy With Me, Miss Nagatoro series:
+
+- Hayase Nagatoro (Dark)
+
+From the Kakegurui Series:
+
+- Jabami Yumeko (Dark)
+
+From the Future Diary Series
+
+- Gasai Yuno (Dark)
+
+![v16 Girls](https://doki.assets.unthrottled.io/misc/v16_girls.png)
+
+### Other Stuff
+
+- Added [linked html editing color](https://code.visualstudio.com/updates/v1_52#_html)
+- Added asset troubleshooting steps for the linux `snap` VS Code install.
+
 # 12.2.2 [WSL Button Usability]
 
 - Updated the WSL remote button in the status bar to be more visible.
