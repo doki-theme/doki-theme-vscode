@@ -3,14 +3,13 @@
   "overrides": {},
   "laf": {
     "extends": "dark-contrast,dark-dim",
-    "ui": {
-    }
+    "ui": {}
   },
+  "syntax": {},
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "syntax": {},
-  "colors": {}
+  }
 }

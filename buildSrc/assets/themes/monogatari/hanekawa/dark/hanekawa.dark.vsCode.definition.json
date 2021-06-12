@@ -1,0 +1,19 @@
+{
+  "id": "dfd05a73-c189-4622-87c7-573fbb3a46b9",
+  "overrides": {},
+  "laf": {
+    "extends":"dark",
+    "ui": {
+      "editor.selectionBackground": "&selectionBackground&AA"
+    }
+  },
+  "syntax": {},
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  },
+  "colors": {
+    "accentColor": "#7660A4"
+  }
+}

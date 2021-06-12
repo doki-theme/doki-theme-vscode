@@ -1900,10 +1900,10 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-doki-build-source@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/doki-build-source/-/doki-build-source-1.0.0.tgz#8182d0a66ee482f2de64150d6b5478d39fdf514a"
-  integrity sha512-4I82gang4fGNA+3RnX/Vn2Jnoi5EupAkpSHiMRRywYU0GQjvgYsFrQpfihdV8aL0u91DdR+PZ+QEVClSqvJG3w==
+doki-build-source@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/doki-build-source/-/doki-build-source-1.3.0.tgz#b7516a96317ff559737f6e87fc81b931bbb1977c"
+  integrity sha512-3Z+BMS0p/FGOlCwuhBauAYeV+DXAF+5HdkMCVSYCYZkbLsqfsymnBM7Unw+vbrHJfI14P0gDuOTbgKOHX9V4Gw==
 
 domain-browser@^1.1.1:
   version "1.2.0"

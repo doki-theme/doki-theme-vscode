@@ -1,0 +1,18 @@
+{
+  "id": "5ec63d95-1e7d-4649-b3d0-0078af8f8740",
+  "overrides": {},
+  "laf": {
+    "extends": "dark-contrast",
+    "ui": {
+      "editor.selectionBackground": "&selectionBackground&88",
+      "selection.background": "&selectionBackground&aa"
+    }
+  },
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  },
+  "syntax": {},
+  "colors": {}
+}

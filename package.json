@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "12.2.2",
+  "version": "13.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -46,6 +46,8 @@
     "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
     "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Light",
+    "onCommand:doki-theme.theme.Hayase Nagatoro",
+    "onCommand:doki-theme.theme.wallpaper.Hayase Nagatoro",
     "onCommand:doki-theme.theme.Kanna",
     "onCommand:doki-theme.theme.wallpaper.Kanna",
     "onCommand:doki-theme.theme.Kanna.secondary",
@@ -68,6 +70,8 @@
     "onCommand:doki-theme.theme.wallpaper.Zero Two Dark",
     "onCommand:doki-theme.theme.Zero Two Light",
     "onCommand:doki-theme.theme.wallpaper.Zero Two Light",
+    "onCommand:doki-theme.theme.Gasai Yuno",
+    "onCommand:doki-theme.theme.wallpaper.Gasai Yuno",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
     "onCommand:doki-theme.theme.Rias Crimson",
@@ -76,6 +80,8 @@
     "onCommand:doki-theme.theme.wallpaper.Rias Onyx",
     "onCommand:doki-theme.theme.Rias Onyx.secondary",
     "onCommand:doki-theme.theme.wallpaper.Rias Onyx.secondary",
+    "onCommand:doki-theme.theme.Jabami Yumeko",
+    "onCommand:doki-theme.theme.wallpaper.Jabami Yumeko",
     "onCommand:doki-theme.theme.Ryuko",
     "onCommand:doki-theme.theme.wallpaper.Ryuko",
     "onCommand:doki-theme.theme.Satsuki",
@@ -130,6 +136,8 @@
     "onCommand:doki-theme.theme.wallpaper.Hatsune Miku",
     "onCommand:doki-theme.theme.Hatsune Miku.secondary",
     "onCommand:doki-theme.theme.wallpaper.Hatsune Miku.secondary",
+    "onCommand:doki-theme.theme.Hanekawa Tsubasa",
+    "onCommand:doki-theme.theme.wallpaper.Hanekawa Tsubasa",
     "onCommand:doki-theme.theme.Miia",
     "onCommand:doki-theme.theme.wallpaper.Miia",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
@@ -157,7 +165,9 @@
     "onCommand:doki-theme.theme.Asuna Light",
     "onCommand:doki-theme.theme.wallpaper.Asuna Light",
     "onCommand:doki-theme.theme.Gray",
-    "onCommand:doki-theme.theme.wallpaper.Gray"
+    "onCommand:doki-theme.theme.wallpaper.Gray",
+    "onCommand:doki-theme.theme.Shima Rin",
+    "onCommand:doki-theme.theme.wallpaper.Shima Rin"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -225,6 +235,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Mioda Ibuki Light",
         "title": "Doki-Theme: Install Mioda Ibuki Light's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Hayase Nagatoro",
+        "title": "Doki-Theme: Install Hayase Nagatoro's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Hayase Nagatoro",
+        "title": "Doki-Theme: Install Hayase Nagatoro's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Kanna",
@@ -315,6 +333,14 @@
         "title": "Doki-Theme: Install Zero Two Light's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Gasai Yuno",
+        "title": "Doki-Theme: Install Gasai Yuno's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Gasai Yuno",
+        "title": "Doki-Theme: Install Gasai Yuno's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Rory Mercury",
         "title": "Doki-Theme: Install Rory Mercury's Sticker"
       },
@@ -345,6 +371,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Rias Onyx.secondary",
         "title": "Doki-Theme: Install Rias Onyx's Secondary Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Jabami Yumeko",
+        "title": "Doki-Theme: Install Jabami Yumeko's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Jabami Yumeko",
+        "title": "Doki-Theme: Install Jabami Yumeko's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Ryuko",
@@ -563,6 +597,14 @@
         "title": "Doki-Theme: Install Hatsune Miku's Secondary Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Hanekawa Tsubasa",
+        "title": "Doki-Theme: Install Hanekawa Tsubasa's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Hanekawa Tsubasa",
+        "title": "Doki-Theme: Install Hanekawa Tsubasa's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Miia",
         "title": "Doki-Theme: Install Miia's Sticker"
       },
@@ -673,6 +715,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Gray",
         "title": "Doki-Theme: Install Gray's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Shima Rin",
+        "title": "Doki-Theme: Install Shima Rin's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Shima Rin",
+        "title": "Doki-Theme: Install Shima Rin's Wallpaper"
       }
     ],
     "themes": [
@@ -767,6 +817,12 @@
         "uiTheme": "vs"
       },
       {
+        "id": "ca45f54a-57cb-4d8c-82a6-d4b31c850bd6",
+        "label": "Doki Theme: DTWMMN:  Nagatoro",
+        "path": "./generatedThemes/Hayase Nagatoro.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
         "path": "./generatedThemes/Rias Crimson.theme.json",
@@ -803,9 +859,21 @@
         "uiTheme": "vs"
       },
       {
+        "id": "5ec63d95-1e7d-4649-b3d0-0078af8f8740",
+        "label": "Doki Theme: FutureDiary:  Yuno",
+        "path": "./generatedThemes/Gasai Yuno.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "355d711c-2fa6-4df2-9504-dd44d8f5e350",
         "label": "Doki Theme: Gate:  Rory",
         "path": "./generatedThemes/Rory Mercury.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "a1da4f2f-e736-40e7-86d9-9167a247da93",
+        "label": "Doki Theme: Kakegurui:  Yumeko",
+        "path": "./generatedThemes/Jabami Yumeko.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -854,6 +922,12 @@
         "id": "be058474-b967-4afb-b6d9-bda1948b33ec",
         "label": "Doki Theme: LS:  Konata",
         "path": "./generatedThemes/Konata.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "dfd05a73-c189-4622-87c7-573fbb3a46b9",
+        "label": "Doki Theme: Monogatari:  Tsubasa",
+        "path": "./generatedThemes/Hanekawa Tsubasa.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -968,6 +1042,12 @@
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
         "label": "Doki Theme: Vocaloid:  Miku",
         "path": "./generatedThemes/Hatsune Miku.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
+        "label": "Doki Theme: YuruCamp:  Rin",
+        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       }
     ]
