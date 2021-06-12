@@ -44,6 +44,8 @@ function showStickerHelp(context: vscode.ExtensionContext, verbs: any) {
                 <p>If you are running Linux or MacOS you can help me by running this command:</p>
                 <code>sudo chown -R $(whoami) ${workbenchDirectory}</code>
                 <p>After you have given yourself permission to write that directory, feel free to run the sticker ${verbs.commandAction} command again.</p>
+                <p>If you have VS Code installed via <code>snap</code> please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/34#issuecomment-730028177">see this workaround</a></p>
+
 
                 <h2>Windows Subsystem for Linux (WSL)</h2>
                 <p>Looks like I was unable to correctly find and modify your Windows 10 VSCode CSS, sorry friend!</p>
