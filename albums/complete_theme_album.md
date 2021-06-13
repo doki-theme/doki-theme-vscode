@@ -151,7 +151,7 @@ Love Live!
 Kakegurui
 ---
 
-### Jabami Yumeke
+### Jabami Yumeko
 ![yumeko_dark code](../screenshots/kakegurui/yumeko_dark_code.png)
 
 
