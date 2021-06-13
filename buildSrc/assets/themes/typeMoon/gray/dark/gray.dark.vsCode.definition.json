@@ -7,11 +7,11 @@
       "quickInput.foreground": "&foregroundColor&"
     }
   },
+  "syntax": {},
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "syntax": {},
-  "colors": {}
+  }
 }

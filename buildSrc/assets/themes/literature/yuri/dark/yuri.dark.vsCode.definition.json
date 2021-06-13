@@ -3,8 +3,7 @@
   "overrides": {},
   "laf": {
     "extends": "dark",
-    "ui": {
-    }
+    "ui": {}
   },
   "syntax": {},
   "colors": {}

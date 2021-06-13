@@ -35,6 +35,7 @@
     "peekViewResult.selectionBackground": "&selectionBackground&",
     "list.hoverBackground": "&selectionBackground&2A",
     "editor.selectionHighlightBackground": "&identifierHighlight&",
+    "editor.linkedEditingBackground": "&identifierHighlight&",
     "editor.selectionBackground": "&selectionBackground&",
     "minimap.selectionHighlight": "&selectionBackground&",
     "list.activeSelectionForeground": "&selectionForeground&",
