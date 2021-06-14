@@ -130,7 +130,7 @@ Inside the `buildSrc` directory, there will be 2 directories:
 
 ### VSCode Themes specifics
 
-There are one important piece that composes a theme:
+There is one important piece that composes a theme:
 
 - `theme.json` - which defines the look and feel of the editor as well as the syntax coloring of the code.
 
