@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -1051,6 +1051,11 @@
         "uiTheme": "vs-dark"
       }
     ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
   },
   "scripts": {
     "package": "vsce package",
