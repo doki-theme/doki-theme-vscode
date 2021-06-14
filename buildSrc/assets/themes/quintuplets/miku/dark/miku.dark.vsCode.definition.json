@@ -3,7 +3,9 @@
   "overrides": {},
   "laf": {
     "extends": "dark-contrast,dark-dim",
-    "ui": {}
+    "ui": {
+      "statusBarItem.prominentBackground": "&selectionBackground&EE"
+    }
   },
   "syntax": {},
   "colors": {},

@@ -1,5 +1,9 @@
 # Change Log
 
+# 13.0.1 [Just trust me, bro]
+
+- Changed extension to be enabled in [restricted mode](https://code.visualstudio.com/docs/editor/workspace-trust#_restricted-mode).
+
 # 13.0.0 [Hanekawa, Shima Rin, Nagatoro, Yumeko, & Yuno]
 
 ## 5 New Themes
