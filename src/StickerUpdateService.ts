@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { performGet } from "./RESTClient";
 import path from "path";
 import fs from "fs";
+import { URL } from 'url';
 import crypto from "crypto";
 import {
   VSCODE_ASSETS_URL,
@@ -13,6 +14,14 @@ import {
 } from "./ENV";
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
+
+function loadImageBase64FromFileProtocol(url: string): string {
+  const fileUrl = new URL(url);
+  const imageBuffer = fs.readFileSync(fileUrl);
+  const imageExtensionName = path.extname(fileUrl.pathname).substr(1);
+
+  return `data:image/${imageExtensionName};base64,${imageBuffer.toString('base64')}`;
+}
 
 export const forceUpdateSticker = async (
   context: vscode.ExtensionContext,
@@ -163,7 +172,7 @@ const resolveLocalBackgroundPath = (
 };
 
 const createCssDokiAssetUrl = (localAssetPath: string): string => {
-  return `file://${cleanPathToUrl(localAssetPath)}`;
+  return loadImageBase64FromFileProtocol(`file://${cleanPathToUrl(localAssetPath)}`);
 };
 
 function cleanPathToUrl(stickerPath: string) {

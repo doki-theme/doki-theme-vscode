@@ -1,5 +1,10 @@
 # Change Log
 
+# 13.1.0 [Insiders Content Support]
+
+- Changed how stickers/wallpapers are installed, so they show up in VSCode v1.58.+. 
+Please re-run your sticker/wallpaper command to see the changes take effect.
+
 # 13.0.1 [Just trust me, bro]
 
 - Changed extension to be enabled in [restricted mode](https://code.visualstudio.com/docs/editor/workspace-trust#_restricted-mode).
