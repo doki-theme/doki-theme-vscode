@@ -15,7 +15,7 @@ what is accomplished.
 
 All themes have a base template that they inherit from. Themes have the ability to choose their inherited parent. Each
 child has the ability to override any attributes defined by the parent. This mitigates any one-off issues for themes
-that are captured by the global shared style.
+that are not captured by the global shared style.
 
 # Getting Started
 
