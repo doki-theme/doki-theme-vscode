@@ -216,6 +216,8 @@ export function uninstallImages(context: vscode.ExtensionContext) {
   }
 }
 
+const MONIKA_LIGHT_THEME_ID = "9a310731-ab2d-40f5-b502-fa5419f799a2";
+
 export const getCurrentThemeAndSticker = (): {
   theme: DokiTheme;
   sticker: DokiSticker;
@@ -225,7 +227,13 @@ export const getCurrentThemeAndSticker = (): {
     DokiThemeDefinitions.find(
       (dokiDefinition) =>
         dokiDefinition.themeDefinition.information.id === currentThemeId
-    ) || DokiThemeDefinitions[0];
+    ) ||
+    DokiThemeDefinitions.find(
+      (dokiDefinition) =>
+        dokiDefinition.themeDefinition.information.id === MONIKA_LIGHT_THEME_ID
+    ) ||
+    DokiThemeDefinitions[0];
+
   const currentStickerType =
     (VSCodeGlobals.globalState.get(ACTIVE_STICKER) as StickerType) ||
     StickerType.DEFAULT;

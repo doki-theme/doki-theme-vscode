@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import ChangelogHtml from "./ChangelogHtml";
+import { getCurrentThemeAndSticker } from './ThemeManager';
 
 export function showChanglog(context: vscode.ExtensionContext) {
     const welcomPanel = vscode.window.createWebviewPanel(
@@ -12,20 +13,16 @@ export function showChanglog(context: vscode.ExtensionContext) {
     welcomPanel.iconPath = getWebviewIcon(context);
     welcomPanel.webview.html = buildWebviewHtml(
         ChangelogHtml,
-        context,
-        welcomPanel
     );
 }
 
 export function buildWebviewHtml(
     content: string,
-    context: vscode.ExtensionContext,
-    panel: vscode.WebviewPanel
 ): string {
-    const monikaUrl =
-    panel.webview.asWebviewUri(
-        vscode.Uri.file(path.join(context.extensionPath, 'assets', 'just_monika.png'))
-    );
+    const {sticker} = getCurrentThemeAndSticker();
+    const stickerUrl =
+    `https://doki.assets.unthrottled.io/stickers/jetbrains/v2${sticker.sticker.path}`;
+    
     return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -43,7 +40,7 @@ export function buildWebviewHtml(
         </head>
         <body>
             ${content}
-            <img class="sticker" src="${monikaUrl}" />
+            <img class="sticker" src="${stickerUrl}" />
         </body>
         </html>`;
 }

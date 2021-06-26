@@ -92,7 +92,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 </ol> 
             </div>
             </div>
-            `, context, welcomePanel);
+            `,);
         
         VSCodeGlobals.globalState.update(IS_GREETED, true);
     }
