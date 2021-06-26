@@ -37,6 +37,11 @@ function buildWallpaperCss({
   .tabs-container,
   .monaco-pane-view, 
   .composite.title,
+  /* welcome window */
+  .editor-container,
+  button.getting-started-category,
+  /* end welcome window */
+  div.header, /* extensions header */
   .content,
   .monaco-select-box,
   .pane-header, 

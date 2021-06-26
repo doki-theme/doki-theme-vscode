@@ -1,5 +1,11 @@
 # Change Log
 
+# 13.2.0 [Small Enhancements]
+
+- Welcome Window now has background in VS Code 1.58
+- Extensions View Header now has background.
+- Changelog has theme's current sticker in the bottom right & the sticker shows above images.
+
 # 13.1.0 [Insiders Content Support]
 
 - Changed how stickers/wallpapers are installed, so they show up in VSCode v1.58.+. 

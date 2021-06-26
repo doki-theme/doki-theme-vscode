@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import ChangelogHtml from "./ChangelogHtml";
+import { getCurrentThemeAndSticker } from './ThemeManager';
+import { ASSETS_URL } from './ENV';
 
 export function showChanglog(context: vscode.ExtensionContext) {
     const welcomPanel = vscode.window.createWebviewPanel(
@@ -12,20 +14,16 @@ export function showChanglog(context: vscode.ExtensionContext) {
     welcomPanel.iconPath = getWebviewIcon(context);
     welcomPanel.webview.html = buildWebviewHtml(
         ChangelogHtml,
-        context,
-        welcomPanel
     );
 }
 
 export function buildWebviewHtml(
     content: string,
-    context: vscode.ExtensionContext,
-    panel: vscode.WebviewPanel
 ): string {
-    const monikaUrl =
-    panel.webview.asWebviewUri(
-        vscode.Uri.file(path.join(context.extensionPath, 'assets', 'just_monika.png'))
-    );
+    const {sticker} = getCurrentThemeAndSticker();
+    const stickerUrl =
+    `${ASSETS_URL}/stickers/jetbrains/v2${sticker.sticker.path}`;
+    
     return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -37,13 +35,13 @@ export function buildWebviewHtml(
                 position: fixed;
                 right: 0;
                 bottom: 0;
-                z-index: -1;
+                z-index: 9001;
             }
             </style>
         </head>
         <body>
             ${content}
-            <img class="sticker" src="${monikaUrl}" />
+            <img class="sticker" src="${stickerUrl}" />
         </body>
         </html>`;
 }
