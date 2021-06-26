@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import ChangelogHtml from "./ChangelogHtml";
 import { getCurrentThemeAndSticker } from './ThemeManager';
+import { ASSETS_URL } from './ENV';
 
 export function showChanglog(context: vscode.ExtensionContext) {
     const welcomPanel = vscode.window.createWebviewPanel(
@@ -21,7 +22,7 @@ export function buildWebviewHtml(
 ): string {
     const {sticker} = getCurrentThemeAndSticker();
     const stickerUrl =
-    `https://doki.assets.unthrottled.io/stickers/jetbrains/v2${sticker.sticker.path}`;
+    `${ASSETS_URL}/stickers/jetbrains/v2${sticker.sticker.path}`;
     
     return `<!DOCTYPE html>
         <html lang="en">
