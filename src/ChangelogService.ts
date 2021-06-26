@@ -37,7 +37,7 @@ export function buildWebviewHtml(
                 position: fixed;
                 right: 0;
                 bottom: 0;
-                z-index: -1;
+                z-index: 9001;
             }
             </style>
         </head>
