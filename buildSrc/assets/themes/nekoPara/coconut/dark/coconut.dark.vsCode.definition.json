@@ -1,11 +1,10 @@
 {
-  "id": "ca45f54a-57cb-4d8c-82a6-d4b31c850bd6",
+  "id": "432fdab1-b8fa-412e-8cca-1844f18a1a43",
   "overrides": {},
   "laf": {
     "extends": "dark-contrast",
     "ui": {
-      "editor.selectionBackground": "&selectionBackground&88",
-      "selection.background": "&selectionBackground&aa"
+      "selection.background": "&selectionBackground&"
     }
   },
   "syntax": {},

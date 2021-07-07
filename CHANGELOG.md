@@ -1,5 +1,15 @@
 # Change Log
 
+# 14.0.0 [NekoPara Release]
+
+## 3 New Themes!!
+
+- Chocola (Dark)
+- Vanilla (Dark)
+- Coconut (Dark)
+
+![v17 Girls](https://doki.assets.unthrottled.io/misc/v17_girls.png)
+
 # 13.2.0 [Small Enhancements]
 
 - Welcome Window now has background in VS Code 1.58

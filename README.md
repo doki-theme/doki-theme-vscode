@@ -41,6 +41,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Lucky Star
 - Miss Kobayashi's Dragon Maid
 - Monogatari
+- NekoPara
 - Neon Genesis Evangelion
 - OreGairu
 - Quintessential Quintuplets

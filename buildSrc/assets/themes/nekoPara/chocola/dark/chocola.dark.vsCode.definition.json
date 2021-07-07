@@ -1,16 +1,14 @@
 {
-  "id": "dfd05a73-c189-4622-87c7-573fbb3a46b9",
+  "id": "93035c21-9eb7-4b0e-92d0-35d66d16c8e0",
   "overrides": {},
   "laf": {
     "extends": "dark",
     "ui": {
-      "editor.selectionBackground": "&selectionBackground&AA"
+      "selection.background": "&selectionBackground&AA"
     }
   },
   "syntax": {},
-  "colors": {
-    "accentColor": "#7660A4"
-  },
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"

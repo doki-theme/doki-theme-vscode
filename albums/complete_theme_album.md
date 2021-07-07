@@ -34,6 +34,21 @@ Monogatari
 ![hanekawa_dark_code code](../screenshots/monogatari/hanekawa_dark_code.png)
 
 
+NekoPara
+---
+
+### Chocola
+
+![chocola_dark_code code](../screenshots/nekoPara/chocola_dark_code.png)
+
+### Vanilla
+
+![vanilla_dark_code code](../screenshots/nekoPara/vanilla_dark_code.png)
+
+### Coconut
+
+![coconut_dark_code code](../screenshots/nekoPara/coconut_dark_code.png)
+
 
 Don't Toy With Me, Miss Nagatoro
 ---

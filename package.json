@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "13.2.0",
+  "version": "14.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -140,6 +140,12 @@
     "onCommand:doki-theme.theme.wallpaper.Hanekawa Tsubasa",
     "onCommand:doki-theme.theme.Miia",
     "onCommand:doki-theme.theme.wallpaper.Miia",
+    "onCommand:doki-theme.theme.Chocola",
+    "onCommand:doki-theme.theme.wallpaper.Chocola",
+    "onCommand:doki-theme.theme.Coconut",
+    "onCommand:doki-theme.theme.wallpaper.Coconut",
+    "onCommand:doki-theme.theme.Vanilla",
+    "onCommand:doki-theme.theme.wallpaper.Vanilla",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.Nakano Miku",
@@ -613,6 +619,30 @@
         "title": "Doki-Theme: Install Miia's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Chocola",
+        "title": "Doki-Theme: Install Chocola's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Chocola",
+        "title": "Doki-Theme: Install Chocola's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Coconut",
+        "title": "Doki-Theme: Install Coconut's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Coconut",
+        "title": "Doki-Theme: Install Coconut's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Vanilla",
+        "title": "Doki-Theme: Install Vanilla's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Vanilla",
+        "title": "Doki-Theme: Install Vanilla's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Yukinoshita Yukino",
         "title": "Doki-Theme: Install Yukinoshita Yukino's Sticker"
       },
@@ -745,16 +775,16 @@
         "uiTheme": "vs"
       },
       {
-        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
-        "label": "Doki Theme: DDLC:  Monika",
-        "path": "./generatedThemes/Monika Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
         "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
+        "label": "Doki Theme: DDLC:  Monika",
+        "path": "./generatedThemes/Monika Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
@@ -781,16 +811,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
-        "label": "Doki Theme: DDLC:  Yuri",
-        "path": "./generatedThemes/Yuri Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
         "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
+        "label": "Doki Theme: DDLC:  Yuri",
+        "path": "./generatedThemes/Yuri Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "b93ab4ea-ff96-4459-8fa2-0caae5bc7116",
@@ -823,15 +853,15 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
-        "label": "Doki Theme: DxD:  Rias",
-        "path": "./generatedThemes/Rias Onyx.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
         "path": "./generatedThemes/Rias Crimson.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
+        "label": "Doki Theme: DxD:  Rias",
+        "path": "./generatedThemes/Rias Onyx.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -895,16 +925,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
-        "label": "Doki Theme: KonoSuba:  Darkness",
-        "path": "./generatedThemes/Darkness Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
         "label": "Doki Theme: KonoSuba:  Darkness",
         "path": "./generatedThemes/Darkness Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
+        "label": "Doki Theme: KonoSuba:  Darkness",
+        "path": "./generatedThemes/Darkness Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "63fe4617-4cac-47a5-9b93-6794514c35ad",
@@ -934,6 +964,24 @@
         "id": "5903b523-ea0a-4724-85d4-f0d0652c3010",
         "label": "Doki Theme: MonsterMusume:  Miia",
         "path": "./generatedThemes/Miia.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "93035c21-9eb7-4b0e-92d0-35d66d16c8e0",
+        "label": "Doki Theme: NekoPara:  Chocola",
+        "path": "./generatedThemes/Chocola.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "432fdab1-b8fa-412e-8cca-1844f18a1a43",
+        "label": "Doki Theme: NekoPara:  Coconut",
+        "path": "./generatedThemes/Coconut.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "31d5574d-f56b-408f-81dc-9d44feeb62c2",
+        "label": "Doki Theme: NekoPara:  Vanilla",
+        "path": "./generatedThemes/Vanilla.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -991,16 +1039,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
-        "label": "Doki Theme: SAO:  Asuna",
-        "path": "./generatedThemes/Asuna Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "bac375a4-abb3-44d5-9bef-8039eb83fec0",
         "label": "Doki Theme: SAO:  Asuna",
         "path": "./generatedThemes/Asuna Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
+        "label": "Doki Theme: SAO:  Asuna",
+        "path": "./generatedThemes/Asuna Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "d39df813-8701-463b-a964-b8cb7714d1cc",
