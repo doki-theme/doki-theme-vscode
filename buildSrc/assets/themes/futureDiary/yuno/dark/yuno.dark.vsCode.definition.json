@@ -8,11 +8,11 @@
       "selection.background": "&selectionBackground&aa"
     }
   },
+  "syntax": {},
+  "colors": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "syntax": {},
-  "colors": {}
+  }
 }
