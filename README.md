@@ -58,6 +58,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - [Configuration](#configuration)
     - [Background Images](#background-images)
     - [Stickers](#sticker)
+    - [Custom Assets](#custom-assets)
     - [Suggestive Content](#suggestive-content)
     - [Asset Removal](#remove-assets)
     - [Show Changelog](#show-changelog)
@@ -91,6 +92,51 @@ This feature will set the background image to the current theme's official wallp
 [This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
+
+
+## Custom Assets
+
+Hey alright, you have the ability to set the image to be used for all the doki-themes. Allowed image types: jpg, png, gif. You'll have to put these changes in the `settings.json` in your VSCode.
+
+**Custom Sticker**
+
+```json
+"doki.sticker.path": "C:\\Users\\alex\\Downloads\\aqua_celebration.gif",
+```
+
+![Custom Sticker](./readmeStuff/custom_sticker.gif)
+
+**Custom Background**
+
+This is the empty editor screen (all tabs closed), the one with the VS Code watermark.
+
+```json
+"doki.background.path": "C:\\Users\\alex\\Downloads\\chocola_celebration.gif",
+```
+
+![Custom Background](./readmeStuff/custom_background.gif)
+
+**Custom Wallpaper**
+
+This shows up on your editor and other places. 
+**Note**: you'll want to make your image partially transparent. 
+Cus I was too lazy to play make all the backgrounds partially transparent to show the opaque background image. Didn't feel like peeling that onion and deviating from my color schemes.
+
+```json
+"doki.wallpaper.path": "C:\\Users\\alex\\Downloads\\ishtar.png",
+```
+
+![Custom Background](./readmeStuff/custom_wallpaper.png)
+
+
+**Custom Wallpaper/Background Anchor**
+
+Value to be used for css 'background-position' for both the background & wallpaper (eg: center, right, left, etc.)
+
+```json
+"doki.background.anchor": "center",
+```
+
 
 ## Suggestive Content
 

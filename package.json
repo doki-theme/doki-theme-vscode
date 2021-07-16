@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "14.0.0",
+  "version": "14.1.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -177,26 +177,26 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "configuration":[
+    "configuration": [
       {
         "title": "Custom Doki Assets",
         "properties": {
-          "doki.background.path" : {
+          "doki.background.path": {
             "type": "string",
             "default": "",
             "description": "Absolute file path of the image you want to use as your empty editor background."
-          },           
-          "doki.background.anchor" : {
+          },
+          "doki.background.anchor": {
             "type": "string",
             "default": "",
             "description": "Value to be used for css 'background-position' for both images (eg: center, right, left, etc.)"
-          }, 
-          "doki.wallpaper.path" : {
+          },
+          "doki.wallpaper.path": {
             "type": "string",
             "default": "",
             "description": "Absolute file path of the image you want to use as your glass pane wallpaper. (Image should be transparent)"
           },
-          "doki.sticker.path" : {
+          "doki.sticker.path": {
             "type": "string",
             "default": "",
             "description": "Absolute file path of the image you want to use as your sticker."
