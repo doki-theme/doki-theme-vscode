@@ -179,7 +179,7 @@
   "contributes": {
     "configuration":[
       {
-        "title": "Custom Background URL",
+        "title": "Custom Doki Assets",
         "properties": {
           "doki.background.path" : {
             "type": "string",

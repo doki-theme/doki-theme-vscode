@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
-import { attemptToInstallSticker, attemptToInstallWallpaper, getCurrentThemeAndSticker } from "./ThemeManager";
+import { InstallStatus } from "./StickerService";
+import { attemptToInstallSticker, attemptToInstallWallpaper, getCurrentThemeAndSticker, handleInstallFailure } from "./ThemeManager";
 
 export const CONFIG_NAME = "doki";
 export const CONFIG_STICKER = "sticker.path";
@@ -13,14 +14,14 @@ export const watchConfigChanges = (
   extensionContext: vscode.ExtensionContext
 ): vscode.Disposable =>
   vscode.workspace.onDidChangeConfiguration(() => {
-    const { sticker } = getCurrentThemeAndSticker();
+    const { sticker, theme } = getCurrentThemeAndSticker();
     const newBoiConfig = vscode.workspace.getConfiguration(CONFIG_NAME);
 
     const stickerInstall =
       newBoiConfig.get(CONFIG_STICKER) !==
         currentConfig.get(CONFIG_STICKER) ?
         attemptToInstallSticker(sticker.sticker, extensionContext) :
-        Promise.resolve();
+        Promise.resolve(InstallStatus.NOT_INSTALLED);
 
     const backgroundChanged = newBoiConfig.get(CONFIG_BACKGROUND) !==
       currentConfig.get(CONFIG_BACKGROUND);
@@ -31,24 +32,36 @@ export const watchConfigChanges = (
     const wallpaperInstall =
       backgroundChanged || wallpaperChanged || anchorChanged ?
         attemptToInstallWallpaper(sticker.sticker, extensionContext) :
-        Promise.resolve();
+        Promise.resolve(InstallStatus.NOT_INSTALLED);
 
-    const installJerbs: Promise<any>[] = [
+    const installJerbs = [
       stickerInstall,
       wallpaperInstall,
     ];
     Promise.all(installJerbs)
-      .then(() => {
-        vscode.window
-          .showInformationMessage(
-            `Custom Assets installed!\n Please restart your VSCode`,
-            { title: "Restart VSCode" }
-          )
-          .then((item) => {
-            if (item) {
-              vscode.commands.executeCommand("workbench.action.reloadWindow");
-            }
-          });
+      .then((jerbResults) => {
+        const hadFailure = jerbResults
+          .reduce((didWork, jerbStatus) =>
+            didWork || jerbStatus == InstallStatus.FAILURE, false);
+        const hadSuccess = jerbResults
+          .reduce((didWork, jerbStatus) =>
+            didWork || jerbStatus == InstallStatus.INSTALLED, false);
+
+        if (hadFailure) {
+          handleInstallFailure(extensionContext, theme);
+        } else if (hadSuccess) {
+          vscode.window
+            .showInformationMessage(
+              `Custom Assets installed!\n Please restart your VSCode`,
+              { title: "Restart VSCode" }
+            )
+            .then((item) => {
+              if (item) {
+                vscode.commands.executeCommand("workbench.action.reloadWindow");
+              }
+            });
+        }
+        currentConfig = newBoiConfig
       })
       .catch(error => {
         console.error("Unable to install custom assets for reasons", error);
