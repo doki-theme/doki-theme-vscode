@@ -5,9 +5,13 @@
 Added the ability for you to add your own assets to be used by the themes!
 Please see the README.md for more details.
 
-| **Custom Sticker** | **Custom Background** | **Custom Wallpaper** |
-| --- | --- | --- |
-| ![custom_sticker](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_sticker.gif) | ![custom_background](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_background.gif) | ![custom_wallpaper](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_wallpaper.png) | 
+| **Custom Sticker** | **Custom Background** |
+| --- | --- |
+| ![custom_sticker](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_sticker.gif) | ![custom_background](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_background.gif) | 
+
+| **Custom Wallpaper** |
+| --- |
+| ![custom_wallpaper](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/customStickers/readmeStuff/custom_wallpaper.png)|
 
 # 14.0.0 [NekoPara Release]
 
