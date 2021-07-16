@@ -13,6 +13,7 @@ import {VSCodeGlobals} from "./VSCodeGlobals";
 import {attemptToNotifyUpdates} from "./NotificationService";
 import {showChanglog} from "./ChangelogService";
 import {attemptToUpdateSticker} from "./StickerUpdateService";
+import { watchConfigChanges } from "./ConfigWatcher";
 
 export interface Sticker {
   path: string;
@@ -96,6 +97,8 @@ export function activate(context: vscode.ExtensionContext) {
       )
     )
     .forEach((disposableHero) => context.subscriptions.push(disposableHero));
+
+    context.subscriptions.push(watchConfigChanges(context));
 }
 
 export function deactivate() {

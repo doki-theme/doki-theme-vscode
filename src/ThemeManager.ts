@@ -89,7 +89,7 @@ async function attemptToInstallAsset(
   }
 }
 
-async function attemptToInstallSticker(
+export async function attemptToInstallSticker(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
@@ -98,7 +98,7 @@ async function attemptToInstallSticker(
   );
 }
 
-async function attemptToInstallWallpaper(
+export async function attemptToInstallWallpaper(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
@@ -179,16 +179,20 @@ export function activateThemeAsset(
           }
         });
     } else if (didInstall === InstallStatus.FAILURE) {
-      showStickerInstallationSupportWindow(context);
-      vscode.window.showErrorMessage(
-        `Unable to install ${dokiTheme.name}, please see active tab for more information.`
-      );
+      handleInstallFailure(context, dokiTheme);
     } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
       vscode.window.showErrorMessage(
         `Unable to install ${dokiTheme.name}, please check your network connection.`
       );
     }
   });
+}
+
+export function handleInstallFailure(context: vscode.ExtensionContext, dokiTheme: DokiTheme) {
+  showStickerInstallationSupportWindow(context);
+  vscode.window.showErrorMessage(
+    `Unable to install ${dokiTheme.name}, please see active tab for more information.`
+  );
 }
 
 // :(
@@ -200,7 +204,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
   ) {
     vscode.window
       .showInformationMessage(
-        `Removed Images. Please restart your restored IDE`,
+        `Removed Images. Please restart your restored VSCode`,
         { title: "Restart VSCode" }
       )
       .then((item) => {

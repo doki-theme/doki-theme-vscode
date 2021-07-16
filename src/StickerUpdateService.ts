@@ -6,7 +6,6 @@ import { URL } from 'url';
 import crypto from "crypto";
 import {
   VSCODE_ASSETS_URL,
-  isCodeServer,
   BACKGROUND_ASSETS_URL,
   isWSL,
   workbenchDirectory,
@@ -14,6 +13,7 @@ import {
 } from "./ENV";
 import { DokiStickers } from "./StickerService";
 import { Sticker } from "./extension";
+import { CONFIG_BACKGROUND, CONFIG_BACKGROUND_ANCHOR, CONFIG_NAME, CONFIG_STICKER, CONFIG_WALLPAPER } from "./ConfigWatcher";
 
 function loadImageBase64FromFileProtocol(url: string): string {
   const fileUrl = new URL(url);
@@ -53,15 +53,6 @@ const _attemptToUpdateSticker = async (
   const remoteBackgroundUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
     currentSticker
   )}`;
-  if (isCodeServer()) {
-    return {
-      stickerDataURL: remoteStickerUrl,
-      backgroundImageURL: remoteBackgroundUrl,
-      wallpaperImageURL: remoteWallpaperUrl,
-      backgroundAnchoring: currentSticker.anchoring,
-    };
-  }
-
   const localStickerPath = resolveLocalStickerPath(currentSticker, context);
   const localWallpaperPath = resolveLocalWallpaperPath(currentSticker, context);
   const localBackgroundPath = resolveLocalBackgroundPath(
@@ -74,11 +65,20 @@ const _attemptToUpdateSticker = async (
     assetUpdater(remoteBackgroundUrl, localBackgroundPath, context),
   ]);
 
+  const config = vscode.workspace.getConfiguration(CONFIG_NAME);
+
   return {
-    stickerDataURL: createCssDokiAssetUrl(localStickerPath),
-    backgroundImageURL: createCssDokiAssetUrl(localBackgroundPath),
-    wallpaperImageURL: createCssDokiAssetUrl(localWallpaperPath),
-    backgroundAnchoring: currentSticker.anchoring,
+    stickerDataURL: createCssDokiAssetUrl(
+      config.get(CONFIG_STICKER) || localStickerPath
+    ),
+    backgroundImageURL: createCssDokiAssetUrl(
+      config.get(CONFIG_BACKGROUND) || localBackgroundPath
+    ),
+    wallpaperImageURL: createCssDokiAssetUrl(
+      config.get(CONFIG_WALLPAPER) || localWallpaperPath
+    ),
+    backgroundAnchoring: config.get(CONFIG_BACKGROUND_ANCHOR) ||
+      currentSticker.anchoring,
   };
 };
 
@@ -94,7 +94,7 @@ async function attemptToUpdateAsset(
   await forceUpdateAsset(remoteStickerUrl, localStickerPath);
 }
 
-export class NetworkError extends Error {}
+export class NetworkError extends Error { }
 
 async function forceUpdateAsset(
   remoteStickerUrl: string,
