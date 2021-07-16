@@ -89,7 +89,7 @@ async function attemptToInstallAsset(
   }
 }
 
-async function attemptToInstallSticker(
+export async function attemptToInstallSticker(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
@@ -98,7 +98,7 @@ async function attemptToInstallSticker(
   );
 }
 
-async function attemptToInstallWallpaper(
+export async function attemptToInstallWallpaper(
   sticker: Sticker,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {

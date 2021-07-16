@@ -177,6 +177,33 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration":[
+      {
+        "title": "Custom Background URL",
+        "properties": {
+          "doki.background.path" : {
+            "type": "string",
+            "default": "",
+            "description": "Absolute file path of the image you want to use as your empty editor background."
+          },           
+          "doki.background.anchor" : {
+            "type": "string",
+            "default": "",
+            "description": "Value to be used for css 'background-position' for both images (eg: center, right, left, etc.)"
+          }, 
+          "doki.wallpaper.path" : {
+            "type": "string",
+            "default": "",
+            "description": "Absolute file path of the image you want to use as your glass pane wallpaper. (Image should be transparent)"
+          },
+          "doki.sticker.path" : {
+            "type": "string",
+            "default": "",
+            "description": "Absolute file path of the image you want to use as your sticker."
+          }
+        }
+      }
+    ],
     "commands": [
       {
         "command": "doki-theme.doki.changelog",
