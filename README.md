@@ -98,6 +98,8 @@ This feature will set the background image to the current theme's official wallp
 
 Hey alright, you have the ability to set the image to be used for all the doki-themes. Allowed image types: jpg, png, gif. You'll have to put these changes in the `settings.json` in your VSCode. 
 
+You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
+
 **Note**: All path values _must_ be an absolute path that resolves to a file on the machine running VSCode.
 
 **Custom Sticker**

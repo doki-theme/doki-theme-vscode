@@ -34,6 +34,9 @@ function buildWallpaperCss({
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor  .overflow-guard>.monaco-scrollable-element::before,
   .overflow-guard,
   .tab,
+  /* settings UI */
+  .settings-editor>.settings-body .settings-toc-container,
+  /* end settings UI */
   .tabs-container,
   .monaco-pane-view, 
   .composite.title,
@@ -62,6 +65,8 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
   
+  /*settings UI */
+  .monaco-list.list_id_1 .monaco-list-rows,
   /* source control diff editor */  
   .lines-content.monaco-editor-background,
   /* output panel */
