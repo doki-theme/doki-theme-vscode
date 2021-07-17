@@ -1,5 +1,11 @@
 # Change Log
 
+# 14.1.1 [Settings UI Enhancement]
+
+- Updated the VSCode [Settings UI](https://code.visualstudio.com/docs/getstarted/settings) to support installed wallpapers!
+![Screenshot from 2021-07-17 14-27-59](https://user-images.githubusercontent.com/15972415/126047756-2410b041-09bb-4783-8a33-f05f47869891.png)
+
+
 # 14.1.0 [Custom Assets]
 
 Added the ability for you to add your own assets to be used by the themes!
