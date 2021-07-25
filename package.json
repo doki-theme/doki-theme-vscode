@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "14.1.1",
+  "version": "14.2.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -802,21 +802,15 @@
         "uiTheme": "vs"
       },
       {
-        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
-        "label": "Doki Theme: DDLC:  Monika",
-        "path": "./generatedThemes/Monika Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
         "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
-        "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
-        "label": "Doki Theme: DDLC:  Natsuki",
-        "path": "./generatedThemes/Natsuki Light.theme.json",
+        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
+        "label": "Doki Theme: DDLC:  Monika",
+        "path": "./generatedThemes/Monika Light.theme.json",
         "uiTheme": "vs"
       },
       {
@@ -824,6 +818,12 @@
         "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "91415015-8fe3-48eb-9951-70a5cd6cbb7f",
+        "label": "Doki Theme: DDLC:  Natsuki",
+        "path": "./generatedThemes/Natsuki Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
@@ -838,16 +838,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
-        "label": "Doki Theme: DDLC:  Yuri",
-        "path": "./generatedThemes/Yuri Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
         "label": "Doki Theme: DDLC:  Yuri",
         "path": "./generatedThemes/Yuri Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "cecf3f92-76d4-4f14-9a9c-3d558b6b3b68",
+        "label": "Doki Theme: DDLC:  Yuri",
+        "path": "./generatedThemes/Yuri Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "b93ab4ea-ff96-4459-8fa2-0caae5bc7116",
@@ -880,15 +880,15 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
-        "label": "Doki Theme: DxD:  Rias",
-        "path": "./generatedThemes/Rias Onyx.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "c5e92ad9-2fa0-491e-b92a-48ab92d13597",
         "label": "Doki Theme: DxD:  Rias",
         "path": "./generatedThemes/Rias Crimson.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160",
+        "label": "Doki Theme: DxD:  Rias",
+        "path": "./generatedThemes/Rias Onyx.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1066,16 +1066,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
-        "label": "Doki Theme: SAO:  Asuna",
-        "path": "./generatedThemes/Asuna Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "bac375a4-abb3-44d5-9bef-8039eb83fec0",
         "label": "Doki Theme: SAO:  Asuna",
         "path": "./generatedThemes/Asuna Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
+        "label": "Doki Theme: SAO:  Asuna",
+        "path": "./generatedThemes/Asuna Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "d39df813-8701-463b-a964-b8cb7714d1cc",
