@@ -1,5 +1,9 @@
 # Change Log
 
+# 14.2.0 [Auto-Checksum Fix]
+
+- Plugin automatically fixes VSCode's checksums on bundled/custom asset installation/removal. Just close all instances of VSCode and start it back up to get rid of the annoying `Unsupported` error.
+
 # 14.1.1 [Settings UI Enhancement]
 
 - Updated the VSCode [Settings UI](https://code.visualstudio.com/docs/getstarted/settings) to support installed wallpapers!

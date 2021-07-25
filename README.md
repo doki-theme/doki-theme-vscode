@@ -76,8 +76,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 **Background Wallpaper** is probably one of the best features of the plugin.
 This feature will set the background image to the current theme's official wallpaper.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. 
-[This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 **Glass Pane effect**
 
@@ -88,8 +87,7 @@ This feature will set the background image to the current theme's official wallp
 
 **Show sticker** allows you to control the presence of the cute sticker in the bottom right-hand corner of your IDE.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling.
-[This plugin](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums) can remove the annoying `Unsupported` warning.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
 
@@ -162,7 +160,7 @@ Applies for the following content:
 
 ## Remove Assets
 
-Removes both the sticker and wallpaper from your vscode and restores the supported status.
+Removes both the sticker and wallpaper from your vscode and restores the original supported status.
 
 ## Show Changelog
 

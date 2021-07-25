@@ -14,6 +14,7 @@ import {attemptToNotifyUpdates} from "./NotificationService";
 import {showChanglog} from "./ChangelogService";
 import {attemptToUpdateSticker} from "./StickerUpdateService";
 import { watchConfigChanges } from "./ConfigWatcher";
+import { cleanupOrigFiles as cleanupCheckSumRestorationFiles } from "./CheckSumService";
 
 export interface Sticker {
   path: string;
@@ -99,6 +100,8 @@ export function activate(context: vscode.ExtensionContext) {
     .forEach((disposableHero) => context.subscriptions.push(disposableHero));
 
     context.subscriptions.push(watchConfigChanges(context));
+
+    cleanupCheckSumRestorationFiles();
 }
 
 export function deactivate() {

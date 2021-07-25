@@ -14,6 +14,7 @@ import {
 } from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { DokiThemeDefinition, Sticker } from "./extension";
+import { fixCheckSums, restoreChecksum } from "./CheckSumService";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
@@ -168,6 +169,7 @@ export function activateThemeAsset(
       VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
       VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
       StatusBarComponent.setText(dokiTheme.displayName);
+      fixCheckSums();
       vscode.window
         .showInformationMessage(
           `${dokiTheme.name}'s ${assetType} installed!\n Please restart your VSCode`,
@@ -202,6 +204,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     stickersRemoved === InstallStatus.INSTALLED ||
     stickersRemoved === InstallStatus.NOT_INSTALLED
   ) {
+    restoreChecksum();
     vscode.window
       .showInformationMessage(
         `Removed Images. Please restart your restored VSCode`,

@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { fixCheckSums } from "./CheckSumService";
 import { InstallStatus } from "./StickerService";
 import { attemptToInstallSticker, attemptToInstallWallpaper, getCurrentThemeAndSticker, handleInstallFailure } from "./ThemeManager";
 
@@ -50,6 +51,7 @@ export const watchConfigChanges = (
         if (hadFailure) {
           handleInstallFailure(extensionContext, theme);
         } else if (hadSuccess) {
+          fixCheckSums();
           vscode.window
             .showInformationMessage(
               `Custom Assets installed!\n Please restart your VSCode`,

@@ -44,3 +44,5 @@ export const CSS_COPY_FILE_NAME = `${CSS_FILE_NAME}.copy`;
 export const editorCss = path.join(workbenchDirectory, CSS_FILE_NAME);
 export const editorCssCopy = path.join(workbenchDirectory, CSS_COPY_FILE_NAME);
 
+export const appDirectory = path.resolve(workbenchDirectory, '..', '..', '..');
+
