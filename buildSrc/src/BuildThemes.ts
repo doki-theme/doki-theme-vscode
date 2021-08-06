@@ -69,7 +69,7 @@ function buildLAFColors(
   const resolvedMasterNameColors = resolveNamedColors(
     masterTemplates,
     dokiThemeTemplateJson,
-  );  
+  );
 
   const evaluatedColors: StringDictionary<string> = {
     ...resolvedMasterNameColors,
@@ -78,7 +78,7 @@ function buildLAFColors(
   };
   return applyNamedColors(resolvedLafTemplate, {
     ...evaluatedColors,
-    editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor || 
+    editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor ||
     evaluatedColors.accentColor,
   });
 }
@@ -292,7 +292,7 @@ evaluateTemplates(
       }`,
     }));
 
-    const sakurajimaMaiID = '0527c6fc-316a-4f80-9459-d92ced0e6492';
+    const shimaRinID = '5fb9c0a4-e613-457c-97a5-6204f9076cef';
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
       label: `Doki Theme: ${getGroupName(dokiDefinition)} ${
@@ -301,9 +301,9 @@ evaluateTemplates(
       path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
     })).sort((a, b) => {
-      if(a.id === sakurajimaMaiID) {
+      if(a.id === shimaRinID) {
         return -1;
-      } else if (b.id === sakurajimaMaiID) {
+      } else if (b.id === shimaRinID) {
         return 1;
       } else {
         return a.label.localeCompare(b.label);
