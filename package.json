@@ -824,15 +824,21 @@
     ],
     "themes": [
       {
-        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
-        "label": "Doki Theme: BunnySenpai:  Mai",
-        "path": "./generatedThemes/Mai Dark.theme.json",
+        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
+        "label": "Doki Theme: YuruCamp:  Rin",
+        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "6106e529-efef-444d-9db0-a9b0b444cf1b",
         "label": "Doki Theme: BlendS:  Maika",
         "path": "./generatedThemes/Maika.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1181,12 +1187,6 @@
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
         "label": "Doki Theme: Vocaloid:  Miku",
         "path": "./generatedThemes/Hatsune Miku.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
-        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
-        "label": "Doki Theme: YuruCamp:  Rin",
-        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       }
     ]
