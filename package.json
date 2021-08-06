@@ -140,10 +140,18 @@
     "onCommand:doki-theme.theme.wallpaper.Hanekawa Tsubasa",
     "onCommand:doki-theme.theme.Miia",
     "onCommand:doki-theme.theme.wallpaper.Miia",
+    "onCommand:doki-theme.theme.Azuki",
+    "onCommand:doki-theme.theme.wallpaper.Azuki",
     "onCommand:doki-theme.theme.Chocola",
     "onCommand:doki-theme.theme.wallpaper.Chocola",
+    "onCommand:doki-theme.theme.Cinnamon",
+    "onCommand:doki-theme.theme.wallpaper.Cinnamon",
     "onCommand:doki-theme.theme.Coconut",
     "onCommand:doki-theme.theme.wallpaper.Coconut",
+    "onCommand:doki-theme.theme.Maple Dark",
+    "onCommand:doki-theme.theme.wallpaper.Maple Dark",
+    "onCommand:doki-theme.theme.Maple Light",
+    "onCommand:doki-theme.theme.wallpaper.Maple Light",
     "onCommand:doki-theme.theme.Vanilla",
     "onCommand:doki-theme.theme.wallpaper.Vanilla",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
@@ -646,6 +654,14 @@
         "title": "Doki-Theme: Install Miia's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Azuki",
+        "title": "Doki-Theme: Install Azuki's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Azuki",
+        "title": "Doki-Theme: Install Azuki's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Chocola",
         "title": "Doki-Theme: Install Chocola's Sticker"
       },
@@ -654,12 +670,36 @@
         "title": "Doki-Theme: Install Chocola's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Cinnamon",
+        "title": "Doki-Theme: Install Cinnamon's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Cinnamon",
+        "title": "Doki-Theme: Install Cinnamon's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Coconut",
         "title": "Doki-Theme: Install Coconut's Sticker"
       },
       {
         "command": "doki-theme.theme.wallpaper.Coconut",
         "title": "Doki-Theme: Install Coconut's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Maple Dark",
+        "title": "Doki-Theme: Install Maple Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Maple Dark",
+        "title": "Doki-Theme: Install Maple Dark's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Maple Light",
+        "title": "Doki-Theme: Install Maple Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Maple Light",
+        "title": "Doki-Theme: Install Maple Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Vanilla",
@@ -994,9 +1034,21 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "83e94920-9ae2-4838-9b85-4c3fa22b67b8",
+        "label": "Doki Theme: NekoPara:  Azuki",
+        "path": "./generatedThemes/Azuki.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "93035c21-9eb7-4b0e-92d0-35d66d16c8e0",
         "label": "Doki Theme: NekoPara:  Chocola",
         "path": "./generatedThemes/Chocola.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "84dc0d3c-1c83-4dde-87b9-e1ea27cd34b0",
+        "label": "Doki Theme: NekoPara:  Cinnamon",
+        "path": "./generatedThemes/Cinnamon.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1004,6 +1056,18 @@
         "label": "Doki Theme: NekoPara:  Coconut",
         "path": "./generatedThemes/Coconut.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "13407818-da66-432b-94e3-fd2192e98118",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "ea7a8b00-2d86-4e06-81a2-5c14a46264d5",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "31d5574d-f56b-408f-81dc-9d44feeb62c2",
