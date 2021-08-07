@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "14.2.0",
+  "version": "15.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -140,10 +140,18 @@
     "onCommand:doki-theme.theme.wallpaper.Hanekawa Tsubasa",
     "onCommand:doki-theme.theme.Miia",
     "onCommand:doki-theme.theme.wallpaper.Miia",
+    "onCommand:doki-theme.theme.Azuki",
+    "onCommand:doki-theme.theme.wallpaper.Azuki",
     "onCommand:doki-theme.theme.Chocola",
     "onCommand:doki-theme.theme.wallpaper.Chocola",
+    "onCommand:doki-theme.theme.Cinnamon",
+    "onCommand:doki-theme.theme.wallpaper.Cinnamon",
     "onCommand:doki-theme.theme.Coconut",
     "onCommand:doki-theme.theme.wallpaper.Coconut",
+    "onCommand:doki-theme.theme.Maple Dark",
+    "onCommand:doki-theme.theme.wallpaper.Maple Dark",
+    "onCommand:doki-theme.theme.Maple Light",
+    "onCommand:doki-theme.theme.wallpaper.Maple Light",
     "onCommand:doki-theme.theme.Vanilla",
     "onCommand:doki-theme.theme.wallpaper.Vanilla",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
@@ -646,6 +654,14 @@
         "title": "Doki-Theme: Install Miia's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Azuki",
+        "title": "Doki-Theme: Install Azuki's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Azuki",
+        "title": "Doki-Theme: Install Azuki's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Chocola",
         "title": "Doki-Theme: Install Chocola's Sticker"
       },
@@ -654,12 +670,36 @@
         "title": "Doki-Theme: Install Chocola's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Cinnamon",
+        "title": "Doki-Theme: Install Cinnamon's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Cinnamon",
+        "title": "Doki-Theme: Install Cinnamon's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Coconut",
         "title": "Doki-Theme: Install Coconut's Sticker"
       },
       {
         "command": "doki-theme.theme.wallpaper.Coconut",
         "title": "Doki-Theme: Install Coconut's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Maple Dark",
+        "title": "Doki-Theme: Install Maple Dark's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Maple Dark",
+        "title": "Doki-Theme: Install Maple Dark's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Maple Light",
+        "title": "Doki-Theme: Install Maple Light's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Maple Light",
+        "title": "Doki-Theme: Install Maple Light's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Vanilla",
@@ -784,15 +824,21 @@
     ],
     "themes": [
       {
-        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
-        "label": "Doki Theme: BunnySenpai:  Mai",
-        "path": "./generatedThemes/Mai Dark.theme.json",
+        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
+        "label": "Doki Theme: YuruCamp:  Rin",
+        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "6106e529-efef-444d-9db0-a9b0b444cf1b",
         "label": "Doki Theme: BlendS:  Maika",
         "path": "./generatedThemes/Maika.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -994,9 +1040,21 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "83e94920-9ae2-4838-9b85-4c3fa22b67b8",
+        "label": "Doki Theme: NekoPara:  Azuki",
+        "path": "./generatedThemes/Azuki.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "93035c21-9eb7-4b0e-92d0-35d66d16c8e0",
         "label": "Doki Theme: NekoPara:  Chocola",
         "path": "./generatedThemes/Chocola.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "84dc0d3c-1c83-4dde-87b9-e1ea27cd34b0",
+        "label": "Doki Theme: NekoPara:  Cinnamon",
+        "path": "./generatedThemes/Cinnamon.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1004,6 +1062,18 @@
         "label": "Doki Theme: NekoPara:  Coconut",
         "path": "./generatedThemes/Coconut.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "13407818-da66-432b-94e3-fd2192e98118",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "ea7a8b00-2d86-4e06-81a2-5c14a46264d5",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "31d5574d-f56b-408f-81dc-9d44feeb62c2",
@@ -1117,12 +1187,6 @@
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
         "label": "Doki Theme: Vocaloid:  Miku",
         "path": "./generatedThemes/Hatsune Miku.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
-        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
-        "label": "Doki Theme: YuruCamp:  Rin",
-        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       }
     ]

@@ -1,5 +1,15 @@
 # Change Log
 
+# 15.0.0 [NekoPara OneeSan Vol.]
+
+## 4 New Themes!!
+
+- Maple (Light/Dark)
+- Cinnamon (Dark)
+- Azuki (Dark)
+
+![v18 Girls](https://doki.assets.unthrottled.io/misc/v18_girls.png)
+
 # 14.2.0 [Auto-Checksum Fix]
 
 - Plugin automatically fixes VSCode's checksums on bundled/custom asset installation/removal. Just close all instances of VSCode and start it back up to get rid of the annoying `Unsupported` error.

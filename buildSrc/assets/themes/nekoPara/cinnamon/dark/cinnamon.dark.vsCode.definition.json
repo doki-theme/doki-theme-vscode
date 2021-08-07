@@ -1,0 +1,17 @@
+{
+  "id": "84dc0d3c-1c83-4dde-87b9-e1ea27cd34b0",
+  "overrides": {},
+  "laf": {
+    "extends": "dark-contrast",
+    "ui": {
+      "selection.background": "&selectionBackground&CC"
+    }
+  },
+  "syntax": {},
+  "colors": {},
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  }
+}

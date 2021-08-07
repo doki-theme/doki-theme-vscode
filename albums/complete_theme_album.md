@@ -49,6 +49,19 @@ NekoPara
 
 ![coconut_dark_code code](../screenshots/nekoPara/coconut_dark_code.png)
 
+### Maple
+
+![maple_dark_code code](../screenshots/nekoPara/maple_dark_code.png)
+![maple_light_code code](../screenshots/nekoPara/maple_light_code.png)
+
+### Cinnamon
+
+![cinnamon_dark_code code](../screenshots/nekoPara/cinnamon_dark_code.png)
+
+### Azuki
+
+![azuki_dark_code code](../screenshots/nekoPara/azuki_dark_code.png)
+
 
 Don't Toy With Me, Miss Nagatoro
 ---
