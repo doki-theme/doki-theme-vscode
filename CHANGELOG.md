@@ -4,7 +4,7 @@
 
 - Stylized the secondary button in the VS Code modal window to match the theme.
 
-![Just Trust Me, Bro]()
+![Just Trust Me, Bro](https://user-images.githubusercontent.com/15972415/129116241-f24404dd-2cb7-4858-8a0b-034e5d914b78.gif)
 
 # 15.0.0 [NekoPara OneeSan Vol.]
 
