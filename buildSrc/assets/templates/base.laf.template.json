@@ -130,6 +130,8 @@
     "activityBar.inactiveForeground": "&accentColor&BB",
     "button.background": "&buttonColor&",
     "button.foreground": "&buttonFont&",
+    "button.secondaryForeground":"&buttonFont&BB",
+    "button.secondaryBackground":"&buttonColor&CC",
     "editor.lineHighlightBackground": "&caretRow&77",
     "gitlens.trailingLineBackgroundColor": "&caretRow&77",
     "editor.lineHighlightBorder": "&caretRow&00",
