@@ -1,5 +1,11 @@
 # Change Log
 
+# 15.1.0 [Search & Selection Differentiation]
+
+- Made it easier to differentiate the search & selection background colors for all **61** themes. <sup><sup>Some days I question my current life choices....</sup></sup>
+
+
+
 # 15.0.1 [Modal Window Enhancement]
 
 - Stylized the secondary button in the VS Code modal window to match the theme.
