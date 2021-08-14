@@ -4,7 +4,7 @@
 
 - Made it easier to differentiate the search & selection background colors for all **61** themes. <sup><sup>Some days I question my current life choices....</sup></sup>
 
-
+![Search & Selection Differentiation](https://user-images.githubusercontent.com/15972415/129452488-70c60425-68fa-4b5d-88e1-207bff582ad0.png)
 
 # 15.0.1 [Modal Window Enhancement]
 
