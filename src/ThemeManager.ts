@@ -154,6 +154,8 @@ export function activateThemeWallpaper(
   );
 }
 
+const quickReloadAction = "Quickly Reload Window";
+
 export function activateThemeAsset(
   dokiTheme: DokiTheme,
   currentSticker: DokiSticker,
@@ -172,8 +174,8 @@ export function activateThemeAsset(
       fixCheckSums();
       vscode.window
         .showInformationMessage(
-          `${dokiTheme.name}'s ${assetType} installed!\n Please restart your VSCode`,
-          { title: "Restart VSCode" }
+          `${dokiTheme.name}'s ${assetType} installed! Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
+          { title: quickReloadAction }
         )
         .then((item) => {
           if (item) {
@@ -207,8 +209,8 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     restoreChecksum();
     vscode.window
       .showInformationMessage(
-        `Removed Images. Please restart your restored VSCode`,
-        { title: "Restart VSCode" }
+        `Removed All Images. Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
+        { title: quickReloadAction }
       )
       .then((item) => {
         if (item) {
