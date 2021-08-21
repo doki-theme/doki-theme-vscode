@@ -836,21 +836,15 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
-        "label": "Doki Theme: BunnySenpai:  Mai",
-        "path": "./generatedThemes/Mai Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "98878c8e-9f91-4e25-930d-dd7d280d9e35",
         "label": "Doki Theme: BunnySenpai:  Mai",
         "path": "./generatedThemes/Mai Light.theme.json",
         "uiTheme": "vs"
       },
       {
-        "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
-        "label": "Doki Theme: DDLC:  Monika",
-        "path": "./generatedThemes/Monika Dark.theme.json",
+        "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -860,9 +854,9 @@
         "uiTheme": "vs"
       },
       {
-        "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
-        "label": "Doki Theme: DDLC:  Natsuki",
-        "path": "./generatedThemes/Natsuki Dark.theme.json",
+        "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
+        "label": "Doki Theme: DDLC:  Monika",
+        "path": "./generatedThemes/Monika Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -870,6 +864,12 @@
         "label": "Doki Theme: DDLC:  Natsuki",
         "path": "./generatedThemes/Natsuki Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
+        "label": "Doki Theme: DDLC:  Natsuki",
+        "path": "./generatedThemes/Natsuki Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
@@ -950,16 +950,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b",
-        "label": "Doki Theme: Franxx:  Zero Two",
-        "path": "./generatedThemes/Zero Two Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "4fd5cb34-d36e-4a3c-8639-052b19b26ba1",
         "label": "Doki Theme: Franxx:  Zero Two",
         "path": "./generatedThemes/Zero Two Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b",
+        "label": "Doki Theme: Franxx:  Zero Two",
+        "path": "./generatedThemes/Zero Two Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "5ec63d95-1e7d-4649-b3d0-0078af8f8740",
@@ -998,16 +998,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
-        "label": "Doki Theme: KonoSuba:  Darkness",
-        "path": "./generatedThemes/Darkness Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
         "label": "Doki Theme: KonoSuba:  Darkness",
         "path": "./generatedThemes/Darkness Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
+        "label": "Doki Theme: KonoSuba:  Darkness",
+        "path": "./generatedThemes/Darkness Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "63fe4617-4cac-47a5-9b93-6794514c35ad",
@@ -1064,16 +1064,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "13407818-da66-432b-94e3-fd2192e98118",
-        "label": "Doki Theme: NekoPara:  Maple",
-        "path": "./generatedThemes/Maple Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "ea7a8b00-2d86-4e06-81a2-5c14a46264d5",
         "label": "Doki Theme: NekoPara:  Maple",
         "path": "./generatedThemes/Maple Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "13407818-da66-432b-94e3-fd2192e98118",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "31d5574d-f56b-408f-81dc-9d44feeb62c2",
@@ -1112,16 +1112,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "696de7c1-3a8e-4445-83ee-3eb7e9dca47f",
-        "label": "Doki Theme: Re:Zero:  Emilia",
-        "path": "./generatedThemes/Emilia Dark.theme.json",
-        "uiTheme": "vs-dark"
-      },
-      {
         "id": "e828aaae-aa8c-4084-8993-d64697146930",
         "label": "Doki Theme: Re:Zero:  Emilia",
         "path": "./generatedThemes/Emilia Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "696de7c1-3a8e-4445-83ee-3eb7e9dca47f",
+        "label": "Doki Theme: Re:Zero:  Emilia",
+        "path": "./generatedThemes/Emilia Dark.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "ecb74f1c-8c84-40c4-916f-601039ba2af0",
