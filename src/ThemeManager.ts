@@ -154,6 +154,8 @@ export function activateThemeWallpaper(
   );
 }
 
+const quickReloadAction = "Quickly Reload Window";
+
 export function activateThemeAsset(
   dokiTheme: DokiTheme,
   currentSticker: DokiSticker,
@@ -161,32 +163,35 @@ export function activateThemeAsset(
   assetType: string,
   installer: (sticker: Sticker) => Promise<InstallStatus>
 ) {
-  vscode.window.showInformationMessage(
-    `Please wait, installing ${dokiTheme.name}'s ${assetType}.`
-  );
-  installer(currentSticker.sticker).then((didInstall) => {
-    if (didInstall === InstallStatus.INSTALLED) {
-      VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
-      VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
-      StatusBarComponent.setText(dokiTheme.displayName);
-      fixCheckSums();
-      vscode.window
-        .showInformationMessage(
-          `${dokiTheme.name}'s ${assetType} installed!\n Please restart your VSCode`,
-          { title: "Restart VSCode" }
-        )
-        .then((item) => {
-          if (item) {
-            vscode.commands.executeCommand("workbench.action.reloadWindow");
-          }
-        });
-    } else if (didInstall === InstallStatus.FAILURE) {
-      handleInstallFailure(context, dokiTheme);
-    } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
-      vscode.window.showErrorMessage(
-        `Unable to install ${dokiTheme.name}, please check your network connection.`
-      );
-    }
+  vscode.window.withProgress({
+    location: vscode.ProgressLocation.Notification,
+    title: `Please wait, installing ${dokiTheme.name}'s ${assetType}.`,
+    cancellable: false,
+  }, () => {
+    return installer(currentSticker.sticker).then((didInstall) => {
+      if (didInstall === InstallStatus.INSTALLED) {
+        VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
+        VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
+        StatusBarComponent.setText(dokiTheme.displayName);
+        fixCheckSums();
+        vscode.window
+          .showInformationMessage(
+            `${dokiTheme.name}'s ${assetType} installed! Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
+            { title: quickReloadAction }
+          )
+          .then((item) => {
+            if (item) {
+              vscode.commands.executeCommand("workbench.action.reloadWindow");
+            }
+          });
+      } else if (didInstall === InstallStatus.FAILURE) {
+        handleInstallFailure(context, dokiTheme);
+      } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
+        vscode.window.showErrorMessage(
+          `Unable to install ${dokiTheme.name}, please check your network connection.`
+        );
+      }
+    });
   });
 }
 
@@ -207,8 +212,8 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     restoreChecksum();
     vscode.window
       .showInformationMessage(
-        `Removed Images. Please restart your restored VSCode`,
-        { title: "Restart VSCode" }
+        `Removed All Images. Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
+        { title: quickReloadAction }
       )
       .then((item) => {
         if (item) {

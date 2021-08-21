@@ -1,5 +1,10 @@
 # Change Log
 
+# 15.1.1 [Asset Installation UX]
+
+- Installation progress notification goes away after install. [#107](https://github.com/doki-theme/doki-theme-vscode/issues/107)
+- Updated verbage on installation asset success notification. [#106](https://github.com/doki-theme/doki-theme-vscode/issues/106)
+
 # 15.1.0 [Search & Selection Differentiation]
 
 - Made it easier to differentiate the search & selection background colors for all **61** themes. <sup><sup>Some days I question my current life choices....</sup></sup>
