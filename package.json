@@ -32,6 +32,7 @@
     "onStartupFinished",
     "onCommand:doki-theme.doki.changelog",
     "onCommand:doki-theme.remove.sticker",
+    "onCommand:doki-theme.remove.watermark",
     "onCommand:doki-theme.theme.Maika",
     "onCommand:doki-theme.theme.wallpaper.Maika",
     "onCommand:doki-theme.theme.Mai Dark",
