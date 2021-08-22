@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "15.1.1",
+  "version": "15.2.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -221,6 +221,10 @@
       {
         "command": "doki-theme.remove.sticker",
         "title": "Doki-Theme: Remove Sticker/Background"
+      },
+      {
+        "command": "doki-theme.remove.watermark",
+        "title": "Doki-Theme: Hide VS Code Watermark"
       },
       {
         "command": "doki-theme.theme.Maika",

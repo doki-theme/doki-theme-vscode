@@ -211,6 +211,8 @@ export async function installWallPaper(
 }
 
 export async function hideWaterMark(): Promise<InstallStatus> {
+  if (!canWrite()) return InstallStatus.FAILURE;
+
   installEditorStyles(buildCSSWithoutWatermark())
   return InstallStatus.INSTALLED
 }
@@ -240,14 +242,17 @@ async function installStyles(
 
 function getScrubbedCSS() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
-  const stickerIndex = getStickerIndex(currentCss);
-  const trimmedCss = trimCss(currentCss, stickerIndex);
-  return trimCss(trimmedCss, getWallpaperIndex(trimmedCss));
+  return indexGetters.reduce(
+    (trimmedCss, indexFinderDude) => trimCss(trimmedCss, indexFinderDude(trimmedCss)),
+    currentCss
+  );
 }
 
+type IndexFinderDude = (currentCss: string) => number;
+
 function scrubCssOfAsset(
-  getOtherAssets: ((currentCss: string) => number)[],
-  getAssetToRemoveIndex: (currentCss: string) => number
+  getOtherAssets: IndexFinderDude[],
+  getAssetToRemoveIndex: IndexFinderDude
 ) {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
   const otherAssetIndices = getOtherAssets.map(assetFinder => assetFinder(currentCss));
@@ -261,7 +266,7 @@ function scrubCssOfAsset(
       .reduce((accum, index) => Math.min(accum, index), Number.POSITIVE_INFINITY)
     return (
       currentCss.substring(0, assetToRemoveIndex) +
-      (smolestGreater === Number.POSITIVE_INFINITY
+      (smolestGreater < Number.POSITIVE_INFINITY
         ? "\n" + currentCss.substring(smolestGreater, currentCss.length)
         : "")
     );
