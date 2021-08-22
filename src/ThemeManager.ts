@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
 import {
+  hideWaterMark,
   InstallStatus,
   installStickers,
   installWallPaper,
@@ -21,6 +22,7 @@ export const ACTIVE_THEME = "doki.theme.active";
 export const ACTIVE_STICKER = "doki.sticker.active";
 
 const FIRST_TIME_STICKER_INSTALL = "doki.sticker.first.install";
+export const handleInstallMessage = `Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`
 
 const createCulturedInstall = (themeId: string): string =>
   `doki.cultured.${themeId}`;
@@ -108,8 +110,16 @@ export async function attemptToInstallWallpaper(
   );
 }
 
-function getInstallStatus(installResult: boolean) {
-  return installResult ? InstallStatus.INSTALLED : InstallStatus.FAILURE;
+export async function attemptToInstallHideWatermark(
+  context: vscode.ExtensionContext
+): Promise<InstallStatus> {
+  return attemptToInstallAsset(context, {
+    anchoring: "Facts: ",
+    name: "Zero Two",
+    path: "Best Girl",
+  }, () =>
+    performHideWatermarkInstall()
+  );
 }
 
 async function performStickerInstall(
@@ -125,6 +135,13 @@ async function performWallpaperInstall(
 ): Promise<InstallStatus> {
   return await installWallPaper(sticker, context);
 }
+
+async function performHideWatermarkInstall(
+): Promise<InstallStatus> {
+  return await hideWaterMark();
+}
+
+
 
 export function activateThemeSticker(
   dokiTheme: DokiTheme,
@@ -154,6 +171,21 @@ export function activateThemeWallpaper(
   );
 }
 
+export function activateHideWatermark(
+  context: vscode.ExtensionContext
+) {
+  return attemptToInstallHideWatermark(context).then(
+    installStatus => {
+      if (installStatus === InstallStatus.INSTALLED) {
+        const message = `VSCode Watermark hidden! ${handleInstallMessage}`;
+        showInstallNotification(message);
+      } else if (installStatus === InstallStatus.FAILURE) {
+        handleInstallFailure(context, getCurrentThemeAndSticker().theme);                
+      }
+    }
+  );
+}
+
 const quickReloadAction = "Quickly Reload Window";
 
 export function activateThemeAsset(
@@ -174,16 +206,8 @@ export function activateThemeAsset(
         VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
         StatusBarComponent.setText(dokiTheme.displayName);
         fixCheckSums();
-        vscode.window
-          .showInformationMessage(
-            `${dokiTheme.name}'s ${assetType} installed! Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
-            { title: quickReloadAction }
-          )
-          .then((item) => {
-            if (item) {
-              vscode.commands.executeCommand("workbench.action.reloadWindow");
-            }
-          });
+        const message = `${dokiTheme.name}'s ${assetType} installed! ${handleInstallMessage}`;
+        showInstallNotification(message);
       } else if (didInstall === InstallStatus.FAILURE) {
         handleInstallFailure(context, dokiTheme);
       } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
@@ -193,6 +217,19 @@ export function activateThemeAsset(
       }
     });
   });
+}
+
+export function showInstallNotification(message: string) {
+  vscode.window
+    .showInformationMessage(
+      message,
+      { title: quickReloadAction }
+    )
+    .then((item) => {
+      if (item) {
+        vscode.commands.executeCommand("workbench.action.reloadWindow");
+      }
+    });
 }
 
 export function handleInstallFailure(context: vscode.ExtensionContext, dokiTheme: DokiTheme) {
@@ -212,7 +249,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     restoreChecksum();
     vscode.window
       .showInformationMessage(
-        `Removed All Images. Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`,
+        `Removed All Images. ${handleInstallMessage}`,
         { title: quickReloadAction }
       )
       .then((item) => {
@@ -271,3 +308,7 @@ function isCultured(
     !context.globalState.get(CULTURED_STICKER_INSTALL)
   );
 }
+function hideWatermark(): InstallStatus | PromiseLike<InstallStatus> {
+  throw new Error("Function not implemented.");
+}
+

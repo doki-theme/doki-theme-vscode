@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import {
+  activateHideWatermark,
   activateThemeSticker,
   activateThemeWallpaper,
   getCurrentThemeAndSticker,
@@ -64,6 +65,13 @@ export function activate(context: vscode.ExtensionContext) {
       showChanglog(context)
     )
   );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("doki-theme.remove.watermark", () =>
+      activateHideWatermark(context)
+    )
+  );
+
 
   VSCodeGlobals.globalState = context.globalState;
 

@@ -1,5 +1,12 @@
 # Change Log
 
+# 15.2.0 [Hide Watermark]
+
+- Added the **Hide VSCode Watermark** command that...well... hides the VS Code watermark that shows when all editor tabs are closed.
+
+![Hidden Watermark](https://user-images.githubusercontent.com/15972415/130338907-3105bf84-5715-4488-879a-db58c5c4c1cb.png)
+
+
 # 15.1.1 [Asset Installation UX]
 
 - Installation progress notification goes away after install. [#107](https://github.com/doki-theme/doki-theme-vscode/issues/107)

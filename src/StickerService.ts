@@ -15,10 +15,13 @@ export enum InstallStatus {
 }
 
 const stickerComment = "/* Stickers */";
+const hideComment = "/* Hide Watermark */";
 const wallpaperComment = "/* Background Image */";
 
 const getStickerIndex = (currentCss: string) =>
   currentCss.indexOf(stickerComment);
+const getHideIndex = (currentCss: string) =>
+  currentCss.indexOf(hideComment);
 const getWallpaperIndex = (currentCss: string) =>
   currentCss.indexOf(wallpaperComment);
 
@@ -143,6 +146,19 @@ function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
 `;
 }
 
+function buildHideWaterMarkCSS(): string {
+  return `
+  ${hideComment}
+  .monaco-workbench .part.editor.has-watermark>.content.empty .editor-group-container>.editor-group-letterpress,
+  .monaco-workbench .part.editor>.content.empty>.watermark>.watermark-box 
+  {
+    display: none !important;
+  }
+`;
+}
+
+
+
 function buildCSSWithStickers(dokiStickers: DokiStickers): string {
   return `${getStickerScrubbedCSS()}${buildStickerCss(dokiStickers)}`;
 }
@@ -150,6 +166,11 @@ function buildCSSWithStickers(dokiStickers: DokiStickers): string {
 function buildCSSWithWallpaper(dokiStickers: DokiStickers): string {
   return `${getWallpaperScrubbedCSS()}${buildWallpaperCss(dokiStickers)}`;
 }
+
+function buildCSSWithoutWatermark(): string {
+  return `${getWatermarkScrubbedCSS()}${buildHideWaterMarkCSS()}`;
+}
+
 
 function installEditorStyles(styles: string) {
   fs.writeFileSync(editorCss, styles, "utf-8");
@@ -189,6 +210,14 @@ export async function installWallPaper(
   );
 }
 
+export async function hideWaterMark(): Promise<InstallStatus> {
+  if (!canWrite()) return InstallStatus.FAILURE;
+
+  installEditorStyles(buildCSSWithoutWatermark())
+  return InstallStatus.INSTALLED
+}
+
+
 async function installStyles(
   sticker: Sticker,
   context: vscode.ExtensionContext,
@@ -213,36 +242,59 @@ async function installStyles(
 
 function getScrubbedCSS() {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
-  const stickerIndex = getStickerIndex(currentCss);
-  const trimmedCss = trimCss(currentCss, stickerIndex);
-  return trimCss(trimmedCss, getWallpaperIndex(trimmedCss));
+  return indexGetters.reduce(
+    (trimmedCss, indexFinderDude) => trimCss(trimmedCss, indexFinderDude(trimmedCss)),
+    currentCss
+  );
 }
 
+type IndexFinderDude = (currentCss: string) => number;
+
 function scrubCssOfAsset(
-  getAssetOneIndex: (currentCss: string) => number,
-  getAssetToRemoveIndex: (currentCss: string) => number
+  getOtherAssets: IndexFinderDude[],
+  getAssetToRemoveIndex: IndexFinderDude
 ) {
   const currentCss = fs.readFileSync(editorCss, "utf-8");
-  const otherAssetIndex = getAssetOneIndex(currentCss);
+  const otherAssetIndices = getOtherAssets.map(assetFinder => assetFinder(currentCss));
   const assetToRemoveIndex = getAssetToRemoveIndex(currentCss);
-  if (otherAssetIndex < 0) {
+  const otherIndex = otherAssetIndices.reduce((accum, index) => Math.max(accum, index), -1);
+  if (otherIndex < 0) {
     return trimCss(currentCss, assetToRemoveIndex);
   } else if (assetToRemoveIndex > -1) {
+    const smolestGreater = otherAssetIndices
+      .filter(otherIndex => assetToRemoveIndex < otherIndex)
+      .reduce((accum, index) => Math.min(accum, index), Number.POSITIVE_INFINITY)
     return (
       currentCss.substring(0, assetToRemoveIndex) +
-      (assetToRemoveIndex < otherAssetIndex
-        ? "\n" + currentCss.substring(otherAssetIndex, currentCss.length)
+      (smolestGreater < Number.POSITIVE_INFINITY
+        ? "\n" + currentCss.substring(smolestGreater, currentCss.length)
         : "")
     );
   }
   return currentCss;
 }
 
+const indexGetters = [
+  getStickerIndex, getWallpaperIndex, getHideIndex
+]
+
 function getWallpaperScrubbedCSS() {
-  return scrubCssOfAsset(getStickerIndex, getWallpaperIndex);
+  return scrubCssOfAsset(
+    indexGetters.filter(getter => getter !== getWallpaperIndex),
+    getWallpaperIndex
+  );
 }
 function getStickerScrubbedCSS() {
-  return scrubCssOfAsset(getWallpaperIndex, getStickerIndex);
+  return scrubCssOfAsset(
+    indexGetters.filter(getter => getter !== getStickerIndex),
+    getStickerIndex
+  );
+}
+function getWatermarkScrubbedCSS() {
+  return scrubCssOfAsset(
+    indexGetters.filter(getter => getter !== getHideIndex),
+    getHideIndex
+  );
 }
 
 function trimCss(currentCss: string, index: number): string {
