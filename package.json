@@ -224,7 +224,7 @@
       },
       {
         "command": "doki-theme.remove.watermark",
-        "title": "Doki-Theme: Hide VS Code Watermark"
+        "title": "Doki-Theme: Hide VSCode Watermark"
       },
       {
         "command": "doki-theme.theme.Maika",

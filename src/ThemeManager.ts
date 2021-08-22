@@ -22,7 +22,7 @@ export const ACTIVE_THEME = "doki.theme.active";
 export const ACTIVE_STICKER = "doki.sticker.active";
 
 const FIRST_TIME_STICKER_INSTALL = "doki.sticker.first.install";
-const handleInstallMessage = `Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`
+export const handleInstallMessage = `Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`
 
 const createCulturedInstall = (themeId: string): string =>
   `doki.cultured.${themeId}`;
@@ -219,7 +219,7 @@ export function activateThemeAsset(
   });
 }
 
-function showInstallNotification(message: string) {
+export function showInstallNotification(message: string) {
   vscode.window
     .showInformationMessage(
       message,

@@ -57,6 +57,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 
 - [Configuration](#configuration)
     - [Background Images](#background-images)
+    - [Hide VSCode Watermark](#hide-watermark)
     - [Stickers](#sticker)
     - [Custom Assets](#custom-assets)
     - [Suggestive Content](#suggestive-content)
@@ -83,6 +84,15 @@ This feature will set the background image to the current theme's official wallp
 ![Zero Two Code](./readmeStuff/wallpaper_code.png)
 ![Zero Two Code](./readmeStuff/wallpaper_background.png)
 
+## Hide Watermark
+
+Tired of the the VSCode watermark cramping your style? 
+You have the ability to hide it using **Hide VSCode Watermark**, so you can fully enjoy your art.
+
+**Important!!** Hiding the watermark requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
+
+![Hidden Watermark](./readmeStuff/hide_watermark.gif)
+
 ## Stickers
 
 **Show sticker** allows you to control the presence of the cute sticker in the bottom right-hand corner of your IDE.
@@ -90,7 +100,6 @@ This feature will set the background image to the current theme's official wallp
 **Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
-
 
 ## Custom Assets
 
