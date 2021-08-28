@@ -1,7 +1,8 @@
 import * as vscode from "vscode";
 import { fixCheckSums } from "./CheckSumService";
-import { DokiTheme, DokiSticker } from "./DokiTheme";
-import { getHideIndex, getStickerIndex, getWallpaperIndex, InstallStatus, installStickers, readCSS } from "./StickerService";
+import { DokiSticker, StickerType } from "./DokiTheme";
+import { Sticker } from "./extension";
+import { getHideIndex, getStickerIndex, getWallpaperIndex, hideWaterMark, InstallStatus, installStickers, installWallPaper, readCSS } from "./StickerService";
 import { getCurrentThemeAndSticker, handleInstallFailure, handleInstallMessage, showInstallNotification, showNetworkErrorMessage } from "./ThemeManager";
 
 const previousVersionKey = "doki.vscode.version"
@@ -65,9 +66,9 @@ export function restoreInstallation(
     context: vscode.ExtensionContext,
 ) {
     saveNewVersion(context);
-    const stickerInstallStatus = autoInstallAsset(stickerInstallKey, context);
-    const wallpaperInstallStatus = autoInstallAsset(wallpaperInstallKey, context);
-    const hideWaterMarkStatus = autoInstallAsset(watermarkKey, context);
+    const stickerInstallStatus = autoInstallAsset(stickerInstallKey, context, installStickers);
+    const wallpaperInstallStatus = autoInstallAsset(wallpaperInstallKey, context, installWallPaper);
+    const hideWaterMarkStatus = autoInstallAsset(watermarkKey, context, () => hideWaterMark());
     vscode.window.withProgress({
         location: vscode.ProgressLocation.Notification,
         title: `Please wait, restoring installed assets.`,
@@ -101,14 +102,18 @@ export function restoreInstallation(
 
 function autoInstallAsset(
     assetKey: string,
-    context: vscode.ExtensionContext
+    context: vscode.ExtensionContext,
+    assetInstaller: (
+        sticker: Sticker,
+        context: vscode.ExtensionContext,
+    ) => Promise<InstallStatus>
 ): Promise<InstallStatus> {
     const wasTheAssetInstalledYo = wasAssetInstalled(assetKey, context)
     if (wasTheAssetInstalledYo) {
         const {
             sticker,
-        }: RestoreConfig = JSON.parse(context.globalState.get(stickerInstallKey) as string);
-        return installStickers(sticker.sticker, context);
+        }: RestoreConfig = JSON.parse(context.globalState.get(assetKey) as string);
+        return assetInstaller(sticker.sticker, context);
     } else {
         return Promise.resolve(InstallStatus.NOT_INSTALLED);
     }
@@ -133,8 +138,16 @@ export function saveWallpaperConfig(
 }
 
 export function saveHiddenWatermarkConfig(context: vscode.ExtensionContext) {
+    const bestSticker: DokiSticker = {
+        sticker: {
+            anchoring: 'right',
+            name: "Zero Two",
+            path: "Is best girl",
+        },
+        type: StickerType.DEFAULT,
+    }
     context.globalState.update(
-        watermarkKey, "是的"
+        watermarkKey, createAssetRestoreConfig(bestSticker),
     )
 }
 

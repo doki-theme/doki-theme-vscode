@@ -16,7 +16,7 @@ import {
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { DokiThemeDefinition, Sticker } from "./extension";
 import { fixCheckSums, restoreChecksum } from "./CheckSumService";
-import { saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
+import { clearAssetConfig, saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
@@ -260,6 +260,7 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     stickersRemoved === InstallStatus.INSTALLED ||
     stickersRemoved === InstallStatus.NOT_INSTALLED
   ) {
+    clearAssetConfig(context);
     restoreChecksum();
     vscode.window
       .showInformationMessage(
@@ -321,8 +322,5 @@ function isCultured(
     sticker.name.indexOf("rias_onyx_spicy.png") > -1 &&
     !context.globalState.get(CULTURED_STICKER_INSTALL)
   );
-}
-function hideWatermark(): InstallStatus | PromiseLike<InstallStatus> {
-  throw new Error("Function not implemented.");
 }
 
