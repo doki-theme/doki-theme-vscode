@@ -60,6 +60,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
     - [Hide VSCode Watermark](#hide-watermark)
     - [Stickers](#sticker)
     - [Custom Assets](#custom-assets)
+    - [Asset Restoration](#asset-restoration)
     - [Suggestive Content](#suggestive-content)
     - [Asset Removal](#remove-assets)
     - [Show Changelog](#show-changelog)
@@ -148,6 +149,12 @@ Value to be used for css 'background-position' for both the background & wallpap
 "doki.background.anchor": "center",
 ```
 
+## Asset Restoration
+
+Unfortunately, every time VSCode updates, you will lose your installed asset changes. 
+Thankfully, this plugin will remember what assets you installed, and attempt to restore them on the first detection of a VSCode update. 
+
+If the restoration does not work the first time, you can fix the issue then run the **Restore Assets** command to quickly get you back to coding! 
 
 ## Suggestive Content
 

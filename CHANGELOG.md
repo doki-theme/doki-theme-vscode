@@ -1,5 +1,10 @@
 # Change Log
 
+# 15.3.0 [Auto Restoration]
+
+- Added the **Restore Assets** action that allows you to quickly re-install assets after a VSCode update. Plugin will attempt to restore assets on first detection of VSCode update.
+- Enhanced the wallpaper in the Welcome Screen.
+
 # 15.2.0 [Hide Watermark]
 
 - Added the **Hide VSCode Watermark** command that...well... hides the VS Code watermark that shows when all editor tabs are closed.

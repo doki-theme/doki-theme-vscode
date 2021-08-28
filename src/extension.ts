@@ -16,6 +16,7 @@ import {showChanglog} from "./ChangelogService";
 import {attemptToUpdateSticker} from "./StickerUpdateService";
 import { watchConfigChanges } from "./ConfigWatcher";
 import { cleanupOrigFiles as cleanupCheckSumRestorationFiles } from "./CheckSumService";
+import { attemptToPerformAutoInstall, restoreInstallation } from "./AutoInstaller";
 
 export interface Sticker {
   path: string;
@@ -72,6 +73,11 @@ export function activate(context: vscode.ExtensionContext) {
     )
   );
 
+  context.subscriptions.push(
+    vscode.commands.registerCommand("doki-theme.restore.assets", () =>
+      restoreInstallation(context)
+    )
+  );
 
   VSCodeGlobals.globalState = context.globalState;
 
@@ -110,6 +116,8 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(watchConfigChanges(context));
 
     cleanupCheckSumRestorationFiles();
+
+    attemptToPerformAutoInstall(context);
 }
 
 export function deactivate() {

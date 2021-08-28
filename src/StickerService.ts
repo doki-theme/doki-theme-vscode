@@ -18,11 +18,11 @@ const stickerComment = "/* Stickers */";
 const hideComment = "/* Hide Watermark */";
 const wallpaperComment = "/* Background Image */";
 
-const getStickerIndex = (currentCss: string) =>
+export const getStickerIndex = (currentCss: string) =>
   currentCss.indexOf(stickerComment);
-const getHideIndex = (currentCss: string) =>
+export const getHideIndex = (currentCss: string) =>
   currentCss.indexOf(hideComment);
-const getWallpaperIndex = (currentCss: string) =>
+export const getWallpaperIndex = (currentCss: string) =>
   currentCss.indexOf(wallpaperComment);
 
 function buildWallpaperCss({
@@ -99,7 +99,11 @@ function buildWallpaperCss({
   [id="workbench.view.explorer"] .monaco-icon-label-container,
   .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .show-file-icons > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
-  .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows
+  .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  /* Welcome Page */
+  .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories>.gettingStartedCategoriesContainer>.header,
+  .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories .getting-started-category
+  /* end welcome page */
   {
     background-color: #00000000 !important;
     background-image: none !important;
@@ -241,7 +245,7 @@ async function installStyles(
 }
 
 function getScrubbedCSS() {
-  const currentCss = fs.readFileSync(editorCss, "utf-8");
+  const currentCss = readCSS();
   return indexGetters.reduce(
     (trimmedCss, indexFinderDude) => trimCss(trimmedCss, indexFinderDude(trimmedCss)),
     currentCss
@@ -249,6 +253,10 @@ function getScrubbedCSS() {
 }
 
 type IndexFinderDude = (currentCss: string) => number;
+
+export function readCSS() {
+  return fs.readFileSync(editorCss, "utf-8");
+}
 
 function scrubCssOfAsset(
   getOtherAssets: IndexFinderDude[],
