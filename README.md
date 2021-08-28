@@ -151,10 +151,10 @@ Value to be used for css 'background-position' for both the background & wallpap
 
 ## Asset Restoration
 
-Unfortunately, every time VSCode updates, you will loose your installed asset changes. 
+Unfortunately, every time VSCode updates, you will lose your installed asset changes. 
 Thankfully, this plugin will remember what assets you installed, and attempt to restore them on the first detection of a VSCode update. 
 
-If the restoration does not work the first time, you can fix the issue then run the **Restore Assets** command to quickly get you back to coding quicker! 
+If the restoration does not work the first time, you can fix the issue then run the **Restore Assets** command to quickly get you back to coding! 
 
 ## Suggestive Content
 
