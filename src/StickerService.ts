@@ -99,7 +99,11 @@ function buildWallpaperCss({
   [id="workbench.view.explorer"] .monaco-icon-label-container,
   .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .show-file-icons > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
-  .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows
+  .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  /* Welcome Page */
+  .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories>.gettingStartedCategoriesContainer>.header,
+  .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories .getting-started-category
+  /* end welcome page */
   {
     background-color: #00000000 !important;
     background-image: none !important;
