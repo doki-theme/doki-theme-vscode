@@ -16,6 +16,7 @@ import {
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { DokiThemeDefinition, Sticker } from "./extension";
 import { fixCheckSums, restoreChecksum } from "./CheckSumService";
+import { saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
@@ -153,7 +154,8 @@ export function activateThemeSticker(
     currentSticker,
     context,
     "Sticker",
-    (sticker) => attemptToInstallSticker(sticker, context)
+    (sticker) => attemptToInstallSticker(sticker, context),
+    saveStickerConfig,
   );
 }
 
@@ -167,7 +169,8 @@ export function activateThemeWallpaper(
     currentSticker,
     context,
     "Wallpaper",
-    (sticker) => attemptToInstallWallpaper(sticker, context)
+    (sticker) => attemptToInstallWallpaper(sticker, context),
+    saveWallpaperConfig,
   );
 }
 
@@ -177,8 +180,10 @@ export function activateHideWatermark(
   return attemptToInstallHideWatermark(context).then(
     installStatus => {
       if (installStatus === InstallStatus.INSTALLED) {
+        fixCheckSums();
         const message = `VSCode Watermark hidden! ${handleInstallMessage}`;
         showInstallNotification(message);
+        saveHiddenWatermarkConfig(context);
       } else if (installStatus === InstallStatus.FAILURE) {
         handleInstallFailure(context, getCurrentThemeAndSticker().theme);                
       }
@@ -193,7 +198,11 @@ export function activateThemeAsset(
   currentSticker: DokiSticker,
   context: vscode.ExtensionContext,
   assetType: string,
-  installer: (sticker: Sticker) => Promise<InstallStatus>
+  installer: (sticker: Sticker) => Promise<InstallStatus>,
+  configSaver: (
+    sticker: DokiSticker,
+    context: vscode.ExtensionContext,
+    ) => void,
 ) {
   vscode.window.withProgress({
     location: vscode.ProgressLocation.Notification,
@@ -208,15 +217,20 @@ export function activateThemeAsset(
         fixCheckSums();
         const message = `${dokiTheme.name}'s ${assetType} installed! ${handleInstallMessage}`;
         showInstallNotification(message);
+        configSaver(currentSticker, context);
       } else if (didInstall === InstallStatus.FAILURE) {
         handleInstallFailure(context, dokiTheme);
       } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
-        vscode.window.showErrorMessage(
-          `Unable to install ${dokiTheme.name}, please check your network connection.`
-        );
+        showNetworkErrorMessage(dokiTheme);
       }
     });
   });
+}
+
+export function showNetworkErrorMessage(dokiTheme: DokiTheme) {
+  vscode.window.showErrorMessage(
+    `Unable to install ${dokiTheme.name}, please check your network connection.`
+  );
 }
 
 export function showInstallNotification(message: string) {

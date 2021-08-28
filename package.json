@@ -31,6 +31,7 @@
   "activationEvents": [
     "onStartupFinished",
     "onCommand:doki-theme.doki.changelog",
+    "onCommand:doki-theme.restore.assets",
     "onCommand:doki-theme.remove.sticker",
     "onCommand:doki-theme.remove.watermark",
     "onCommand:doki-theme.theme.Maika",
@@ -221,6 +222,10 @@
       {
         "command": "doki-theme.remove.sticker",
         "title": "Doki-Theme: Remove Sticker/Background"
+      },
+      {
+        "command": "doki-theme.restore.assets",
+        "title": "Doki-Theme: Restore Assets"
       },
       {
         "command": "doki-theme.remove.watermark",
