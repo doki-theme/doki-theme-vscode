@@ -4,11 +4,11 @@
   "laf": {
     "extends": "light",
     "ui": {
-      "editor.selectionBackground": "&selectionBackground&44"
+      "editor.selectionBackground": "&selectionBackground&AA",
+      "selection.background": "&selectionBackground&AA"
     }
   },
   "syntax": {},
   "colors": {
-    "selectionBackground": "#b7bcda"
   }
-}
+}    

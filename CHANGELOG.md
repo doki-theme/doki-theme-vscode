@@ -1,5 +1,15 @@
 # Change Log
 
+# 16.0.0 [KillLaKill Alt. Themes]
+
+**2 New Themes!**
+
+- Ryuko Light
+- Satsuki Dark
+
+![v19 Girls](https://doki.assets.unthrottled.io/misc/v19_girls.png)
+
+
 # 15.3.0 [Auto Restoration]
 
 - Added the **Restore Assets** action that allows you to quickly re-install assets after a VSCode update. Plugin will attempt to restore assets on first detection of VSCode update.
