@@ -4,6 +4,7 @@
 
 - Spent the time to actually colorize the JavaScript & TypeScript tokens to be more consistent with the JetBrains Syntax Highlighting. (More colorful mix!)
 
+![Syntax Updates](https://user-images.githubusercontent.com/15972415/133911128-5d6d72f6-152b-4a21-891b-990323b558ce.png)
 
 
 
