@@ -1,5 +1,12 @@
 # Change Log
 
+# 16.1.0 [Consistent JavaScript Syntax]
+
+- Spent the time to actually colorize the JavaScript & TypeScript tokens to be more consistent with the JetBrains Syntax Highlighting. (More colorful mix!)
+
+
+
+
 # 16.0.0 [KillLaKill Alt. Themes]
 
 **2 New Themes!**
