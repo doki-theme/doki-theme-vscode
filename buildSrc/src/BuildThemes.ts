@@ -106,7 +106,7 @@ function buildSyntaxColors(
   const overrides =
     dokiThemeTemplateJson.overrides?.editorScheme?.colors ||
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
-  const resolvedNamedColors = {
+  const evaluatedColors: StringDictionary<string> = {
     ...resolveNamedColors(
       masterTemplates,
       dokiThemeTemplateJson,
@@ -118,6 +118,12 @@ function buildSyntaxColors(
     ...overrides,
     ...dokiThemeVSCodeTemplateJson.colors,
   };
+
+  const resolvedNamedColors = {
+    ...evaluatedColors,
+    editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor ||
+    evaluatedColors.accentColor,
+  }
 
   return syntaxTemplate.map((tokenSpecification) => {
     const newTokenSpec = {

@@ -68,7 +68,8 @@
         "meta.object-literal.key",
         "variable.object.property",
         "variable.other.readwrite.alias",
-        "variable.other.property"
+        "variable.other.property",
+        "meta.brace"
       ],
       "settings": {
         "foreground": "&foregroundColorEditor&",
@@ -80,7 +81,11 @@
         "source",
         "punctuation.definition.parameters",
         "punctuation.definition.block",
-        "text.html.markdown"
+        "text.html.markdown",
+        "variable.other.constant",
+        "meta.definition.variable",
+        "variable.other.constant.js",
+        "variable.other.constant.ts"
       ],
       "settings": {
         "foreground": "&foregroundColorEditor&"
@@ -89,6 +94,7 @@
     {
       "scope": [
         "variable.parameter",
+        "meta.parameters",
         "meta.function-call.arguments",
         "string"
       ],
@@ -102,6 +108,7 @@
         "keyword",
         "storage.type",
         "storage.modifier",
+        "keyword.operator.optional",
         "keyword.operator.new",
         "keyword.operator.instanceof",
         "keyword.operator.expression.typeof",
@@ -123,7 +130,8 @@
         "meta.embedded.line",
         "markup.inline.raw.string",
         "variable.css",
-        "entity.name.function",
+        "meta.function",
+        "support.class",
         "meta.method.identifier"
       ],
       "settings": {
@@ -137,7 +145,8 @@
         "meta.template.expression",
         "punctuation.definition.list.begin",
         "support.class.component.svelte",
-        "punctuation.definition.link.restructuredtext"
+        "punctuation.definition.link.restructuredtext",
+        "punctuation.definition.typeparameters"
       ],
       "settings": {
         "foreground": "&htmlTagColor&"
@@ -177,13 +186,14 @@
         "meta.decorator",
         "meta.link",
         "meta.method-call",
+        "meta.function-call.ts",
         "storage.type.annotation",
         "meta.declaration.annotation",
         "support.function",
         "meta.assertion.look-ahead.regexp"
       ],
       "settings": {
-        "foreground": "&accentColor&"
+        "foreground": "&editorAccentColor&"
       }
     },
     {
@@ -202,7 +212,9 @@
         "variable.other.enummember",
         "meta.enum.declaration",
         "constant.other.color",
-        "variable.language.special"
+        "variable.language.special",
+        "support.constant",
+        "meta.type.parameters"
       ],
       "settings": {
         "foreground": "&constantColor&"
