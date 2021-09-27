@@ -88,11 +88,11 @@ export function restoreInstallation(
                 const message = `Assets Restored! ${handleInstallMessage}`;
                 showInstallNotification(message)
             } else if (
-                !installStatuses.find(status => status === InstallStatus.NETWORK_FAILURE)
+                installStatuses.find(status => status === InstallStatus.NETWORK_FAILURE)
             ) {
                 showNetworkErrorMessage(dokiTheme)
             } else if (
-                !installStatuses.find(status => status === InstallStatus.FAILURE)
+                installStatuses.find(status => status === InstallStatus.FAILURE)
             ) {
                 handleInstallFailure(context, dokiTheme);
             }
