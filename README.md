@@ -19,7 +19,7 @@ Themes grouped [by anime](./albums/grouping.md)
 ## About!
 
 This plugin is for serious Otaku programmers.
-Code with your waifu. With over **50** themes,
+Code with your waifu. With over **60** themes,
 I think you will find best girl.
 
 You can choose themes from various, Anime, Manga, or Visual Novels:
@@ -30,6 +30,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Darling in the Franxx
 - Doki-Doki Literature Club
 - Don't Toy With Me, Miss Nagatoro
+- EroManga Sensei
 - Fate
 - Future Diary
 - Gate
@@ -44,6 +45,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - NekoPara
 - Neon Genesis Evangelion
 - OreGairu
+- OreImo
 - Quintessential Quintuplets
 - Rascal does not dream of bunny girl senpai
 - Re:Zero
