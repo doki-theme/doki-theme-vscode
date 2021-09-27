@@ -56,6 +56,8 @@
     "onCommand:doki-theme.theme.wallpaper.Kanna.secondary",
     "onCommand:doki-theme.theme.Tohru",
     "onCommand:doki-theme.theme.wallpaper.Tohru",
+    "onCommand:doki-theme.theme.Sagiri",
+    "onCommand:doki-theme.theme.wallpaper.Sagiri",
     "onCommand:doki-theme.theme.Katsuragi Misato",
     "onCommand:doki-theme.theme.wallpaper.Katsuragi Misato",
     "onCommand:doki-theme.theme.Rei",
@@ -158,10 +160,14 @@
     "onCommand:doki-theme.theme.wallpaper.Maple Dark",
     "onCommand:doki-theme.theme.Maple Light",
     "onCommand:doki-theme.theme.wallpaper.Maple Light",
+    "onCommand:doki-theme.theme.Shigure",
+    "onCommand:doki-theme.theme.wallpaper.Shigure",
     "onCommand:doki-theme.theme.Vanilla",
     "onCommand:doki-theme.theme.wallpaper.Vanilla",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
+    "onCommand:doki-theme.theme.Kirino",
+    "onCommand:doki-theme.theme.wallpaper.Kirino",
     "onCommand:doki-theme.theme.Nakano Miku",
     "onCommand:doki-theme.theme.wallpaper.Nakano Miku",
     "onCommand:doki-theme.theme.Nakano Nino",
@@ -322,6 +328,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Tohru",
         "title": "Doki-Theme: Install Tohru's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Sagiri",
+        "title": "Doki-Theme: Install Sagiri's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Sagiri",
+        "title": "Doki-Theme: Install Sagiri's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Katsuragi Misato",
@@ -732,6 +746,14 @@
         "title": "Doki-Theme: Install Maple Light's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Shigure",
+        "title": "Doki-Theme: Install Shigure's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Shigure",
+        "title": "Doki-Theme: Install Shigure's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Vanilla",
         "title": "Doki-Theme: Install Vanilla's Sticker"
       },
@@ -746,6 +768,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Yukinoshita Yukino",
         "title": "Doki-Theme: Install Yukinoshita Yukino's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Kirino",
+        "title": "Doki-Theme: Install Kirino's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Kirino",
+        "title": "Doki-Theme: Install Kirino's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Nakano Miku",
@@ -866,21 +896,15 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "98878c8e-9f91-4e25-930d-dd7d280d9e35",
-        "label": "Doki Theme: BunnySenpai:  Mai",
-        "path": "./generatedThemes/Mai Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "0527c6fc-316a-4f80-9459-d92ced0e6492",
         "label": "Doki Theme: BunnySenpai:  Mai",
         "path": "./generatedThemes/Mai Dark.theme.json",
         "uiTheme": "vs-dark"
       },
       {
-        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
-        "label": "Doki Theme: DDLC:  Monika",
-        "path": "./generatedThemes/Monika Light.theme.json",
+        "id": "98878c8e-9f91-4e25-930d-dd7d280d9e35",
+        "label": "Doki Theme: BunnySenpai:  Mai",
+        "path": "./generatedThemes/Mai Light.theme.json",
         "uiTheme": "vs"
       },
       {
@@ -888,6 +912,12 @@
         "label": "Doki Theme: DDLC:  Monika",
         "path": "./generatedThemes/Monika Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "9a310731-ab2d-40f5-b502-fa5419f799a2",
+        "label": "Doki Theme: DDLC:  Monika",
+        "path": "./generatedThemes/Monika Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "a7e0aa28-739a-4671-80ae-3980997e6b71",
@@ -968,6 +998,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "dc8e4142-c371-4107-a3c3-99dceefadac2",
+        "label": "Doki Theme: EroManga:  Sagiri",
+        "path": "./generatedThemes/Sagiri.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "8e8773ee-4bbb-4812-b311-005f04f6bb20",
         "label": "Doki Theme: EVA:  Misato",
         "path": "./generatedThemes/Katsuragi Misato.theme.json",
@@ -1040,16 +1076,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
-        "label": "Doki Theme: KonoSuba:  Darkness",
-        "path": "./generatedThemes/Darkness Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "774ec7ad-d6a0-4d9c-b195-2f54d72ab664",
         "label": "Doki Theme: KonoSuba:  Darkness",
         "path": "./generatedThemes/Darkness Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "8474d98d-7bb1-462c-82b1-dd7c512142a6",
+        "label": "Doki Theme: KonoSuba:  Darkness",
+        "path": "./generatedThemes/Darkness Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "63fe4617-4cac-47a5-9b93-6794514c35ad",
@@ -1106,16 +1142,22 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "13407818-da66-432b-94e3-fd2192e98118",
+        "label": "Doki Theme: NekoPara:  Maple",
+        "path": "./generatedThemes/Maple Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "ea7a8b00-2d86-4e06-81a2-5c14a46264d5",
         "label": "Doki Theme: NekoPara:  Maple",
         "path": "./generatedThemes/Maple Light.theme.json",
         "uiTheme": "vs"
       },
       {
-        "id": "13407818-da66-432b-94e3-fd2192e98118",
-        "label": "Doki Theme: NekoPara:  Maple",
-        "path": "./generatedThemes/Maple Dark.theme.json",
-        "uiTheme": "vs-dark"
+        "id": "67278007-b7f8-46d4-88b7-e40cac3576a7",
+        "label": "Doki Theme: NekoPara:  Shigure",
+        "path": "./generatedThemes/Shigure.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "31d5574d-f56b-408f-81dc-9d44feeb62c2",
@@ -1127,6 +1169,12 @@
         "id": "06143cbe-2d51-4423-9a93-73a02c828119",
         "label": "Doki Theme: OreGairu:  Yukino",
         "path": "./generatedThemes/Yukinoshita Yukino.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "2f2dff01-7e0e-4ebc-ab1e-34be2486c66f",
+        "label": "Doki Theme: OreImo:  Kirino",
+        "path": "./generatedThemes/Kirino.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1154,16 +1202,16 @@
         "uiTheme": "vs-dark"
       },
       {
-        "id": "e828aaae-aa8c-4084-8993-d64697146930",
-        "label": "Doki Theme: Re:Zero:  Emilia",
-        "path": "./generatedThemes/Emilia Light.theme.json",
-        "uiTheme": "vs"
-      },
-      {
         "id": "696de7c1-3a8e-4445-83ee-3eb7e9dca47f",
         "label": "Doki Theme: Re:Zero:  Emilia",
         "path": "./generatedThemes/Emilia Dark.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "e828aaae-aa8c-4084-8993-d64697146930",
+        "label": "Doki Theme: Re:Zero:  Emilia",
+        "path": "./generatedThemes/Emilia Light.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "ecb74f1c-8c84-40c4-916f-601039ba2af0",
