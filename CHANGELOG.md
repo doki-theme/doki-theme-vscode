@@ -1,5 +1,14 @@
 # Change Log
 
+# 18.0.0 [Jahy-sama Will Not Be Discouraged!]
+
+**1 New Theme!**
+
+Featuring the Dark World's Second in Command: Jahy!
+
+![v21 Girl](https://doki.assets.unthrottled.io/misc/v21_girl.png)
+
+
 # 17.0.0 [Only for Onii-chan]
 
 **3 New Themes!**

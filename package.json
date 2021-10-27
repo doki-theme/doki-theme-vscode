@@ -84,6 +84,8 @@
     "onCommand:doki-theme.theme.wallpaper.Rias Onyx",
     "onCommand:doki-theme.theme.Rias Onyx.secondary",
     "onCommand:doki-theme.theme.wallpaper.Rias Onyx.secondary",
+    "onCommand:doki-theme.theme.Jahy",
+    "onCommand:doki-theme.theme.wallpaper.Jahy",
     "onCommand:doki-theme.theme.Jabami Yumeko",
     "onCommand:doki-theme.theme.wallpaper.Jabami Yumeko",
     "onCommand:doki-theme.theme.Ryuko Dark",
@@ -440,6 +442,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Rias Onyx.secondary",
         "title": "Doki-Theme: Install Rias Onyx's Secondary Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Jahy",
+        "title": "Doki-Theme: Install Jahy's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Jahy",
+        "title": "Doki-Theme: Install Jahy's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Jabami Yumeko",
@@ -1037,6 +1047,12 @@
         "id": "355d711c-2fa6-4df2-9504-dd44d8f5e350",
         "label": "Doki Theme: Gate:  Rory",
         "path": "./generatedThemes/Rory Mercury.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "91d0931d-3e1d-4101-b923-278ce264f0f5",
+        "label": "Doki Theme: JahySama:  Jahy",
+        "path": "./generatedThemes/Jahy.theme.json",
         "uiTheme": "vs-dark"
       },
       {

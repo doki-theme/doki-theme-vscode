@@ -35,6 +35,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Future Diary
 - Gate
 - High School DxD
+- Jahy-sama Will Not Be Discouraged!
 - Kakegurui
 - Kill La Kill
 - KonoSuba

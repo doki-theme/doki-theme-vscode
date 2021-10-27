@@ -66,6 +66,11 @@ NekoPara
 
 ![azuki_dark_code code](../screenshots/nekoPara/azuki_dark_code.png)
 
+Jahy-sama Will Not Be Discouraged!
+---
+![jahy_dark_smol_code](../screenshots/jahySama/jahy_dark_smol_code.png)
+
+
 
 Don't Toy With Me, Miss Nagatoro
 ---
