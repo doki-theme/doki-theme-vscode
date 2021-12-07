@@ -24,6 +24,7 @@ I think you will find best girl.
 
 You can choose themes from various, Anime, Manga, or Visual Novels:
 
+- AzurLane
 - Blend S
 - Daily life with a monster girl
 - DanganRonpa

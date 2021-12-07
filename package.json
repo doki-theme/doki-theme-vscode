@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -34,6 +34,10 @@
     "onCommand:doki-theme.restore.assets",
     "onCommand:doki-theme.remove.sticker",
     "onCommand:doki-theme.remove.watermark",
+    "onCommand:doki-theme.theme.Essex",
+    "onCommand:doki-theme.theme.wallpaper.Essex",
+    "onCommand:doki-theme.theme.Essex.secondary",
+    "onCommand:doki-theme.theme.wallpaper.Essex.secondary",
     "onCommand:doki-theme.theme.Maika",
     "onCommand:doki-theme.theme.wallpaper.Maika",
     "onCommand:doki-theme.theme.Mai Dark",
@@ -154,6 +158,8 @@
     "onCommand:doki-theme.theme.wallpaper.Azuki",
     "onCommand:doki-theme.theme.Chocola",
     "onCommand:doki-theme.theme.wallpaper.Chocola",
+    "onCommand:doki-theme.theme.Christmas Chocola",
+    "onCommand:doki-theme.theme.wallpaper.Christmas Chocola",
     "onCommand:doki-theme.theme.Cinnamon",
     "onCommand:doki-theme.theme.wallpaper.Cinnamon",
     "onCommand:doki-theme.theme.Coconut",
@@ -174,6 +180,8 @@
     "onCommand:doki-theme.theme.wallpaper.Nakano Miku",
     "onCommand:doki-theme.theme.Nakano Nino",
     "onCommand:doki-theme.theme.wallpaper.Nakano Nino",
+    "onCommand:doki-theme.theme.Nakano Yotsuba",
+    "onCommand:doki-theme.theme.wallpaper.Nakano Yotsuba",
     "onCommand:doki-theme.theme.Beatrice",
     "onCommand:doki-theme.theme.wallpaper.Beatrice",
     "onCommand:doki-theme.theme.Echidna",
@@ -242,6 +250,22 @@
       {
         "command": "doki-theme.remove.watermark",
         "title": "Doki-Theme: Hide VSCode Watermark"
+      },
+      {
+        "command": "doki-theme.theme.Essex",
+        "title": "Doki-Theme: Install Essex's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Essex",
+        "title": "Doki-Theme: Install Essex's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Essex.secondary",
+        "title": "Doki-Theme: Install Essex's Secondary Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Essex.secondary",
+        "title": "Doki-Theme: Install Essex's Secondary Wallpaper"
       },
       {
         "command": "doki-theme.theme.Maika",
@@ -724,6 +748,14 @@
         "title": "Doki-Theme: Install Chocola's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Christmas Chocola",
+        "title": "Doki-Theme: Install Christmas Chocola's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Christmas Chocola",
+        "title": "Doki-Theme: Install Christmas Chocola's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Cinnamon",
         "title": "Doki-Theme: Install Cinnamon's Sticker"
       },
@@ -802,6 +834,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Nakano Nino",
         "title": "Doki-Theme: Install Nakano Nino's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Nakano Yotsuba",
+        "title": "Doki-Theme: Install Nakano Yotsuba's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nakano Yotsuba",
+        "title": "Doki-Theme: Install Nakano Yotsuba's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Beatrice",
@@ -897,6 +937,12 @@
         "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
         "label": "Doki Theme: YuruCamp:  Rin",
         "path": "./generatedThemes/Shima Rin.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "e55e70ea-454b-47ef-9270-d46390dd2769",
+        "label": "Doki Theme: AzurLane:  Essex",
+        "path": "./generatedThemes/Essex.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1146,6 +1192,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "6428e1ff-202c-4a43-afb3-9999ebe3b2ca",
+        "label": "Doki Theme: NekoPara:  Chocola",
+        "path": "./generatedThemes/Christmas Chocola.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "84dc0d3c-1c83-4dde-87b9-e1ea27cd34b0",
         "label": "Doki Theme: NekoPara:  Cinnamon",
         "path": "./generatedThemes/Cinnamon.theme.json",
@@ -1203,6 +1255,12 @@
         "id": "5e6a266f-c6d5-4891-a065-a2c2b857016a",
         "label": "Doki Theme: QQ:  Nino",
         "path": "./generatedThemes/Nakano Nino.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "3b11c8f4-d030-4a7e-a46f-b22d3e430a1d",
+        "label": "Doki Theme: QQ:  Yotsuba",
+        "path": "./generatedThemes/Nakano Yotsuba.theme.json",
         "uiTheme": "vs-dark"
       },
       {

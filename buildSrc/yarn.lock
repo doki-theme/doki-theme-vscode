@@ -1873,10 +1873,10 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-doki-build-source@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/doki-build-source/-/doki-build-source-1.7.0.tgz#d90402b8f02e80d8b0376d86d48e57ba7be991e8"
-  integrity sha512-E2PCaT2lNAEZVHhl6cDRah9KqWf/M6S59YgfwHU7N3HBtDl6ld8U6Np9f5UUQPtquLb47UC2R+CvN2t8SKXRhw==
+doki-build-source@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/doki-build-source/-/doki-build-source-1.8.0.tgz#30f82942eca97f4091697302e55ff5504a7bf42e"
+  integrity sha512-l7gvHdcptjruHPVe0KB5UgY9lTjtbxC8aqE2ds4+eD78OttjCgUrfJjAVeeY0tF2cp3vZ8+3eUB9EthbuwL3eQ==
 
 domain-browser@^1.1.1:
   version "1.2.0"
