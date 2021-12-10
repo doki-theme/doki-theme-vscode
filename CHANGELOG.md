@@ -20,6 +20,7 @@ Yotsuba, from The Quintessential Quintuplets, isn't 2spooky4me.
 
 - Moved Tohsaka Rin's wallpaper over to the right.
 
+
 # 18.0.0 [Jahy-sama Will Not Be Discouraged!]
 
 **1 New Theme!**

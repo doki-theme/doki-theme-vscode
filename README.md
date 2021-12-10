@@ -14,8 +14,6 @@ Steps demonstrated:
 
 # [Complete Theme Album.](albums/complete_theme_album.md)
 
-Themes grouped [by anime](./albums/grouping.md)
-
 ## About!
 
 This plugin is for serious Otaku programmers.
