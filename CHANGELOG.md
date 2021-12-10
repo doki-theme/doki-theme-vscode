@@ -19,7 +19,7 @@ Yotsuba, from The Quintessential Quintuplets, isn't 2spooky4me.
 #### Other Stuff
 
 - Moved Tohsaka Rin's wallpaper over to the right.
-
+- Not attempting to install custom assets when config is not a path to a file.
 
 # 18.0.0 [Jahy-sama Will Not Be Discouraged!]
 

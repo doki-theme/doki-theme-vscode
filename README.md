@@ -110,7 +110,7 @@ Hey alright, you have the ability to set the image to be used for all the doki-t
 
 You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
 
-**Note**: All path values _must_ be an absolute path that resolves to a file on the machine running VSCode.
+**Note**: All path values _must_ be an absolute path that resolves to a file on the machine running VSCode. Assets **will not** be installed until the configuration references a file on your system.
 
 **Custom Sticker**
 

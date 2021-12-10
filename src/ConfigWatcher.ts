@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import fs from 'fs';
 import { fixCheckSums } from "./CheckSumService";
 import { InstallStatus } from "./StickerService";
 import { attemptToInstallSticker, attemptToInstallWallpaper, getCurrentThemeAndSticker, handleInstallFailure, handleInstallMessage, showInstallNotification } from "./ThemeManager";
@@ -18,20 +19,28 @@ export const watchConfigChanges = (
     const { sticker, theme } = getCurrentThemeAndSticker();
     const newBoiConfig = vscode.workspace.getConfiguration(CONFIG_NAME);
 
+    const stickerChanged = newBoiConfig.get(CONFIG_STICKER) !==
+      currentConfig.get(CONFIG_STICKER);
+    const isStickerFullPath = isFile(newBoiConfig.get(CONFIG_STICKER));
     const stickerInstall =
-      newBoiConfig.get(CONFIG_STICKER) !==
-        currentConfig.get(CONFIG_STICKER) ?
+      stickerChanged && isStickerFullPath ?
         attemptToInstallSticker(sticker.sticker, extensionContext) :
         Promise.resolve(InstallStatus.NOT_INSTALLED);
 
-    const backgroundChanged = newBoiConfig.get(CONFIG_BACKGROUND) !==
+    const backgroundConfig = newBoiConfig.get(CONFIG_BACKGROUND);
+    const backgroundChanged = backgroundConfig !==
       currentConfig.get(CONFIG_BACKGROUND);
-    const wallpaperChanged = newBoiConfig.get(CONFIG_WALLPAPER) !==
+    const isBackgroundFullPath = isFile(backgroundConfig);
+    const wallpaperConfig = newBoiConfig.get(CONFIG_WALLPAPER);
+    const wallpaperChanged = wallpaperConfig !==
       currentConfig.get(CONFIG_WALLPAPER);
+    const isWallPaperFullPath = isFile(wallpaperConfig);
     const anchorChanged = newBoiConfig.get(CONFIG_BACKGROUND_ANCHOR) !==
       currentConfig.get(CONFIG_BACKGROUND_ANCHOR);
     const wallpaperInstall =
-      backgroundChanged || wallpaperChanged || anchorChanged ?
+      (backgroundChanged && (isBackgroundFullPath || !backgroundConfig)) ||
+        (wallpaperChanged && (isWallPaperFullPath || !wallpaperConfig)) ||
+        anchorChanged ?
         attemptToInstallWallpaper(sticker.sticker, extensionContext) :
         Promise.resolve(InstallStatus.NOT_INSTALLED);
 
@@ -52,7 +61,7 @@ export const watchConfigChanges = (
           handleInstallFailure(extensionContext, theme);
         } else if (hadSuccess) {
           fixCheckSums();
-          const message = `VSCode Watermark hidden! ${handleInstallMessage}`;
+          const message = `Custom Asset(s) Installed! ${handleInstallMessage}`;
           showInstallNotification(message)
         }
         currentConfig = newBoiConfig
@@ -65,4 +74,8 @@ export const watchConfigChanges = (
           )
       });
   });
+
+function isFile(filePath: any) {
+  return fs.existsSync(filePath);
+}
 
