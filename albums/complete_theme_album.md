@@ -17,6 +17,17 @@ Quintessential Quintuplets
 
 ![nakano_miku_dark code](../screenshots/quintuplets/nakano_miku_dark_code.png)
 
+### Nakano Yotsuba
+
+![yotsuba_dark code](../screenshots/quintuplets/yotsuba_dark_code.png)
+
+AzurLane
+---
+
+### Essex
+
+![essex_dark code](../screenshots/azurLane/essex_dark_code.png)
+![essex_dark_plain code](../screenshots/azurLane/essex_dark_plain_code.png)
 
 Yuru Camp
 ---
@@ -40,6 +51,7 @@ NekoPara
 ### Chocola
 
 ![chocola_dark_code code](../screenshots/nekoPara/chocola_dark_code.png)
+![xmas_chocola_code code](../screenshots/nekoPara/xmas_chocola_code.png)
 
 ### Vanilla
 

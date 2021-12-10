@@ -67,15 +67,18 @@ const _attemptToUpdateSticker = async (
 
   const config = vscode.workspace.getConfiguration(CONFIG_NAME);
 
+  const customSticker: string = config.get(CONFIG_STICKER) + '';
+  const customBackground: string = config.get(CONFIG_BACKGROUND) + '';
+  const customWallpaper: string = config.get(CONFIG_WALLPAPER) + '';
   return {
     stickerDataURL: createCssDokiAssetUrl(
-      config.get(CONFIG_STICKER) || localStickerPath
+      fs.existsSync(customSticker) ? customSticker : localStickerPath
     ),
     backgroundImageURL: createCssDokiAssetUrl(
-      config.get(CONFIG_BACKGROUND) || localBackgroundPath
+      fs.existsSync(customBackground) ? customBackground : localBackgroundPath
     ),
     wallpaperImageURL: createCssDokiAssetUrl(
-      config.get(CONFIG_WALLPAPER) || localWallpaperPath
+      fs.existsSync(customWallpaper) ? customWallpaper : localWallpaperPath
     ),
     backgroundAnchoring: config.get(CONFIG_BACKGROUND_ANCHOR) ||
       currentSticker.anchoring,

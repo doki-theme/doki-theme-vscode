@@ -3,5 +3,10 @@
   "overrides": {},
   "laf": {},
   "syntax": {},
-  "colors": {}
+  "colors": {},
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  }
 }

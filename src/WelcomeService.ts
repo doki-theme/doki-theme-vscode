@@ -27,45 +27,58 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 </p>
                 <h2>Themes!</h2>
                 <p>
-                    With over 40+ themes (light and dark) I think you will be able to find 
+                    With over 60+ themes (light and dark) I think you will be able to find 
                     find best girl.
                 </p>
                 <p>
                     You can choose themes from the following Doki-Doki Theme Suites such as:
                 </p>
                 <ul>
+                    <li>AzurLane</li>
                     <li>Blend S</li>
-                    <li>Darling in the Franxx</li>
+                    <li>Daily life with a monster girl</li>
                     <li>DanganRonpa</li>
+                    <li>Darling in the Franxx</li>
                     <li>Doki-Doki Literature Club</li>
+                    <li>Don't Toy With Me, Miss Nagatoro</li>
+                    <li>EroManga Sensei</li>
                     <li>Fate</li>
+                    <li>Future Diary</li>
                     <li>Gate</li>
                     <li>High School DxD</li>
+                    <li>Jahy-sama Will Not Be Discouraged!</li>
+                    <li>Kakegurui</li>
                     <li>Kill La Kill</li>
                     <li>KonoSuba</li>
-                    <li>Live Live!</li>
+                    <li>Love Live!</li>
                     <li>Lucky Star</li>
                     <li>Miss Kobayashi's Dragon Maid</li>
+                    <li>Monogatari</li>
+                    <li>NekoPara</li>
                     <li>Neon Genesis Evangelion</li>
                     <li>OreGairu</li>
-                    <li>Re:Zero</li>
+                    <li>OreImo</li>
+                    <li>Quintessential Quintuplets</li>
                     <li>Rascal does not dream of bunny girl senpai</li>
+                    <li>Re:Zero</li>
                     <li>Steins Gate</li>
                     <li>Sword Art Online</li>
+                    <li>Yuru Camp</li>
                 </ul>
-                <h2>Stickers!</h2>
+                <h2>Background Wallpaper & Stickers!</h2>
                     <p>
                         Possibly the best feature of this plugin! 
-                        Put a cute little sticker in the corner of your IDE.
+                        Decorate your visual studio code with a wallpaper of your favorite anime character.
+                        In addition, put a cute little sticker in the corner of your IDE.
                         As a bonus, you even get a themed background when all your editor windows become closed!
                     </p>
                  <h3>Important!</h3>
                  <p>
-                    Unfortunately, I am unable to provide the cute stickers without having to corrupt your VS-Code installation.
+                    Unfortunately, I am unable to provide the wallpapers/stickers without having to corrupt your VS-Code installation.
                     I have to make changes to a CSS file to support this feature.
                 </p>
                  <p>
-                    If I am unable to install your requested sticker, I will pull up a help menu that will provide 
+                    If I am unable to install your requested asset, I will pull up a help menu that will provide 
                     you with more information. 
                 </p>
                 <p>

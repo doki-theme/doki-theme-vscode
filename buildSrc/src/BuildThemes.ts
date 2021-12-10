@@ -302,7 +302,7 @@ evaluateTemplates(
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
       label: `Doki Theme: ${getGroupName(dokiDefinition)} ${
-        dokiDefinition.displayName
+        getThemeDisplayName(dokiDefinition)
       }`,
       path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
@@ -364,6 +364,15 @@ evaluateTemplates(
   .then(() => {
     console.log("Theme Generation Complete!");
   });
+
+const specialThemes = new Set([
+  '6428e1ff-202c-4a43-afb3-9999ebe3b2ca', // XMas Chocola
+]) ;
+function getThemeDisplayName(dokiDefinition: MasterDokiThemeDefinition) {
+  return specialThemes.has(dokiDefinition.id) ? 
+  dokiDefinition.name :
+  dokiDefinition.displayName;
+}
 
 function getCommandNames(dokiDefinition: MasterDokiThemeDefinition): string[] {
   return keys(dokiDefinition.stickers)

@@ -14,8 +14,6 @@ Steps demonstrated:
 
 # [Complete Theme Album.](albums/complete_theme_album.md)
 
-Themes grouped [by anime](./albums/grouping.md)
-
 ## About!
 
 This plugin is for serious Otaku programmers.
@@ -24,6 +22,7 @@ I think you will find best girl.
 
 You can choose themes from various, Anime, Manga, or Visual Novels:
 
+- AzurLane
 - Blend S
 - Daily life with a monster girl
 - DanganRonpa
@@ -111,7 +110,7 @@ Hey alright, you have the ability to set the image to be used for all the doki-t
 
 You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
 
-**Note**: All path values _must_ be an absolute path that resolves to a file on the machine running VSCode.
+**Note**: All path values _must_ be an absolute path that resolves to a file on the machine running VSCode. Assets **will not** be installed until the configuration references a file on your system.
 
 **Custom Sticker**
 
