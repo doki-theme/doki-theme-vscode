@@ -1,5 +1,9 @@
 [![Gitter](https://badges.gitter.im/doki-theme-vscode/community.svg)](https://gitter.im/doki-theme-vscode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+# Theme Preview
+
+![Takanashi Rikka Theme](./screenshots/chuunibyou/rikka_dark_code.png)
+
 # Feature Preview
 
 ![Ryuko's Theme Usage](./readmeStuff/usage.gif)
@@ -24,6 +28,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 
 - AzurLane
 - Blend S
+- Chuunibyou, Love, & Other Delusions
 - Daily life with a monster girl
 - DanganRonpa
 - Darling in the Franxx
@@ -49,8 +54,10 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Quintessential Quintuplets
 - Rascal does not dream of bunny girl senpai
 - Re:Zero
+- Rising of the Shield Hero
 - Steins Gate
 - Sword Art Online
+- Toaru Majutsu no Index
 - Yuru Camp
 
 ---

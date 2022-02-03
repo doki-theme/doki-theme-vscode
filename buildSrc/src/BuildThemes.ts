@@ -58,7 +58,7 @@ function buildLAFColors(
     lafTemplate,
     lafTemplates,
     (template) => template.ui,
-    (template) => template.extends?.split(',') || []
+    (template) => template.extends?.split(',')
   );
 
   const resolvedNamedColors = resolveNamedColors(
@@ -192,6 +192,7 @@ function createDokiTheme(
       ),
     };
   } catch (e) {
+    console.error(e);
     throw new Error(
       `Unable to build ${dokiThemeDefinition.name}'s theme for reasons ${e}`
     );

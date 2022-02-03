@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "A bunch of themes with cute anime girls. Code with your waifu!",
   "publisher": "unthrottled",
-  "version": "19.0.0",
+  "version": "74.1.0",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -48,6 +48,8 @@
     "onCommand:doki-theme.theme.wallpaper.Mai Light",
     "onCommand:doki-theme.theme.Mai Light.secondary",
     "onCommand:doki-theme.theme.wallpaper.Mai Light.secondary",
+    "onCommand:doki-theme.theme.Takanashi Rikka",
+    "onCommand:doki-theme.theme.wallpaper.Takanashi Rikka",
     "onCommand:doki-theme.theme.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
@@ -182,6 +184,8 @@
     "onCommand:doki-theme.theme.wallpaper.Nakano Nino",
     "onCommand:doki-theme.theme.Nakano Yotsuba",
     "onCommand:doki-theme.theme.wallpaper.Nakano Yotsuba",
+    "onCommand:doki-theme.theme.Misaka Mikoto",
+    "onCommand:doki-theme.theme.wallpaper.Misaka Mikoto",
     "onCommand:doki-theme.theme.Beatrice",
     "onCommand:doki-theme.theme.wallpaper.Beatrice",
     "onCommand:doki-theme.theme.Echidna",
@@ -194,6 +198,8 @@
     "onCommand:doki-theme.theme.wallpaper.Ram",
     "onCommand:doki-theme.theme.Rem",
     "onCommand:doki-theme.theme.wallpaper.Rem",
+    "onCommand:doki-theme.theme.Raphtalia",
+    "onCommand:doki-theme.theme.wallpaper.Raphtalia",
     "onCommand:doki-theme.theme.Makise Kurisu",
     "onCommand:doki-theme.theme.wallpaper.Makise Kurisu",
     "onCommand:doki-theme.theme.Asuna Dark",
@@ -202,6 +208,8 @@
     "onCommand:doki-theme.theme.wallpaper.Asuna Light",
     "onCommand:doki-theme.theme.Gray",
     "onCommand:doki-theme.theme.wallpaper.Gray",
+    "onCommand:doki-theme.theme.Nadeshiko",
+    "onCommand:doki-theme.theme.wallpaper.Nadeshiko",
     "onCommand:doki-theme.theme.Shima Rin",
     "onCommand:doki-theme.theme.wallpaper.Shima Rin"
   ],
@@ -306,6 +314,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Mai Light.secondary",
         "title": "Doki-Theme: Install Mai Light's Secondary Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Takanashi Rikka",
+        "title": "Doki-Theme: Install Takanashi Rikka's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Takanashi Rikka",
+        "title": "Doki-Theme: Install Takanashi Rikka's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mioda Ibuki Dark",
@@ -844,6 +860,14 @@
         "title": "Doki-Theme: Install Nakano Yotsuba's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Misaka Mikoto",
+        "title": "Doki-Theme: Install Misaka Mikoto's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Misaka Mikoto",
+        "title": "Doki-Theme: Install Misaka Mikoto's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Beatrice",
         "title": "Doki-Theme: Install Beatrice's Sticker"
       },
@@ -892,6 +916,14 @@
         "title": "Doki-Theme: Install Rem's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Raphtalia",
+        "title": "Doki-Theme: Install Raphtalia's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Raphtalia",
+        "title": "Doki-Theme: Install Raphtalia's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Makise Kurisu",
         "title": "Doki-Theme: Install Makise Kurisu's Sticker"
       },
@@ -922,6 +954,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Gray",
         "title": "Doki-Theme: Install Gray's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Nadeshiko",
+        "title": "Doki-Theme: Install Nadeshiko's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nadeshiko",
+        "title": "Doki-Theme: Install Nadeshiko's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Shima Rin",
@@ -962,6 +1002,12 @@
         "label": "Doki Theme: BunnySenpai:  Mai",
         "path": "./generatedThemes/Mai Light.theme.json",
         "uiTheme": "vs"
+      },
+      {
+        "id": "5412c41d-f76b-4488-85a7-1ae1a63bbfcc",
+        "label": "Doki Theme: Chuunibyou:  Rikka",
+        "path": "./generatedThemes/Takanashi Rikka.theme.json",
+        "uiTheme": "vs-dark"
       },
       {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
@@ -1264,6 +1310,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "01e61500-862c-41cd-b653-48d2ef7b1882",
+        "label": "Doki Theme: Railgun:  Mikoto",
+        "path": "./generatedThemes/Misaka Mikoto.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "35422aa4-1396-4e76-8ec6-c5560884df22",
         "label": "Doki Theme: Re:Zero:  Beatrice",
         "path": "./generatedThemes/Beatrice.theme.json",
@@ -1312,6 +1364,12 @@
         "uiTheme": "vs"
       },
       {
+        "id": "df23dabc-61eb-4559-a504-992786964602",
+        "label": "Doki Theme: ShieldHero:  Raphtalia",
+        "path": "./generatedThemes/Raphtalia.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "d39df813-8701-463b-a964-b8cb7714d1cc",
         "label": "Doki Theme: Steins Gate:  Kurisu",
         "path": "./generatedThemes/Makise Kurisu.theme.json",
@@ -1351,6 +1409,12 @@
         "id": "bc12b380-1f2a-4a9d-89d8-388a07f1e15f",
         "label": "Doki Theme: Vocaloid:  Miku",
         "path": "./generatedThemes/Hatsune Miku.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "d587f5ab-9334-4b7b-a99e-58461719d87b",
+        "label": "Doki Theme: YuruCamp:  Nadeshiko",
+        "path": "./generatedThemes/Nadeshiko.theme.json",
         "uiTheme": "vs-dark"
       }
     ]

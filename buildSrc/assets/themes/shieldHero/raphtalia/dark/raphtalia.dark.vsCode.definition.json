@@ -1,0 +1,17 @@
+{
+  "id": "df23dabc-61eb-4559-a504-992786964602",
+  "overrides": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "list.highlightForeground": "&keywordColor&"
+    }
+  },
+  "syntax": {},
+  "colors": {},
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  }
+}
