@@ -205,20 +205,19 @@ const getStickers = (
   dokiTheme: any
 ) => {
   const secondary =
-    dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
-  const backgrounds = dokiTheme.backgrounds;
+    dokiDefinition.stickers.secondary;
   return {
     default: {
-      path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default, __dirname),
+      path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default.name, __dirname),
       name: dokiDefinition.stickers.default,
-      anchoring: backgrounds?.default?.anchor || "center",
+      anchoring: dokiDefinition.stickers.default.anchor || "center",
     },
     ...(secondary
       ? {
           secondary: {
-            path: resolveStickerPath(dokiTheme.path, secondary, __dirname),
+            path: resolveStickerPath(dokiTheme.path, secondary?.name, __dirname),
             name: secondary,
-            anchoring: backgrounds?.secondary?.anchor || "center",
+            anchoring: secondary?.anchor || "center",
           },
         }
       : {}),
