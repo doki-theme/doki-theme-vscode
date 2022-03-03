@@ -183,7 +183,6 @@ function createDokiTheme(
     return {
       path: swapMasterThemeForLocalTheme(dokiFileDefinitionPath),
       definition: dokiThemeDefinition,
-      backgrounds: dokiThemeVSCodeDefinition.backgrounds,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
         dokiThemeVSCodeDefinition,

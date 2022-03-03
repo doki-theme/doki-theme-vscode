@@ -10,10 +10,5 @@
   "syntax": {},
   "colors": {
     "accentColor": "#7660A4"
-  },
-  "backgrounds": {
-    "default": {
-      "anchor": "right"
-    }
   }
 }

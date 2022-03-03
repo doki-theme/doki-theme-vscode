@@ -8,10 +8,5 @@
     }
   },
   "syntax": {},
-  "colors": {},
-  "backgrounds": {
-    "secondary": {
-      "anchor": "right"
-    }
-  }
+  "colors": {}
 }
