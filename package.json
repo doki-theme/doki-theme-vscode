@@ -1034,16 +1034,16 @@
         "uiTheme": "vs"
       },
       {
+        "id": "b0340303-0a5a-4a20-9b9c-fc8ce9880078",
+        "label": "Doki Theme: DDLC:  Sayori",
+        "path": "./generatedThemes/Sayori Dark.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "cb8ef4b7-0844-4a04-b08b-754086598de4",
         "label": "Doki Theme: DDLC:  Sayori",
         "path": "./generatedThemes/Sayori Light.theme.json",
         "uiTheme": "vs"
-      },
-      {
-        "id": "b0340303-0a5a-4a20-9b9c-fc8ce9880078",
-        "label": "Doki Theme: DDLC:  Š̸̘͚̼͎̯̙̣̱̎̋̐͒a̴̖̟̠̳̤͙̟͂̂͑̐͜ỷ̵̧̨̞̠̖̠o̴̧͍̗̬̎̓͆̔͝ͅr̴̡̮̟͈͠ͅi̴̡̨͓͈̬̗̺̍́̃̇̓",
-        "path": "./generatedThemes/Sayori Dark.theme.json",
-        "uiTheme": "vs-dark"
       },
       {
         "id": "a14733d6-8e15-4e75-b6b8-509f323e5b3b",
