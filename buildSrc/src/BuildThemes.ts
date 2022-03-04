@@ -208,14 +208,14 @@ const getStickers = (
   return {
     default: {
       path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default.name, __dirname),
-      name: dokiDefinition.stickers.default,
+      name: dokiDefinition.stickers.default.name,
       anchoring: dokiDefinition.stickers.default.anchor || "center",
     },
     ...(secondary
       ? {
           secondary: {
             path: resolveStickerPath(dokiTheme.path, secondary?.name, __dirname),
-            name: secondary,
+            name: secondary.name,
             anchoring: secondary?.anchor || "center",
           },
         }
