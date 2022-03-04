@@ -5,7 +5,10 @@
     "extends": "dark",
     "ui": {
       "editor.lineHighlightBackground": "&caretRow&77",
-      "list.focusBackground": "#2c1c32"
+      "list.focusBackground": "#2c1c32",
+      "textLink.foreground": "&accentColorOverride&AA",
+      "textLink.activeForeground": "&accentColorOverride&",
+      "gitDecoration.modifiedResourceForeground": "&accentColorOverride&"
     }
   },
   "syntax": {},

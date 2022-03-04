@@ -11,10 +11,5 @@
     }
   },
   "syntax": {},
-  "colors": {},
-  "backgrounds": {
-    "default": {
-      "anchor": "right"
-    }
-  }
+  "colors": {}
 }

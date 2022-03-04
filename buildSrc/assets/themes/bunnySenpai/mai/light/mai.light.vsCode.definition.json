@@ -5,10 +5,5 @@
   "syntax": {},
   "colors": {
     "selectionBackground": "#d3d5f1"
-  },
-  "backgrounds": {
-    "secondary": {
-      "anchor": "right"
-    }
   }
 }

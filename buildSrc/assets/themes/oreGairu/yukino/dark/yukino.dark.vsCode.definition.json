@@ -5,14 +5,12 @@
     "extends": "dark",
     "ui": {
       "editor.selectionBackground": "&selectionBackground&AA",
-      "quickInput.foreground": "&foregroundColor&"
+      "quickInput.foreground": "&foregroundColor&",
+      "textLink.foreground": "&editorAccentColor&AA",
+      "textLink.activeForeground": "&editorAccentColor&",
+      "gitDecoration.modifiedResourceForeground": "&editorAccentColor&"
     }
   },
   "syntax": {},
-  "colors": {},
-  "backgrounds": {
-    "default": {
-      "anchor": "right"
-    }
-  }
+  "colors": {}
 }

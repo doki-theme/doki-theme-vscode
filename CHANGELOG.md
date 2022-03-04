@@ -1,5 +1,12 @@
 # Change Log
 
+# 74.2-1.0.1 [Enhanced Usability & Stuff]
+
+- Increased badge icon foreground constrast.
+- Increased usability of Raphtalia's, Yukino's, & Kanna's link colors.
+- Darkened Nino's theme some.
+- Removed the Zalgo Text from Š̸̘͚̼͎̯̙̣̱̎̋̐͒a̴̖̟̠̳̤͙̟͂̂͑̐͜ỷ̵̧̨̞̠̖̠o̴̧͍̗̬̎̓͆̔͝ͅr̴̡̮̟͈͠ͅi̴̡̨͓͈̬̗̺̍́̃̇̓'s dark theme name, so you can search for her dark theme now.
+
 # 74.1-1.0.0 [Synapse break. Vanishment, this world!]
 
 **4 New Dark Themes!**

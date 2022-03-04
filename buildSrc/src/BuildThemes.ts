@@ -51,8 +51,8 @@ function buildLAFColors(
   const lafTemplate = dokiVSCodeThemeTemplateJson.laf.extends
     ? dokiVSCodeThemeTemplateJson.laf
     : dokiThemeTemplateJson.dark
-    ? lafTemplates.dark
-    : lafTemplates.light;
+      ? lafTemplates.dark
+      : lafTemplates.light;
 
   const resolvedLafTemplate = composeTemplate(
     lafTemplate,
@@ -79,7 +79,7 @@ function buildLAFColors(
   return applyNamedColors(resolvedLafTemplate, {
     ...evaluatedColors,
     editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor ||
-    evaluatedColors.accentColor,
+      evaluatedColors.accentColor,
   });
 }
 
@@ -122,7 +122,7 @@ function buildSyntaxColors(
   const resolvedNamedColors = {
     ...evaluatedColors,
     editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor ||
-    evaluatedColors.accentColor,
+      evaluatedColors.accentColor,
   }
 
   return syntaxTemplate.map((tokenSpecification) => {
@@ -183,7 +183,6 @@ function createDokiTheme(
     return {
       path: swapMasterThemeForLocalTheme(dokiFileDefinitionPath),
       definition: dokiThemeDefinition,
-      backgrounds: dokiThemeVSCodeDefinition.backgrounds,
       theme: buildVSCodeTheme(
         dokiThemeDefinition,
         dokiThemeVSCodeDefinition,
@@ -205,22 +204,21 @@ const getStickers = (
   dokiTheme: any
 ) => {
   const secondary =
-    dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
-  const backgrounds = dokiTheme.backgrounds;
+    dokiDefinition.stickers.secondary;
   return {
     default: {
-      path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default, __dirname),
-      name: dokiDefinition.stickers.default,
-      anchoring: backgrounds?.default?.anchor || "center",
+      path: resolveStickerPath(dokiTheme.path, dokiDefinition.stickers.default.name, __dirname),
+      name: dokiDefinition.stickers.default.name,
+      anchoring: dokiDefinition.stickers.default.anchor || "center",
     },
     ...(secondary
       ? {
-          secondary: {
-            path: resolveStickerPath(dokiTheme.path, secondary, __dirname),
-            name: secondary,
-            anchoring: backgrounds?.secondary?.anchor || "center",
-          },
-        }
+        secondary: {
+          path: resolveStickerPath(dokiTheme.path, secondary?.name, __dirname),
+          name: secondary.name,
+          anchoring: secondary?.anchor || "center",
+        },
+      }
       : {}),
   };
 };
@@ -292,23 +290,20 @@ evaluateTemplates(
 
     const commands = stickerInstallCommands.map((commandAndDefinition) => ({
       command: commandAndDefinition.command,
-      title: `Doki-Theme: Install ${getName(commandAndDefinition.definition)}'s${
-        commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
-      } ${
-        commandAndDefinition.command.indexOf('wallpaper') >=0 ? 'Wallpaper' : 'Sticker'
-      }`,
+      title: `Doki-Theme: Install ${getName(commandAndDefinition.definition)}'s${commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
+        } ${commandAndDefinition.command.indexOf('wallpaper') >= 0 ? 'Wallpaper' : 'Sticker'
+        }`,
     }));
 
     const shimaRinID = '5fb9c0a4-e613-457c-97a5-6204f9076cef';
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
-      label: `Doki Theme: ${getGroupName(dokiDefinition)} ${
-        getThemeDisplayName(dokiDefinition)
-      }`,
+      label: `Doki Theme: ${getGroupName(dokiDefinition)} ${getThemeDisplayName(dokiDefinition)
+        }`,
       path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
     })).sort((a, b) => {
-      if(a.id === shimaRinID) {
+      if (a.id === shimaRinID) {
         return -1;
       } else if (b.id === shimaRinID) {
         return 1;
@@ -366,13 +361,17 @@ evaluateTemplates(
     console.log("Theme Generation Complete!");
   });
 
-const specialThemes = new Set([
-  '6428e1ff-202c-4a43-afb3-9999ebe3b2ca', // XMas Chocola
-]) ;
+
+const nameGetter = (def: MasterDokiThemeDefinition) => def.name;
+const specialThemes: { [key: string]: (def: MasterDokiThemeDefinition) => string } = {
+  '6428e1ff-202c-4a43-afb3-9999ebe3b2ca': nameGetter, // XMas Chocola
+  'b0340303-0a5a-4a20-9b9c-fc8ce9880078': () => 'Sayori',
+}
 function getThemeDisplayName(dokiDefinition: MasterDokiThemeDefinition) {
-  return specialThemes.has(dokiDefinition.id) ? 
-  dokiDefinition.name :
-  dokiDefinition.displayName;
+  const displayNameGetter = specialThemes[dokiDefinition.id];
+  return displayNameGetter ?
+    displayNameGetter(dokiDefinition) :
+    dokiDefinition.displayName;
 }
 
 function getCommandNames(dokiDefinition: MasterDokiThemeDefinition): string[] {
