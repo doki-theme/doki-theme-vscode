@@ -4,7 +4,10 @@
   "laf": {
     "extends": "dark",
     "ui": {
-      "list.highlightForeground": "&keywordColor&"
+      "list.highlightForeground": "&keywordColor&",
+      "textLink.foreground": "&keyColor&AA",
+      "textLink.activeForeground": "&keyColor&",
+      "gitDecoration.modifiedResourceForeground": "&keyColor&"
     }
   },
   "syntax": {},
