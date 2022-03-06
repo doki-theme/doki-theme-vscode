@@ -4,6 +4,11 @@
 
 ![Takanashi Rikka Theme](./screenshots/chuunibyou/rikka_dark_code.png)
 
+<div align="center"> 
+    <h3>Code Font <a href="https://rubjo.github.io/victor-mono/">Victor Mono</a></h3>
+</div>
+
+
 # Feature Preview
 
 ![Ryuko's Theme Usage](./readmeStuff/usage.gif)
