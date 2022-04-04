@@ -84,7 +84,7 @@ export function restoreInstallation(
                 accum && (status == InstallStatus.INSTALLED ||
                     status === InstallStatus.NOT_INSTALLED), true);
             if (allWorked) {
-                fixCheckSums();
+                fixCheckSums(context);
                 const message = `Assets Restored! ${handleInstallMessage}`;
                 showInstallNotification(message)
             } else if (

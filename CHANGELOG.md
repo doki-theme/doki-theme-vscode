@@ -1,5 +1,9 @@
 # Change Log
 
+# 74.2.1.0.2 [Unsupported Status Help]
+
+- Added some guidance to users who will have issues with removing the [Unsupported] warning when installing assets.
+
 # 74.2-1.0.1 [Enhanced Usability & Stuff]
 
 - Increased badge icon foreground constrast.
