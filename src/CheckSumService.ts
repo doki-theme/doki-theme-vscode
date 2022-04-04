@@ -62,18 +62,6 @@ export const restoreChecksum = () => {
   }
 };
 
-function writeChecksums(product: any) {
-  const json = JSON.stringify(product, null, "\t");
-  try {
-    if (!fs.existsSync(originalProductFile)) {
-      fs.renameSync(productFile, originalProductFile);
-    }
-    fs.writeFileSync(productFile, json, { encoding: "utf8" });
-  } catch (err) {
-    console.error(err);
-  }
-}
-
 function computeChecksum(file: string) {
   const contents = fs.readFileSync(file);
   return crypto
