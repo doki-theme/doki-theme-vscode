@@ -25,11 +25,12 @@ Steps demonstrated:
 
 ## About!
 
-This plugin is for serious Otaku programmers.
-Code with your waifu. With over **60** themes,
-I think you will find best girl.
+Cute themes based on cute anime characters. With over **60** themes, the one you like the best is probably here.
 
-You can choose themes from various, Anime, Manga, or Visual Novels:
+You can choose themes based on characters from these various Anime, Manga, or Visual Novels:
+
+<details>
+<summary>All Featured Titles</summary>
 
 - AzurLane
 - Blend S
@@ -43,6 +44,7 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Fate
 - Future Diary
 - Gate
+- Haikyu!!
 - High School DxD
 - Jahy-sama Will Not Be Discouraged!
 - Kakegurui
@@ -54,16 +56,20 @@ You can choose themes from various, Anime, Manga, or Visual Novels:
 - Monogatari
 - NekoPara
 - Neon Genesis Evangelion
+- One Punch Man
 - OreGairu
 - OreImo
 - Quintessential Quintuplets
 - Rascal does not dream of bunny girl senpai
 - Re:Zero
 - Rising of the Shield Hero
+- Shokugeki no Soma
 - Steins Gate
 - Sword Art Online
+- That Time I Got Reincarnated as a Slime
 - Toaru Majutsu no Index
 - Yuru Camp
+</details>
 
 ---
 

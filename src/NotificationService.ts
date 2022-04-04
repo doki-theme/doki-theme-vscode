@@ -3,7 +3,7 @@ import { VSCodeGlobals } from "./VSCodeGlobals";
 import { attemptToGreetUser } from "./WelcomeService";
 
 const SAVED_VERSION = "doki.theme.version";
-const DOKI_THEME_VERSION = "v74.2-1.0.2";
+const DOKI_THEME_VERSION = "v78.0-1.0.2";
 
 export function attemptToNotifyUpdates(context: vscode.ExtensionContext) {
   const savedVersion = VSCodeGlobals.globalState.get(SAVED_VERSION);

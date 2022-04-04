@@ -1,9 +1,9 @@
 {
   "name": "doki-theme",
   "displayName": "The Doki Theme",
-  "description": "A bunch of themes with cute anime girls. Code with your waifu!",
+  "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "74.1.2",
+  "version": "78.1.2",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -84,6 +84,8 @@
     "onCommand:doki-theme.theme.wallpaper.Gasai Yuno",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
+    "onCommand:doki-theme.theme.Hinata Shoyo",
+    "onCommand:doki-theme.theme.wallpaper.Hinata Shoyo",
     "onCommand:doki-theme.theme.Rias Crimson",
     "onCommand:doki-theme.theme.wallpaper.Rias Crimson",
     "onCommand:doki-theme.theme.Rias Onyx",
@@ -174,6 +176,8 @@
     "onCommand:doki-theme.theme.wallpaper.Shigure",
     "onCommand:doki-theme.theme.Vanilla",
     "onCommand:doki-theme.theme.wallpaper.Vanilla",
+    "onCommand:doki-theme.theme.Genos",
+    "onCommand:doki-theme.theme.wallpaper.Genos",
     "onCommand:doki-theme.theme.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.Kirino",
@@ -200,6 +204,10 @@
     "onCommand:doki-theme.theme.wallpaper.Rem",
     "onCommand:doki-theme.theme.Raphtalia",
     "onCommand:doki-theme.theme.wallpaper.Raphtalia",
+    "onCommand:doki-theme.theme.Yukihira Soma",
+    "onCommand:doki-theme.theme.wallpaper.Yukihira Soma",
+    "onCommand:doki-theme.theme.Rimiru Tempest",
+    "onCommand:doki-theme.theme.wallpaper.Rimiru Tempest",
     "onCommand:doki-theme.theme.Makise Kurisu",
     "onCommand:doki-theme.theme.wallpaper.Makise Kurisu",
     "onCommand:doki-theme.theme.Asuna Dark",
@@ -458,6 +466,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Rory Mercury",
         "title": "Doki-Theme: Install Rory Mercury's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Hinata Shoyo",
+        "title": "Doki-Theme: Install Hinata Shoyo's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Hinata Shoyo",
+        "title": "Doki-Theme: Install Hinata Shoyo's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Rias Crimson",
@@ -820,6 +836,14 @@
         "title": "Doki-Theme: Install Vanilla's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Genos",
+        "title": "Doki-Theme: Install Genos's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Genos",
+        "title": "Doki-Theme: Install Genos's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Yukinoshita Yukino",
         "title": "Doki-Theme: Install Yukinoshita Yukino's Sticker"
       },
@@ -922,6 +946,22 @@
       {
         "command": "doki-theme.theme.wallpaper.Raphtalia",
         "title": "Doki-Theme: Install Raphtalia's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Yukihira Soma",
+        "title": "Doki-Theme: Install Yukihira Soma's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yukihira Soma",
+        "title": "Doki-Theme: Install Yukihira Soma's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Rimiru Tempest",
+        "title": "Doki-Theme: Install Rimiru Tempest's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Rimiru Tempest",
+        "title": "Doki-Theme: Install Rimiru Tempest's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Makise Kurisu",
@@ -1142,6 +1182,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "44ed0d2d-cce8-4707-a0cf-5150e1b31c16",
+        "label": "Doki Theme: Haikyu:  Shoyo",
+        "path": "./generatedThemes/Hinata Shoyo.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "91d0931d-3e1d-4101-b923-278ce264f0f5",
         "label": "Doki Theme: JahySama:  Jahy",
         "path": "./generatedThemes/Jahy.theme.json",
@@ -1280,6 +1326,12 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "22d0250f-a33b-409a-9cef-22f5eb69fc3d",
+        "label": "Doki Theme: OPM:  Genos",
+        "path": "./generatedThemes/Genos.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "06143cbe-2d51-4423-9a93-73a02c828119",
         "label": "Doki Theme: OreGairu:  Yukino",
         "path": "./generatedThemes/Yukinoshita Yukino.theme.json",
@@ -1367,6 +1419,18 @@
         "id": "df23dabc-61eb-4559-a504-992786964602",
         "label": "Doki Theme: ShieldHero:  Raphtalia",
         "path": "./generatedThemes/Raphtalia.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "fb25d871-4a7c-49f5-9426-1f7eb00c2699",
+        "label": "Doki Theme: Shokugeki:  Soma",
+        "path": "./generatedThemes/Yukihira Soma.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "5ca2846d-31a9-40b3-8908-965dad3c127d",
+        "label": "Doki Theme: Slime:  Rimiru",
+        "path": "./generatedThemes/Rimiru Tempest.theme.json",
         "uiTheme": "vs-dark"
       },
       {
