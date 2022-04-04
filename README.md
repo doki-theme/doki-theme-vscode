@@ -25,7 +25,7 @@ Steps demonstrated:
 
 ## About!
 
-Cute themes based on cute anime characters. With over **60** themes, the one you like the best is probably here.
+Cute themes based on cute anime characters. With over **60** themes, the one you like the best, is probably here.
 
 You can choose themes based on characters from these various Anime, Manga, or Visual Novels:
 
@@ -232,18 +232,7 @@ I think your voice needs to be heard! You probably have good ideas, so feel free
 
 Help make this plugin better!
 
-## Even more Doki-Theme!
-
-![Intellij](./readmeStuff/intellij.png)
-## JetBrains IDEs
-
-Do you also develop using JetBrain's products (Intellij, CLion, Pycharm, etc)? 
-Then be sure to install also install [the Doki Theme there as well!](https://github.com/doki-theme/doki-theme-jetbrains)
-
-![Hyper.js Terminal](./readmeStuff/hyper.png)
-## Hyper.js
-
-Enhance your command line experience! Install [the Doki Theme for Hyper!](https://github.com/doki-theme/doki-theme-hyper)
+## [Even more Doki-Theme!](https://doki-theme.unthrottled.io/products)
 
 ---
 
