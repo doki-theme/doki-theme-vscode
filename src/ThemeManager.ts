@@ -180,7 +180,7 @@ export function activateHideWatermark(
   return attemptToInstallHideWatermark(context).then(
     installStatus => {
       if (installStatus === InstallStatus.INSTALLED) {
-        fixCheckSums();
+        fixCheckSums(context);
         const message = `VSCode Watermark hidden! ${handleInstallMessage}`;
         showInstallNotification(message);
         saveHiddenWatermarkConfig(context);
@@ -214,7 +214,7 @@ export function activateThemeAsset(
         VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
         VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
         StatusBarComponent.setText(dokiTheme.displayName);
-        fixCheckSums();
+        fixCheckSums(context);
         const message = `${dokiTheme.name}'s ${assetType} installed! ${handleInstallMessage}`;
         showInstallNotification(message);
         configSaver(currentSticker, context);

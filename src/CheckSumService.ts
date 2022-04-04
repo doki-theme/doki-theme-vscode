@@ -3,13 +3,16 @@ import vscode from "vscode";
 import fs from "fs";
 import crypto from "crypto";
 import { appDirectory, workbenchDirectory } from "./ENV";
+import { showChecksumFixHelp } from "./SupportService";
 
-const productFile = path.join(appDirectory, "product.json");
+export const productFile = path.join(appDirectory, "product.json");
 const originalProductFile = `${productFile}.orig.${vscode.version}`;
 
 const outDirectory = path.resolve(workbenchDirectory, '..', '..');
 
-export const fixCheckSums = () => {
+export const fixCheckSums = (
+  extensionContext: vscode.ExtensionContext
+) => {
   const product: any = require(productFile);
   const checksumChanged = Object.entries(product.checksums).reduce(
     (didChange, entry) => {
@@ -35,6 +38,14 @@ export const fixCheckSums = () => {
       }
       fs.writeFileSync(productFile, json, { encoding: "utf8" });
     } catch (err) {
+      vscode.window.showErrorMessage(
+        `Unable to remove [Unsupported] status!`,
+        {title: 'Show Help'}
+      ).then((item) => {
+        if (item) {
+          showChecksumFixHelp(extensionContext)
+        }
+      })
       console.error(err);
     }
   }

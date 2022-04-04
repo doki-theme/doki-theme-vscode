@@ -60,7 +60,7 @@ export const watchConfigChanges = (
         if (hadFailure) {
           handleInstallFailure(extensionContext, theme);
         } else if (hadSuccess) {
-          fixCheckSums();
+          fixCheckSums(extensionContext);
           const message = `Custom Asset(s) Installed! ${handleInstallMessage}`;
           showInstallNotification(message)
         }
