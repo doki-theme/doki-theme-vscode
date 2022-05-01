@@ -201,7 +201,7 @@
         "entity.other.attribute-name"
       ],
       "settings": {
-        "foreground": "&accentColor&",
+        "foreground": "&editorAccentColor&",
         "fontStyle": "italic"
       }
     },
