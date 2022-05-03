@@ -4,6 +4,7 @@
   "laf": {
     "extends": "dark",
     "ui": {
+      "list.highlightForeground": "&accentColorBrighter&",
       "quickInput.foreground": "&foregroundColor&"
     }
   },
