@@ -11,7 +11,7 @@
 
 # Feature Preview
 
-![Ryuko's Theme Usage](./readmeStuff/usage.gif)
+![Ryuko's Theme Usage](./readmeStuff/vscode_doki_install_v2.gif)
 
 Steps demonstrated:
 1. Choose Ryuko's Color Theme
@@ -25,7 +25,7 @@ Steps demonstrated:
 
 ## About!
 
-Cute themes based on cute anime characters. With over **60** themes, the one you like the best, is probably here.
+Cute themes based on cute anime characters. With over **60** themes, the one you like the best is probably here.
 
 You can choose themes based on characters from these various Anime, Manga, or Visual Novels:
 

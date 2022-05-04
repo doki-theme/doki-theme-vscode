@@ -4,6 +4,7 @@
   "laf": {
     "extends": "dark",
     "ui": {
+      "list.highlightForeground": "&accentColorBrighter&",
       "editor.selectionBackground": "&selectionBackground&AA",
       "quickInput.foreground": "&foregroundColor&",
       "textLink.foreground": "&editorAccentColor&AA",

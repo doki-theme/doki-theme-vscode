@@ -1,5 +1,31 @@
 # Change Log
 
+# 78.2-1.0.2 [Major Theme Syntax Coloring Updates]
+
+- **Major Updates** to syntax highlighting colors to these themes:
+  - Asuna Dark
+  - Beatrice
+  - Emilia Light.
+  - Ibuki Light
+  - Monika Dark/Light
+  - Natsuki Dark/Light
+  - Sayori Dark/Light
+  - Yuri Dark/Light
+- Minor syntax highlighting updates to these themes: Nakano Miku, Megumin, Mai Dark, Ryuko Dark, Tohsaka Rin,
+  Rias: Crimson, Mai Light, and Asuna Light
+- Small syntax highlighting usability updates to these themes: Zero Two Dark, Yukino, Hanekawa,
+  Nagatoro, Rei, Astolfo, Echidna, Shima Rin, Sonoda Umi, Kurisu, & Ishtar Dark
+- Made the background art brighter for: Satsuki Dark & Asuna Dark
+- Made background art dimmer for: Yuri Light.
+
+#### Motivation
+
+I am in a position where I will now regularly be using my light themes more often. I am also planning on adding more.
+Most of my light themes were created a long time ago and my tastes have evolved over time.
+I have taken the time to revisit a fair number of my legacy themes, light and dark.
+
+Thank you for your understanding!
+
 # 78.0-1.0.2 [The Boys]
 
 I'm trying to bring in a bit of inclusion.
