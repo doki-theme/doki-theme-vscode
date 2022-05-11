@@ -227,6 +227,13 @@
     "charts.yellow": "&terminal.ansiYellow&",
     "charts.orange": "&editorAccentColor&",
     "charts.green": "&terminal.ansiGreen&",
-    "charts.purple": "&keyColor&"
+    "charts.purple": "&keyColor&",
+    "editorBracketHighlight.foreground1": "&foregroundColorEditor&",
+		"editorBracketHighlight.foreground2": "&keyColor&",
+		"editorBracketHighlight.foreground3": "&classNameColor&",
+		"editorBracketHighlight.foreground4": "&editorAccentColor&",
+		"editorBracketHighlight.foreground5": "&keyColor&",
+		"editorBracketHighlight.foreground6": "&constantColor&",
+		"editorBracketHighlight.unexpectedBracket.foreground": "&errorColor&"
   }
 }
