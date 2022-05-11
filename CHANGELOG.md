@@ -4,6 +4,8 @@
 
 - Since VS Code 1.67, [bracket pair colorization](https://code.visualstudio.com/updates/v1_67#_bracket-pair-colorization-enabled-by-default) is on by default. Well the default colors where cramping my style, so I fixed that. If you don't what I did, you can customize it yourself [search for "editorBracketHighlight.foreground" on this page](https://code.visualstudio.com/api/references/theme-color#editor-colors) and also see [customizing a color theme](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme).
 
+![Themed Brace Matching](https://user-images.githubusercontent.com/15972415/167956580-ba51862a-8d31-4d1a-9cbe-fb3676f33152.png)
+
 # 78.2-1.0.2 [Major Theme Syntax Coloring Updates]
 
 - **Major Updates** to syntax highlighting colors to these themes:
