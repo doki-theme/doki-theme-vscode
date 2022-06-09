@@ -42,6 +42,7 @@ function buildWallpaperCss({
   .tab,
   /* settings UI */
   .settings-editor>.settings-body .settings-toc-container,
+  .settings-editor > .settings-body .settings-tree-container .monaco-list-row.focused .settings-row-inner-container,
   /* end settings UI */
   .tabs-container,
   .monaco-pane-view, 
@@ -73,6 +74,8 @@ function buildWallpaperCss({
   
   /*settings UI */
   .monaco-list.list_id_1 .monaco-list-rows,
+  .settings-tree-container > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  .monaco-list.list_id_2:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused),
   /* source control diff editor */  
   .lines-content.monaco-editor-background,
   /* output panel */
