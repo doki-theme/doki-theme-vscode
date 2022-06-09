@@ -116,6 +116,8 @@ You'll have to put these changes in the `settings.json` in your VSCode.
 
 You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
 
+https://user-images.githubusercontent.com/15972415/172961532-d8403999-15f0-4030-9f69-1da50002dfd9.mp4
+
 ## Hide Watermark
 
 Tired of the the VSCode watermark cramping your style? 
