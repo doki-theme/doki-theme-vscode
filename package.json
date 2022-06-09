@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "78.1.4",
+  "version": "78.1.5",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -235,7 +235,7 @@
           "doki.background.enabled": {
             "type": "boolean",
             "default": true,
-            "description": "Whether or not you want an image in your empty editor background when installing assets."
+            "description": "Whether or not you want an image in your empty editor background when when running the 'Install Wallpaper' command."
           },
           "doki.background.anchor": {
             "type": "string",
@@ -250,7 +250,7 @@
           "doki.wallpaper.enabled": {
             "type": "boolean",
             "default": true,
-            "description": "Whether or not you want an image on top of your code editor."
+            "description": "Whether or not you want an image on top of your code editor, when running the 'Install Wallpaper' command."
           },
           "doki.sticker.path": {
             "type": "string",

@@ -1,5 +1,12 @@
 # Change Log
 
+# 78.2-1.2.0 [Asset Settings]
+
+- Added the following settings that allow you to control what assets get installed during the `Install Wallpaper` actions.
+  - `doki.background.enabled`: Whether or not you want an image in your empty editor background when when running the 'Install Wallpaper' command.
+  - `doki.wallpaper.enabled`: Whether or not you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+- Enhanced the 'Settings (UI)' wallpaper experience.
+
 # 78.2-1.1.0 [Themed Bracket Pair Colorization]
 
 - Since VS Code 1.67, [bracket pair colorization](https://code.visualstudio.com/updates/v1_67#_bracket-pair-colorization-enabled-by-default) is on by default. Well the default colors where cramping my style, so I fixed that. If you don't what I did, you can customize it yourself [search for "editorBracketHighlight.foreground" on this page](https://code.visualstudio.com/api/references/theme-color#editor-colors) and also see [customizing a color theme](https://code.visualstudio.com/docs/getstarted/themes#_customizing-a-color-theme).

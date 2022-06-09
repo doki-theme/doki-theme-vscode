@@ -105,6 +105,17 @@ This feature will set the background image to the current theme's official wallp
 ![Zero Two Code](./readmeStuff/wallpaper_code.png)
 ![Zero Two Code](./readmeStuff/wallpaper_background.png)
 
+#### Settings
+
+For convinence, the wallpaper & background image are both installed when you run the `Install Wallpaper` command. If you want the background image on and the wallpaper off, then you can adjust it using the settings listed below.
+
+- `doki.background.enabled`: Whether or not you want an image in your empty editor background when when running the 'Install Wallpaper' command.
+- `doki.wallpaper.enabled`: Whether or not you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+
+You'll have to put these changes in the `settings.json` in your VSCode. 
+
+You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
+
 ## Hide Watermark
 
 Tired of the the VSCode watermark cramping your style? 
