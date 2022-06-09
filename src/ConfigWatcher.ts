@@ -8,9 +8,14 @@ export const CONFIG_NAME = "doki";
 export const CONFIG_STICKER = "sticker.path";
 export const CONFIG_BACKGROUND = "background.path";
 export const CONFIG_WALLPAPER = "wallpaper.path";
+export const CONFIG_WALLPAPER_ENABLED = "wallpaper.enabled";
 export const CONFIG_BACKGROUND_ANCHOR = "background.anchor";
+export const CONFIG_BACKGROUND_ENABLED = "background.enabled";
 
-let currentConfig = vscode.workspace.getConfiguration(CONFIG_NAME);
+export const getConfig = () => vscode.workspace.getConfiguration(CONFIG_NAME)
+
+let currentConfig = getConfig();
+
 
 export const watchConfigChanges = (
   extensionContext: vscode.ExtensionContext

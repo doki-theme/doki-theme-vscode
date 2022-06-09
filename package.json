@@ -232,6 +232,11 @@
             "default": "",
             "description": "Absolute file path of the image you want to use as your empty editor background."
           },
+          "doki.background.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether or not you want an image in your empty editor background when installing assets."
+          },
           "doki.background.anchor": {
             "type": "string",
             "default": "",
@@ -241,6 +246,11 @@
             "type": "string",
             "default": "",
             "description": "Absolute file path of the image you want to use as your glass pane wallpaper. (Image should be transparent)"
+          },
+          "doki.wallpaper.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether or not you want an image on top of your code editor."
           },
           "doki.sticker.path": {
             "type": "string",

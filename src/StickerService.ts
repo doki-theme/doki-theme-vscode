@@ -6,6 +6,7 @@ import {
   NetworkError,
 } from "./StickerUpdateService";
 import { Sticker } from "./extension";
+import { CONFIG_BACKGROUND_ENABLED, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
 
 export enum InstallStatus {
   INSTALLED,
@@ -17,6 +18,7 @@ export enum InstallStatus {
 const stickerComment = "/* Stickers */";
 const hideComment = "/* Hide Watermark */";
 const wallpaperComment = "/* Background Image */";
+const backgroundComment = "/* EmptyEditor Image */";
 
 export const getStickerIndex = (currentCss: string) =>
   currentCss.indexOf(stickerComment);
@@ -24,9 +26,10 @@ export const getHideIndex = (currentCss: string) =>
   currentCss.indexOf(hideComment);
 export const getWallpaperIndex = (currentCss: string) =>
   currentCss.indexOf(wallpaperComment);
+export const getBackgroundIndex = (currentCss: string) =>
+  currentCss.indexOf(backgroundComment);
 
 function buildWallpaperCss({
-  backgroundImageURL: backgroundUrl,
   wallpaperImageURL: wallpaperURL,
   backgroundAnchoring,
 }: DokiStickers): string {
@@ -113,7 +116,14 @@ function buildWallpaperCss({
   .monaco-icon-label-container {
     background: none !important;
   }
+  `;
+}
 
+function buildBackgroundCss({
+  backgroundImageURL: backgroundUrl,
+  backgroundAnchoring,
+}: DokiStickers): string {
+  return `${wallpaperComment}
   .monaco-workbench .part.editor > .content {
     background-image: url('${backgroundUrl}') !important;
     background-position: ${backgroundAnchoring};
@@ -167,8 +177,13 @@ function buildCSSWithStickers(dokiStickers: DokiStickers): string {
   return `${getStickerScrubbedCSS()}${buildStickerCss(dokiStickers)}`;
 }
 
-function buildCSSWithWallpaper(dokiStickers: DokiStickers): string {
-  return `${getWallpaperScrubbedCSS()}${buildWallpaperCss(dokiStickers)}`;
+function buildCSSWithWallpaperAndBackground(dokiStickers: DokiStickers): string {
+  const wallpaperScrubbedCSS = getWallpaperScrubbedCSS();
+  const backgroundAndWallpaperScrubbedCSS = getBackgroundScrubbedCSS(wallpaperScrubbedCSS);
+  const config = getConfig();
+  const wallPaperCss = config.get(CONFIG_WALLPAPER_ENABLED) ? buildWallpaperCss(dokiStickers) : '';
+  const backgroundCSS = config.get(CONFIG_BACKGROUND_ENABLED) ? buildBackgroundCss(dokiStickers): '';
+  return `${backgroundAndWallpaperScrubbedCSS}${wallPaperCss}${backgroundCSS}`;
 }
 
 function buildCSSWithoutWatermark(): string {
@@ -210,7 +225,7 @@ export async function installWallPaper(
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
   return installStyles(sticker, context, (stickersAndWallpaper) =>
-    buildCSSWithWallpaper(stickersAndWallpaper)
+    buildCSSWithWallpaperAndBackground(stickersAndWallpaper)
   );
 }
 
@@ -258,11 +273,19 @@ export function readCSS() {
   return fs.readFileSync(editorCss, "utf-8");
 }
 
-function scrubCssOfAsset(
+function readVSCodeCSSAndScrubAsset(
   getOtherAssets: IndexFinderDude[],
   getAssetToRemoveIndex: IndexFinderDude
 ) {
-  const currentCss = fs.readFileSync(editorCss, "utf-8");
+  const currentVSCodeCss = fs.readFileSync(editorCss, "utf-8");
+  return scrubProvidedCssOfAsset(getOtherAssets, getAssetToRemoveIndex, currentVSCodeCss);
+}
+
+function scrubProvidedCssOfAsset(
+  getOtherAssets: IndexFinderDude[],
+  getAssetToRemoveIndex: IndexFinderDude,
+  currentCss: string
+) {
   const otherAssetIndices = getOtherAssets.map(assetFinder => assetFinder(currentCss));
   const assetToRemoveIndex = getAssetToRemoveIndex(currentCss);
   const otherIndex = otherAssetIndices.reduce((accum, index) => Math.max(accum, index), -1);
@@ -283,23 +306,32 @@ function scrubCssOfAsset(
 }
 
 const indexGetters = [
-  getStickerIndex, getWallpaperIndex, getHideIndex
+  getStickerIndex, getWallpaperIndex, getHideIndex, getBackgroundIndex
 ]
 
 function getWallpaperScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getWallpaperIndex),
     getWallpaperIndex
   );
 }
+
+function getBackgroundScrubbedCSS(vscodeCSS: string) {
+  return scrubProvidedCssOfAsset(
+    indexGetters.filter(getter => getter !== getBackgroundIndex),
+    getBackgroundIndex,
+    vscodeCSS
+  );
+}
+
 function getStickerScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getStickerIndex),
     getStickerIndex
   );
 }
 function getWatermarkScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getHideIndex),
     getHideIndex
   );
