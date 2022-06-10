@@ -252,6 +252,11 @@
             "default": true,
             "description": "Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command."
           },
+          "doki.statusbar.name": {
+            "type": "string",
+            "default": "",
+            "description": "Custom name you can use that shows up in the status bar next to the ❤️"
+          },
           "doki.sticker.path": {
             "type": "string",
             "default": "",

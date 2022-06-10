@@ -182,6 +182,13 @@ Value to be used for css 'background-position' for both the background & wallpap
 "doki.background.anchor": "center",
 ```
 
+**Custom Status Bar Name**
+
+I can't get every theme build, so I suppose you want to customize and make your own.
+I get that, so you have the ability to change the name that shows up next to the heart in the status bar.
+
+![Custom Status Bar Name](./readmeStuff/custom_name.png)
+
 ## Asset Restoration
 
 Unfortunately, every time VSCode updates, you will lose your installed asset changes. 

@@ -1,11 +1,12 @@
 # Change Log
 
-# 78.2-1.2.0 [Asset Settings]
+# 78.2-1.2.0 [Asset Settings & Custom Status Bar Name]
 
 - Added the following settings that allow you to control what assets get installed during the `Install Wallpaper` actions.
   - `doki.background.enabled`: Whether you want an image in your empty editor background when when running the 'Install Wallpaper' command.
   - `doki.wallpaper.enabled`: Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
 - Enhanced the 'Settings (UI)' wallpaper experience.
+- You can also set your own name that shows up next to the ❤ in the status bar now with the `doki.statusbar.name` setting. 
 
 # 78.2-1.1.0 [Themed Bracket Pair Colorization]
 
