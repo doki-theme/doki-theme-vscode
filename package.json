@@ -48,8 +48,12 @@
     "onCommand:doki-theme.theme.wallpaper.Mai Light",
     "onCommand:doki-theme.theme.Mai Light.secondary",
     "onCommand:doki-theme.theme.wallpaper.Mai Light.secondary",
+    "onCommand:doki-theme.theme.Tomori Nao",
+    "onCommand:doki-theme.theme.wallpaper.Tomori Nao",
     "onCommand:doki-theme.theme.Takanashi Rikka",
     "onCommand:doki-theme.theme.wallpaper.Takanashi Rikka",
+    "onCommand:doki-theme.theme.C.C.",
+    "onCommand:doki-theme.theme.wallpaper.C.C.",
     "onCommand:doki-theme.theme.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.wallpaper.Mioda Ibuki Dark",
     "onCommand:doki-theme.theme.Mioda Ibuki Light",
@@ -84,6 +88,8 @@
     "onCommand:doki-theme.theme.wallpaper.Gasai Yuno",
     "onCommand:doki-theme.theme.Rory Mercury",
     "onCommand:doki-theme.theme.wallpaper.Rory Mercury",
+    "onCommand:doki-theme.theme.Yuzuriha Inori",
+    "onCommand:doki-theme.theme.wallpaper.Yuzuriha Inori",
     "onCommand:doki-theme.theme.Hinata Shoyo",
     "onCommand:doki-theme.theme.wallpaper.Hinata Shoyo",
     "onCommand:doki-theme.theme.Rias Crimson",
@@ -182,6 +188,10 @@
     "onCommand:doki-theme.theme.wallpaper.Yukinoshita Yukino",
     "onCommand:doki-theme.theme.Kirino",
     "onCommand:doki-theme.theme.wallpaper.Kirino",
+    "onCommand:doki-theme.theme.Nakano Ichika",
+    "onCommand:doki-theme.theme.wallpaper.Nakano Ichika",
+    "onCommand:doki-theme.theme.Nakano Itsuki",
+    "onCommand:doki-theme.theme.wallpaper.Nakano Itsuki",
     "onCommand:doki-theme.theme.Nakano Miku",
     "onCommand:doki-theme.theme.wallpaper.Nakano Miku",
     "onCommand:doki-theme.theme.Nakano Nino",
@@ -202,6 +212,8 @@
     "onCommand:doki-theme.theme.wallpaper.Ram",
     "onCommand:doki-theme.theme.Rem",
     "onCommand:doki-theme.theme.wallpaper.Rem",
+    "onCommand:doki-theme.theme.Senko",
+    "onCommand:doki-theme.theme.wallpaper.Senko",
     "onCommand:doki-theme.theme.Raphtalia",
     "onCommand:doki-theme.theme.wallpaper.Raphtalia",
     "onCommand:doki-theme.theme.Yukihira Soma",
@@ -339,12 +351,28 @@
         "title": "Doki-Theme: Install Mai Light's Secondary Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Tomori Nao",
+        "title": "Doki-Theme: Install Tomori Nao's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Tomori Nao",
+        "title": "Doki-Theme: Install Tomori Nao's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Takanashi Rikka",
         "title": "Doki-Theme: Install Takanashi Rikka's Sticker"
       },
       {
         "command": "doki-theme.theme.wallpaper.Takanashi Rikka",
         "title": "Doki-Theme: Install Takanashi Rikka's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.C.C.",
+        "title": "Doki-Theme: Install C.C.'s Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.C.C.",
+        "title": "Doki-Theme: Install C.C.'s Wallpaper"
       },
       {
         "command": "doki-theme.theme.Mioda Ibuki Dark",
@@ -481,6 +509,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Rory Mercury",
         "title": "Doki-Theme: Install Rory Mercury's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Yuzuriha Inori",
+        "title": "Doki-Theme: Install Yuzuriha Inori's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Yuzuriha Inori",
+        "title": "Doki-Theme: Install Yuzuriha Inori's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Hinata Shoyo",
@@ -875,6 +911,22 @@
         "title": "Doki-Theme: Install Kirino's Wallpaper"
       },
       {
+        "command": "doki-theme.theme.Nakano Ichika",
+        "title": "Doki-Theme: Install Nakano Ichika's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nakano Ichika",
+        "title": "Doki-Theme: Install Nakano Ichika's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Nakano Itsuki",
+        "title": "Doki-Theme: Install Nakano Itsuki's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Nakano Itsuki",
+        "title": "Doki-Theme: Install Nakano Itsuki's Wallpaper"
+      },
+      {
         "command": "doki-theme.theme.Nakano Miku",
         "title": "Doki-Theme: Install Nakano Miku's Sticker"
       },
@@ -953,6 +1005,14 @@
       {
         "command": "doki-theme.theme.wallpaper.Rem",
         "title": "Doki-Theme: Install Rem's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Senko",
+        "title": "Doki-Theme: Install Senko's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Senko",
+        "title": "Doki-Theme: Install Senko's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Raphtalia",
@@ -1059,10 +1119,22 @@
         "uiTheme": "vs"
       },
       {
+        "id": "4fb20370-1b89-4a0d-9f8f-84542ec147b2",
+        "label": "Doki Theme: Charlotte:  Nao",
+        "path": "./generatedThemes/Tomori Nao.theme.json",
+        "uiTheme": "vs"
+      },
+      {
         "id": "5412c41d-f76b-4488-85a7-1ae1a63bbfcc",
         "label": "Doki Theme: Chuunibyou:  Rikka",
         "path": "./generatedThemes/Takanashi Rikka.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "3462121b-b101-406f-8b31-ce04d09b2ef6",
+        "label": "Doki Theme: CodeGeass:  C.C.",
+        "path": "./generatedThemes/C.C..theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "dce48196-ff46-470c-b5f9-d1e23f4a79d3",
@@ -1195,6 +1267,12 @@
         "label": "Doki Theme: Gate:  Rory",
         "path": "./generatedThemes/Rory Mercury.theme.json",
         "uiTheme": "vs-dark"
+      },
+      {
+        "id": "926c4bf5-eafb-463e-815a-b6a101fc1f4a",
+        "label": "Doki Theme: GuiltyCrown:  Inori",
+        "path": "./generatedThemes/Yuzuriha Inori.theme.json",
+        "uiTheme": "vs"
       },
       {
         "id": "44ed0d2d-cce8-4707-a0cf-5150e1b31c16",
@@ -1359,6 +1437,18 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "a8c6675e-7bdb-41f0-af80-4e9ebbf617d2",
+        "label": "Doki Theme: QQ:  Ichika",
+        "path": "./generatedThemes/Nakano Ichika.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "dd37f2e1-24bd-4cb2-b350-e2d1f4a0a50f",
+        "label": "Doki Theme: QQ:  Itsuki",
+        "path": "./generatedThemes/Nakano Itsuki.theme.json",
+        "uiTheme": "vs"
+      },
+      {
         "id": "d96c6599-ebf8-4359-ae26-19f79b69e919",
         "label": "Doki Theme: QQ:  Miku",
         "path": "./generatedThemes/Nakano Miku.theme.json",
@@ -1428,6 +1518,12 @@
         "id": "546e8fb8-6082-4ef5-a5e3-44790686f02f",
         "label": "Doki Theme: SAO:  Asuna",
         "path": "./generatedThemes/Asuna Light.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "7bafa167-148d-472a-8a9b-6f4129ef2e1f",
+        "label": "Doki Theme: Senko-san:  Senko",
+        "path": "./generatedThemes/Senko.theme.json",
         "uiTheme": "vs"
       },
       {
