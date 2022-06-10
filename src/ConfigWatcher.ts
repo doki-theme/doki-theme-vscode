@@ -3,14 +3,21 @@ import fs from 'fs';
 import { fixCheckSums } from "./CheckSumService";
 import { InstallStatus } from "./StickerService";
 import { attemptToInstallSticker, attemptToInstallWallpaper, getCurrentThemeAndSticker, handleInstallFailure, handleInstallMessage, showInstallNotification } from "./ThemeManager";
+import { StatusBarComponent } from "./StatusBar";
 
 export const CONFIG_NAME = "doki";
 export const CONFIG_STICKER = "sticker.path";
 export const CONFIG_BACKGROUND = "background.path";
 export const CONFIG_WALLPAPER = "wallpaper.path";
+export const CONFIG_WALLPAPER_ENABLED = "wallpaper.enabled";
 export const CONFIG_BACKGROUND_ANCHOR = "background.anchor";
+export const CONFIG_BACKGROUND_ENABLED = "background.enabled";
+export const CONFIG_STATUS_BAR_NAME = "statusbar.name";
 
-let currentConfig = vscode.workspace.getConfiguration(CONFIG_NAME);
+export const getConfig = () => vscode.workspace.getConfiguration(CONFIG_NAME)
+
+let currentConfig = getConfig();
+
 
 export const watchConfigChanges = (
   extensionContext: vscode.ExtensionContext
@@ -18,6 +25,15 @@ export const watchConfigChanges = (
   vscode.workspace.onDidChangeConfiguration(() => {
     const { sticker, theme } = getCurrentThemeAndSticker();
     const newBoiConfig = vscode.workspace.getConfiguration(CONFIG_NAME);
+
+    const statusBarName = newBoiConfig.get(CONFIG_STATUS_BAR_NAME);
+    const statusBarConfigChanged = currentConfig.get(CONFIG_STATUS_BAR_NAME) !== statusBarName;
+    if (statusBarConfigChanged && !!statusBarName && typeof statusBarName === 'string') {
+      StatusBarComponent.setText(statusBarName);
+    } else if (statusBarConfigChanged && !statusBarName) {
+      const {theme} = getCurrentThemeAndSticker();
+      StatusBarComponent.setText(theme.displayName);
+    }
 
     const stickerChanged = newBoiConfig.get(CONFIG_STICKER) !==
       currentConfig.get(CONFIG_STICKER);

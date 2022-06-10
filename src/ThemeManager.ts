@@ -17,6 +17,7 @@ import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { DokiThemeDefinition, Sticker } from "./extension";
 import { fixCheckSums, restoreChecksum } from "./CheckSumService";
 import { clearAssetConfig, saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
+import { CONFIG_STATUS_BAR_NAME, getConfig } from "./ConfigWatcher";
 
 export const ACTIVE_THEME = "doki.theme.active";
 
@@ -213,7 +214,9 @@ export function activateThemeAsset(
       if (didInstall === InstallStatus.INSTALLED) {
         VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
         VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
-        StatusBarComponent.setText(dokiTheme.displayName);
+        if(!getConfig().get(CONFIG_STATUS_BAR_NAME)) {
+          StatusBarComponent.setText(dokiTheme.displayName);
+        }
         fixCheckSums(context);
         const message = `${dokiTheme.name}'s ${assetType} installed! ${handleInstallMessage}`;
         showInstallNotification(message);

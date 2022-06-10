@@ -105,6 +105,19 @@ This feature will set the background image to the current theme's official wallp
 ![Zero Two Code](./readmeStuff/wallpaper_code.png)
 ![Zero Two Code](./readmeStuff/wallpaper_background.png)
 
+#### Settings
+
+For convenience, the wallpaper & background image are both installed when you run the `Install Wallpaper` command. If you want the background image on and the wallpaper off, then you can adjust it using the settings listed below.
+
+- `doki.background.enabled`: Whether you want an image in your empty editor background when running the 'Install Wallpaper' command.
+- `doki.wallpaper.enabled`: Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+
+You'll have to put these changes in the `settings.json` in your VSCode. 
+
+You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
+
+https://user-images.githubusercontent.com/15972415/172961532-d8403999-15f0-4030-9f69-1da50002dfd9.mp4
+
 ## Hide Watermark
 
 Tired of the the VSCode watermark cramping your style? 
@@ -168,6 +181,13 @@ Value to be used for css 'background-position' for both the background & wallpap
 ```json
 "doki.background.anchor": "center",
 ```
+
+**Custom Status Bar Name**
+
+I can't get every theme build, so I suppose you want to customize and make your own.
+I get that, so you have the ability to change the name that shows up next to the heart in the status bar.
+
+![Custom Status Bar Name](./readmeStuff/custom_name.png)
 
 ## Asset Restoration
 

@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "78.1.4",
+  "version": "78.1.5",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -232,6 +232,11 @@
             "default": "",
             "description": "Absolute file path of the image you want to use as your empty editor background."
           },
+          "doki.background.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether you want an image in your empty editor background when running the 'Install Wallpaper' command."
+          },
           "doki.background.anchor": {
             "type": "string",
             "default": "",
@@ -241,6 +246,16 @@
             "type": "string",
             "default": "",
             "description": "Absolute file path of the image you want to use as your glass pane wallpaper. (Image should be transparent)"
+          },
+          "doki.wallpaper.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command."
+          },
+          "doki.statusbar.name": {
+            "type": "string",
+            "default": "",
+            "description": "Custom name you can use that shows up in the status bar next to the ❤️"
           },
           "doki.sticker.path": {
             "type": "string",

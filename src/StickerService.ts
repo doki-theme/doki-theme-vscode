@@ -6,6 +6,7 @@ import {
   NetworkError,
 } from "./StickerUpdateService";
 import { Sticker } from "./extension";
+import { CONFIG_BACKGROUND_ENABLED, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
 
 export enum InstallStatus {
   INSTALLED,
@@ -17,6 +18,7 @@ export enum InstallStatus {
 const stickerComment = "/* Stickers */";
 const hideComment = "/* Hide Watermark */";
 const wallpaperComment = "/* Background Image */";
+const backgroundComment = "/* EmptyEditor Image */";
 
 export const getStickerIndex = (currentCss: string) =>
   currentCss.indexOf(stickerComment);
@@ -24,9 +26,10 @@ export const getHideIndex = (currentCss: string) =>
   currentCss.indexOf(hideComment);
 export const getWallpaperIndex = (currentCss: string) =>
   currentCss.indexOf(wallpaperComment);
+export const getBackgroundIndex = (currentCss: string) =>
+  currentCss.indexOf(backgroundComment);
 
 function buildWallpaperCss({
-  backgroundImageURL: backgroundUrl,
   wallpaperImageURL: wallpaperURL,
   backgroundAnchoring,
 }: DokiStickers): string {
@@ -39,6 +42,7 @@ function buildWallpaperCss({
   .tab,
   /* settings UI */
   .settings-editor>.settings-body .settings-toc-container,
+  .settings-editor > .settings-body .settings-tree-container .monaco-list-row.focused .settings-row-inner-container,
   /* end settings UI */
   .tabs-container,
   .monaco-pane-view, 
@@ -70,6 +74,8 @@ function buildWallpaperCss({
   
   /*settings UI */
   .monaco-list.list_id_1 .monaco-list-rows,
+  .settings-tree-container > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  .monaco-list.list_id_2:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused),
   /* source control diff editor */  
   .lines-content.monaco-editor-background,
   /* output panel */
@@ -113,7 +119,21 @@ function buildWallpaperCss({
   .monaco-icon-label-container {
     background: none !important;
   }
+  `;
+}
+function buildHideWallpaperOnEmptyEditor(): string {
+  return ` 
+  .monaco-workbench .part.editor > .content {
+    background-image: none !important;
+}
+  `;
+}
 
+function buildBackgroundCss({
+  backgroundImageURL: backgroundUrl,
+  backgroundAnchoring,
+}: DokiStickers): string {
+  return `${backgroundComment}
   .monaco-workbench .part.editor > .content {
     background-image: url('${backgroundUrl}') !important;
     background-position: ${backgroundAnchoring};
@@ -167,8 +187,17 @@ function buildCSSWithStickers(dokiStickers: DokiStickers): string {
   return `${getStickerScrubbedCSS()}${buildStickerCss(dokiStickers)}`;
 }
 
-function buildCSSWithWallpaper(dokiStickers: DokiStickers): string {
-  return `${getWallpaperScrubbedCSS()}${buildWallpaperCss(dokiStickers)}`;
+function buildCSSWithWallpaperAndBackground(dokiStickers: DokiStickers): string {
+  const wallpaperScrubbedCSS = getWallpaperScrubbedCSS();
+  const backgroundAndWallpaperScrubbedCSS = getBackgroundScrubbedCSS(wallpaperScrubbedCSS);
+  const config = getConfig();
+  const wallPaperCss = config.get(CONFIG_WALLPAPER_ENABLED) ? buildWallpaperCss(dokiStickers) : '';
+  const backgroundCSS = config.get(CONFIG_BACKGROUND_ENABLED) ? 
+  buildBackgroundCss(dokiStickers): 
+  // If the background image isn't set, then the wallpaper will be drawn over it.
+  (!!wallPaperCss ? buildHideWallpaperOnEmptyEditor() : '');
+
+  return `${backgroundAndWallpaperScrubbedCSS}${wallPaperCss}${backgroundCSS}`;
 }
 
 function buildCSSWithoutWatermark(): string {
@@ -210,7 +239,7 @@ export async function installWallPaper(
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
   return installStyles(sticker, context, (stickersAndWallpaper) =>
-    buildCSSWithWallpaper(stickersAndWallpaper)
+    buildCSSWithWallpaperAndBackground(stickersAndWallpaper)
   );
 }
 
@@ -258,11 +287,19 @@ export function readCSS() {
   return fs.readFileSync(editorCss, "utf-8");
 }
 
-function scrubCssOfAsset(
+function readVSCodeCSSAndScrubAsset(
   getOtherAssets: IndexFinderDude[],
   getAssetToRemoveIndex: IndexFinderDude
 ) {
-  const currentCss = fs.readFileSync(editorCss, "utf-8");
+  const currentVSCodeCss = fs.readFileSync(editorCss, "utf-8");
+  return scrubProvidedCssOfAsset(getOtherAssets, getAssetToRemoveIndex, currentVSCodeCss);
+}
+
+function scrubProvidedCssOfAsset(
+  getOtherAssets: IndexFinderDude[],
+  getAssetToRemoveIndex: IndexFinderDude,
+  currentCss: string
+) {
   const otherAssetIndices = getOtherAssets.map(assetFinder => assetFinder(currentCss));
   const assetToRemoveIndex = getAssetToRemoveIndex(currentCss);
   const otherIndex = otherAssetIndices.reduce((accum, index) => Math.max(accum, index), -1);
@@ -283,23 +320,32 @@ function scrubCssOfAsset(
 }
 
 const indexGetters = [
-  getStickerIndex, getWallpaperIndex, getHideIndex
+  getStickerIndex, getWallpaperIndex, getHideIndex, getBackgroundIndex
 ]
 
 function getWallpaperScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getWallpaperIndex),
     getWallpaperIndex
   );
 }
+
+function getBackgroundScrubbedCSS(vscodeCSS: string) {
+  return scrubProvidedCssOfAsset(
+    indexGetters.filter(getter => getter !== getBackgroundIndex),
+    getBackgroundIndex,
+    vscodeCSS
+  );
+}
+
 function getStickerScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getStickerIndex),
     getStickerIndex
   );
 }
 function getWatermarkScrubbedCSS() {
-  return scrubCssOfAsset(
+  return readVSCodeCSSAndScrubAsset(
     indexGetters.filter(getter => getter !== getHideIndex),
     getHideIndex
   );
