@@ -3,8 +3,8 @@
 # 78.2-1.2.0 [Asset Settings]
 
 - Added the following settings that allow you to control what assets get installed during the `Install Wallpaper` actions.
-  - `doki.background.enabled`: Whether or not you want an image in your empty editor background when when running the 'Install Wallpaper' command.
-  - `doki.wallpaper.enabled`: Whether or not you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+  - `doki.background.enabled`: Whether you want an image in your empty editor background when when running the 'Install Wallpaper' command.
+  - `doki.wallpaper.enabled`: Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
 - Enhanced the 'Settings (UI)' wallpaper experience.
 
 # 78.2-1.1.0 [Themed Bracket Pair Colorization]

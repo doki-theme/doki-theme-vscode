@@ -107,10 +107,10 @@ This feature will set the background image to the current theme's official wallp
 
 #### Settings
 
-For convinence, the wallpaper & background image are both installed when you run the `Install Wallpaper` command. If you want the background image on and the wallpaper off, then you can adjust it using the settings listed below.
+For convenience, the wallpaper & background image are both installed when you run the `Install Wallpaper` command. If you want the background image on and the wallpaper off, then you can adjust it using the settings listed below.
 
-- `doki.background.enabled`: Whether or not you want an image in your empty editor background when when running the 'Install Wallpaper' command.
-- `doki.wallpaper.enabled`: Whether or not you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+- `doki.background.enabled`: Whether you want an image in your empty editor background when running the 'Install Wallpaper' command.
+- `doki.wallpaper.enabled`: Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
 
 You'll have to put these changes in the `settings.json` in your VSCode. 
 

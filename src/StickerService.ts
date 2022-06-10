@@ -121,8 +121,8 @@ function buildWallpaperCss({
   }
   `;
 }
-function builHideWallpaperOnEmptyEditor(): string {
-  return `${wallpaperComment}
+function buildHideWallpaperOnEmptyEditor(): string {
+  return ` 
   .monaco-workbench .part.editor > .content {
     background-image: none !important;
 }
@@ -133,7 +133,7 @@ function buildBackgroundCss({
   backgroundImageURL: backgroundUrl,
   backgroundAnchoring,
 }: DokiStickers): string {
-  return `${wallpaperComment}
+  return `${backgroundComment}
   .monaco-workbench .part.editor > .content {
     background-image: url('${backgroundUrl}') !important;
     background-position: ${backgroundAnchoring};
@@ -195,7 +195,7 @@ function buildCSSWithWallpaperAndBackground(dokiStickers: DokiStickers): string 
   const backgroundCSS = config.get(CONFIG_BACKGROUND_ENABLED) ? 
   buildBackgroundCss(dokiStickers): 
   // If the background image isn't set, then the wallpaper will be drawn over it.
-  (!!wallPaperCss ? builHideWallpaperOnEmptyEditor() : '');
+  (!!wallPaperCss ? buildHideWallpaperOnEmptyEditor() : '');
 
   return `${backgroundAndWallpaperScrubbedCSS}${wallPaperCss}${backgroundCSS}`;
 }
