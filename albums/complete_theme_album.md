@@ -153,7 +153,7 @@ Kill la Kill
 
 ### Ryuko
 ![Ryuko (Light)](../screenshots/ryuko_light_code.png)
-![Ryuko (Dark)](../screenshots/ryuko_code.png)
+![Ryuko (Dark)](../screenshots/ryuko_dark_code.png)
 
 ### Satsuki
 ![Satsuki (Light)](../screenshots/satsuki_code.png)
@@ -164,7 +164,7 @@ Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderf
 ---
 
 ### Megumin
-![Megumin (Dark)](../screenshots/megumin_code.png)
+![Megumin (Dark)](../screenshots/megumin_dark_code.png)
 
 ### Aqua
 ![Aqua (Dark)](../screenshots/aqua_dark_code.png)
@@ -302,7 +302,7 @@ Re:Zero
 ---
 
 ### Beatrice
-![Beatrice (Light)](../screenshots/beatrice_code.png)
+![Beatrice (Light)](../screenshots/beatrice_light_code.png)
 
 ### Echidna
 ![Echidna (Dark)](../screenshots/echidna_dark_code.png)
@@ -312,10 +312,10 @@ Re:Zero
 ![Emilia (Dark)](../screenshots/emilia_dark_code.png)
 
 ### Ram
-![Ram (Dark)](../screenshots/ram_code.png)
+![Ram (Dark)](../screenshots/ram_dark_code.png)
 
 ### Rem
-![Rem (Dark)](../screenshots/rem_code.png)
+![Rem (Dark)](../screenshots/rem_dark_code.png)
 
 
 Tate no Yuusha no Nariagari (Rising of the Shield Hero)
@@ -375,6 +375,6 @@ Miscellaneous
 ---
 
 ### Hatsune Miku
-![Hatsune Miku (Dark)](../screenshots/miku_code.png)
+![Hatsune Miku (Dark)](../screenshots/miku_dark_code.png)
 #### Secondary
-![Hatsune Miku (Dark, Secondary)](../screenshots/miku_secondary_code.png)
+![Hatsune Miku (Dark, Secondary)](../screenshots/miku_dark_secondary_code.png)
