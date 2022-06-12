@@ -32,6 +32,14 @@ Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei (Danganronpa)
 ![Mioda Ibuki (Dark)](../screenshots/ibuki_dark_code.png)
 ![Mioda Ibuki (Light)](../screenshots/ibuki_light_code.png)
 
+Darling in the FranXX
+---
+
+### Zero Two
+![Zero Two (Dark)](../screenshots/zero_two_dark_code.png)
+![Zero Two (Light)](../screenshots/zero_two_light_code.png)
+
+
 Doki-Doki Literature Club!
 ---
 
@@ -77,8 +85,8 @@ Fate/Zero
 ![Astolfo (Dark)](../screenshots/astolfo_dark_code.png)
 
 ### Ishtar
-![Ishtar (Light)](../screenshots/ishtar_light_code.png)
 ![Ishtar (Dark)](../screenshots/ishtar_dark_code.png)
+![Ishtar (Light)](../screenshots/ishtar_light_code.png)
 
 ### Tohsaka Rin
 ![Tohsaka Rin (Dark)](../screenshots/rin_dark_code.png)
