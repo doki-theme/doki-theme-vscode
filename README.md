@@ -34,7 +34,9 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 
 - AzurLane
 - Blend S
+- Charlotte
 - Chuunibyou, Love, & Other Delusions
+- Code Geass
 - Daily life with a monster girl
 - DanganRonpa
 - Darling in the Franxx
@@ -44,6 +46,7 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 - Fate
 - Future Diary
 - Gate
+- Guilty Crown
 - Haikyu!!
 - High School DxD
 - Jahy-sama Will Not Be Discouraged!
@@ -63,6 +66,7 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 - Rascal does not dream of bunny girl senpai
 - Re:Zero
 - Rising of the Shield Hero
+- Sewayaki Kitsune no Senko-san
 - Shokugeki no Soma
 - Steins Gate
 - Sword Art Online
