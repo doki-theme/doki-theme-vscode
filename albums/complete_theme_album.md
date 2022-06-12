@@ -17,12 +17,27 @@ Blend S (BLEND-S)
 ### Sakuranomiya Maika
 ![Sakuranomiya Maika (Dark)](../screenshots/maika_dark_code.png)
 
+Charlotte
+---
+
+### Tomori Nao
+
+![Nao (Light)](../screenshots/nao_light_code.png)
+
+
 
 Chuunibyou demo Koi ga Shitai! (Love, Chunibyo & Other Delusions!)
 ---
 
 ### TakanashiRikka
 ![Rikka Takanashi (Dark)](../screenshots/rikka_dark_code.png)
+
+Code Geass
+---
+
+### C.C.
+
+![C.C. (Light)](../screenshots/cc_light_code.png)
 
 
 Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei (Danganronpa)
@@ -97,6 +112,14 @@ Gate: Jieitai Kanochi nite, Kaku Tatakaeri (Gate)
 
 ### Rory Mercury
 ![Rory Mercury (Dark)](../screenshots/rory_dark_code.png)
+
+
+Guilty Crown
+---
+
+### Yuzuriha Inori
+
+![Inori (Light)](../screenshots/inori_light_code.png)
 
 
 Haikyuu!! (Haikyu!!)
@@ -267,8 +290,11 @@ OreImo (My little sister cannot be this cute.)
 ![Kousaka Kirino (Dark)](../screenshots/kirino_dark_code.png)
 
 
-Quintessential Quintuplets
+Quintessential Quintuplets (Goutoubun no Hanayome)
 ---
+
+### Nakano Ichika
+![Nakano Ichika (Light)](../screenshots/ichika_light_code.png)
 
 ### Nakano Nino
 ![Nakano Nino (Dark)](../screenshots/nino_dark_code.png)
@@ -278,6 +304,9 @@ Quintessential Quintuplets
 
 ### Nakano Yotsuba
 ![Nakano Yotsuba (Dark)](../screenshots/yotsuba_dark_code.png)
+
+### Nakano Itsuki
+![Nakano Itsuki (Light)](../screenshots/itsuki_light_code.png)
 
 
 Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai (Rascal does not dream of bunny girl senpai)
@@ -310,6 +339,13 @@ Re:Zero
 
 ### Rem
 ![Rem (Dark)](../screenshots/rem_dark_code.png)
+
+Sewayaki Kitsune no Senko-san
+---
+
+### Senko
+
+![Senko (Light)](../screenshots/senko_light_code.png)
 
 
 Shokugeki no Souma (Food Wars! Shokugeki no Soma)

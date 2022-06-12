@@ -1,5 +1,23 @@
 # Change Log
 
+# 84.1-1.2.0 [Light Theme Release]
+
+![v84 Girls](https://doki.assets.unthrottled.io/misc/v84_girls.png)
+
+This release is not for my Dark Theme Normies. Dark themes are nice, but I like Light Themes too (and my Dark Theme Normies). I'm currently trying new things out. Sorry in advance if I made your eyes bleed. I might tweak some of them as time goes on, still not 100% on what looks good & also is a fun color.
+
+**6 New Light Themes!**
+
+- Tired & broken down programmers rejoice! Even though you will never be pampered by a real Fox-demigod, you can now at least code with one. Let "The Helpful Fox Senko-san" watch over you as complete your tickets. You can almost feel the "おかえりなのじゃ" you will never get 😭
+- I decided to complete my Quintessential Quintuplets collection by adding the oldest and youngest quint: Nakano Ichika & Nakano Itsuki.
+- Tomori Nao, from Charlotte, has an interesting dichotomy when it comes to her personality. She is super cute tho.
+- Have I ever seen Code Geass? No. Can I appreciate C.C. without having seen the anime? Yeah buddy.
+- Guess while I'm talking about "anime I haven't seen but, chose to make a theme because the girl is pretty." We now have Yuzuriha Inori from Guilty Crown.
+
+### Other Stuff
+
+- Adjusted Sayori's dark diff deleted color & updated Satsuki's light autocomplete letter match color.
+
 # 78.2-1.2.0 [Asset Settings & Custom Status Bar Name]
 
 - Added the following settings that allow you to control what assets get installed during the `Install Wallpaper` actions.
