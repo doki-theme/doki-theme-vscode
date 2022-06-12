@@ -340,7 +340,7 @@ Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai (Rascal does not dream 
 ![Sakurajima Mai (Light, Secondary)](../screenshots/mai_light_secondary_code.png)
 
 
-Sewayaki Kitsune no Senko-san
+Sewayaki Kitsune no Senko-san (The Helpful Fox: Senko-san)
 ---
 
 ### Senko
