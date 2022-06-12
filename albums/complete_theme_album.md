@@ -3,90 +3,71 @@ AzurLane (Azur Lane)
 
 ### Essex
 ![Essex (Dark)](../screenshots/essex_dark_code.png)
-![Essex (Dark, Plain)](../screenshots/essex_dark_secondary_code.png)
+![Essex (Dark, Secondary)](../screenshots/essex_dark_secondary_code.png)
 
+Bakemonogatari
+---
+
+### Hanekawa Tsubasa
+![Hanekawa Tsubasa (Dark)](../screenshots/hanekawa_dark_code.png)
 
 Blend S (BLEND-S)
 ---
 
-### Maika Sakuranomiya
-![Maika Sakuranomiya (Dark)](../screenshots/maika_dark_code.png)
+### Sakuranomiya Maika
+![Sakuranomiya Maika (Dark)](../screenshots/maika_dark_code.png)
 
 
 Chuunibyou demo Koi ga Shitai! (Love, Chunibyo & Other Delusions!)
 ---
 
-### Rikka Takanashi
+### TakanashiRikka
 ![Rikka Takanashi (Dark)](../screenshots/rikka_dark_code.png)
-
-
-Monster Musume no Iru Nichijou (Monster Musume: Everyday Life with Monster Girls)
----
-
-### Miia
-![Miia (Dark)](../screenshots/miia_dark_code.png)
 
 
 Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei (Danganronpa)
 ---
 
-### Ibuki Mioda
-![Ibuki Mioda (Light)](../screenshots/ibuki_light_code.png)
-![Ibuki Mioda (Dark)](../screenshots/ibuki_dark_code.png)
-
-
-Darling in the FranXX
----
-
-### Zero Two
-![Zero Two (Light)](../screenshots/zero_two_light_code.png)
-![Zero Two (Dark)](../screenshots/zero_two_dark_code.png)
-
+### Mioda Ibuki
+![Mioda Ibuki (Dark)](../screenshots/ibuki_dark_code.png)
+![Mioda Ibuki (Light)](../screenshots/ibuki_light_code.png)
 
 Doki-Doki Literature Club!
 ---
 
 ### Just Monika
-![Just Monika (Light)](../screenshots/monika_light_code.png)
 ![Just Monika (Dark)](../screenshots/monika_dark_code.png)
+![Just Monika (Light)](../screenshots/monika_light_code.png)
 #### Secondary
-![Just Monika (Light, Secondary)](../screenshots/monika_light_secondary_code.png)
 ![Just Monika (Dark, Secondary)](../screenshots/monika_dark_secondary_code.png)
+![Just Monika (Light, Secondary)](../screenshots/monika_light_secondary_code.png)
 
 ### Natsuki
-![Natsuki (Light)](../screenshots/natsuki_light_code.png)
 ![Natsuki (Dark)](../screenshots/natsuki_dark_code.png)
+![Natsuki (Light)](../screenshots/natsuki_light_code.png)
 #### Secondary
-![Natsuki (Light, Secondary)](../screenshots/natsuki_light_secondary_code.png)
 ![Natsuki (Dark, Secondary)](../screenshots/natsuki_dark_secondary_code.png)
+![Natsuki (Light, Secondary)](../screenshots/natsuki_light_secondary_code.png)
 
 ### Sayori
-![Sayori (Light)](../screenshots/sayori_light_code.png)
 ![Sayori (Dark)](../screenshots/sayori_dark_code.png)
+![Sayori (Light)](../screenshots/sayori_light_code.png)
 #### Secondary
-![Sayori (Light, Secondary)](../screenshots/sayori_light_secondary_code.png)
 ![Sayori (Dark, Secondary)](../screenshots/sayori_dark_secondary_code.png)
+![Sayori (Light, Secondary)](../screenshots/sayori_light_secondary_code.png)
 
 ### Yuri
-![Yuri (Light)](../screenshots/yuri_light_code.png)
 ![Yuri (Dark)](../screenshots/yuri_dark_code.png)
+![Yuri (Light)](../screenshots/yuri_light_code.png)
 #### Secondary
 ![Yuri (Light, Secondary)](../screenshots/yuri_light_secondary_code.png)
 ![Yuri (Dark, Secondary)](../screenshots/yuri_dark_secondary_code.png)
 
-
-Ijiranaide, Nagatoro-san (Don't Toy With Me, Miss Nagatoro)
----
-
-### Hayase Nagatoro
-![Hayase Nagatoro (Dark)](../screenshots/nagatoro_dark_code.png)
-
-
 Eromanga-sensei (Eromanga Sensei)
 ---
 
-### Sagiri Izumi
-![Sagiri Izumi (Dark)](../screenshots/sagiri_dark_code.png)
+### Izumi Sagiri
+![Izumi Sagiri (Dark)](../screenshots/sagiri_dark_code.png)
 
 
 Fate/Zero
@@ -101,13 +82,6 @@ Fate/Zero
 
 ### Tohsaka Rin
 ![Tohsaka Rin (Dark)](../screenshots/rin_dark_code.png)
-
-
-Mirai Nikki (The Future Diary)
----
-
-### Gasai Yuno
-![Gasai Yuno (Dark)](../screenshots/yuno_dark_code.png)
 
 
 Gate: Jieitai Kanochi nite, Kaku Tatakaeri (Gate)
@@ -134,6 +108,13 @@ High School DxD
 ### [Rias Onyx Secondary [Suggestive Content] (Click to view)](../screenshots/rias_onyx_secondary_code.png)
 
 
+Ijiranaide, Nagatoro-san (Don't Toy With Me, Miss Nagatoro)
+---
+
+### Hayase Nagatoro
+![Hayase Nagatoro (Dark)](../screenshots/nagatoro_dark_code.png)
+
+
 Jahy-sama wa Kujikenai! (The Great Jahy Will Not Be Defeated!)
 ---
 
@@ -152,12 +133,12 @@ Kill la Kill
 ---
 
 ### Ryuko
-![Ryuko (Light)](../screenshots/ryuko_light_code.png)
 ![Ryuko (Dark)](../screenshots/ryuko_dark_code.png)
+![Ryuko (Light)](../screenshots/ryuko_light_code.png)
 
 ### Satsuki
-![Satsuki (Light)](../screenshots/satsuki_light_code.png)
 ![Satsuki (Dark)](../screenshots/satsuki_dark_code.png)
+![Satsuki (Light)](../screenshots/satsuki_light_code.png)
 
 
 Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)
@@ -170,8 +151,8 @@ Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderf
 ![Aqua (Dark)](../screenshots/aqua_dark_code.png)
 
 ### Darkness
-![Darkness (Light)](../screenshots/darkness_light_code.png)
 ![Darkness (Dark)](../screenshots/darkness_dark_code.png)
+![Darkness (Light)](../screenshots/darkness_light_code.png)
 
 
 Lord El-Melloi II-sei no Jikenbo (Lord El-Melloi II Case Files)
@@ -208,13 +189,18 @@ Kobayashi-san Chi no Maid Dragon (Miss Kobayashi's Dragon Maid)
 ### Tohru
 ![Tohru (Light)](../screenshots/tohru_light_code.png)
 
-
-Bakemonogatari
+Mirai Nikki (The Future Diary)
 ---
 
-### Hanekawa Tsubasa
-![Hanekawa Tsubasa (Dark)](../screenshots/hanekawa_dark_code.png)
+### Gasai Yuno
+![Gasai Yuno (Dark)](../screenshots/yuno_dark_code.png)
 
+
+Monster Musume no Iru Nichijou (Monster Musume: Everyday Life with Monster Girls)
+---
+
+### Miia
+![Miia (Dark)](../screenshots/miia_dark_code.png)
 
 Nekopara
 ---
@@ -222,9 +208,9 @@ Nekopara
 ### Azuki
 ![Azuki (Dark)](../screenshots/azuki_dark_code.png)
 
-### Chocola
-![Chocola (Dark)](../screenshots/chocola_dark_code.png)
-![Chocola (Dark, Christmas)](../screenshots/chocola_xmas_code.png)
+### Maple
+![Maple (Dark)](../screenshots/maple_dark_code.png)
+![Maple (Light)](../screenshots/maple_light_code.png)
 
 ### Cinnamon
 ![Cinnamon (Dark)](../screenshots/cinnamon_dark_code.png)
@@ -232,16 +218,15 @@ Nekopara
 ### Coconut
 ![Coconut (Dark)](../screenshots/coconut_dark_code.png)
 
-### Maple
-![Maple (Light)](../screenshots/maple_light_code.png)
-![Maple (Dark)](../screenshots/maple_dark_code.png)
-
-### Shigure
-![Shigure (Light)](../screenshots/shigure_light_code.png)
+### Chocola
+![Chocola (Dark)](../screenshots/chocola_dark_code.png)
+![Chocola (Dark, Christmas)](../screenshots/chocola_xmas_code.png)
 
 ### Vanilla
 ![Vanilla (Dark)](../screenshots/vanilla_dark_code.png)
 
+### Shigure
+![Shigure (Light)](../screenshots/shigure_light_code.png)
 
 Neon Genesis Evangelion
 ---
@@ -249,8 +234,8 @@ Neon Genesis Evangelion
 ### Ayanami Rei
 ![Ayanami Rei (Dark)](../screenshots/rei_dark_code.png)
 
-### Misato Katsuragi
-![Misato Katsuragi (Dark)](../screenshots/misato_dark_code.png)
+### Katsuragi Misato 
+![Katsuragi Misato  (Dark)](../screenshots/misato_dark_code.png)
 
 
 One Punch Man
@@ -277,11 +262,11 @@ OreImo (My little sister cannot be this cute.)
 Quintessential Quintuplets
 ---
 
-### Nakano Miku
-![Nakano Miku (Dark)](../screenshots/nakano_miku_dark_code.png)
-
 ### Nakano Nino
 ![Nakano Nino (Dark)](../screenshots/nino_dark_code.png)
+
+### Nakano Miku
+![Nakano Miku (Dark)](../screenshots/nakano_miku_dark_code.png)
 
 ### Nakano Yotsuba
 ![Nakano Yotsuba (Dark)](../screenshots/yotsuba_dark_code.png)
@@ -291,11 +276,12 @@ Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai (Rascal does not dream 
 ---
 
 ### Sakurajima Mai
-![Sakurajima Mai (Light)](../screenshots/mai_light_code.png)
 ![Sakurajima Mai (Dark)](../screenshots/mai_dark_code.png)
+![Sakurajima Mai (Light)](../screenshots/mai_light_code.png)
+
 #### Secondary
-![Sakurajima Mai (Light, Secondary)](../screenshots/mai_light_secondary_code.png)
 ![Sakurajima Mai (Dark, Secondary)](../screenshots/mai_dark_secondary_code.png)
+![Sakurajima Mai (Light, Secondary)](../screenshots/mai_light_secondary_code.png)
 
 
 Re:Zero
@@ -308,21 +294,14 @@ Re:Zero
 ![Echidna (Dark)](../screenshots/echidna_dark_code.png)
 
 ### Emilia
-![Emilia (Light)](../screenshots/emilia_light_code.png)
 ![Emilia (Dark)](../screenshots/emilia_dark_code.png)
+![Emilia (Light)](../screenshots/emilia_light_code.png)
 
 ### Ram
 ![Ram (Dark)](../screenshots/ram_dark_code.png)
 
 ### Rem
 ![Rem (Dark)](../screenshots/rem_dark_code.png)
-
-
-Tate no Yuusha no Nariagari (Rising of the Shield Hero)
----
-
-### Raphtalia
-![Raphtalia (Dark)](../screenshots/raphtalia_dark_code.png)
 
 
 Shokugeki no Souma (Food Wars! Shokugeki no Soma)
@@ -343,9 +322,14 @@ Sword Art Online
 ---
 
 ### Yuuki Asuna
-![Yuuki Asuna (Light)](../screenshots/asuna_light_code.png)
 ![Yuuki Asuna (Dark)](../screenshots/asuna_dark_code.png)
+![Yuuki Asuna (Light)](../screenshots/asuna_light_code.png)
 
+Tate no Yuusha no Nariagari (Rising of the Shield Hero)
+---
+
+### Raphtalia
+![Raphtalia (Dark)](../screenshots/raphtalia_dark_code.png)
 
 Tensei shitara Slime Datta Ken (That Time I Got Reincamrnated as a Slime)
 ---
@@ -357,8 +341,17 @@ Tensei shitara Slime Datta Ken (That Time I Got Reincamrnated as a Slime)
 Toaru Kagaku no Railgun (A Certain Scientific Railgun)
 ---
 
-### Mikoto Misaka
-![Mikoto Misaka (Dark)](../screenshots/mikoto_dark_code.png)
+### Misaka Mikoto
+![Misaka Mikoto (Dark)](../screenshots/mikoto_dark_code.png)
+
+Vocaloid
+---
+
+### Hatsune Miku
+![Hatsune Miku (Dark)](../screenshots/miku_dark_code.png)
+
+#### Secondary
+![Hatsune Miku (Dark, Secondary)](../screenshots/miku_dark_secondary_code.png)
 
 
 Yuru Camp (Laid-Back Camp)
@@ -369,12 +362,3 @@ Yuru Camp (Laid-Back Camp)
 
 ### Shima Rin
 ![Shima Rin (Dark)](../screenshots/shima_rin_dark_code.png)
-
-
-Miscellaneous
----
-
-### Hatsune Miku
-![Hatsune Miku (Dark)](../screenshots/miku_dark_code.png)
-#### Secondary
-![Hatsune Miku (Dark, Secondary)](../screenshots/miku_dark_secondary_code.png)
