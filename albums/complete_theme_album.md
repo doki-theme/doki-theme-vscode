@@ -309,18 +309,6 @@ Quintessential Quintuplets (Goutoubun no Hanayome)
 ![Nakano Itsuki (Light)](../screenshots/itsuki_light_code.png)
 
 
-Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai (Rascal does not dream of bunny girl senpai)
----
-
-### Sakurajima Mai
-![Sakurajima Mai (Dark)](../screenshots/mai_dark_code.png)
-![Sakurajima Mai (Light)](../screenshots/mai_light_code.png)
-
-#### Secondary
-![Sakurajima Mai (Dark, Secondary)](../screenshots/mai_dark_secondary_code.png)
-![Sakurajima Mai (Light, Secondary)](../screenshots/mai_light_secondary_code.png)
-
-
 Re:Zero
 ---
 
@@ -339,6 +327,18 @@ Re:Zero
 
 ### Rem
 ![Rem (Dark)](../screenshots/rem_dark_code.png)
+
+Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai (Rascal does not dream of bunny girl senpai)
+---
+
+### Sakurajima Mai
+![Sakurajima Mai (Dark)](../screenshots/mai_dark_code.png)
+![Sakurajima Mai (Light)](../screenshots/mai_light_code.png)
+
+#### Secondary
+![Sakurajima Mai (Dark, Secondary)](../screenshots/mai_dark_secondary_code.png)
+![Sakurajima Mai (Light, Secondary)](../screenshots/mai_light_secondary_code.png)
+
 
 Sewayaki Kitsune no Senko-san
 ---
