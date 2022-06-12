@@ -3,7 +3,7 @@ AzurLane (Azur Lane)
 
 ### Essex
 ![Essex (Dark)](../screenshots/essex_dark_code.png)
-![Essex (Dark, Plain)](../screenshots/essex_dark_plain_code.png)
+![Essex (Dark, Plain)](../screenshots/essex_dark_secondary_code.png)
 
 
 Blend S (BLEND-S)
@@ -138,7 +138,7 @@ Jahy-sama wa Kujikenai! (The Great Jahy Will Not Be Defeated!)
 ---
 
 ### Jahy
-![Jahy (Dark)](../screenshots/jahy_dark_smol_code.png)
+![Jahy (Dark)](../screenshots/jahy_dark_code.png)
 
 
 Kakegurui (Kakegurui: Das Leben ist ein Spiel)
@@ -156,7 +156,7 @@ Kill la Kill
 ![Ryuko (Dark)](../screenshots/ryuko_dark_code.png)
 
 ### Satsuki
-![Satsuki (Light)](../screenshots/satsuki_code.png)
+![Satsuki (Light)](../screenshots/satsuki_light_code.png)
 ![Satsuki (Dark)](../screenshots/satsuki_dark_code.png)
 
 
@@ -224,7 +224,7 @@ Nekopara
 
 ### Chocola
 ![Chocola (Dark)](../screenshots/chocola_dark_code.png)
-![Chocola (Dark, Christmas)](../screenshots/xmas_chocola_code.png)
+![Chocola (Dark, Christmas)](../screenshots/chocola_xmas_code.png)
 
 ### Cinnamon
 ![Cinnamon (Dark)](../screenshots/cinnamon_dark_code.png)
