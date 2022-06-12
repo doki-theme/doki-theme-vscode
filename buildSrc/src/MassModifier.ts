@@ -4,8 +4,8 @@ import fs from "fs";
 
 console.log(path.resolve('.'));
 
-walkDir(path.resolve('.','assets','themes'))
-  .then((files) => files.filter((file) => file.endsWith("vsCode.definition.json"))
+walkDir(path.resolve('..','masterThemes','definitions'))
+  .then((files) => files.filter((file) => file.endsWith("master.definition.json"))
   )
   .then((dokiFileDefinitionPaths) => {
     return {
@@ -23,6 +23,13 @@ walkDir(path.resolve('.','assets','themes'))
   })
   .then((defs) => {
 
+    console.log(
+        Object.keys(
+            defs.map(a => a.dokiThemeDefinition.characterId).reduce((acc, id) => {
+          acc[id] = id;
+          return acc;
+        }, {})).length
+    );
     defs.forEach(({
       dokiFileDefinitionPath,
       dokiThemeDefinition,
