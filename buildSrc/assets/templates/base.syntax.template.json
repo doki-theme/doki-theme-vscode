@@ -190,7 +190,8 @@
         "storage.type.annotation",
         "meta.declaration.annotation",
         "support.function",
-        "meta.assertion.look-ahead.regexp"
+        "meta.assertion.look-ahead.regexp",
+        "entity.name.function"
       ],
       "settings": {
         "foreground": "&editorAccentColor&"
