@@ -1,5 +1,9 @@
 # Change Log
 
+# 84.2-1.2.1 [Small Dart Enhancement]
+
+- Enhanced Dart syntax highlighting a bit.
+
 # 84.1-1.2.0 [Light Theme Release]
 
 ![v84 Girls](https://doki.assets.unthrottled.io/misc/v84_girls.png)
