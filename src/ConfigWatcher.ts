@@ -7,6 +7,7 @@ import { StatusBarComponent } from "./StatusBar";
 
 export const CONFIG_NAME = "doki";
 export const CONFIG_STICKER = "sticker.path";
+export const CONFIG_STICKER_CSS = "sticker.css";
 export const CONFIG_BACKGROUND = "background.path";
 export const CONFIG_WALLPAPER = "wallpaper.path";
 export const CONFIG_WALLPAPER_ENABLED = "wallpaper.enabled";
@@ -31,15 +32,18 @@ export const watchConfigChanges = (
     if (statusBarConfigChanged && !!statusBarName && typeof statusBarName === 'string') {
       StatusBarComponent.setText(statusBarName);
     } else if (statusBarConfigChanged && !statusBarName) {
-      const {theme} = getCurrentThemeAndSticker();
+      const { theme } = getCurrentThemeAndSticker();
       StatusBarComponent.setText(theme.displayName);
     }
 
     const stickerChanged = newBoiConfig.get(CONFIG_STICKER) !==
       currentConfig.get(CONFIG_STICKER);
+    const stickerCSSChanged = newBoiConfig.get(CONFIG_STICKER_CSS) !==
+      currentConfig.get(CONFIG_STICKER_CSS);
     const isStickerFullPath = isFile(newBoiConfig.get(CONFIG_STICKER));
     const stickerInstall =
-      stickerChanged && isStickerFullPath ?
+      (stickerChanged && isStickerFullPath) ||
+        (stickerCSSChanged) ?
         attemptToInstallSticker(sticker.sticker, extensionContext) :
         Promise.resolve(InstallStatus.NOT_INSTALLED);
 

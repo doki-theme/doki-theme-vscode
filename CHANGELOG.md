@@ -1,5 +1,10 @@
 # Change Log
 
+# 84.2-1.3.0 [Enhancments n Stuff]
+
+- Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.
+
+
 # 84.2-1.2.1 [Small Dart Enhancement]
 
 - Enhanced Dart syntax highlighting a bit.

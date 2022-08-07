@@ -155,6 +155,11 @@ You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted
 
 ![Custom Sticker](./readmeStuff/custom_sticker.gif)
 
+**Custom Sticker Positioning**
+
+Any valid CSS that you can use to modify the position of the sticker.
+As an FYI, stickers are displayed on a psuedo element the size of the window & applied as the background of that element. So you'll probably want to play around with `background-position` & `background-size`, or whatever your heart desires!
+
 **Custom Background**
 
 This is the empty editor screen (all tabs closed), the one with the VS Code watermark.
