@@ -30,9 +30,15 @@ const resolveWorkbench = () => {
 
 export const workbenchDirectory = resolveWorkbench();
 
+const REMOTE_CODE_SERVER_FILE = `web.main`;
 const CODE_SERVER_FILE = 'web.api';
 const getFileName = () => {
-  return fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`)) ?
+  if(fs.existsSync(path.join(workbenchDirectory, `workbench.web.main.css`))) {
+    return REMOTE_CODE_SERVER_FILE;
+  }
+
+  const hasRegularVSCodeStuff =  fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`));
+  return hasRegularVSCodeStuff ?
     'desktop.main' : CODE_SERVER_FILE;
 };
 

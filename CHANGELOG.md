@@ -4,6 +4,7 @@
 
 - Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.
 - Fixed artifacted background images on the extension list tree (be sure to re-install your wallpaper for this to take effect).
+- Restored asset installation on code-server (please be sure to clear caches and hard reload!)
 
 # 84.2-1.2.1 [Small Dart Enhancement]
 
