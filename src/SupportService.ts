@@ -51,6 +51,9 @@ export function showChecksumFixHelp(
                 <p>If you have VS Code installed via <code>snap</code> please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/34#issuecomment-730028177">see this workaround</a></p>
                 <p>On MacOS, if you have VS Code in your <code>Downloads</code> folder please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/137">see this workaround</a></p>
 
+                <h2>Remote Develoment Server/SSH connection</h2>
+                <p>If you are attempting to install assets on your remote development host, please disconnect and run the installation again.</p>
+                <p>Assets only need to be installed on your local VSCode (not connected to a session) to show up on the SSH connection. <a href="https://github.com/doki-theme/doki-theme-vscode/issues/168#issue-1327657127">Please see this issue for more details</a></p>
 
                 <h2>Windows Subsystem for Linux (WSL)</h2>
                 <p>Looks like I was unable to correctly find and modify your Windows 10 VSCode CSS, sorry friend!</p>
@@ -104,6 +107,10 @@ function showStickerHelp(context: vscode.ExtensionContext, verbs: any) {
                 <p>After you have given yourself permission to write that directory, feel free to run the asset ${verbs.commandAction} command again.</p>
                 <p>If you have VS Code installed via <code>snap</code> please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/34#issuecomment-730028177">see this workaround</a></p>
                 <p>On MacOS, if you have VS Code in your <code>Downloads</code> folder please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/137">see this workaround</a></p>
+
+                <h2>Remote Develoment Server/SSH connection</h2>
+                <p>If you are attempting to install assets on your remote development host, please disconnect and run the installation again.</p>
+                <p>Assets only need to be installed on your local VSCode (not connected to a session) to show up on the SSH connection. <a href="https://github.com/doki-theme/doki-theme-vscode/issues/168#issue-1327657127">Please see this issue for more details</a></p>
 
                 <h2>Windows Subsystem for Linux (WSL)</h2>
                 <p>Looks like I was unable to correctly find and modify your Windows 10 VSCode CSS, sorry friend!</p>
