@@ -106,6 +106,7 @@ function buildWallpaperCss({
   .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .show-file-icons > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  div.details .header-container .header, /* extension list tree*/
   /* Welcome Page */
   .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories>.gettingStartedCategoriesContainer>.header,
   .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories .getting-started-category
