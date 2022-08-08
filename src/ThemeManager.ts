@@ -211,7 +211,6 @@ export function activateThemeAsset(
     cancellable: false,
   }, () => {
     return installer(currentSticker.sticker).then((didInstall) => {
-      console.log(`did install ${didInstall}`)
       if (didInstall === InstallStatus.INSTALLED) {
         VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
         VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
