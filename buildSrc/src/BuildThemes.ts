@@ -295,7 +295,7 @@ evaluateTemplates(
         }`,
     }));
 
-    const shimaRinID = '5fb9c0a4-e613-457c-97a5-6204f9076cef';
+    const zeroTwoObsidianID = '13adffd9-acbe-47af-8101-fa71269a4c5c';
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
       label: `Doki Theme: ${getGroupName(dokiDefinition)} ${getThemeDisplayName(dokiDefinition)
@@ -303,9 +303,9 @@ evaluateTemplates(
       path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
     })).sort((a, b) => {
-      if (a.id === shimaRinID) {
+      if (a.id === zeroTwoObsidianID) {
         return -1;
-      } else if (b.id === shimaRinID) {
+      } else if (b.id === zeroTwoObsidianID) {
         return 1;
       } else {
         return a.label.localeCompare(b.label);
@@ -365,6 +365,10 @@ evaluateTemplates(
 const nameGetter = (def: MasterDokiThemeDefinition) => def.name;
 const specialThemes: { [key: string]: (def: MasterDokiThemeDefinition) => string } = {
   '6428e1ff-202c-4a43-afb3-9999ebe3b2ca': nameGetter, // XMas Chocola
+  '4fd5cb34-d36e-4a3c-8639-052b19b26ba1': nameGetter, // Zero Two Lily
+  '2eedcc31-b5fa-4b30-b045-6a539e915581': nameGetter, // Zero Two Sakura
+  '8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b': nameGetter, // Zero Two Rose
+  '13adffd9-acbe-47af-8101-fa71269a4c5c': nameGetter, // Zero Two Obsidian
   'b0340303-0a5a-4a20-9b9c-fc8ce9880078': () => 'Sayori',
 }
 function getThemeDisplayName(dokiDefinition: MasterDokiThemeDefinition) {

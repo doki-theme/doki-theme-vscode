@@ -5,7 +5,7 @@ import {
   forceUpdateSticker,
   NetworkError,
 } from "./StickerUpdateService";
-import { Sticker } from "./extension";
+import { Sticker, StickerInstallPayload } from "./extension";
 import { CONFIG_BACKGROUND_ENABLED, CONFIG_NAME, CONFIG_STICKER_CSS, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
 
 export enum InstallStatus {
@@ -228,19 +228,19 @@ export interface DokiStickers {
 }
 
 export async function installStickers(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return installStyles(sticker, context, (stickersAndWallpaper) =>
+  return installStyles(stickerInstallPayload, context, (stickersAndWallpaper) =>
     buildCSSWithStickers(stickersAndWallpaper)
   );
 }
 
 export async function installWallPaper(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return installStyles(sticker, context, (stickersAndWallpaper) =>
+  return installStyles(stickerInstallPayload, context, (stickersAndWallpaper) =>
     buildCSSWithWallpaperAndBackground(stickersAndWallpaper)
   );
 }
@@ -254,13 +254,13 @@ export async function hideWaterMark(): Promise<InstallStatus> {
 
 
 async function installStyles(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext,
   cssDecorator: (assets: DokiStickers) => string
 ): Promise<InstallStatus> {
   if (canWrite()) {
     try {
-      const stickersAndWallpaper = await forceUpdateSticker(context, sticker);
+      const stickersAndWallpaper = await forceUpdateSticker(context, stickerInstallPayload);
       const stickerStyles = cssDecorator(stickersAndWallpaper);
       installEditorStyles(stickerStyles);
       return InstallStatus.INSTALLED;

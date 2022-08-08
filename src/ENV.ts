@@ -4,6 +4,7 @@ import fs from "fs";
 export const ASSETS_URL = `https://doki.assets.unthrottled.io`;
 export const VSCODE_ASSETS_URL = `${ASSETS_URL}/stickers/vscode`;
 export const BACKGROUND_ASSETS_URL = `${ASSETS_URL}/backgrounds/wallpapers`;
+export const ACTUAL_BACKGROUND_ASSETS_URL = `${ASSETS_URL}/backgrounds`;
 export const WALLPAPER_ASSETS_URL = `${ASSETS_URL}/backgrounds/wallpapers/transparent`;
 export const SCREENSHOT_ASSETS_URL = `${ASSETS_URL}/screenshots`;
 

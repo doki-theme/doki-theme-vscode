@@ -1,7 +1,8 @@
 import * as vscode from "vscode";
 import { fixCheckSums } from "./CheckSumService";
-import { DokiSticker, StickerType } from "./DokiTheme";
-import { Sticker } from "./extension";
+import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
+import DokiThemeDefinitions from "./DokiThemeDefinitions";
+import { Sticker, StickerInstallPayload } from "./extension";
 import { getHideIndex, getStickerIndex, getWallpaperIndex, hideWaterMark, InstallStatus, installStickers, installWallPaper, readCSS } from "./StickerService";
 import { getCurrentThemeAndSticker, handleInstallFailure, handleInstallMessage, showInstallNotification, showNetworkErrorMessage } from "./ThemeManager";
 
@@ -104,7 +105,7 @@ function autoInstallAsset(
     assetKey: string,
     context: vscode.ExtensionContext,
     assetInstaller: (
-        sticker: Sticker,
+        stickerInstallPayload: StickerInstallPayload,
         context: vscode.ExtensionContext,
     ) => Promise<InstallStatus>
 ): Promise<InstallStatus> {
@@ -112,8 +113,16 @@ function autoInstallAsset(
     if (wasTheAssetInstalledYo) {
         const {
             sticker,
+            themeId,
         }: RestoreConfig = JSON.parse(context.globalState.get(assetKey) as string);
-        return assetInstaller(sticker.sticker, context);
+        const { theme } = getCurrentThemeAndSticker()
+        const usableThemeId = themeId || theme.id;
+        const def = DokiThemeDefinitions.find(theme => theme.themeDefinition.information.id === usableThemeId)
+            || DokiThemeDefinitions[0];
+        return assetInstaller({
+            sticker: sticker.sticker,
+            theme: new DokiTheme(def.themeDefinition),
+        }, context);
     } else {
         return Promise.resolve(InstallStatus.NOT_INSTALLED);
     }
@@ -171,6 +180,7 @@ export function clearAssetConfig(
 
 type RestoreConfig = {
     sticker: DokiSticker;
+    themeId: string;
 }
 
 function createAssetRestoreConfig(sticker: DokiSticker): string {

@@ -10,10 +10,12 @@ import {
   isWSL,
   workbenchDirectory,
   WALLPAPER_ASSETS_URL,
+  ACTUAL_BACKGROUND_ASSETS_URL,
 } from "./ENV";
 import { DokiStickers } from "./StickerService";
-import { Sticker } from "./extension";
+import { DokiThemeDefinition, Sticker, StickerInstallPayload } from "./extension";
 import { CONFIG_BACKGROUND, CONFIG_BACKGROUND_ANCHOR, CONFIG_NAME, CONFIG_STICKER, CONFIG_WALLPAPER } from "./ConfigWatcher";
+import { DokiTheme, ZERO_TWO_OBSIDIAN_ID } from "./DokiTheme";
 
 function loadImageBase64FromFileProtocol(url: string): string {
   const fileUrl = new URL(url);
@@ -25,19 +27,19 @@ function loadImageBase64FromFileProtocol(url: string): string {
 
 export const forceUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentSticker: Sticker
+  stickerInstallPayload: StickerInstallPayload,
 ): Promise<DokiStickers> =>
-  _attemptToUpdateSticker(context, currentSticker, forceUpdateAsset);
+  _attemptToUpdateSticker(context, stickerInstallPayload, forceUpdateAsset);
 
 export const attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentSticker: Sticker
+  stickerInstallPayload: StickerInstallPayload
 ): Promise<DokiStickers> =>
-  _attemptToUpdateSticker(context, currentSticker, attemptToUpdateAsset);
+  _attemptToUpdateSticker(context, stickerInstallPayload, attemptToUpdateAsset);
 
 const _attemptToUpdateSticker = async (
   context: vscode.ExtensionContext,
-  currentSticker: Sticker,
+  { sticker: currentSticker, theme }: StickerInstallPayload,
   assetUpdater: (
     remoteStickerUrl: string,
     localStickerPath: string,
@@ -50,9 +52,12 @@ const _attemptToUpdateSticker = async (
   const remoteWallpaperUrl = `${WALLPAPER_ASSETS_URL}${wallpaperPathToUrl(
     currentSticker
   )}`;
-  const remoteBackgroundUrl = `${BACKGROUND_ASSETS_URL}${wallpaperPathToUrl(
-    currentSticker
-  )}`;
+  const backgroundBase = requiresRealBackground(theme) ?
+    ACTUAL_BACKGROUND_ASSETS_URL : BACKGROUND_ASSETS_URL;
+  const remoteBackgroundUrl =
+    `${backgroundBase}${wallpaperPathToUrl(
+      currentSticker
+    )}`;
   const localStickerPath = resolveLocalStickerPath(currentSticker, context);
   const localWallpaperPath = resolveLocalWallpaperPath(currentSticker, context);
   const localBackgroundPath = resolveLocalBackgroundPath(
@@ -260,4 +265,8 @@ function hasCheckedToday(
   } else {
     return true;
   }
+}
+
+function requiresRealBackground(theme: DokiTheme) {
+  return theme.id === ZERO_TWO_OBSIDIAN_ID;
 }

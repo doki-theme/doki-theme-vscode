@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
+import { DEFAULT_THEME_ID, DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
 import {
   hideWaterMark,
   InstallStatus,
@@ -14,7 +14,7 @@ import {
   showStickerRemovalSupportWindow,
 } from "./SupportService";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import { DokiThemeDefinition, Sticker } from "./extension";
+import { DokiThemeDefinition, Sticker, StickerInstallPayload } from "./extension";
 import { fixCheckSums, restoreChecksum } from "./CheckSumService";
 import { clearAssetConfig, saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
 import { CONFIG_STATUS_BAR_NAME, getConfig } from "./ConfigWatcher";
@@ -65,10 +65,10 @@ async function conditionalInstall(
 
 async function attemptToInstallAsset(
   context: vscode.ExtensionContext,
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   installAsset: () => Promise<InstallStatus>
 ): Promise<InstallStatus> {
-  if (isCultured(context, sticker)) {
+  if (isCultured(context, stickerInstallPayload)) {
     const storageKey = CULTURED_STICKER_INSTALL;
     const actionText = "Yes, Please!";
     const messageBody = `You are about to install sexually suggestive content. Are you sure you want to continue? I won't show you this message again in the future if you choose to install.`;
@@ -95,20 +95,20 @@ async function attemptToInstallAsset(
 }
 
 export async function attemptToInstallSticker(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return attemptToInstallAsset(context, sticker, () =>
-    performStickerInstall(sticker, context)
+  return attemptToInstallAsset(context, stickerInstallPayload, () =>
+    performStickerInstall(stickerInstallPayload, context)
   );
 }
 
 export async function attemptToInstallWallpaper(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return attemptToInstallAsset(context, sticker, () =>
-    performWallpaperInstall(sticker, context)
+  return attemptToInstallAsset(context, stickerInstallPayload, () =>
+    performWallpaperInstall(stickerInstallPayload, context)
   );
 }
 
@@ -116,26 +116,29 @@ export async function attemptToInstallHideWatermark(
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
   return attemptToInstallAsset(context, {
-    anchoring: "Facts: ",
-    name: "Zero Two",
-    path: "Best Girl",
+    sticker: {
+      anchoring: "Facts: ",
+      name: "Zero Two",
+      path: "Best Girl",
+    }, 
+    theme: new DokiTheme(DokiThemeDefinitions[0].themeDefinition),
   }, () =>
     performHideWatermarkInstall()
   );
 }
 
 async function performStickerInstall(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return await installStickers(sticker, context);
+  return await installStickers(stickerInstallPayload, context);
 }
 
 async function performWallpaperInstall(
-  sticker: Sticker,
+  stickerInstallPayload: StickerInstallPayload,
   context: vscode.ExtensionContext
 ): Promise<InstallStatus> {
-  return await installWallPaper(sticker, context);
+  return await installWallPaper(stickerInstallPayload, context);
 }
 
 async function performHideWatermarkInstall(
@@ -186,7 +189,7 @@ export function activateHideWatermark(
         showInstallNotification(message);
         saveHiddenWatermarkConfig(context);
       } else if (installStatus === InstallStatus.FAILURE) {
-        handleInstallFailure(context, getCurrentThemeAndSticker().theme);                
+        handleInstallFailure(context, getCurrentThemeAndSticker().theme);
       }
     }
   );
@@ -199,22 +202,25 @@ export function activateThemeAsset(
   currentSticker: DokiSticker,
   context: vscode.ExtensionContext,
   assetType: string,
-  installer: (sticker: Sticker) => Promise<InstallStatus>,
+  installer: (stickerInstallPayload: StickerInstallPayload) => Promise<InstallStatus>,
   configSaver: (
     sticker: DokiSticker,
     context: vscode.ExtensionContext,
-    ) => void,
+  ) => void,
 ) {
   vscode.window.withProgress({
     location: vscode.ProgressLocation.Notification,
     title: `Please wait, installing ${dokiTheme.name}'s ${assetType}.`,
     cancellable: false,
   }, () => {
-    return installer(currentSticker.sticker).then((didInstall) => {
+    return installer({
+      sticker: currentSticker.sticker,
+      theme: dokiTheme,
+    }).then((didInstall) => {
       if (didInstall === InstallStatus.INSTALLED) {
         VSCodeGlobals.globalState.update(ACTIVE_THEME, dokiTheme.id);
         VSCodeGlobals.globalState.update(ACTIVE_STICKER, currentSticker.type);
-        if(!getConfig().get(CONFIG_STATUS_BAR_NAME)) {
+        if (!getConfig().get(CONFIG_STATUS_BAR_NAME)) {
           StatusBarComponent.setText(dokiTheme.displayName);
         }
         fixCheckSums(context);
@@ -292,7 +298,10 @@ export const getCurrentThemeAndSticker = (): {
     DokiThemeDefinitions.find(
       (dokiDefinition) =>
         dokiDefinition.themeDefinition.information.id === currentThemeId
-    ) || DokiThemeDefinitions[0];
+    ) ||
+    DokiThemeDefinitions.find(def =>
+      def.themeDefinition.information.id === DEFAULT_THEME_ID
+    )!;
   const currentStickerType =
     (VSCodeGlobals.globalState.get(ACTIVE_STICKER) as StickerType) ||
     StickerType.DEFAULT;
@@ -319,10 +328,10 @@ export function getSticker(
 }
 function isCultured(
   context: vscode.ExtensionContext,
-  sticker: Sticker
+  stickerInstallPayload: StickerInstallPayload
 ): boolean {
   return (
-    sticker.name.indexOf("rias_onyx_spicy.png") > -1 &&
+    stickerInstallPayload.sticker.name.indexOf("rias_onyx_spicy.png") > -1 &&
     !context.globalState.get(CULTURED_STICKER_INSTALL)
   );
 }
