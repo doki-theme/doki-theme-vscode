@@ -42,7 +42,6 @@ function buildWallpaperCss({
   .tab,
   /* settings UI */
   .settings-editor>.settings-body .settings-toc-container,
-  .settings-editor > .settings-body .settings-tree-container .monaco-list-row.focused .settings-row-inner-container,
   /* end settings UI */
   .tabs-container,
   .monaco-pane-view, 
