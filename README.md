@@ -182,6 +182,11 @@ Cus I was too lazy to play make all the backgrounds partially transparent to sho
 
 ![Custom Background](./readmeStuff/custom_wallpaper.png)
 
+This is what happens when you don't make your custom wallpaper transparent.
+
+![Not transparent wallpaper](./readmeStuff/not_transparent_image.png)
+
+You cannot see anything! 
 
 **Custom Wallpaper/Background Anchor**
 
