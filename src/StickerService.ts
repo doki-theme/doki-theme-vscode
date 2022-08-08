@@ -6,7 +6,7 @@ import {
   NetworkError,
 } from "./StickerUpdateService";
 import { Sticker } from "./extension";
-import { CONFIG_BACKGROUND_ENABLED, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
+import { CONFIG_BACKGROUND_ENABLED, CONFIG_NAME, CONFIG_STICKER_CSS, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
 
 export enum InstallStatus {
   INSTALLED,
@@ -42,7 +42,6 @@ function buildWallpaperCss({
   .tab,
   /* settings UI */
   .settings-editor>.settings-body .settings-toc-container,
-  .settings-editor > .settings-body .settings-tree-container .monaco-list-row.focused .settings-row-inner-container,
   /* end settings UI */
   .tabs-container,
   .monaco-pane-view, 
@@ -106,6 +105,7 @@ function buildWallpaperCss({
   .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .show-file-icons > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
   .extensions-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
+  div.details .header-container .header, /* extension list tree*/
   /* Welcome Page */
   .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories>.gettingStartedCategoriesContainer>.header,
   .monaco-workbench .part.editor>.content .gettingStartedContainer .gettingStartedSlideCategories .getting-started-category
@@ -150,8 +150,10 @@ function buildBackgroundCss({
 }
 
 function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
+  const stickerPositioningStyles: string = vscode.workspace.getConfiguration(CONFIG_NAME).get(CONFIG_STICKER_CSS) + '';
   const style =
-    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-position:100% 97%;background-repeat:no-repeat;opacity:1;";
+    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-repeat:no-repeat;opacity:1;"
+    + stickerPositioningStyles + (stickerPositioningStyles.endsWith(';') ? '':';') ;
   return `
   ${stickerComment}
   body > .monaco-workbench > .monaco-grid-view > .monaco-grid-branch-node > .monaco-split-view2 > .split-view-container::after,
@@ -192,10 +194,10 @@ function buildCSSWithWallpaperAndBackground(dokiStickers: DokiStickers): string 
   const backgroundAndWallpaperScrubbedCSS = getBackgroundScrubbedCSS(wallpaperScrubbedCSS);
   const config = getConfig();
   const wallPaperCss = config.get(CONFIG_WALLPAPER_ENABLED) ? buildWallpaperCss(dokiStickers) : '';
-  const backgroundCSS = config.get(CONFIG_BACKGROUND_ENABLED) ? 
-  buildBackgroundCss(dokiStickers): 
-  // If the background image isn't set, then the wallpaper will be drawn over it.
-  (!!wallPaperCss ? buildHideWallpaperOnEmptyEditor() : '');
+  const backgroundCSS = config.get(CONFIG_BACKGROUND_ENABLED) ?
+    buildBackgroundCss(dokiStickers) :
+    // If the background image isn't set, then the wallpaper will be drawn over it.
+    (!!wallPaperCss ? buildHideWallpaperOnEmptyEditor() : '');
 
   return `${backgroundAndWallpaperScrubbedCSS}${wallPaperCss}${backgroundCSS}`;
 }

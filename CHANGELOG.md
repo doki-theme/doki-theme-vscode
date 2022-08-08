@@ -1,5 +1,12 @@
 # Change Log
 
+# 84.2-1.3.0 [Enhancments n Stuff]
+
+- Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.
+- Fixed artifacted background images on the extension list tree & settings UI selected config (be sure to re-install your wallpaper for this to take effect).
+- Restored asset installation on code-server (please be sure to clear caches and hard reload!)
+- Added Remote Development Server/SSH connection asset installation help instructions.
+
 # 84.2-1.2.1 [Small Dart Enhancement]
 
 - Enhanced Dart syntax highlighting a bit.

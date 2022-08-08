@@ -155,6 +155,11 @@ You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted
 
 ![Custom Sticker](./readmeStuff/custom_sticker.gif)
 
+**Custom Sticker Positioning**
+
+Any valid CSS that you can use to modify the position of the sticker.
+As an FYI, stickers are displayed on a psuedo element the size of the window & applied as the background of that element. So you'll probably want to play around with `background-position` & `background-size`, or whatever your heart desires!
+
 **Custom Background**
 
 This is the empty editor screen (all tabs closed), the one with the VS Code watermark.
@@ -177,6 +182,11 @@ Cus I was too lazy to play make all the backgrounds partially transparent to sho
 
 ![Custom Background](./readmeStuff/custom_wallpaper.png)
 
+This is what happens when you don't make your custom wallpaper transparent.
+
+![Not transparent wallpaper](./readmeStuff/not_transparent_image.png)
+
+You cannot see anything! 
 
 **Custom Wallpaper/Background Anchor**
 
