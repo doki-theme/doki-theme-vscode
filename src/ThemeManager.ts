@@ -127,7 +127,11 @@ export async function attemptToInstallHideWatermark(
       name: "Zero Two",
       path: "Best Girl",
     },
-    theme: new DokiTheme(DokiThemeDefinitions[0].themeDefinition),
+    theme: new DokiTheme(
+      DokiThemeDefinitions
+        .find(theme => theme.themeDefinition.information.id === DEFAULT_THEME_ID)!
+        .themeDefinition
+    ),
   }, () =>
     performHideWatermarkInstall()
   );

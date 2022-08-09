@@ -20,7 +20,6 @@ _Zero Two's Not Just A Cutie. ;)_
 - It was brought to my attention that I cannot spell "Rimuru".
 - Zero Two's Obsidian theme is the default theme now.
 
-
 # 84.2-1.3.0 [Enhancements n Stuff]
 
 - Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.

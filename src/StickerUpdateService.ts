@@ -13,7 +13,7 @@ import {
   ACTUAL_BACKGROUND_ASSETS_URL,
 } from "./ENV";
 import { DokiStickers } from "./StickerService";
-import { DokiThemeDefinition, Sticker, StickerInstallPayload } from "./extension";
+import { Sticker, StickerInstallPayload } from "./extension";
 import { CONFIG_BACKGROUND, CONFIG_BACKGROUND_ANCHOR, CONFIG_NAME, CONFIG_STICKER, CONFIG_WALLPAPER } from "./ConfigWatcher";
 import { DokiTheme, ZERO_TWO_OBSIDIAN_ID } from "./DokiTheme";
 

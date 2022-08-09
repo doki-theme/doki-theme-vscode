@@ -5,7 +5,7 @@ import {
   forceUpdateSticker,
   NetworkError,
 } from "./StickerUpdateService";
-import { Sticker, StickerInstallPayload } from "./extension";
+import { StickerInstallPayload } from "./extension";
 import { CONFIG_BACKGROUND_ENABLED, CONFIG_NAME, CONFIG_STICKER_CSS, CONFIG_WALLPAPER_ENABLED, getConfig } from "./ConfigWatcher";
 
 export enum InstallStatus {
