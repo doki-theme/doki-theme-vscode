@@ -4,8 +4,8 @@ import fs from "fs";
 
 console.log(path.resolve('.'));
 
-walkDir(path.resolve('..','masterThemes','definitions'))
-  .then((files) => files.filter((file) => file.endsWith("master.definition.json"))
+walkDir(path.resolve('.','assets','themes'))
+  .then((files) => files.filter((file) => file.endsWith("vsCode.definition.json"))
   )
   .then((dokiFileDefinitionPaths) => {
     return {
@@ -34,7 +34,9 @@ walkDir(path.resolve('..','masterThemes','definitions'))
       dokiFileDefinitionPath,
       dokiThemeDefinition,
     })=>{
-      delete dokiThemeDefinition.backgrounds;
+      console.log(`${dokiThemeDefinition.id}: ${dokiThemeDefinition.laf?.ui?.['selection.background']}`);
+      
+      // delete dokiThemeDefinition.backgrounds;
       // fs.writeFileSync(
       //   dokiFileDefinitionPath,
       //   JSON.stringify(

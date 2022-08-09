@@ -16,7 +16,13 @@ import {
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import { DokiThemeDefinition, Sticker, StickerInstallPayload } from "./extension";
 import { fixCheckSums, restoreChecksum } from "./CheckSumService";
-import { clearAssetConfig, saveHiddenWatermarkConfig, saveStickerConfig, saveWallpaperConfig } from "./AutoInstaller";
+import {
+  clearAssetConfig,
+  RestoreConfig,
+  saveHiddenWatermarkConfig,
+  saveStickerConfig,
+  saveWallpaperConfig
+} from "./AutoInstaller";
 import { CONFIG_STATUS_BAR_NAME, getConfig } from "./ConfigWatcher";
 
 export const ACTIVE_THEME = "doki.theme.active";
@@ -120,7 +126,7 @@ export async function attemptToInstallHideWatermark(
       anchoring: "Facts: ",
       name: "Zero Two",
       path: "Best Girl",
-    }, 
+    },
     theme: new DokiTheme(DokiThemeDefinitions[0].themeDefinition),
   }, () =>
     performHideWatermarkInstall()
@@ -204,7 +210,7 @@ export function activateThemeAsset(
   assetType: string,
   installer: (stickerInstallPayload: StickerInstallPayload) => Promise<InstallStatus>,
   configSaver: (
-    sticker: DokiSticker,
+    restoreConfig: RestoreConfig,
     context: vscode.ExtensionContext,
   ) => void,
 ) {
@@ -226,7 +232,10 @@ export function activateThemeAsset(
         fixCheckSums(context);
         const message = `${dokiTheme.name}'s ${assetType} installed! ${handleInstallMessage}`;
         showInstallNotification(message);
-        configSaver(currentSticker, context);
+        configSaver({
+          sticker: currentSticker,
+          themeId: dokiTheme.id
+        }, context);
       } else if (didInstall === InstallStatus.FAILURE) {
         handleInstallFailure(context, dokiTheme);
       } else if (didInstall === InstallStatus.NETWORK_FAILURE) {
