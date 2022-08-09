@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "84.1.7",
+  "version": "88.1.7",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -80,10 +80,18 @@
     "onCommand:doki-theme.theme.wallpaper.Ishtar Light",
     "onCommand:doki-theme.theme.Tohsaka Rin",
     "onCommand:doki-theme.theme.wallpaper.Tohsaka Rin",
-    "onCommand:doki-theme.theme.Zero Two Dark",
-    "onCommand:doki-theme.theme.wallpaper.Zero Two Dark",
-    "onCommand:doki-theme.theme.Zero Two Light",
-    "onCommand:doki-theme.theme.wallpaper.Zero Two Light",
+    "onCommand:doki-theme.theme.Hiro",
+    "onCommand:doki-theme.theme.wallpaper.Hiro",
+    "onCommand:doki-theme.theme.Hiro x Zero Two",
+    "onCommand:doki-theme.theme.wallpaper.Hiro x Zero Two",
+    "onCommand:doki-theme.theme.Zero Two Light Lily",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Light Lily",
+    "onCommand:doki-theme.theme.Zero Two Dark Obsidian",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Dark Obsidian",
+    "onCommand:doki-theme.theme.Zero Two Dark Rose",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Dark Rose",
+    "onCommand:doki-theme.theme.Zero Two Light Sakura",
+    "onCommand:doki-theme.theme.wallpaper.Zero Two Light Sakura",
     "onCommand:doki-theme.theme.Gasai Yuno",
     "onCommand:doki-theme.theme.wallpaper.Gasai Yuno",
     "onCommand:doki-theme.theme.Rory Mercury",
@@ -218,8 +226,8 @@
     "onCommand:doki-theme.theme.wallpaper.Raphtalia",
     "onCommand:doki-theme.theme.Yukihira Soma",
     "onCommand:doki-theme.theme.wallpaper.Yukihira Soma",
-    "onCommand:doki-theme.theme.Rimiru Tempest",
-    "onCommand:doki-theme.theme.wallpaper.Rimiru Tempest",
+    "onCommand:doki-theme.theme.Rimuru Tempest",
+    "onCommand:doki-theme.theme.wallpaper.Rimuru Tempest",
     "onCommand:doki-theme.theme.Makise Kurisu",
     "onCommand:doki-theme.theme.wallpaper.Makise Kurisu",
     "onCommand:doki-theme.theme.Asuna Dark",
@@ -484,20 +492,52 @@
         "title": "Doki-Theme: Install Tohsaka Rin's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Zero Two Dark",
-        "title": "Doki-Theme: Install Zero Two Dark's Sticker"
+        "command": "doki-theme.theme.Hiro",
+        "title": "Doki-Theme: Install Hiro's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Zero Two Dark",
-        "title": "Doki-Theme: Install Zero Two Dark's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Hiro",
+        "title": "Doki-Theme: Install Hiro's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Zero Two Light",
-        "title": "Doki-Theme: Install Zero Two Light's Sticker"
+        "command": "doki-theme.theme.Hiro x Zero Two",
+        "title": "Doki-Theme: Install Hiro x Zero Two's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Zero Two Light",
-        "title": "Doki-Theme: Install Zero Two Light's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Hiro x Zero Two",
+        "title": "Doki-Theme: Install Hiro x Zero Two's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Light Lily",
+        "title": "Doki-Theme: Install Zero Two Light Lily's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Light Lily",
+        "title": "Doki-Theme: Install Zero Two Light Lily's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Dark Obsidian",
+        "title": "Doki-Theme: Install Zero Two Dark Obsidian's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Dark Obsidian",
+        "title": "Doki-Theme: Install Zero Two Dark Obsidian's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Dark Rose",
+        "title": "Doki-Theme: Install Zero Two Dark Rose's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Dark Rose",
+        "title": "Doki-Theme: Install Zero Two Dark Rose's Wallpaper"
+      },
+      {
+        "command": "doki-theme.theme.Zero Two Light Sakura",
+        "title": "Doki-Theme: Install Zero Two Light Sakura's Sticker"
+      },
+      {
+        "command": "doki-theme.theme.wallpaper.Zero Two Light Sakura",
+        "title": "Doki-Theme: Install Zero Two Light Sakura's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Gasai Yuno",
@@ -1036,12 +1076,12 @@
         "title": "Doki-Theme: Install Yukihira Soma's Wallpaper"
       },
       {
-        "command": "doki-theme.theme.Rimiru Tempest",
-        "title": "Doki-Theme: Install Rimiru Tempest's Sticker"
+        "command": "doki-theme.theme.Rimuru Tempest",
+        "title": "Doki-Theme: Install Rimuru Tempest's Sticker"
       },
       {
-        "command": "doki-theme.theme.wallpaper.Rimiru Tempest",
-        "title": "Doki-Theme: Install Rimiru Tempest's Wallpaper"
+        "command": "doki-theme.theme.wallpaper.Rimuru Tempest",
+        "title": "Doki-Theme: Install Rimuru Tempest's Wallpaper"
       },
       {
         "command": "doki-theme.theme.Makise Kurisu",
@@ -1094,9 +1134,9 @@
     ],
     "themes": [
       {
-        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
-        "label": "Doki Theme: YuruCamp:  Rin",
-        "path": "./generatedThemes/Shima Rin.theme.json",
+        "id": "13adffd9-acbe-47af-8101-fa71269a4c5c",
+        "label": "Doki Theme: Franxx:  Zero Two Dark Obsidian",
+        "path": "./generatedThemes/Zero Two Dark Obsidian.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1250,15 +1290,33 @@
         "uiTheme": "vs-dark"
       },
       {
+        "id": "ceb8c11f-f736-420b-962b-fc0db26b3708",
+        "label": "Doki Theme: Franxx:  Hiro",
+        "path": "./generatedThemes/Hiro.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "1f9697bd-aec1-49ff-bdb4-c37ef8ace62b",
+        "label": "Doki Theme: Franxx:  Hiro x Zero Two",
+        "path": "./generatedThemes/Hiro x Zero Two.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
         "id": "8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b",
-        "label": "Doki Theme: Franxx:  Zero Two",
-        "path": "./generatedThemes/Zero Two Dark.theme.json",
+        "label": "Doki Theme: Franxx:  Zero Two Dark Rose",
+        "path": "./generatedThemes/Zero Two Dark Rose.theme.json",
         "uiTheme": "vs-dark"
       },
       {
         "id": "4fd5cb34-d36e-4a3c-8639-052b19b26ba1",
-        "label": "Doki Theme: Franxx:  Zero Two",
-        "path": "./generatedThemes/Zero Two Light.theme.json",
+        "label": "Doki Theme: Franxx:  Zero Two Light Lily",
+        "path": "./generatedThemes/Zero Two Light Lily.theme.json",
+        "uiTheme": "vs"
+      },
+      {
+        "id": "2eedcc31-b5fa-4b30-b045-6a539e915581",
+        "label": "Doki Theme: Franxx:  Zero Two Light Sakura",
+        "path": "./generatedThemes/Zero Two Light Sakura.theme.json",
         "uiTheme": "vs"
       },
       {
@@ -1545,8 +1603,8 @@
       },
       {
         "id": "5ca2846d-31a9-40b3-8908-965dad3c127d",
-        "label": "Doki Theme: Slime:  Rimiru",
-        "path": "./generatedThemes/Rimiru Tempest.theme.json",
+        "label": "Doki Theme: Slime:  Rimuru",
+        "path": "./generatedThemes/Rimuru Tempest.theme.json",
         "uiTheme": "vs-dark"
       },
       {
@@ -1595,6 +1653,12 @@
         "id": "d587f5ab-9334-4b7b-a99e-58461719d87b",
         "label": "Doki Theme: YuruCamp:  Nadeshiko",
         "path": "./generatedThemes/Nadeshiko.theme.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "id": "5fb9c0a4-e613-457c-97a5-6204f9076cef",
+        "label": "Doki Theme: YuruCamp:  Rin",
+        "path": "./generatedThemes/Shima Rin.theme.json",
         "uiTheme": "vs-dark"
       }
     ]

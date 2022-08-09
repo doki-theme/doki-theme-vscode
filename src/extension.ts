@@ -7,16 +7,21 @@ import {
   getSticker,
   uninstallImages,
 } from "./ThemeManager";
-import {DokiSticker, DokiTheme, StickerType} from "./DokiTheme";
+import { DokiSticker, DokiTheme, StickerType } from "./DokiTheme";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import {StatusBarComponent} from "./StatusBar";
-import {VSCodeGlobals} from "./VSCodeGlobals";
-import {attemptToNotifyUpdates} from "./NotificationService";
-import {showChanglog} from "./ChangelogService";
-import {attemptToUpdateSticker} from "./StickerUpdateService";
+import { StatusBarComponent } from "./StatusBar";
+import { VSCodeGlobals } from "./VSCodeGlobals";
+import { attemptToNotifyUpdates } from "./NotificationService";
+import { showChanglog } from "./ChangelogService";
+import { attemptToUpdateSticker } from "./StickerUpdateService";
 import { watchConfigChanges } from "./ConfigWatcher";
 import { cleanupOrigFiles as cleanupCheckSumRestorationFiles } from "./CheckSumService";
 import { attemptToPerformAutoInstall, restoreInstallation } from "./AutoInstaller";
+
+export interface StickerInstallPayload {
+  sticker: Sticker;
+  theme: DokiTheme;
+}
 
 export interface Sticker {
   path: string;
@@ -86,8 +91,11 @@ export function activate(context: vscode.ExtensionContext) {
 
   attemptToNotifyUpdates(context);
 
-  const {sticker} = getCurrentThemeAndSticker();
-  attemptToUpdateSticker(context, sticker.sticker)
+  const { sticker, theme } = getCurrentThemeAndSticker();
+  attemptToUpdateSticker(context, {
+    theme,
+    sticker: sticker.sticker,
+  })
     .catch(error => {
       console.error("Unable to update sticker for reasons", error);
     });
@@ -99,25 +107,25 @@ export function activate(context: vscode.ExtensionContext) {
     }))
   )
     .reduce((accum, next) => accum.concat(next), [])
-    .map(({dokiThemeDefinition, extensionCommand}) =>
+    .map(({ dokiThemeDefinition, extensionCommand }) =>
       vscode.commands.registerCommand(extensionCommand, () => {
-          const dokiTheme = new DokiTheme(dokiThemeDefinition.themeDefinition);
-          const currentSticker = getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition);
-          if (isStickerCommand(extensionCommand)) {
-            activateThemeSticker(dokiTheme, currentSticker, context);
-          } else {
-            activateThemeWallpaper(dokiTheme, currentSticker, context);
-          }
+        const dokiTheme = new DokiTheme(dokiThemeDefinition.themeDefinition);
+        const currentSticker = getCurrentSticker(extensionCommand, dokiThemeDefinition.themeDefinition);
+        if (isStickerCommand(extensionCommand)) {
+          activateThemeSticker(dokiTheme, currentSticker, context);
+        } else {
+          activateThemeWallpaper(dokiTheme, currentSticker, context);
         }
+      }
       )
     )
     .forEach((disposableHero) => context.subscriptions.push(disposableHero));
 
-    context.subscriptions.push(watchConfigChanges(context));
+  context.subscriptions.push(watchConfigChanges(context));
 
-    cleanupCheckSumRestorationFiles();
+  cleanupCheckSumRestorationFiles();
 
-    attemptToPerformAutoInstall(context);
+  attemptToPerformAutoInstall(context);
 }
 
 export function deactivate() {

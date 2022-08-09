@@ -44,7 +44,10 @@ export const watchConfigChanges = (
     const stickerInstall =
       (stickerChanged && isStickerFullPath) ||
         (stickerCSSChanged) ?
-        attemptToInstallSticker(sticker.sticker, extensionContext) :
+        attemptToInstallSticker({
+          theme,
+          sticker: sticker.sticker,
+        }, extensionContext) :
         Promise.resolve(InstallStatus.NOT_INSTALLED);
 
     const backgroundConfig = newBoiConfig.get(CONFIG_BACKGROUND);
@@ -61,7 +64,10 @@ export const watchConfigChanges = (
       (backgroundChanged && (isBackgroundFullPath || !backgroundConfig)) ||
         (wallpaperChanged && (isWallPaperFullPath || !wallpaperConfig)) ||
         anchorChanged ?
-        attemptToInstallWallpaper(sticker.sticker, extensionContext) :
+        attemptToInstallWallpaper({
+          theme,
+          sticker: sticker.sticker,
+        }, extensionContext) :
         Promise.resolve(InstallStatus.NOT_INSTALLED);
 
     const installJerbs = [

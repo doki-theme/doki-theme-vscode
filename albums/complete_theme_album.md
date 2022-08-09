@@ -1,3 +1,26 @@
+Darling in the FranXX
+---
+
+### Zero Two
+
+**Obsidian**
+![Zero Two (Obsidian)](../screenshots/zero_two_dark_obsidian_code.png)
+
+**Rose**
+![Zero Two (Rose)](../screenshots/zero_two_dark_code.png)
+
+**Sakura**
+![Zero Two (Sakura)](../screenshots/zero_two_light_sakura_code.png)
+
+**Lily**
+![Zero Two (Lily)](../screenshots/zero_two_light_code.png)
+
+### Hiro x Zero Two
+![Hiro x Zero Two](../screenshots/hiro_x_zero_two_dark_code.png)
+
+### Hiro 
+![Hiro](../screenshots/hiro_dark_code.png)
+
 AzurLane (Azur Lane)
 ---
 
@@ -46,13 +69,6 @@ Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei (Danganronpa)
 ### Mioda Ibuki
 ![Mioda Ibuki (Dark)](../screenshots/ibuki_dark_code.png)
 ![Mioda Ibuki (Light)](../screenshots/ibuki_light_code.png)
-
-Darling in the FranXX
----
-
-### Zero Two
-![Zero Two (Dark)](../screenshots/zero_two_dark_code.png)
-![Zero Two (Light)](../screenshots/zero_two_light_code.png)
 
 
 Doki-Doki Literature Club!

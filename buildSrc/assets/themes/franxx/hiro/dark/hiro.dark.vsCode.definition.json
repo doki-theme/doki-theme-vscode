@@ -1,0 +1,12 @@
+{
+  "id": "ceb8c11f-f736-420b-962b-fc0db26b3708",
+  "overrides": {},
+  "laf": {
+    "extends": "dark",
+    "ui": {
+      "selection.background": "&selectionBackground&"
+    }
+  },
+  "syntax": {},
+  "colors": {}
+}

@@ -1,6 +1,26 @@
 # Change Log
 
-# 84.2-1.3.0 [Enhancments n Stuff]
+# 88.1-1.3.0 [Darling]
+
+Best Girl just got _better_. ❤️
+
+![Best Girl](https://doki.assets.unthrottled.io/misc/best_girl.png)
+
+_Zero Two's Not Just A Cutie. ;)_
+
+**4 New Themes!**
+
+- I decided that I didn't have enough Zero Two themes, so I fixed that. She now has a new top-tier dark hacker theme: `Obsidian`. I also felt like Red Zero Two doesn't get enough attention, so I added a light `Sakura` theme which features her as she was as a child. With all these new Zero Two themes, I thought it would be best to rename the existing dark & light themes to `Rose` & `Lily` respectively.
+- It wouldn't be the _Darling_ release if I didn't include Hiro as well. (Dark Theme)
+- Lastly, this is the first release with a duo theme! (Nao's doesn't count, I just wanted the melon meme.) Just to pad my Zero Two theme stats, I've now got a Hiro & Zero Two couples' dark theme.
+
+### Other Stuff
+
+- Desaturated Itsuki's theme a bit.
+- It was brought to my attention that I cannot spell "Rimuru".
+- Zero Two's Obsidian theme is the default theme now.
+
+# 84.2-1.3.0 [Enhancements n Stuff]
 
 - Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.
 - Fixed artifacted background images on the extension list tree & settings UI selected config (be sure to re-install your wallpaper for this to take effect).
@@ -75,7 +95,7 @@ I'm trying to bring in a bit of inclusion.
 
 **4 New Dark Themes!**
 
-- I can already hear you now, "Rimiru Tempest, from 'That Time I Got Reincarnated as a Slime', is not a boy. They are the best genderless slime, get your facts correct." Yeah well....shut up.
+- I can already hear you now, "Rimuru Tempest, from 'That Time I Got Reincarnated as a Slime', is not a boy. They are the best genderless slime, get your facts correct." Yeah well....shut up.
 - Next, is one of the S ranked heroes in the 'One Punch Man' universe, Genos.
 - After that, is the smug smile of Yukihira Soma from Shokugeki no Soma. 
 - Lastly, I am going to be honest, I haven't seen Haikyu. I just wanted a Indigo & Orange based theme. So here is Hinata Shoyo.

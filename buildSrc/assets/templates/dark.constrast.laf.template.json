@@ -2,8 +2,8 @@
   "name":"dark-contrast",
   "extends":"dark",
   "ui": {
-    "activityBarBadge.foreground": "&accentContrastColor&",
-    "statusBar.foreground": "&accentContrastColor&",
-    "badge.foreground": "&accentContrastColor&"
+    "activityBarBadge.foreground": "&baseBackground&",
+    "statusBar.foreground": "&baseBackground&",
+    "badge.foreground": "&baseBackground&"
   }
 }
