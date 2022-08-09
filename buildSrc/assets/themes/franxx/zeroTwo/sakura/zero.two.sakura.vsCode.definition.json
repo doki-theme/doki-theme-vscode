@@ -1,7 +1,12 @@
 {
   "id": "2eedcc31-b5fa-4b30-b045-6a539e915581",
   "overrides": {},
-  "laf": {},
+  "laf": {
+    "extends": "light",
+    "ui": {
+      "selection.background": "&selectionBackground&"
+    }
+  },
   "syntax": {},
   "colors": {}
 }

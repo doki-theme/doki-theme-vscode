@@ -1,6 +1,25 @@
 # Change Log
 
-# 84.2-1.3.0 [Enhancments n Stuff]
+# 88.0-1.3.0 [Darling]
+
+Best Girl just got _better_. ❤️
+
+![Best Girl](https://doki.assets.unthrottled.io/misc/best_girl.png)
+
+_Zero Two's Not Just A Cutie. ;)_
+
+**4 New Themes!**
+
+- I decided that I didn't have enough Zero Two themes, so I fixed that. She now has a new top-tier dark hacker theme: `Obsidian`. I also felt like Red Zero Two doesn't get enough attention, so I added a light `Sakura` theme which features her as she was as a child. With all these new Zero Two themes, I thought it would be best to rename the existing dark & light themes to `Rose` & `Lily` respectively.
+- It wouldn't be the _Darling_ release if I didn't include Hiro as well. (Dark Theme)
+- Lastly, this is the first release with a duo theme! (Nao's doesn't count, I just wanted the melon meme.) Just to pad my Zero Two theme stats, I've now got a Hiro & Zero Two couples' dark theme.
+
+### Other Stuff
+
+- Desaturated Itsuki's theme a bit.
+- It was brought to my attention that I cannot spell "Rimuru".
+
+# 84.2-1.3.0 [Enhancements n Stuff]
 
 - Added the ability to control the position & size of the sticker using the `doki.sticker.css` configruation property.
 - Fixed artifacted background images on the extension list tree & settings UI selected config (be sure to re-install your wallpaper for this to take effect).
