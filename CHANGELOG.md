@@ -4,6 +4,8 @@
 
 - Placing the sticker at the proper z-index such that it no longer blocks the: Notifications & Status Bar Tooltips. Please re-install your sticker for this to take effect!
 
+![Can See Notifications Now](https://user-images.githubusercontent.com/15972415/194716630-1ffe84f7-b20b-4403-8e24-e7eea37b3754.png)
+
 # 88.1-1.3.0 [Darling]
 
 Best Girl just got _better_. ❤️
