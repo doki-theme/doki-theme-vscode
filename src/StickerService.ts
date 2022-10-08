@@ -152,7 +152,7 @@ function buildBackgroundCss({
 function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
   const stickerPositioningStyles: string = vscode.workspace.getConfiguration(CONFIG_NAME).get(CONFIG_STICKER_CSS) + '';
   const style =
-    "content:'';pointer-events:none;position:absolute;z-index:9001;width:100%;height:100%;background-repeat:no-repeat;opacity:1;"
+    "content:'';pointer-events:none;position:absolute;z-index:10;width:100%;height:100%;background-repeat:no-repeat;opacity:1;"
     + stickerPositioningStyles + (stickerPositioningStyles.endsWith(';') ? '':';') ;
   return `
   ${stickerComment}
@@ -161,6 +161,7 @@ function buildStickerCss({ stickerDataURL: stickerUrl }: DokiStickers): string {
   {background-image: url('${stickerUrl}');${style}}
 
   /* Makes sure notification shows on top of sticker */
+  .monaco-workbench>.notifications-center,
   .notifications-toasts {
     z-index: 9002 !important;
   }

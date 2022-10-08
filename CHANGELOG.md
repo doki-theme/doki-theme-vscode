@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.1.3.1 [Sticker Z-Index Fix]
+
+- Placing the sticker at the proper z-index such that it no longer blocks the: Notifications & Status Bar Tooltips. Please re-install your sticker for this to take effect!
+
 # 88.1-1.3.0 [Darling]
 
 Best Girl just got _better_. ❤️
