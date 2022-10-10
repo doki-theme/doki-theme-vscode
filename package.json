@@ -3,7 +3,7 @@
   "displayName": "The Doki Theme",
   "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "88.1.8",
+  "version": "88.1.9",
   "license": "MIT",
   "icon": "Doki-Theme.png",
   "galleryBanner": {
@@ -284,7 +284,7 @@
           },
           "doki.sticker.css": {
             "type": "string",
-            "default": "background-position:100% 97%",
+            "default": "z-index:100;background-position:100% 97%",
             "description": "Additional CSS stylings you can apply to the installed sticker (such as positioning)."
           }
         }
