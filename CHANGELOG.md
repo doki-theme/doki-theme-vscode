@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.1.3.2 [Sticker Fix Revisited]
+
+- Remember what I last said? Well that was a lie, I did it correctly this time. I also am including the `z-index` in the `doki.sticker.css` setting so you can update it for your custom setup.
+
 ## 88.1.3.1 [Sticker Z-Index Fix]
 
 - Placing the sticker at the proper z-index such that it no longer blocks the: Notifications & Status Bar Tooltips. Please re-install your sticker for this to take effect!
