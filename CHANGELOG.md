@@ -3,7 +3,8 @@
 ## 88.1.4.0 [Re-Brand]
 
 - Re-Branded extension from `The Doki Theme` to just `Doki Theme`.
-- Updated extension icon to match the newest logo.
+- Updated extension icon to match the newest Doki Theme logo.
+- Prevents installation of asset that is a directory (for the most part).
 
 ## 88.1.3.2 [Sticker Fix Revisited]
 
