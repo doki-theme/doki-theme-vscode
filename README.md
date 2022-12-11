@@ -271,5 +271,5 @@ Help make this plugin better!
 ---
 
 <div align="center">
-    <img src="https://doki.assets.unthrottled.io/misc/logo.png" ></img>
+    <img src="https://doki.assets.unthrottled.io/misc/logo_v2.png" ></img>
 </div>

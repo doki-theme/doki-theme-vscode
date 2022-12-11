@@ -47,5 +47,5 @@ export function buildWebviewHtml(
 }
 
 export function getWebviewIcon(context: vscode.ExtensionContext) {
-    return vscode.Uri.file(path.join(context.extensionPath, 'assets', 'heart.png'));
+    return vscode.Uri.file(path.join(context.extensionPath, 'assets', 'Doki-Icon-Smol.png'));
 }
