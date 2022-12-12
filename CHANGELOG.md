@@ -1,12 +1,12 @@
 # Change Log
 
-## 88.1.4.0 [Re-Brand]
+## 88.3-1.4.0 [Re-Brand]
 
 - Re-Branded extension from `The Doki Theme` to just `Doki Theme`.
 - Updated extension icon to match the newest Doki Theme logo.
 - Prevents installation of asset that is a directory (for the most part).
 
-## 88.1.3.2 [Sticker Fix Revisited]
+## 88.1-1.3.2 [Sticker Fix Revisited]
 
 - Remember what I last said? Well that was a lie, I did it correctly this time. I also am including the `z-index` in the `doki.sticker.css` setting so you can update it for your custom setup.
 
