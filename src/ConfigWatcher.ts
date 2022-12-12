@@ -102,6 +102,6 @@ export const watchConfigChanges = (
   });
 
 function isFile(filePath: any) {
-  return fs.existsSync(filePath);
+  return fs.existsSync(filePath) && fs.lstatSync(filePath).isFile();
 }
 

@@ -1,13 +1,13 @@
 {
   "name": "doki-theme",
-  "displayName": "The Doki Theme",
+  "displayName": "Doki Theme",
   "description": "Cute anime character themes!",
   "publisher": "unthrottled",
-  "version": "88.1.9",
+  "version": "88.1.10",
   "license": "MIT",
-  "icon": "Doki-Theme.png",
+  "icon": "Doki-Theme-v2.png",
   "galleryBanner": {
-    "color": "#578CDA",
+    "color": "#1ecd86",
     "theme": "dark"
   },
   "bugs": {
