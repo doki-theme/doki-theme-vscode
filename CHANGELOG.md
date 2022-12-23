@@ -1,10 +1,18 @@
 # Change Log
 
+## 88.3-1.5.0 [Semantic Highlighting]
+
+- Themes now support [semantic highliglighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#semantic-coloring-in-color-themes). Which I tried to make as similar to [the WebStorm plugin syntax highlighting](https://github.com/doki-theme/doki-theme-jetbrains). 
+  - If you don't like what I did, then you can always add `"editor.semanticHighlighting.enabled": false,` to your `settings.json` in your VSCode to turn off semantic highlighting :)
+
+![Comparison]()
+
 ## 88.3-1.4.0 [Re-Brand]
 
 - Re-Branded extension from `The Doki Theme` to just `Doki Theme`.
 - Updated extension icon to match the newest Doki Theme logo.
 - Prevents installation of asset that is a directory (for the most part).
+- Updated XMas Chocola's theme.
 
 ## 88.1-1.3.2 [Sticker Fix Revisited]
 
