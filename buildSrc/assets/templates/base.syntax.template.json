@@ -96,6 +96,7 @@
         "variable.parameter",
         "meta.parameters",
         "meta.function-call.arguments",
+        "markup.inline.raw.string.markdown",
         "string"
       ],
       "settings": {
@@ -116,7 +117,10 @@
         "variable.language.this",
         "constant.language.undefined",
         "constant.language.java",
-        "constant.language.python"
+        "constant.language.python",
+        "support.type.primitive.ts",
+        "markup.heading.setext",
+        "punctuation.definition.raw.markdown"
       ],
       "settings": {
         "foreground": "&keywordColor&"
@@ -132,7 +136,8 @@
         "variable.css",
         "meta.function",
         "support.class",
-        "meta.method.identifier"
+        "meta.method.identifier",
+        "variable.other.readwrite.alias"
       ],
       "settings": {
         "foreground": "&classNameColor&"
@@ -173,6 +178,7 @@
     {
       "scope": [
         "support.type.primitive",
+        "entity.name.type.interface",
         "variable.parameter.function-call"
       ],
       "settings": {
@@ -215,7 +221,9 @@
         "constant.other.color",
         "variable.language.special",
         "support.constant",
-        "meta.type.parameters"
+        "meta.type.parameters",
+        "fenced_code.block.language.markdown",
+        "entity.name.section.markdown"
       ],
       "settings": {
         "foreground": "&constantColor&"

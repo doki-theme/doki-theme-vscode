@@ -1,0 +1,7 @@
+{
+  "name": "base",
+  "semanticTokenColors": {
+    "variable.readonly.local":"&foregroundColorEditor&",
+    "function.declaration": "&classNameColor&"
+  }
+}

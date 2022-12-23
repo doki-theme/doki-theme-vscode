@@ -94,15 +94,7 @@ function getSyntaxColor(
   }
 }
 
-function buildSyntaxColors(
-  dokiThemeTemplateJson: MasterDokiThemeDefinition,
-  dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
-  dokiTemplateDefinitions: DokiThemeDefinitions,
-  masterTemplates: DokiThemeDefinitions,
-) {
-  const syntaxTemplate: any[] =
-    dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
-
+function getNamedColorsForTemplateFillIn(dokiThemeTemplateJson: MasterDokiThemeDefinition, dokiThemeVSCodeTemplateJson: BaseAppDokiThemeDefinition, masterTemplates: DokiThemeDefinitions, dokiTemplateDefinitions: DokiThemeDefinitions) {
   const overrides =
     dokiThemeTemplateJson.overrides?.editorScheme?.colors ||
     dokiThemeVSCodeTemplateJson?.overrides?.editorScheme?.colors || {};
@@ -124,6 +116,50 @@ function buildSyntaxColors(
     editorAccentColor: dokiThemeTemplateJson.overrides?.editorScheme?.colors?.accentColor ||
       evaluatedColors.accentColor,
   }
+  return resolvedNamedColors;
+}
+
+function buildSemanticTokens(
+  dokiThemeTemplateJson: MasterDokiThemeDefinition,
+  dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplates: DokiThemeDefinitions,
+) {
+  const syntaxTemplate: StringDictionary<string> =
+    dokiTemplateDefinitions['semantic-tokens'].base.semanticTokenColors;
+  const resolvedNamedColors =
+    getNamedColorsForTemplateFillIn(
+      dokiThemeTemplateJson,
+      dokiThemeVSCodeTemplateJson,
+      masterTemplates,
+      dokiTemplateDefinitions,
+    );
+
+  return Object.entries(syntaxTemplate)
+    .map(([key, value]) =>
+      ([key, getSyntaxColor(value, resolvedNamedColors)])
+    ).reduce((accum, [key, value]) => {
+      accum[key] = value;
+      return accum
+    }, {} as StringDictionary<string>);
+}
+
+function buildSyntaxColors(
+  dokiThemeTemplateJson: MasterDokiThemeDefinition,
+  dokiThemeVSCodeTemplateJson: VSCodeDokiThemeDefinition,
+  dokiTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplates: DokiThemeDefinitions,
+) {
+  const syntaxTemplate: any[] =
+    dokiTemplateDefinitions[SYNTAX_TYPE].base.tokenColors;
+
+  const resolvedNamedColors =
+    getNamedColorsForTemplateFillIn(
+      dokiThemeTemplateJson,
+      dokiThemeVSCodeTemplateJson,
+      masterTemplates,
+      dokiTemplateDefinitions,
+    );
 
   return syntaxTemplate.map((tokenSpecification) => {
     const newTokenSpec = {
@@ -134,7 +170,7 @@ function buildSyntaxColors(
       .map((key) => {
         const oldValue = newTokenSpec.settings[key];
         const value = getSyntaxColor(oldValue, resolvedNamedColors);
-        return { key, value };
+        return {key, value};
       })
       .reduce((accum: StringDictionary<string>, next) => {
         accum[next.key] = next.value;
@@ -158,6 +194,13 @@ function buildVSCodeTheme(
   return {
     type: getThemeType(dokiThemeDefinition),
     colors: buildLAFColors(
+      dokiThemeDefinition,
+      dokiThemeVSCodeDefinition,
+      dokiTemplateDefinitions,
+      masterTemplates,
+    ),
+    semanticHighlighting: true,
+    semanticTokenColors: buildSemanticTokens(
       dokiThemeDefinition,
       dokiThemeVSCodeDefinition,
       dokiTemplateDefinitions,
@@ -291,15 +334,15 @@ evaluateTemplates(
     const commands = stickerInstallCommands.map((commandAndDefinition) => ({
       command: commandAndDefinition.command,
       title: `Doki-Theme: Install ${getName(commandAndDefinition.definition)}'s${commandAndDefinition.command.endsWith("secondary") ? " Secondary" : ""
-        } ${commandAndDefinition.command.indexOf('wallpaper') >= 0 ? 'Wallpaper' : 'Sticker'
-        }`,
+      } ${commandAndDefinition.command.indexOf('wallpaper') >= 0 ? 'Wallpaper' : 'Sticker'
+      }`,
     }));
 
     const zeroTwoObsidianID = '13adffd9-acbe-47af-8101-fa71269a4c5c';
     const themes = dokiDefinitions.map((dokiDefinition) => ({
       id: dokiDefinition.id,
       label: `Doki Theme: ${getGroupName(dokiDefinition)} ${getThemeDisplayName(dokiDefinition)
-        }`,
+      }`,
       path: `./${themeOutputDirectory}/${getName(dokiDefinition)}${themePostfix}`,
       uiTheme: dokiDefinition.dark ? "vs-dark" : "vs",
     })).sort((a, b) => {
@@ -371,6 +414,7 @@ const specialThemes: { [key: string]: (def: MasterDokiThemeDefinition) => string
   '13adffd9-acbe-47af-8101-fa71269a4c5c': nameGetter, // Zero Two Obsidian
   'b0340303-0a5a-4a20-9b9c-fc8ce9880078': () => 'Sayori',
 }
+
 function getThemeDisplayName(dokiDefinition: MasterDokiThemeDefinition) {
   const displayNameGetter = specialThemes[dokiDefinition.id];
   return displayNameGetter ?
@@ -394,6 +438,7 @@ function getCommandNames(dokiDefinition: MasterDokiThemeDefinition): string[] {
       ];
     }).reduce((accum, next) => accum.concat(next), []);
 }
+
 function getName(dokiDefinition: MasterDokiThemeDefinition) {
   return dokiDefinition.name.replace(':', '');
 }
