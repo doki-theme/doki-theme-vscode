@@ -5,7 +5,7 @@
 - Themes now support [semantic highliglighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#semantic-coloring-in-color-themes). Which I tried to make as similar to [the WebStorm plugin syntax highlighting](https://github.com/doki-theme/doki-theme-jetbrains). 
   - If you don't like what I did, then you can always add `"editor.semanticHighlighting.enabled": false,` to your `settings.json` in your VSCode to turn off semantic highlighting :)
 
-![Comparison]()
+![Comparison](https://user-images.githubusercontent.com/15972415/209368481-0c8a2d07-4195-40d1-9cd7-994833a71091.png)
 
 ## 88.3-1.4.0 [Re-Brand]
 
