@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.3-1.5.1 [Windows Terminal Bugfix]
+
+-Fixed wallpaper rendering issue on windows terminals.
+
 ## 88.3-1.5.0 [Semantic Highlighting]
 
 - Themes now support [semantic highliglighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#semantic-coloring-in-color-themes). Which I tried to make as similar to [the WebStorm plugin syntax highlighting](https://github.com/doki-theme/doki-theme-jetbrains). 
