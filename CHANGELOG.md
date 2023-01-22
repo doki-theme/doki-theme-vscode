@@ -1,8 +1,10 @@
 # Change Log
 
-## 88.3-1.5.1 [Windows Terminal Bugfix]
+## 88.3-1.5.1 [Terminal Wallpaper Bugfix]
 
--Fixed wallpaper rendering issue on windows terminals.
+- Fixed wallpaper rendering issue terminals of VSCode 1.74.3. Please re-install your wallpaper for this to take effect.
+
+![Terminal](https://user-images.githubusercontent.com/15972415/213933498-b8d0697a-46d2-4a5f-ab43-830d9fd8231a.png)
 
 ## 88.3-1.5.0 [Semantic Highlighting]
 
