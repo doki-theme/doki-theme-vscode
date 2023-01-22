@@ -1,5 +1,11 @@
 # Change Log
 
+## 88.3-1.5.1 [Terminal Wallpaper Bugfix]
+
+- Fixed wallpaper rendering issue terminals of VSCode 1.74.3. Please re-install your wallpaper for this to take effect.
+
+![Terminal](https://user-images.githubusercontent.com/15972415/213933498-b8d0697a-46d2-4a5f-ab43-830d9fd8231a.png)
+
 ## 88.3-1.5.0 [Semantic Highlighting]
 
 - Themes now support [semantic highliglighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#semantic-coloring-in-color-themes). Which I tried to make as similar to [the WebStorm plugin syntax highlighting](https://github.com/doki-theme/doki-theme-jetbrains). 
