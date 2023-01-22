@@ -101,7 +101,6 @@ function buildWallpaperCss({
   [id="workbench.view.explorer"] .monaco-pane-view,
   [id="workbench.view.explorer"] .split-view-view,
   [id="workbench.view.explorer"] .monaco-tl-twistie,
-  [id="workbench.view.explorer"] .monaco-tl-twistie,
   [id="terminal"] .pane-header,
   [id="terminal"] .monaco-pane-view,
   .explorer-folders-view > .monaco-list > .monaco-scrollable-element > .monaco-list-rows,
