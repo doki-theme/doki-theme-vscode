@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.3-1.5.2 [Hide Watermark Restore]
+
+- Restored hide watermark functionality for VSCode 1.75.0.
+
 ## 88.3-1.5.1 [Terminal Wallpaper Bugfix]
 
 - Fixed wallpaper rendering issue terminals of VSCode 1.74.3. Please re-install your wallpaper for this to take effect.
