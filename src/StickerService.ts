@@ -178,6 +178,8 @@ function buildHideWaterMarkCSS(): string {
   return `
   ${hideComment}
   .monaco-workbench .part.editor.has-watermark>.content.empty .editor-group-container>.editor-group-letterpress,
+  .part.editor>.content .editor-group-container .editor-group-watermark>.letterpress,
+  .monaco-workbench .part.editor>.content .editor-group-container>.editor-group-watermark>.shortcuts>.watermark-box,
   .monaco-workbench .part.editor>.content.empty>.watermark>.watermark-box 
   {
     display: none !important;
