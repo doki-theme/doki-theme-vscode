@@ -2,7 +2,9 @@
 
 ## 88.3-1.5.2 [Hide Watermark Restore]
 
-- Restored hide watermark functionality for VSCode 1.75.0.
+- Restored hide watermark functionality for VSCode 1.75.0. Please re-run the hide watermark command for this to take effect.
+
+![Hidden Watermark](https://user-images.githubusercontent.com/15972415/216770850-7dc66024-78f5-4503-ae15-2dc087def6cd.png)
 
 ## 88.3-1.5.1 [Terminal Wallpaper Bugfix]
 
