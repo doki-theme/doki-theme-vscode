@@ -47,7 +47,7 @@ export function showChecksumFixHelp(
                 <h2>Linux/MacOS</h2>
                 <p>If you are running Linux or MacOS you can help me by running this command:</p>
                 <code>sudo chown $(whoami) ${productFile}</code>
-                <p>After you have given yourself permission to write that file, feel free to run your previous command again.</p>
+                <p>After you have given yourself permission to write that file and <em>create files in that directory</em>, feel free to run your previous command again.</p>
                 <p>If you have VS Code installed via <code>snap</code> please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/34#issuecomment-730028177">see this workaround</a></p>
                 <p>On MacOS, if you have VS Code in your <code>Downloads</code> folder please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/137">see this workaround</a></p>
 
