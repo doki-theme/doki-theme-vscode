@@ -292,15 +292,15 @@ Anime is trash...._and so am I_.
 # 14.1.0 [Custom Assets]
 
 Added the ability for you to add your own assets to be used by the themes!
-Please see the [README.md](https://github.com/doki-theme/doki-theme-vscode/tree/master#custom-assets) for more details.
+Please see the [README.md](https://github.com/doki-theme/doki-theme-vscode/tree/main#custom-assets) for more details.
 
 | **Custom Sticker** | **Custom Background** |
 | --- | --- |
-| ![custom_sticker](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/master/readmeStuff/custom_sticker.gif) | ![custom_background](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/master/readmeStuff/custom_background.gif) | 
+| ![custom_sticker](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/main/readmeStuff/custom_sticker.gif) | ![custom_background](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/main/readmeStuff/custom_background.gif) | 
 
 | **Custom Wallpaper** |
 | --- |
-| ![custom_wallpaper](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/master/readmeStuff/custom_wallpaper.png)|
+| ![custom_wallpaper](https://raw.githubusercontent.com/doki-theme/doki-theme-vscode/main/readmeStuff/custom_wallpaper.png)|
 
 # 14.0.0 [NekoPara Release]
 

@@ -151,7 +151,7 @@ original JetBrains plugin which uses all the colors defined. There is also Doki 
 the IDE as well.
 
 Please follow
-the [theme creation contributions in the JetBrains Plugin repository](https://github.com/doki-theme/doki-theme-jetbrains/blob/master/CONTRIBUTING.md#creating-new-themes)
+the [theme creation contributions in the JetBrains Plugin repository](https://github.com/doki-theme/doki-theme-jetbrains/blob/main/CONTRIBUTING.md#creating-new-themes)
 for more details on how to build new themes.
 
 ## Creating Themes Required Software
