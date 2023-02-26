@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { getWebviewIcon, buildWebviewHtml } from "./ChangelogService";
 import { productFile } from './CheckSumService';
-import { workbenchDirectory } from './ENV';
+import { appDirectory, workbenchDirectory } from './ENV';
 
 export function showStickerInstallationSupportWindow(context: vscode.ExtensionContext) {
     const verbs = {
@@ -40,14 +40,15 @@ export function showChecksumFixHelp(
                 error. No worries, friend, I am here to help.
                 </p>
                 <p>
-                I need access to <strong>${productFile}</strong> and to also be able to add files in that directory.
-                So I can fix VS Code's checksums (which removes the [Unsupported] message).
+                I need access to <strong>${productFile}</strong> and to also be able to add files in <strong>${appDirectory}</strong>.
+                So I can fix VS Code's checksums (which removes the [Unsupported] message) and make a copy of the original file to restore.
                 Please take a moment to make sure the file actually exists and I can add files to that directory.
                 </p>
                 <h2>Linux/MacOS</h2>
                 <p>If you are running Linux or MacOS you can help me by running this command:</p>
                 <code>sudo chown $(whoami) ${productFile}</code>
-                <p>After you have given yourself permission to write that file, feel free to run your previous command again.</p>
+                <code>sudo chown $(whoami) ${appDirectory}</code>
+                <p>After you have given yourself permission to write that file and <em>create files in that directory</em>, feel free to run your previous command again.</p>
                 <p>If you have VS Code installed via <code>snap</code> please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/34#issuecomment-730028177">see this workaround</a></p>
                 <p>On MacOS, if you have VS Code in your <code>Downloads</code> folder please <a href="https://github.com/doki-theme/doki-theme-vscode/issues/137">see this workaround</a></p>
 
