@@ -1,5 +1,11 @@
 # Change Log
 
+## 88.4-1.6.0 [VS Code Web Support]
+
+- Extension now supported in [VSCode for the web](https://code.visualstudio.com/docs/editor/vscode-web).
+- Added better checksum restoration error message.
+- Updated Sagiri's syntax highlighting color a bit.
+
 ## 88.3-1.5.2 [Hide Watermark Restore]
 
 - Restored hide watermark functionality for VSCode 1.75.0. Please re-run the hide watermark command for this to take effect.
