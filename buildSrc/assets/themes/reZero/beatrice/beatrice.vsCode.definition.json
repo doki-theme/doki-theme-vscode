@@ -12,7 +12,7 @@
       "scrollbarSlider.hoverBackground": "&accentColorSecondary&9A",
       "scrollbarSlider.background": "&accentColorSecondary&5A",
       "scrollbarSlider.activeBackground": "&accentColorSecondary&9A",
-      "editor.selectionBackground": "&selectionBackground&33"
+      "editor.selectionBackground": "&selectionBackground&aa"
     }
   },
   "syntax": {},
