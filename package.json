@@ -242,6 +242,7 @@
     "onCommand:doki-theme.theme.wallpaper.Shima Rin"
   ],
   "main": "./out/extension.js",
+  "browser": "./out/web-extension.bundled.js",
   "contributes": {
     "configuration": [
       {
@@ -1670,9 +1671,10 @@
   },
   "scripts": {
     "package": "vsce package",
-    "vscode:prepublish": "yarn run compile",
+    "package-web": "webpack --mode production --devtool hidden-source-map",
+    "vscode:prepublish": "yarn run compile && yarn package-web",
     "vscode:uninstall": "node ./out/Cleanup.js",
-    "compile": "tsc -p ./",
+    "compile": "tsc -p ./ && yarn package-web",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile",
     "test": "node ./out/test/runTest.js"
@@ -1689,10 +1691,13 @@
     "lodash": "^4.17.21",
     "markdown-it": "^12.3.2",
     "mocha": "^6.2.2",
+    "ts-loader": "^9.4.2",
     "ts-node": "^8.6.2",
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
-    "vscode-test": "^1.2.2"
+    "vscode-test": "^1.2.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "resolutions": {
     "minimist": "0.2.1"
