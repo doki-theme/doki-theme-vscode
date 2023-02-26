@@ -1,5 +1,10 @@
 # Change Log
 
+## 88.5-1.6.1 [Cleanups]
+
+- Cleaned up build process to use correct colors.
+- Renamed stuff to reflect `main` branch rename. 
+
 ## 88.4-1.6.0 [VS Code Web Support]
 
 - Extension now supported in [VSCode for the web](https://code.visualstudio.com/docs/editor/vscode-web).
