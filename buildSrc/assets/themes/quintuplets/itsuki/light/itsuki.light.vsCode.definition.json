@@ -3,9 +3,7 @@
   "overrides": {},
   "laf": {
     "extends": "light",
-    "ui": {
-      "selection.background": "&selectionBackground&"
-    }
+    "ui": {}
   },
   "syntax": {},
   "colors": {}

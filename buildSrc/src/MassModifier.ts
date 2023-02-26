@@ -4,7 +4,7 @@ import fs from "fs";
 
 console.log(path.resolve('.'));
 
-walkDir(path.resolve('.','assets','themes'))
+walkDir(path.resolve('.', 'assets', 'themes'))
   .then((files) => files.filter((file) => file.endsWith("vsCode.definition.json"))
   )
   .then((dokiFileDefinitionPaths) => {
@@ -24,8 +24,8 @@ walkDir(path.resolve('.','assets','themes'))
   .then((defs) => {
 
     console.log(
-        Object.keys(
-            defs.map(a => a.dokiThemeDefinition.characterId).reduce((acc, id) => {
+      Object.keys(
+        defs.map(a => a.dokiThemeDefinition.characterId).reduce((acc, id) => {
           acc[id] = id;
           return acc;
         }, {})).length
@@ -33,16 +33,18 @@ walkDir(path.resolve('.','assets','themes'))
     defs.forEach(({
       dokiFileDefinitionPath,
       dokiThemeDefinition,
-    })=>{
-      console.log(`${dokiThemeDefinition.id}: ${dokiThemeDefinition.laf?.ui?.['selection.background']}`);
-      
-      // delete dokiThemeDefinition.backgrounds;
-      // fs.writeFileSync(
-      //   dokiFileDefinitionPath,
-      //   JSON.stringify(
-      //     dokiThemeDefinition, null, 2
+    }) => {
+      const selectionBackground = dokiThemeDefinition.laf?.ui?.['selection.background'];
+      console.log(`${dokiThemeDefinition.id}: ${selectionBackground}`);
+      // if (selectionBackground === '&selectionBackground&') {
+      //   delete dokiThemeDefinition.laf?.ui?.['selection.background'];
+      //   fs.writeFileSync(
+      //     dokiFileDefinitionPath,
+      //     JSON.stringify(
+      //       dokiThemeDefinition, null, 2
+      //     )
       //   )
-      // )
+      // }
     });
 
   });

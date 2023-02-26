@@ -18,7 +18,7 @@
     "quickInput.list.focusBackground": "&selectionBackground&AA",
     "quickInput.foreground": "&foregroundColor&",
     "peekViewTitleLabel.foreground": "&foregroundColor&",
-    "selection.background": "&accentColor&",
+    "selection.background": "&selectionBackground&",
     "editorGutter.modifiedBackground": "&diff.modified&",
     "editorGutter.addedBackground": "&diff.inserted&",
     "editorGutter.deletedBackground": "&diff.deleted&",
