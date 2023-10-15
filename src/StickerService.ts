@@ -52,6 +52,11 @@ function buildWallpaperCss({
   /* end welcome window */
   div.header, /* extensions header */
   .content,
+  /* terminal stuff */
+  .terminal .xterm,
+  .monaco-workbench .pane-body.integrated-terminal .terminal-wrapper,
+  .xterm .xterm-screen canvas,
+  /* end terminal stuff */
   .monaco-select-box,
   .pane-header, 
   .minimap-decorations-layer,

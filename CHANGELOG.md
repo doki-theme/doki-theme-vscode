@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.5-1.6.2 [Terminal Wallpaper support]
+
+- Wallpaper now shows up on the terminal for the `1.83.1` builds. Please re-install your wallpaper for this to take effect.
+
 ## 88.5-1.6.1 [Cleanups]
 
 - Cleaned up build process to use correct colors.
