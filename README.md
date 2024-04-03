@@ -1,5 +1,7 @@
 [![Gitter](https://badges.gitter.im/doki-theme-vscode/community.svg)](https://gitter.im/doki-theme-vscode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+[中文文档](README-CN.md)
+
 # Theme Preview
 
 ![Takanashi Rikka Theme](./screenshots/chuunibyou/rikka_dark_code.png)
@@ -8,12 +10,12 @@
     <h3>Code Font <a href="https://rubjo.github.io/victor-mono/">Victor Mono</a></h3>
 </div>
 
-
 # Feature Preview
 
 ![Ryuko's Theme Usage](./readmeStuff/vscode_doki_install_v2.gif)
 
 Steps demonstrated:
+
 1. Choose Ryuko's Color Theme
 1. Enable Ryuko's wallpaper
 1. Reload/Restart VSCode
@@ -80,20 +82,20 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 # Documentation
 
 - [Configuration](#configuration)
-    - [Background Images](#background-images)
-    - [Hide VSCode Watermark](#hide-watermark)
-    - [Stickers](#sticker)
-    - [Custom Assets](#custom-assets)
-    - [Asset Restoration](#asset-restoration)
-    - [Suggestive Content](#suggestive-content)
-    - [Asset Removal](#remove-assets)
-    - [Show Changelog](#show-changelog)
+  - [Background Images](#background-images)
+  - [Hide VSCode Watermark](#hide-watermark)
+  - [Stickers](#sticker)
+  - [Custom Assets](#custom-assets)
+  - [Asset Restoration](#asset-restoration)
+  - [Suggestive Content](#suggestive-content)
+  - [Asset Removal](#remove-assets)
+  - [Show Changelog](#show-changelog)
 - [Miscellaneous](#miscellaneous)
-    - [Contributing](#contributing)
-    - [Theme Requests](#theme-requests)
-    - [Helping the community](#enjoying-the-plugin)
-    - [Feature Requests](#contributions)
-    - [More Doki Theme!](#even-more-doki-theme)
+  - [Contributing](#contributing)
+  - [Theme Requests](#theme-requests)
+  - [Helping the community](#enjoying-the-plugin)
+  - [Feature Requests](#contributions)
+  - [More Doki Theme!](#even-more-doki-theme)
 
 # Configuration
 
@@ -116,7 +118,7 @@ For convenience, the wallpaper & background image are both installed when you ru
 - `doki.background.enabled`: Whether you want an image in your empty editor background when running the 'Install Wallpaper' command.
 - `doki.wallpaper.enabled`: Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
 
-You'll have to put these changes in the `settings.json` in your VSCode. 
+You'll have to put these changes in the `settings.json` in your VSCode.
 
 You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
 
@@ -124,7 +126,7 @@ https://user-images.githubusercontent.com/15972415/172961532-d8403999-15f0-4030-
 
 ## Hide Watermark
 
-Tired of the the VSCode watermark cramping your style? 
+Tired of the the VSCode watermark cramping your style?
 You have the ability to hide it using **Hide VSCode Watermark**, so you can fully enjoy your art.
 
 **Important!!** Hiding the watermark requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
@@ -141,7 +143,7 @@ You have the ability to hide it using **Hide VSCode Watermark**, so you can full
 
 ## Custom Assets
 
-Hey alright, you have the ability to set the image to be used for all the doki-themes. Allowed image types: jpg, png, gif. You'll have to put these changes in the `settings.json` in your VSCode. 
+Hey alright, you have the ability to set the image to be used for all the doki-themes. Allowed image types: jpg, png, gif. You'll have to put these changes in the `settings.json` in your VSCode.
 
 You can also use the [settings UI](https://code.visualstudio.com/docs/getstarted/settings) just search for `Doki` and you should find the relevant settings.
 
@@ -172,8 +174,8 @@ This is the empty editor screen (all tabs closed), the one with the VS Code wate
 
 **Custom Wallpaper**
 
-This shows up on your editor and other places. 
-**Note**: you'll want to make your image partially transparent. 
+This shows up on your editor and other places.
+**Note**: you'll want to make your image partially transparent.
 Cus I was too lazy to play make all the backgrounds partially transparent to show the opaque background image. Didn't feel like peeling that onion and deviating from my color schemes.
 
 ```json
@@ -186,7 +188,7 @@ This is what happens when you don't make your custom wallpaper transparent.
 
 ![Not transparent wallpaper](./readmeStuff/not_transparent_image.png)
 
-You cannot see anything! 
+You cannot see anything!
 
 **Custom Wallpaper/Background Anchor**
 
@@ -205,10 +207,10 @@ I get that, so you have the ability to change the name that shows up next to the
 
 ## Asset Restoration
 
-Unfortunately, every time VSCode updates, you will lose your installed asset changes. 
-Thankfully, this plugin will remember what assets you installed, and attempt to restore them on the first detection of a VSCode update. 
+Unfortunately, every time VSCode updates, you will lose your installed asset changes.
+Thankfully, this plugin will remember what assets you installed, and attempt to restore them on the first detection of a VSCode update.
 
-If the restoration does not work the first time, you can fix the issue then run the **Restore Assets** command to quickly get you back to coding! 
+If the restoration does not work the first time, you can fix the issue then run the **Restore Assets** command to quickly get you back to coding!
 
 ## Suggestive Content
 
@@ -226,7 +228,6 @@ Don't worry if you choose to continue, I won't ask you again for that specific t
 Applies for the following content:
 
 - Rias Onyx: Secondary Content
-
 
 ## Remove Assets
 
