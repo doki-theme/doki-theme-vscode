@@ -61,6 +61,12 @@ function buildWallpaperCss({
   .pane-header, 
   .minimap-decorations-layer,
   .xterm-cursor-layer,
+  .monaco-breadcrumbs,
+  /* sticky lines */
+  .monaco-editor .sticky-line-content,
+  .monaco-editor .sticky-line-number,
+  .monaco-list .monaco-scrollable-element .monaco-tree-sticky-container .monaco-tree-sticky-row.monaco-list-row,
+  /* end sticky lines */
   .decorationsOverviewRuler,
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
