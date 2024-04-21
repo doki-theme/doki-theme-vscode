@@ -1,5 +1,14 @@
 # Change Log
 
+## 88.5-1.6.3 [Bug Fixes]
+
+- Restored the checksum fixes, so you do not see the "Your Code installation appears to be corrupt" message anymore. Restore your assets, exit VSCode and start it again for this to take effect.
+- Fixed wallpaper showing up on sticky lines. Please re-install your wallpaper (or restore assets) for this to take effect. 
+
+| Before | After |
+| --- | --- |
+| ![before](https://github.com/doki-theme/doki-theme-vscode/assets/15972415/8f523c2e-06f2-47aa-b1f6-93de38fed06e) | ![after](https://github.com/doki-theme/doki-theme-vscode/assets/15972415/fcdb89db-90ad-462a-bc53-5d0fa9fb85ff) |
+
 ## 88.5-1.6.2 [Terminal Wallpaper support]
 
 - Wallpaper now shows up on the terminal for the `1.83.1` builds. Please re-install your wallpaper for this to take effect.

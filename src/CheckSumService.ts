@@ -29,6 +29,7 @@ export const fixCheckSums = (extensionContext: vscode.ExtensionContext) => {
       false
     );
 
+    console.log(checksumChanged, productFile)
     if (checksumChanged) {
       const json = JSON.stringify(product, null, "\t");
       try {
@@ -68,7 +69,7 @@ export const restoreChecksum = () => {
 function computeChecksum(file: string) {
   const contents = fs.readFileSync(file);
   return crypto
-    .createHash("md5")
+    .createHash("sha256")
     .update(contents)
     .digest("base64")
     .replace(/=+$/, "");
