@@ -102,7 +102,7 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 **Background Wallpaper** is probably one of the best features of the plugin.
 This feature will set the background image to the current theme's official wallpaper.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before uninstalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 **Glass Pane effect**
 
@@ -127,7 +127,7 @@ https://user-images.githubusercontent.com/15972415/172961532-d8403999-15f0-4030-
 Tired of the the VSCode watermark cramping your style? 
 You have the ability to hide it using **Hide VSCode Watermark**, so you can fully enjoy your art.
 
-**Important!!** Hiding the watermark requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
+**Important!!** Hiding the watermark requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before uninstalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 ![Hidden Watermark](./readmeStuff/hide_watermark.gif)
 
@@ -135,7 +135,7 @@ You have the ability to hide it using **Hide VSCode Watermark**, so you can full
 
 **Show sticker** allows you to control the presence of the cute sticker in the bottom right-hand corner of your IDE.
 
-**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
+**Important!!** Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before uninstalling. You can close VSCode and start it back up remove the annoying `Unsupported` warning. The plugin automatically fixes VSCode's checksums.
 
 ![Ibuki's Dark Sticker](./readmeStuff/sticker.png)
 
