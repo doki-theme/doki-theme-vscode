@@ -1,5 +1,9 @@
 # Change Log
 
+## 88.5-1.6.4 [Bug Fixes]
+
+- Restored the ability for the extension to load. Restore your assets, exit VSCode and start it again for this to take effect. 
+
 ## 88.5-1.6.3 [Bug Fixes]
 
 - Restored the checksum fixes, so you do not see the "Your Code installation appears to be corrupt" message anymore. Restore your assets, exit VSCode and start it again for this to take effect.
