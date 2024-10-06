@@ -29,7 +29,6 @@ export const fixCheckSums = (extensionContext: vscode.ExtensionContext) => {
       false
     );
 
-    console.log(checksumChanged, productFile)
     if (checksumChanged) {
       const json = JSON.stringify(product, null, "\t");
       try {

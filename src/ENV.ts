@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from "fs";
+import {vscode} from './vsc'
 
 export const ASSETS_URL = `https://doki.assets.unthrottled.io`;
 export const VSCODE_ASSETS_URL = `${ASSETS_URL}/stickers/vscode`;
@@ -9,24 +10,31 @@ export const WALLPAPER_ASSETS_URL = `${ASSETS_URL}/backgrounds/wallpapers/transp
 export const SCREENSHOT_ASSETS_URL = `${ASSETS_URL}/screenshots`;
 
 
-const main = require.main || { filename: 'yeet' };
-export const defaultWorkbenchDirectory = path.join(path.dirname(main.filename), 'vs', 'workbench');
-export const isWSL = () => !fs.existsSync(defaultWorkbenchDirectory);
+export const isWSL = () => !fs.existsSync(getDefaultWorkBenchDirectory());
+const getDefaultWorkBenchDirectory = () => {
+  const mainFilename = require.main?.filename;
+  const vscodeInstallationPath = vscode?.env.appRoot;
+  const appRoot = mainFilename?.length ? path.dirname(mainFilename) : path.join(vscodeInstallationPath!, 'out');
+  return path.join(appRoot, 'vs', 'workbench');
+};
 
 const resolveWorkbench = () => {
   if (!isWSL()) {
-    return defaultWorkbenchDirectory;
+    return getDefaultWorkBenchDirectory();
   }
 
-  const usersPath = path.resolve('/mnt', 'c', 'Users');
-  const users = fs.readdirSync(usersPath);
+  try {
+    const usersPath = path.resolve('/mnt', 'c', 'Users');
+    const users = fs.readdirSync(usersPath);
 
-  return users.map(user => path.resolve(usersPath, user, 'AppData',
+    return users.map(user => path.resolve(usersPath, user, 'AppData',
       'Local', 'Programs', 'Microsoft VS Code', 'resources',
       'app', 'out', 'vs', 'workbench'))
       .filter(path => fs.existsSync(path))
-      .find(Boolean) || defaultWorkbenchDirectory;
-
+      .find(Boolean) || getDefaultWorkBenchDirectory();
+  } catch (error) {
+    return getDefaultWorkBenchDirectory();
+  }
 };
 
 export const workbenchDirectory = resolveWorkbench();
@@ -34,11 +42,11 @@ export const workbenchDirectory = resolveWorkbench();
 const REMOTE_CODE_SERVER_FILE = `web.main`;
 const CODE_SERVER_FILE = 'web.api';
 const getFileName = () => {
-  if(fs.existsSync(path.join(workbenchDirectory, `workbench.web.main.css`))) {
+  if (fs.existsSync(path.join(workbenchDirectory, `workbench.web.main.css`))) {
     return REMOTE_CODE_SERVER_FILE;
   }
 
-  const hasRegularVSCodeStuff =  fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`));
+  const hasRegularVSCodeStuff = fs.existsSync(path.join(workbenchDirectory, `workbench.desktop.main.css`));
   return hasRegularVSCodeStuff ?
     'desktop.main' : CODE_SERVER_FILE;
 };
