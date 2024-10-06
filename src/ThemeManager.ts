@@ -87,7 +87,7 @@ async function attemptToInstallAsset(
     );
   } else if (isFirstTimeInstalling(context)) {
     const actionText = "Install Theme Assets";
-    const messageBody = `Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before unistalling. I won't show you this message again in the future if you choose to install.`;
+    const messageBody = `Installing theme assets requires me to corrupt VS-Code by modifying CSS. You will have to use the "Remove Sticker/Background" command to restore VS Code back to supported status before uninstalling. I won't show you this message again in the future if you choose to install.`;
     return conditionalInstall(
       FIRST_TIME_STICKER_INSTALL,
       actionText,
