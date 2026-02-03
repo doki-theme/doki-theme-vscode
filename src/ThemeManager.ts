@@ -30,7 +30,7 @@ export const ACTIVE_THEME = "doki.theme.active";
 export const ACTIVE_STICKER = "doki.sticker.active";
 
 const FIRST_TIME_STICKER_INSTALL = "doki.sticker.first.install";
-export const handleInstallMessage = `Quick reload to see changes, please restart VSCode to remove the Unsupported warning.`
+export const handleInstallMessage = `Restart to see changes, please restart VSCode to remove the Unsupported warning.`
 
 const createCulturedInstall = (themeId: string): string =>
   `doki.cultured.${themeId}`;
@@ -205,7 +205,7 @@ export function activateHideWatermark(
   );
 }
 
-const quickReloadAction = "Quickly Reload Window";
+const QuitAction = "Quit";
 
 export function activateThemeAsset(
   dokiTheme: DokiTheme,
@@ -259,11 +259,11 @@ export function showInstallNotification(message: string) {
   vscode.window
     .showInformationMessage(
       message,
-      { title: quickReloadAction }
+      { title: QuitAction }
     )
     .then((item) => {
       if (item) {
-        vscode.commands.executeCommand("workbench.action.reloadWindow");
+        vscode.commands.executeCommand("workbench.action.quit");
       }
     });
 }
@@ -287,11 +287,11 @@ export function uninstallImages(context: vscode.ExtensionContext) {
     vscode.window
       .showInformationMessage(
         `Removed All Images. ${handleInstallMessage}`,
-        { title: quickReloadAction }
+        { title: QuitAction }
       )
       .then((item) => {
         if (item) {
-          vscode.commands.executeCommand("workbench.action.reloadWindow");
+          vscode.commands.executeCommand("workbench.action.quit");
         }
       });
   } else if (stickersRemoved === InstallStatus.FAILURE) {

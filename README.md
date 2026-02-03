@@ -16,7 +16,7 @@
 Steps demonstrated:
 1. Choose Ryuko's Color Theme
 1. Enable Ryuko's wallpaper
-1. Reload/Restart VSCode
+1. Restart VSCode
 1. Demonstrate glass pane feature
 
 ## Screen Samples!
@@ -79,21 +79,28 @@ You can choose themes based on characters from these various Anime, Manga, or Vi
 
 # Documentation
 
+- [Theme Preview](#theme-preview)
+- [Feature Preview](#feature-preview)
+  - [Screen Samples!](#screen-samples)
+- [Complete Theme Album.](#complete-theme-album)
+  - [About!](#about)
+- [Documentation](#documentation)
 - [Configuration](#configuration)
-    - [Background Images](#background-images)
-    - [Hide VSCode Watermark](#hide-watermark)
-    - [Stickers](#sticker)
-    - [Custom Assets](#custom-assets)
-    - [Asset Restoration](#asset-restoration)
-    - [Suggestive Content](#suggestive-content)
-    - [Asset Removal](#remove-assets)
-    - [Show Changelog](#show-changelog)
+  - [Background Images](#background-images)
+      - [Settings](#settings)
+  - [Hide Watermark](#hide-watermark)
+  - [Stickers](#stickers)
+  - [Custom Assets](#custom-assets)
+  - [Asset Restoration](#asset-restoration)
+  - [Suggestive Content](#suggestive-content)
+  - [Remove Assets](#remove-assets)
+  - [Show Changelog](#show-changelog)
 - [Miscellaneous](#miscellaneous)
-    - [Contributing](#contributing)
-    - [Theme Requests](#theme-requests)
-    - [Helping the community](#enjoying-the-plugin)
-    - [Feature Requests](#contributions)
-    - [More Doki Theme!](#even-more-doki-theme)
+  - [Contributing](#contributing)
+  - [Theme Requests](#theme-requests)
+  - [Enjoying the plugin?](#enjoying-the-plugin)
+  - [Contributions?](#contributions)
+  - [Even more Doki-Theme!](#even-more-doki-theme)
 
 # Configuration
 

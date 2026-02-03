@@ -100,7 +100,7 @@ export function attemptToGreetUser(context: vscode.ExtensionContext) {
                 <ol>
                     <li>Choose Color Theme</li>
                     <li>Enable Theme's Stickers</li>
-                    <li>Reload/Restart VSCode</li>
+                    <li>Restart VSCode</li>
                     <li>Code!</li>
                 </ol> 
             </div>
