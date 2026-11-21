@@ -56,10 +56,21 @@ export const fixCheckSums = (extensionContext: vscode.ExtensionContext) => {
 
 export const restoreChecksum = () => {
   try {
-    if (fs.existsSync(originalProductFile)) {
-      fs.unlinkSync(productFile);
-      fs.renameSync(originalProductFile, productFile);
+    if (!fs.existsSync(originalProductFile)) {
+      return;
     }
+
+    // Only the checksums are ours to put back. The rest of product.json
+    // belongs to whoever installed the editor -- the extension gallery and
+    // telemetry settings get patched in there -- and swapping the whole file
+    // for our copy threw those edits away without saying so.
+    const current = JSON.parse(fs.readFileSync(productFile, "utf8"));
+    const original = JSON.parse(fs.readFileSync(originalProductFile, "utf8"));
+    current.checksums = original.checksums;
+    fs.writeFileSync(productFile, JSON.stringify(current, null, "\t"), {
+      encoding: "utf8",
+    });
+    fs.unlinkSync(originalProductFile);
   } catch (err) {
     console.error(err);
   }

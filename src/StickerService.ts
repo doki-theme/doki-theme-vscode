@@ -222,8 +222,154 @@ function buildCSSWithoutWatermark(): string {
 }
 
 
+// Installing an asset is a read-modify-write of the editor's stylesheet, and
+// every editor window is a separate extension host that can be doing it at the
+// same moment. `fs.writeFileSync` truncates the file to zero before refilling
+// it, so a window reading while another window wrote could come back with an
+// empty or half-written stylesheet. Scrubbing an empty read yields nothing, and
+// the editor's styles were then gone for good.
+//
+// Two things prevent that:
+//   - a lock, so only one window is inside the read-modify-write at a time
+//   - a temp-file-and-rename write, so nobody ever observes a partial file
+const lockDirectory = `${editorCss}.lock`;
+const STALE_LOCK_MS = 30000;
+const LOCK_POLL_MS = 50;
+const LOCK_ATTEMPTS = 200;
+const RENAME_ATTEMPTS = 20;
+
+function sleepSync(milliseconds: number) {
+  // The asset installers write synchronously, so we cannot yield to the event
+  // loop while waiting on another window.
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, milliseconds);
+}
+
+function lockIsStale(): boolean {
+  try {
+    return Date.now() - fs.statSync(lockDirectory).mtimeMs > STALE_LOCK_MS;
+  } catch (error) {
+    return false; // it just went away, somebody else is making progress
+  }
+}
+
+function releaseLock() {
+  try {
+    fs.rmdirSync(lockDirectory);
+  } catch (error) {
+    // already gone
+  }
+}
+
+function acquireLock(): boolean {
+  for (let attempt = 0; attempt < LOCK_ATTEMPTS; attempt++) {
+    try {
+      fs.mkdirSync(lockDirectory); // atomic, unlike existsSync-then-create
+      return true;
+    } catch (error) {
+      if (lockIsStale()) {
+        releaseLock(); // a window died mid-install, take the lock from it
+        continue;
+      }
+      sleepSync(LOCK_POLL_MS);
+    }
+  }
+  return false;
+}
+
+function withEditorCssLock<T>(whenBusy: T, criticalSection: () => T): T {
+  if (!acquireLock()) {
+    console.error("Unable to lock the editor stylesheet, another window has it.");
+    return whenBusy;
+  }
+  try {
+    return criticalSection();
+  } finally {
+    releaseLock();
+  }
+}
+
 function installEditorStyles(styles: string) {
-  fs.writeFileSync(editorCss, styles, "utf-8");
+  const scratchFile = `${editorCss}.${process.pid}.tmp`;
+  fs.writeFileSync(scratchFile, styles, "utf-8");
+  for (let attempt = 0; ; attempt++) {
+    try {
+      fs.renameSync(scratchFile, editorCss); // readers see all of it, or none of it
+      return;
+    } catch (error) {
+      // Windows reports EPERM/EBUSY while a scanner or the editor itself has
+      // the file open for a moment.
+      if (attempt >= RENAME_ATTEMPTS) {
+        try {
+          fs.unlinkSync(scratchFile);
+        } catch (cleanupError) {
+          // leave it, the next install overwrites it
+        }
+        throw error;
+      }
+      sleepSync(LOCK_POLL_MS);
+    }
+  }
+}
+
+// We only ever keep the editor's own styles by holding on to whatever sits in
+// front of our markers, so losing them once used to be permanent. Keep a copy
+// of the stylesheet without our blocks in it, and refuse to build on top of a
+// read that no longer looks like a stylesheet.
+const MIN_BASE_CSS_LENGTH = 1024;
+const MIN_BASE_CSS_RATIO = 0.5;
+
+function looksLikeTheEditorsStylesheet(css: string): boolean {
+  return css.length > MIN_BASE_CSS_LENGTH && css.indexOf(".monaco-workbench") > -1;
+}
+
+function readRememberedCSS(): string | undefined {
+  try {
+    return fs.existsSync(editorCssCopy)
+      ? fs.readFileSync(editorCssCopy, "utf-8")
+      : undefined;
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function rememberCSS(baseCss: string) {
+  try {
+    const scratchFile = `${editorCssCopy}.${process.pid}.tmp`;
+    fs.writeFileSync(scratchFile, baseCss, "utf-8");
+    fs.renameSync(scratchFile, editorCssCopy);
+  } catch (error) {
+    console.error("Unable to remember the editor's stylesheet", error);
+  }
+}
+
+function stripDokiCss(currentCss: string): string {
+  return indexGetters.reduce(
+    (trimmedCss, indexFinderDude) => trimCss(trimmedCss, indexFinderDude(trimmedCss)),
+    currentCss
+  );
+}
+
+// Keeps the remembered copy current -- so it survives editor updates -- and
+// hands back the known-good styles when what we just read is damaged.
+function rememberOrRecover(currentCss: string, scrubbedCss: string): string {
+  const baseCss = stripDokiCss(currentCss);
+  const remembered = readRememberedCSS();
+  const isBelievable = looksLikeTheEditorsStylesheet(baseCss) &&
+    (!remembered || baseCss.length >= remembered.length * MIN_BASE_CSS_RATIO);
+
+  if (isBelievable) {
+    if (baseCss !== remembered) {
+      rememberCSS(baseCss);
+    }
+    return scrubbedCss;
+  }
+
+  if (remembered) {
+    console.error("The editor's stylesheet lost its styles, restoring them.");
+    return remembered;
+  }
+
+  return scrubbedCss;
 }
 
 function canWrite(): boolean {
@@ -263,8 +409,10 @@ export async function installWallPaper(
 export async function hideWaterMark(): Promise<InstallStatus> {
   if (!canWrite()) return InstallStatus.FAILURE;
 
-  installEditorStyles(buildCSSWithoutWatermark())
-  return InstallStatus.INSTALLED
+  return withEditorCssLock(InstallStatus.FAILURE, () => {
+    installEditorStyles(buildCSSWithoutWatermark())
+    return InstallStatus.INSTALLED
+  });
 }
 
 
@@ -276,9 +424,11 @@ async function installStyles(
   if (canWrite()) {
     try {
       const stickersAndWallpaper = await forceUpdateSticker(context, stickerInstallPayload);
-      const stickerStyles = cssDecorator(stickersAndWallpaper);
-      installEditorStyles(stickerStyles);
-      return InstallStatus.INSTALLED;
+      return withEditorCssLock(InstallStatus.FAILURE, () => {
+        const stickerStyles = cssDecorator(stickersAndWallpaper);
+        installEditorStyles(stickerStyles);
+        return InstallStatus.INSTALLED;
+      });
     } catch (e) {
       console.error("Unable to install sticker!", e);
       if (e instanceof NetworkError) {
@@ -288,14 +438,6 @@ async function installStyles(
   }
 
   return InstallStatus.FAILURE;
-}
-
-function getScrubbedCSS() {
-  const currentCss = readCSS();
-  return indexGetters.reduce(
-    (trimmedCss, indexFinderDude) => trimCss(trimmedCss, indexFinderDude(trimmedCss)),
-    currentCss
-  );
 }
 
 type IndexFinderDude = (currentCss: string) => number;
@@ -308,8 +450,11 @@ function readVSCodeCSSAndScrubAsset(
   getOtherAssets: IndexFinderDude[],
   getAssetToRemoveIndex: IndexFinderDude
 ) {
-  const currentVSCodeCss = fs.readFileSync(editorCss, "utf-8");
-  return scrubProvidedCssOfAsset(getOtherAssets, getAssetToRemoveIndex, currentVSCodeCss);
+  const currentVSCodeCss = readCSS();
+  return rememberOrRecover(
+    currentVSCodeCss,
+    scrubProvidedCssOfAsset(getOtherAssets, getAssetToRemoveIndex, currentVSCodeCss)
+  );
 }
 
 function scrubProvidedCssOfAsset(
@@ -327,7 +472,7 @@ function scrubProvidedCssOfAsset(
       .filter(otherIndex => assetToRemoveIndex < otherIndex)
       .reduce((accum, index) => Math.min(accum, index), Number.POSITIVE_INFINITY)
     return (
-      currentCss.substring(0, assetToRemoveIndex) +
+      currentCss.substring(0, assetToRemoveIndex).replace(/\s+$/, "") +
       (smolestGreater < Number.POSITIVE_INFINITY
         ? "\n" + currentCss.substring(smolestGreater, currentCss.length)
         : "")
@@ -370,32 +515,34 @@ function getWatermarkScrubbedCSS() {
 
 function trimCss(currentCss: string, index: number): string {
   if (index >= 0) {
-    return currentCss.substr(0, index).trim();
+    return currentCss.substring(0, index).trim();
   }
   return currentCss;
 }
 
-const scrubCSSFile = () => {
-  const scrubbedCSS = getScrubbedCSS();
-  fs.writeFileSync(editorCss, scrubbedCSS, "utf-8");
-};
-
 // :(
 export function removeStickers(): InstallStatus {
-  if (canWrite()) {
+  if (!canWrite()) return InstallStatus.FAILURE;
+
+  return withEditorCssLock(InstallStatus.FAILURE, () => {
     try {
+      const remembered = readRememberedCSS();
+      // Prefer the copy we kept: it is the stylesheet as we found it, whereas
+      // scrubbing trusts markers that may no longer be where we left them.
+      installEditorStyles(
+        remembered && looksLikeTheEditorsStylesheet(remembered)
+          ? remembered
+          : stripDokiCss(readCSS())
+      );
+
       if (fs.existsSync(editorCssCopy)) {
         fs.unlinkSync(editorCssCopy);
-        scrubCSSFile();
         return InstallStatus.INSTALLED;
       }
-      scrubCSSFile();
       return InstallStatus.NOT_INSTALLED;
     } catch (e) {
       console.error("Unable to remove stickers!", e);
       return InstallStatus.FAILURE;
     }
-  }
-
-  return InstallStatus.FAILURE;
+  });
 }
